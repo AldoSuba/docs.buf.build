@@ -13,8 +13,9 @@ Follow the prompts to enter your username and password (API Token). This adds an
 
 ## Push a module
 
-The only requirement to push to the BSR is to have a module that [builds](../build/usage.md)
-successfully, meaning that you should be able to run `buf build` successfully on your module.
+The requirements to push to the BSR is to have a module that [builds](../build/usage.md)
+successfully, meaning that you should be able to run `buf build` successfully on your module,
+and the module does not have any dependency that is pinned to a draft commit.
 
 Before you can push a module into the BSR there needs to exist a repository, owned by either a user or an organization, the user has access to. A repository can be created either through the UI or from the command line with `buf`.
 
