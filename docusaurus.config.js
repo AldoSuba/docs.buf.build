@@ -15,9 +15,6 @@ module.exports = {
           path: "docs",
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
-          admonitions: {
-            icons: "none"
-          },
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css")
@@ -39,8 +36,9 @@ module.exports = {
   onBrokenMarkdownLinks: "warn",
   organizationName: "bufbuild",
   projectName: "buf",
-  // Ref: https://docusaurus.io/docs/2.0.0-beta.3/api/themes/configuration
+  // https://docusaurus.io/docs/api/themes/configuration
   themeConfig: {
+    // https://docusaurus.io/docs/search
     algolia: {
       appId: process.env.ALGOLIA_APP_ID || "none",
       apiKey: process.env.ALGOLIA_API_KEY || "none",

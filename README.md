@@ -40,7 +40,7 @@ but the content you view this way should be identical to the deployed docs.
 
 ## About the Docusaurus setup
 
-We are using [version 2.0.0-beta.3](https://docusaurus.io/docs/2.0.0-beta.3) of
+We are using [version 2.0.0](https://github.com/facebook/docusaurus/releases/tag/v2.0.0) of
 Docusaurus.
 
 ### Authoring code blocks
