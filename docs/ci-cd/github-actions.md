@@ -120,7 +120,7 @@ since we do not want to be pushing to the BSR on each commit pushed to the pull 
 Add this `.github/workflows/push.yaml` file alongside your pull request workflow
 configuration.
 
-```yaml title=".github/workflows/push.yaml" {1-5,17-19}
+```yaml title=".github/workflows/push.yaml" {1-5,17-20}
 name: buf-push
 on:
   push:
