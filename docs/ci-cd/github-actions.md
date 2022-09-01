@@ -140,9 +140,11 @@ jobs:
       - uses: bufbuild/buf-push-action@v1
         with:
           buf_token: ${{ secrets.BUF_TOKEN }}
+          enable_draft: true
 ```
 
 This workflow is basically the same workflow as before, with an additional step to push to the BSR when a push is made to the `main` branch of your repository. The `buf-push` action only pushes to the BSR if contents have actually changed, it otherwise succeeds silently.
+When `enable_draft` is set to `true`, `buf-push` action will push the BSR commit as a draft if the branch that triggering the workflow is not `main`.
 
 When comparing against the same branch we also set `ref=HEAD~1` to compare against the previous commit on that branch.
 
