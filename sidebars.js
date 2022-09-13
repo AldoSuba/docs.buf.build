@@ -80,6 +80,18 @@ const sidebars = {
         },
         {
           type: "category",
+          label: "Generated Assets",
+          customProps: {
+            badge: {
+              label: "beta",
+              severity: "info"
+            }
+          },
+          items: [],
+          collapsed: true
+        },
+        {
+          type: "category",
           label: "Remote generation",
           customProps: {
             badge: {
