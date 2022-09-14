@@ -141,11 +141,11 @@ invocation used to generate Go/gRPC code with this
 ```yaml title="buf.gen.yaml"
 version: v1
 plugins:
-  - name: go
+  - plugin: go
     out: .
     opt:
       - paths=source_relative
-  - name: go-grpc
+  - plugin: go-grpc
     out: .
     opt:
       - paths=source_relative

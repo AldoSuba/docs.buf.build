@@ -70,14 +70,14 @@ options):
 ```yaml title="buf.gen.yaml" {3-14}
  version: v1
  plugins:
--  - name: cpp
+-  - plugin: cpp
 -    out: gen/proto/cpp
--  - name: java
+-  - plugin: java
 -    out: gen/proto/java
-+  - name: go
++  - plugin: go
 +    out: gen/proto/go
 +    opt: paths=source_relative
-+  - name: go-grpc
++  - plugin: go-grpc
 +    out: gen/proto/go
 +    opt:
 +      - paths=source_relative

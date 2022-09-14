@@ -118,10 +118,10 @@ And the corresponding Buf configuration:
 +  go_package_prefix:
 +    default: github.com/bufbuild/buf-tour/petstore/gen/proto/go
  plugins:
-   - name: go
+   - plugin: go
      out: gen/proto/go
      opt: paths=source_relative
-   - name: go-grpc
+   - plugin: go-grpc
      out: gen/proto/go
      opt:
        - paths=source_relative
@@ -186,12 +186,12 @@ module from managed mode:
 +    except:
 +      - buf.build/googleapis/googleapis
  plugins:
-   - name: java
+   - plugin: java
      out: gen/proto/java
-   - name: go
+   - plugin: go
      out: gen/proto/go
      opt: paths=source_relative
-   - name: go-grpc
+   - plugin: go-grpc
      out: gen/proto/go
      opt:
        - paths=source_relative

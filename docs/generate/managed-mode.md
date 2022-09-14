@@ -50,7 +50,7 @@ version: v1
 managed:
   enabled: true
 plugins:
-  - remote: buf.build/protocolbuffers/plugins/java
+  - plugin: buf.build/library/java
     out: gen/proto/java
 ```
 
@@ -84,10 +84,10 @@ managed:
     JAVA_PACKAGE:
       acme/weather/v1/weather.proto: org
 plugins:
-  - remote: buf.build/protocolbuffers/plugins/go
+  - plugin: buf.build/library/go
     out: gen/proto/go
     opt: paths=source_relative
-  - remote: buf.build/protocolbuffers/plugins/java
+  - plugin: buf.build/library/java
     out: gen/proto/java
 ```
 

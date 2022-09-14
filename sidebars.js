@@ -105,7 +105,7 @@ const sidebars = {
             "bsr/remote-generation/js",
             "bsr/remote-generation/plugin-example",
             "bsr/remote-generation/template-example",
-            "bsr/remote-generation/remote-plugin-execution"
+            "bsr/remote-generation/hosted-plugin-execution"
           ],
           collapsed: false
         }
