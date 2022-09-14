@@ -25,10 +25,10 @@ An example of the `buf.gen.yaml` file used to generate Go/gRPC stubs is shown be
 ```yaml title="buf.gen.yaml"
 version: v1
 plugins:
-  - name: go
+  - plugin: go
     out: gen/proto/go
     opt: paths=source_relative
-  - remote: buf.build/grpc/plugins/go:v1.2.0-1
+  - plugin: buf.build/library/grpc-go:v1.2.0
     out: gen/proto/go
     opt:
       - paths=source_relative
@@ -45,22 +45,24 @@ values are `v1beta1` and `v1`.
 Each entry in the `buf.gen.yaml` `plugins` key is a `protoc` plugin configuration, which is a
 program that generates code by interacting with the compiled representation of your module.
 
-#### `name` or `remote`
+#### `plugin`, `name` or `remote`
 
-One of `name` or `remote` for a plugin is **required**.
+One of `plugin`, `name` or `remote` for a plugin is **required**.
 
-In the case of `<name>`, it is equal to the value in `protoc-gen-<name>`, which is the traditional naming
-convention for `protoc` plugins. To be clear, all `protoc` plugins begin with the `protoc-gen-` prefix.
-For example, in the `buf.gen.yaml` example shown above, the `protoc-gen-go` plugins is configured.
+Local Plugin Execution:
+
+To execute a locally installed plugin, specify the plugin name via either the `plugin` or `name` fields.
+All `protoc` plugins begin with the `protoc-gen-` prefix.
 
 By default, a `protoc-gen-<name>` program is expected to be on your `PATH` so that it can be discovered and
 executed by `buf`. This can be overridden with the [path](#path) option shown below.
 
-In the case of `<remote>`, this enables you to run `buf generate` with a remote plugin, using the fully qualified
-path to the remote plugin defined via the BSR, `<remote>/<owner>/plugins/<plugin-name>:<plugin-version>`. In the `buf.gen.yaml`
-example shown above, the `go` plugin managed by `buf.build/grpc` is being used as a part of the generation,
-and does not require a local installation of the `go` plugin. If no version is specified, the generation defaults
-to using the latest version available for the requested remote plugin.
+Remote Plugin Execution:
+
+The `plugin` or `remote` (deprecated) fields can specify a remotely
+executed plugin (`<remote>/<owner>/<plugin-name>:<plugin-version>` or `<remote>/<owner>/<plugin-name>`).
+If a remotely executed plugin omits the `<plugin-version>`, the latest version will be used.
+If a `<plugin-version>` is specified with `<plugin>`, the optional [revision](#revision) can be specified to pin an exact version/revision of a plugin.
 
 #### `out`
 
@@ -101,12 +103,28 @@ on your `PATH`, but is found at `bin/proto/protoc-gen-foo`, you can refer to it 
 ```yaml title="buf.gen.yaml"
 version: v1
 plugins:
-  - name: foo
+  - plugin: foo
     out: gen/foo
     path: bin/proto/protoc-gen-foo
 ```
 
 This field is **exclusive** with `remote` and only works with `name` for local plugins.
+
+#### `revision`
+
+The `revision` is **optional** and may be used along with the `plugin` field to pin an exact version of a remote plugin.
+In most cases, it is recommended to omit the `revision`, in which case the latest revision of the plugin will be used (automatically pulling in the latest bug fixes).
+
+Below is an example of using the revision to target an exact version of a plugin:
+
+```yaml title="buf.gen.yaml"
+version: v1
+plugins:
+  - plugin: buf.build/library/grpc-go:v1.28.1
+    revision: 1
+    out: gen/proto/go
+    opt: paths=source_relative
+```
 
 #### `strategy`
 
@@ -116,10 +134,10 @@ For example, we can add a `strategy` to one of the plugins in the configuration 
 ```yaml title="buf.gen.yaml"
 version: v1
 plugins:
-  - name: go
+  - plugin: go
     out: gen/proto/go
     opt: paths=source_relative
-  - name: go-grpc
+  - plugin: go-grpc
     out: gen/proto/go
     opt:
       - paths=source_relative
@@ -178,7 +196,7 @@ managed:
     JAVA_PACKAGE:
       acme/weather/v1/weather.proto: "org"
 plugins:
-  - name: go
+  - plugin: go
     out: gen/proto/go
     opt: paths=source_relative
 ```

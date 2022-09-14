@@ -52,10 +52,10 @@ for [go](https://github.com/protocolbuffers/protobuf-go) and [grpc](https://gith
 ```yaml title="buf.gen.yaml"
 version: v1
 plugins:
-  - name: go
+  - plugin: go
     out: gen/go
     opt: paths=source_relative
-  - name: go-grpc
+  - plugin: go-grpc
     out: gen/go
     opt:
       - paths=source_relative

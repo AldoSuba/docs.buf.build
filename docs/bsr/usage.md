@@ -131,9 +131,9 @@ Add a `buf.gen.yaml` file and list all the plugins as well as their options. Her
 ```yaml title=buf.gen.yaml
 version: v1
 plugins:
-  - name: cpp
+  - plugin: cpp
     out: gen/proto/cpp
-  - name: java
+  - plugin: java
     out: gen/proto/java
 ```
 

@@ -35,9 +35,9 @@ plugins:
 ```yaml title="buf.gen.yaml"
 version: v1
 plugins:
-  - name: cpp
+  - plugin: cpp
     out: gen/proto/cpp
-  - name: java
+  - plugin: java
     out: gen/proto/java
 ```
 
@@ -126,9 +126,9 @@ for C++ and Java. You can disable [`cc_enable_arenas`][cc_enable_arenas] and ena
 +  cc_enable_arenas: false
 +  java_multiple_files: true
  plugins:
-   - name: cpp
+   - plugin: cpp
      out: gen/proto/cpp
-   - name: java
+   - plugin: java
      out: gen/proto/java
 ```
 
@@ -199,9 +199,9 @@ For now, restore your `buf.gen.yaml` configuration before you continue:
 -  cc_enable_arenas: false
 -  java_multiple_files: true
  plugins:
-   - name: cpp
+   - plugin: cpp
      out: gen/proto/cpp
-   - name: java
+   - plugin: java
      out: gen/proto/java
 ```
 

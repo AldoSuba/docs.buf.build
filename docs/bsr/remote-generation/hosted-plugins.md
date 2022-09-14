@@ -1,6 +1,6 @@
 ---
-id: remote-plugin-execution
-title: Remote plugin execution
+id: hosted-plugin-execution
+title: Hosted plugin execution
 ---
 
 One of the greatest challenges with Protobuf code generation is the complexity of working with `protoc` and custom plugins. Time and time again we've heard that developers want the benefits of code generation, but the existing tooling gets in the way.
@@ -11,7 +11,7 @@ Every organization and open source project develops homegrown tooling in an effo
 
 At Buf, we believe code generation is a key building block and the Protobuf ecosystem deserves a proper solution.
 
-The **remote plugin execution** feature makes it possible to remotely generate source code using hosted plugins in an isolated environment on the BSR. By isolating code generation from its environment, you eliminate an entire class of problems caused by subtle differences across specific compiler versions and custom Protobuf plugins.
+The **hosted plugin execution** feature makes it possible to remotely generate source code using hosted plugins in an isolated environment on the BSR. By isolating code generation from its environment, you eliminate an entire class of problems caused by subtle differences across specific compiler versions and custom Protobuf plugins.
 
 All you need to get started is:
 
@@ -23,52 +23,67 @@ With this setup a single developer or thousands of developers at a large organiz
 
 The Buf team has published a set of [official plugins](#official-plugins) for you to use, starting with all the built-in `protoc` Protobuf plugins and popular ones such as gRPC plugins. 
 
-> Interested in publishing your own community plugin? Check out [Authoring a Plugin](plugin-example.md).
 > To learn more about Buf Plugins check out the [Key concepts documentation](overview.md#concepts).
 
 ## Official plugins
 
-### `protoc`-based plugins
+To discover plugins maintained by the Buf team, go to https://buf.build/plugins.
+This page provides information on all available plugins, including the language type(s) and instructions for use in `buf.gen.yaml`.
 
-The Buf team has developed tooling to automatically sync and publish all of the plugins built-in to `protoc`, which are located under the `protocolbuffers` organization. Here is a list of supported `protoc`-based plugins:
+The packaging and distribution source code for Buf-managed plugins is available at https://github.com/bufbuild/plugins.
 
-- https://buf.build/protocolbuffers/plugins/cpp
-- https://buf.build/protocolbuffers/plugins/csharp
-- https://buf.build/protocolbuffers/plugins/dart
-- https://buf.build/protocolbuffers/plugins/go
-- https://buf.build/protocolbuffers/plugins/java
-- https://buf.build/protocolbuffers/plugins/js
-- https://buf.build/protocolbuffers/plugins/kotlin
-- https://buf.build/protocolbuffers/plugins/objc
-- https://buf.build/protocolbuffers/plugins/php
-- https://buf.build/protocolbuffers/plugins/python
-- https://buf.build/protocolbuffers/plugins/ruby
+### protobuf language plugins
 
-This is powerful because you no longer need to have `protoc` installed, or understand how to invoke it (a daunting task in and of itself). Furthermore you don't need to install additional plugins not already built-in to the `protoc` compiler, such as [protoc-gen-go](https://pkg.go.dev/github.com/golang/protobuf/protoc-gen-go).
+The Buf team has developed tooling to publish all of the plugins built-in to `protoc`. Additionally, other third-party plugins provide language support for languages unsupported by `protoc` (TypeScript, Dart, Swift). Here is a list of supported language plugins:
 
-### gRPC plugins
+- C++: https://buf.build/library/cpp
+- C#: https://buf.build/library/csharp
+- Dart: https://buf.build/library/dart
+- Go: https://buf.build/library/go
+- Java: https://buf.build/library/java
+- JavaScript/TypeScript: https://buf.build/library/protobuf-es
+- JavaScript (deprecated): https://buf.build/library/js
+- Kotlin: https://buf.build/library/kotlin
+- Objective C: https://buf.build/library/objc
+- PHP: https://buf.build/library/php
+- Python: https://buf.build/library/python
+- Ruby: https://buf.build/library/ruby
+- Swift: https://buf.build/library/swift
 
-In addition to the plugins mentioned above, we're also adding support for popular gRPC plugins for nearly all of the same languages. These plugins are located under the `grpc` organization. Here is a list of supported gRPC plugins:
+This is powerful because you no longer need to have `protoc` installed, or understand how to invoke it (a daunting task in and of itself). Furthermore you don't need to install additional plugins not already built-in to the `protoc` compiler, such as [protoc-gen-go](https://pkg.go.dev/google.golang.org/protobuf/cmd/protoc-gen-go).
 
-- https://buf.build/grpc/plugins/cpp
-- https://buf.build/grpc/plugins/csharp
-- https://buf.build/grpc/plugins/go
-- https://buf.build/grpc/plugins/java
-- https://buf.build/grpc/plugins/kotlin
-- https://buf.build/grpc/plugins/node
-- https://buf.build/grpc/plugins/objc
-- https://buf.build/grpc/plugins/php
-- https://buf.build/grpc/plugins/python
-- https://buf.build/grpc/plugins/ruby
-- https://buf.build/grpc/plugins/web
+### RPC plugins
+
+In addition to the plugins mentioned above, we're also adding support for popular RPC plugins for nearly all of the same languages. Here is a list of supported RPC plugins:
+
+#### Connect
+- https://buf.build/library/connect-go
+- https://buf.build/library/connect-web
+
+#### gRPC
+- https://buf.build/library/grpc-cpp
+- https://buf.build/library/grpc-csharp
+- https://buf.build/library/grpc-go
+- https://buf.build/library/grpc-java
+- https://buf.build/library/grpc-kotlin
+- https://buf.build/library/grpc-node
+- https://buf.build/library/grpc-objc
+- https://buf.build/library/grpc-php
+- https://buf.build/library/grpc-python
+- https://buf.build/library/grpc-ruby
+- https://buf.build/library/grpc-swift
+- https://buf.build/library/grpc-web
+
+#### Twirp
+- https://buf.build/library/twirp-go
 
 ## Example
 
-This section provides an example of remote plugin execution.
+This section provides an example of hosted plugin execution.
 
-We'll use the [buf.build/demolab/theweather](https://buf.build/demolab/theweather) module hosted on the BSR as the input source. You can also use local Protobuf files, but for this example we'll use a hosted module to illustrate remote plugin execution.
+We'll use the [buf.build/demolab/theweather](https://buf.build/demolab/theweather) module hosted on the BSR as the input source. You can also use local Protobuf files, but for this example we'll use a hosted module to illustrate plugin execution.
 
-A remote plugin can have a version specified, as is done below, or it can be omitted, if you want to always use the latest version of the plugin.
+A hosted plugin can have a version specified, as is done below, or it can be omitted, if you want to always use the latest version of the plugin.
 
 Create a template file with these contents: 
 
@@ -94,10 +109,10 @@ managed:
   go_package_prefix:
     default: github.com/organization/repository/gen/go
 plugins:
-  - remote: buf.build/protocolbuffers/plugins/go:v1.27.1-1
+  - plugin: buf.build/library/go:v1.28.1
     out: gen/go
     opt: paths=source_relative
-  - remote: buf.build/grpc/plugins/go:v1.1.0-1
+  - plugin: buf.build/library/grpc-go:v1.2.0
     out: gen/go
     opt:
       - paths=source_relative
@@ -112,12 +127,12 @@ version: v1
 managed:
   enabled: true
 plugins:
-  - remote: buf.build/protocolbuffers/plugins/js:v3.19.1-1
+  - plugin: buf.build/library/js:v3.20.1
     out: gen/js
     opt:
       - import_style=commonjs
       - binary
-  - remote: buf.build/grpc/plugins/node:v1.11.2-1
+  - plugin: buf.build/library/grpc-node:v1.11.2
     out: gen/js
     opt:
       - import_style=commonjs
@@ -131,9 +146,9 @@ version: v1
 managed:
   enabled: true
 plugins:
-  - remote: buf.build/protocolbuffers/plugins/python:v3.19.1-1
+  - plugin: buf.build/library/python:v21.5
     out: gen/python
-  - remote: buf.build/grpc/plugins/python:v1.41.1-1
+  - plugin: buf.build/library/grpc-python:v1.48.1
     out: gen/python
 ```
   
@@ -145,9 +160,9 @@ version: v1
 managed:
   enabled: true
 plugins:
-  - remote: buf.build/protocolbuffers/plugins/ruby:v3.19.1-1
+  - plugin: buf.build/library/ruby:v21.5
     out: gen/ruby
-  - remote: buf.build/grpc/plugins/ruby:v1.41.1-1
+  - plugin: buf.build/library/grpc-ruby:v1.48.1
     out: gen/ruby
 ```
 
@@ -159,20 +174,20 @@ version: v1
 managed:
   enabled: true
 plugins:
-  - remote: buf.build/protocolbuffers/plugins/java:v3.19.1-1
+  - plugin: buf.build/library/java:v21.5
     out: gen/java
-  - remote: buf.build/grpc/plugins/java:v1.42.1-1
+  - plugin: buf.build/library/grpc-java:v1.49.0
     out: gen/java
 ```
 
   </TabItem>
 </Tabs>
 
-Note, we're using the `remote` key instead of `name` to reference a remote plugin, instead of a local one. More information can be [found in the buf.gen.yaml docs](https://docs.buf.build/configuration/v1/buf-gen-yaml#name-or-remote).
+Note, we're using the `plugin` key to reference a hosted plugin. More information can be [found in the buf.gen.yaml docs](https://docs.buf.build/configuration/v1/buf-gen-yaml#plugin-name-or-remote).
 
-> As a best practice, when referencing remote plugins we recommend including the version of the plugin to ensure reproducible code generation.
+> As a best practice, when referencing hosted plugins we recommend including the version of the plugin to ensure reproducible code generation.
 
-It is possible to reference both local and remote plugins within a single template file. The `buf generate` command issues an RPC to the BSR to execute the remote plugins against the given input. Once execution is finished the output is written out to disk.
+It is possible to reference both local and hosted plugins within a single template file. The `buf generate` command issues an RPC to the BSR to execute the hosted plugins against the given input. Once execution is finished the output is written out to disk.
 
 ```terminal
 $ buf generate buf.build/demolab/theweather
@@ -197,10 +212,11 @@ You should end up with this structure:
 ├── buf.gen.yaml
 └── gen
     └── go
-        └── weather
-            └── v1
-                ├── weather.pb.go
-                └── weather_grpc.pb.go
+        └── proto
+            └── weather
+                └── v1
+                    ├── weather.pb.go
+                    └── weather_grpc.pb.go
 ```
 
   </TabItem>
@@ -211,10 +227,11 @@ You should end up with this structure:
 ├── buf.gen.yaml
 └── gen
     └── js
-        └── weather
-            └── v1
-                ├── weather_grpc_pb.js
-                └── weather_pb.js
+        └── proto
+            └── weather
+                └── v1
+                    ├── weather_grpc_pb.js
+                    └── weather_pb.js
 ```
 
   </TabItem>
@@ -225,10 +242,11 @@ You should end up with this structure:
 ├── buf.gen.yaml
 └── gen
     └── python
-        └── weather
-            └── v1
-                ├── weather_pb2.py
-                └── weather_pb2_grpc.py
+        └── proto
+            └── weather
+                └── v1
+                    ├── weather_pb2.py
+                    └── weather_pb2_grpc.py
 ```
   
   </TabItem>
@@ -239,10 +257,11 @@ You should end up with this structure:
 ├── buf.gen.yaml
 └── gen
     └── ruby
-        └── weather
-            └── v1
-                ├── weather_pb.rb
-                └── weather_services_pb.rb
+        └── proto
+            └── weather
+                └── v1
+                    ├── weather_pb.rb
+                    └── weather_services_pb.rb
 ```
 
   </TabItem>
@@ -269,6 +288,6 @@ You should end up with this structure:
 
 ## Wrapping up
 
-Remote plugin execution simplifies the process of generating code for your Protobuf API. It also has the added benefit of enforcing reproducible outputs by eliminating differences in the environment where generation takes place, such as a developer's local machine or across continuous integration environments.
+Hosted plugin execution simplifies the process of generating code for your Protobuf API. It also has the added benefit of enforcing reproducible outputs by eliminating differences in the environment where generation takes place, such as a developer's local machine or across continuous integration environments.
 
 Bring your own Protobuf files, or publish them to the BSR, and then generate the corresponding client and server code in your language of choice with hosted plugins on the BSR. You get all the benefits of code generation without the headache of managing plugins or `protoc` versions.
