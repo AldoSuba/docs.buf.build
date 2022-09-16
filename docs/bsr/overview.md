@@ -74,7 +74,7 @@ deps:
   - buf.build/acme/units
 ```
 
-Although we **do not recommend** it, in some situations you may need to pin a module to a specific version. Ideally, authors keeps modules backwards-compatible and avoid breaking changes so you can *always* rely on the latest version.
+Although we **do not recommend** it, in some situations you may need to pin a module to a specific version, you can do so by specifying tag, commit, or draft in your `deps` after the `:` delimiter. Ideally, authors keeps modules backwards-compatible and avoid breaking changes so you can *always* rely on the latest version.
 
 ```yaml
 deps:
@@ -110,11 +110,13 @@ The `buf` CLI automatically resolves the module(s) specified in the `deps` list.
 
 Each module on the BSR exists as a snapshot, and contains a unique reference associated with every change.
 
-A reference is a way to refer to a single version of the repository. While a reference always _resolves_ to a single snapshot of the repository, it can be either a commit or a tag.
+A reference is a way to refer to a single version of the repository. While a reference always _resolves_ to a single snapshot of the repository, it can be either a commit, a tag, or a draft.
 
 **Commit**: Every push of new content to a repository is associated with a commit that identifies that change in the schema. The commit is created after a successful push. This means that unlike Git, the commit only exists on the BSR repository and not locally.
 
 **Tag**: A reference to a single commit but with a human readable name, similar to a Git tag. It is useful for identifying commonly referenced commits&mdash;like a release.
+
+**Draft**: A temporary commit in development workflow with a human readable name, similar to a Git feature branch but without history. It is useful for iterating on a module while keeping those changes outside the main branch. Can be replaced by another commit with the same draft name and is deletable. When it is used as a dependency in `buf.yaml` of a module, the module cannot be pushed until you update to a non-draft commit of the dependency.
 
 ## Local modules with workspaces
 

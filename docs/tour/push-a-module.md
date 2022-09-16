@@ -20,7 +20,7 @@ you initialized a [`buf.yaml`](../configuration/v1/buf-yaml.md) at the beginning
 ### 7.1.2 Repositories {#repositories}
 
 A module is stored in a **repository**. A repository stores all versions of a module, where each
-version is identified by a commit and (optionally) a tag.
+version is identified by a commit, (optionally) a tag, and/or (optionally) a draft.
 
 While roughly analogous to Git repositories, a BSR repository is only a remote location - there is
 no concept of a repository "clone". In other words, repositories do not exist in multiple locations.
@@ -88,3 +88,12 @@ Behind the scenes, `buf` recognizes the `name` in your `buf.yaml` and pushes the
 repository. If successful, the generated commit identifies this current version of your module.
 
 > The commit you see differs from the one shown here.
+
+> You can also push the module as a draft with `--draft` flag!
+> ```terminal
+> $ buf push --draft draft-name
+> ---
+> e9ec7a9375eb496baf6f3d38c36ba629
+> ```
+> The pushed draft will not be included in the main commit history, and can only be resolved by using the draft name or
+> the commit name as reference. See the [Referencing a module](../bsr/overview.md#referencing-a-module) for detail.

@@ -125,7 +125,7 @@ the imports required to build your module. **You don't have to manually copy `.p
 
 ## 9.3 Pin Your Dependencies {#pin-your-dependencies}
 
-You can pin to a specific tag or commit by specifying it in your `deps` after the `:` delimiter. For example,
+You can pin to a specific tag, commit, or draft by specifying it in your `deps` after the `:` delimiter. For example,
 if you want to depend on the same commit you resolved above and prevent `buf` from updating it in the future,
 you can specify it like this:
 
@@ -171,3 +171,5 @@ $ buf push
 ---
 b2917eb692064beb92ad1e38dba6c25e
 ```
+
+> If one or more dependencies are pinned to a draft commit, pushing the module will not be allowed.
