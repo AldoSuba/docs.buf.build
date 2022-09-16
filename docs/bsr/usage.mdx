@@ -15,9 +15,10 @@ entry into your `$HOME/.netrc` (Linux or macOS) or `%HOME%/_netrc` (Windows).
 
 ## Push a module
 
-The only requirement to push to the BSR is to have a module that
+The requirements to push to the BSR is to have a module that
 [builds](../build/usage.md) successfully, meaning that you should be able to run
-`buf build` successfully on your module.
+`buf build` successfully on your module, and the module does not have any
+dependency that is pinned to a draft commit.
 
 Before you can push a module into the BSR, a repository must exist and you must
 own or have access to that repository. A repository can be created either

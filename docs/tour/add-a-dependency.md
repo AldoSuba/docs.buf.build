@@ -71,7 +71,7 @@ breaking:
      - FILE
  lint:
    use:
-     - DEFAULT 
+     - DEFAULT
 ```
 
 Now, if you try to build the module again, you'll notice this:
@@ -134,10 +134,10 @@ have to manually copy `.proto` files anymore!**
 
 ## 9.3 Pin Your Dependencies {#pin-your-dependencies}
 
-You can pin to a specific tag or commit by specifying it in your `deps` after
-the `:` delimiter. For example, if you want to depend on the same commit you
-resolved above and prevent `buf` from updating it in the future, you can specify
-it like this:
+You can pin to a specific tag, commit, or draft by specifying it in your `deps`
+after the `:` delimiter. For example, if you want to depend on the same commit
+you resolved above and prevent `buf` from updating it in the future, you can
+specify it like this:
 
 ```yaml title="buf.yaml" {4-5}
  version: v1
@@ -150,7 +150,7 @@ breaking:
      - FILE
  lint:
    use:
-     - DEFAULT 
+     - DEFAULT
 ```
 
 This is **not recommended** in general since you should _always_ be able to
@@ -169,7 +169,7 @@ breaking:
      - FILE
  lint:
    use:
-     - DEFAULT 
+     - DEFAULT
 ```
 
 ## 9.4 Push Your Changes {#push-your-changes}
@@ -183,3 +183,6 @@ $ buf push
 ---
 b2917eb692064beb92ad1e38dba6c25e
 ```
+
+> If one or more dependencies are pinned to a draft commit, pushing the module
+> will not be allowed.
