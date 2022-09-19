@@ -103,9 +103,11 @@ const sidebars = {
             "bsr/remote-generation/overview",
             "bsr/remote-generation/go",
             "bsr/remote-generation/js",
+            "bsr/remote-generation/npm-registry",
             "bsr/remote-generation/plugin-example",
             "bsr/remote-generation/template-example",
-            "bsr/remote-generation/hosted-plugin-execution"
+            "bsr/remote-generation/hosted-plugin-execution",
+            "bsr/remote-generation/migration-guide"
           ],
           collapsed: false
         }
