@@ -87,7 +87,9 @@ const sidebars = {
               severity: "info"
             }
           },
-          items: [],
+          items: [
+            "bsr/generated-assets/go"
+          ],
           collapsed: true
         },
         {
