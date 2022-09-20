@@ -58,7 +58,92 @@ plugins:
 
 ## Go proxy
 
-...
+There are a couple of key changes from the alpha:
+
+- The base URL has changed to `buf.build/gen/go`
+- The path has changed to begin with the module name.
+- The template reference in the path has been replaced with plugins and moved to the end.
+- The version has changed to inlcude plugin version and module commit information.
+
+The new format is:
+
+`buf.build/gen/go/{moduleOwner}/{moduleName}/{pluginOwner}/{pluginName}`
+
+```diff
+- go.buf.build/protocolbuffers/go/acme/petapis
++ buf.build/gen/go/acme/petapis/library/go
+```
+
+This means you'll need to search and replace the old import path with the new one and run `go mod tidy`.
+
+The versioning has also changed to a more descriptive form:
+
+`{pluginVersion}-{moduleCommitTimestamp}-{moduleCommitName}.{pluginRevision}`
+
+Instead of relying on the commit sequence it now relies directly on commits. For ways to pin to a commit and other documentation please see the new [Go proxy][go-proxy] docs.
+
+### connect-go template
+
+If you've used the [connect go template][bsr-template-connect-go] you'll need to update all **connect** imports to the generated code of the connect plugin.
+
+The `go.mod` will now require two different imports, one for the [`go`][bsr-plugin-go] plugin and the other for the [`connect-go`][bsr-plugin-connect-go] plugin.
+
+```diff title=go.mod
+- go.buf.build/bufbuild/connect-go/acme/petapis
++ buf.build/gen/go/acme/petapis/library/go
++ buf.build/gen/go/acme/petapis/library/connect-go
+```
+
+Example:
+
+```diff
+package main
+
+import (
+-  petv1 "go.buf.build/bufbuild/connect-go/acme/petapis/pet/v1"
+-  petv1connect "go.buf.build/bufbuild/connect-go/acme/petapis/pet/v1/petv1connect"
++  petv1 "buf.build/gen/go/acme/petapis/library/go/pet/v1"
++  petv1connect "buf.build/gen/go/acme/petapis/library/connect-go/pet/v1/petv1connect"
+)
+```
+
+### grpc/go template
+
+If you've used the [`grpc/go` template][bsr-template-grpc-go] you'll need to update all **grpc** imports to the generated code of the grpc plugin.
+
+The `go.mod` will now require two different imports, one for the [`go`][bsr-plugin-go] plugin and the other for the [`grpc-go`][bsr-plugin-grpc-go] plugin.
+
+```diff title=go.mod
+- go.buf.build/grpc/go/acme/petapis
++ buf.build/gen/go/acme/petapis/library/go
++ buf.build/gen/go/acme/petapis/library/grpc-go
+```
+
+We patched the [`grpc-go`][bsr-plugin-grpc-go] plugin to generate code to a sub package. Earlier it used to generate code to the same package as the [`go`][bsr-plugin-go] plugin. The new import path is a subpackage that is named in the format: `{goPackageName}grpc`
+
+Example:
+
+```diff
+package main
+
+import (
+-  petv1 "go.buf.build/grpc/go/acme/petapis/pet/v1"
++  petv1 "buf.build/gen/go/acme/petapis/library/go/pet/v1"
++  petv1grpc "buf.build/gen/go/acme/petapis/library/grpc-go/pet/v1/petv1grpc"
+)
+
+func main() {
+  ...
+-  client := petv1.NewPetStoreServiceClient(conn)
++  client := petv1grpc.NewPetStoreServiceClient(conn)
+  res, err := client.GetPet(ctx, &petv1.GetPetRequest{})
+  ...
+}
+```
+
+### protoc-gen-validate plugin
+
+If you've used a custom template that included the [`protoc-gen-validate`][protoc-gen-validate] plugin as of now there is no direct migration path. We are working with the envoy team to take [stewardship][protoc-gen-validate-ownership] of protoc-gen-validate. Supporting the generated assets workflow is a primary goal. In the meantime, continue to use the template or switch to local generation using [`buf generate`][buf-generate].
 
 ## BSR npm registry
 
@@ -152,9 +237,18 @@ Using this example, if your application code imported `eliza_pb.js` from `@buf/b
 
 
 [bsr-plugins]: https://buf.build/plugins
+[bsr-plugin-connect-go]: https://buf.build/plugins/connect-go
+[bsr-plugin-go]: https://buf.build/plugins/go
+[bsr-plugin-grpc-go]: https://buf.build/plugins/grpc-go
+[bsr-template-connect-go]: https://buf.build/bufbuild/templates/connect-go
 [bsr-template-connect-web]: https://buf.build/bufbuild/templates/connect-web
+[bsr-template-grpc-go]: https://buf.build/grpc/templates/go
 [bufbuild-plugins]: https://github.com/bufbuild/plugins
 [bufbuild-plugins-issue]: https://github.com/bufbuild/plugins/issues/new/choose
+[buf-generate]: /generate/usage
 [buf-tag-18]: https://github.com/bufbuild/buf/releases/tag/v1.8.0
+[go-proxy]: /bsr/generated-assets/go
 [npm-registry]: /bsr/remote-generation/npm-registry
 [protobuf-es]: https://www.npmjs.com/package/@bufbuild/protoc-gen-es
+[protoc-gen-validate]: https://github.com/envoyproxy/protoc-gen-validate
+[protoc-gen-validate-ownership]: https://github.com/envoyproxy/protoc-gen-validate/issues/616
