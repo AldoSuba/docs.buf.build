@@ -69,8 +69,8 @@ const sidebars = {
         "bsr/documentation",
         "bsr/user-management",
         {
-          type: 'doc',
-          id: 'bsr/studio',
+          type: "doc",
+          id: "bsr/studio",
           customProps: {
             badge: {
               label: "beta",
@@ -81,17 +81,13 @@ const sidebars = {
         {
           type: "category",
           label: "Generated Assets",
-          customProps: {
-            badge: {
-              label: "beta",
-              severity: "info"
-            }
-          },
           items: [
-            "bsr/generated-assets/go"
+            "bsr/generated-assets/overview",
+            "bsr/generated-assets/npm-registry",
           ],
-          collapsed: true
+          collapsed: false
         },
+        "bsr/hosted-plugin-execution",
         {
           type: "category",
           label: "Remote generation",
@@ -102,16 +98,14 @@ const sidebars = {
             }
           },
           items: [
+            "bsr/remote-generation/migration-guide",
             "bsr/remote-generation/overview",
             "bsr/remote-generation/go",
             "bsr/remote-generation/js",
-            "bsr/remote-generation/npm-registry",
             "bsr/remote-generation/plugin-example",
-            "bsr/remote-generation/template-example",
-            "bsr/remote-generation/hosted-plugin-execution",
-            "bsr/remote-generation/migration-guide"
+            "bsr/remote-generation/template-example"
           ],
-          collapsed: false
+          collapsed: true
         }
       ],
       collapsed: false
