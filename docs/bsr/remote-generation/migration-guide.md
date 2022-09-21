@@ -243,6 +243,14 @@ If you consumed [connect-web template][bsr-template-connect-web] you'll need to 
 
 Using this example, if your application code imported `eliza_pb.js` from `@buf/bufbuild_connect-web_bufbuild_eliza/eliza_connectweb.js` then you'll want to update that import within your application code to reference the base types from `@buf/bufbuild_eliza.library_protobuf-es/eliza_connectweb.js`. Assuming you have `npm uninstall` and `npm install` based on the naming change mentioned above.
 
+### protocolbuffers/js and grpc/web templates 
+
+If you were using the [`protocolbuffers_js`][template-protocolbuffers-js] or [`grpc_web`][template-grpc-web] templates there is no equivalent in the new BSR npm registry.
+
+The plugins themselves are still hosted on the BSR and can be used with `buf generate` commands.
+
+- https://buf.build/library/js
+- https://buf.build/library/grpc-web
 
 
 [bsr-hosted-plugins]: /bsr/hosted-plugin-execution
@@ -261,3 +269,5 @@ Using this example, if your application code imported `eliza_pb.js` from `@buf/b
 [protobuf-es]: https://www.npmjs.com/package/@bufbuild/protoc-gen-es
 [protoc-gen-validate]: https://github.com/envoyproxy/protoc-gen-validate
 [protoc-gen-validate-ownership]: https://github.com/envoyproxy/protoc-gen-validate/issues/616
+[template-grpc-web]: https://buf.build/grpc/templates/web
+[template-protocolbuffers-js]: https://buf.build/protocolbuffers/templates/js
