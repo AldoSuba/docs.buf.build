@@ -16,8 +16,8 @@ The **hosted plugin execution** feature makes it possible to remotely generate s
 All you need to get started is:
 
 - The `buf` CLI
-- A [`buf.gen.yaml`](../../configuration/v1/buf-gen-yaml.md) file
-- An [input](../../reference/inputs.md) of your choice
+- A [`buf.gen.yaml`](../configuration/v1/buf-gen-yaml.md) file
+- An [input](../reference/inputs.md) of your choice
 
 With this setup a single developer or thousands of developers at a large organization are able to achieve stable and reproducible code generation, while enjoying a simplified developer experience.
 

@@ -3,14 +3,12 @@ id: use-remote-generation
 title: 16 Bonus — Use remote generation
 ---
 
-> The [remote code generation](/bsr/remote-generation/overview) feature is currently in **alpha**. We started with Go and have plans to add support for other languages. [Let us know](/contact.md) which language we should tackle next.
-
 In this section, you'll learn how to use Buf's Go Module Proxy to import the Go/gRPC client and
 server stubs as you would import any other Go library. Remote generation thus reduces the code
 generation workflow to two steps:
 
 1. `buf push`
-1. `go get` (or `go mod tidy`)
+2. `go get` (or `go mod tidy`)
 
 ## 16.1 Remove `buf.gen.yaml` {#remove-bufgenyaml}
 

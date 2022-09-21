@@ -94,8 +94,8 @@ LABEL "build.buf.plugins.runtime_library_versions.0.version"="v1.27.1"
 
 You need to give plugins a valid [semantic version][semver].
 
-:::success Remote plugin execution
-A feature that you may also find useful is [remote plugin execution](./hosted-plugins.md). While
+:::success Hosted plugin execution
+A feature that you may also find useful is [hosted plugin execution](../hosted-plugins.md). While
 remote code generation is geared toward eliminating the need to generate code stubs _at all_, remote
 plugin execution enables you to generate code stubs locally without needing to install plugins
 locally.

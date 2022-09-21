@@ -121,7 +121,7 @@ Once your dependencies are updated, you can run `buf build` and the `buf` CLI re
 
 ## Code generation
 
-The BSR facilitates both local and remote code generation, simplifying how module consumers get access to generated code. This is especially useful for **clients** that need to generate an SDK to consume a Protobuf-based API in their language of choice.
+The BSR facilitates both local and remote code generation, simplifying how module consumers get access to generated code.
 
 ### Local code generation
 
@@ -152,7 +152,7 @@ This generates C++ and Java code in the local `/gen/proto/{cpp,java}` directorie
 
 ### Remote code generation
 
-If you don't want to manage plugins and generate code manually and would prefer to simply consume generated code, check out the [remote code generation](remote-generation/overview.md) feature, which is currently in **alpha**.
+The BSR supports hosted plugins and generated assets, check out the [remote code generation](remote-generation/overview.md) feature for additional details.
 
 ## Manage a repository
 

@@ -5,8 +5,13 @@ title: Migration guide
 
 # Remote generation migration guide
 
-Several changes have been made to the plugins hosted on the BSR and the remote generation features. This guide walks you through the changes and exactly what you need to update.
+Several changes have been made to the remote generation features of the BSR. This guide walks you through the changes and exactly what you need to update.
 
+Updated documentation can be found here:
+
+- [Hosted plugin execution][bsr-hosted-plugins]
+- [BSR npm registry][npm-registry]
+- [BSR go module proxy][go-proxy] ???????????????
 
 ## Disable plugin uploads
 
@@ -30,13 +35,17 @@ https://buf.build/plugins
 
 All hosted plugins can be used as `plugin` references in `buf.gen.yaml` files.
 
-Some plugins can be used with the BSR go proxy and BSR npm registry.
+Some plugins can be used with the BSR go module proxy and BSR npm registry.
 
 ### Versioning
 
-The synthetic versioning scheme has been replaced by a more explicit versioning scheme which is comprised of the plugin version, module reference (datetime+short commit name) and revision.
+The synthetic versioning scheme has been replaced by a more explicit versioning scheme comprised of the plugin version, module reference (datetime+short commit name) and revision. Example:
 
-This new versioning scheme is semver-compatible and ensures the versions can be pinned in lock files  and always reference a specific plugin + module for reproducibility.
+```
+0.4.0-20220908151351-622fe7149695.1
+```
+
+This new semver-compatible versioning scheme can be pinned in lock files and always references a specific plugin + module for reproducibility.
 
 Most users will be fetching `@latest` and will be unaffected by the versioning change.
 
@@ -56,7 +65,7 @@ plugins:
 +  - plugin: buf.build/library/connect-go
 ```
 
-## Go proxy
+## Go module proxy
 
 There are a couple of key changes from the alpha:
 
@@ -232,10 +241,11 @@ If you consumed [connect-web template][bsr-template-connect-web] you'll need to 
 </details>
 
 
-Using this example, if your application code imported `eliza_pb.js` from `@buf/bufbuild_connect-web_bufbuild_eliza/eliza_connectweb.js` then you'll want to update that import within your appliction code to reference the base types from `@buf/bufbuild_eliza.library_protobuf-es/eliza_connectweb.js`. Assuming you have `npm uninstall` and `npm install` based on the naming change mentioned above.
+Using this example, if your application code imported `eliza_pb.js` from `@buf/bufbuild_connect-web_bufbuild_eliza/eliza_connectweb.js` then you'll want to update that import within your application code to reference the base types from `@buf/bufbuild_eliza.library_protobuf-es/eliza_connectweb.js`. Assuming you have `npm uninstall` and `npm install` based on the naming change mentioned above.
 
 
 
+[bsr-hosted-plugins]: /bsr/hosted-plugin-execution
 [bsr-plugins]: https://buf.build/plugins
 [bsr-plugin-connect-go]: https://buf.build/plugins/connect-go
 [bsr-plugin-go]: https://buf.build/plugins/go
@@ -247,8 +257,7 @@ Using this example, if your application code imported `eliza_pb.js` from `@buf/b
 [bufbuild-plugins-issue]: https://github.com/bufbuild/plugins/issues/new/choose
 [buf-generate]: /generate/usage
 [buf-tag-18]: https://github.com/bufbuild/buf/releases/tag/v1.8.0
-[go-proxy]: /bsr/generated-assets/go
-[npm-registry]: /bsr/remote-generation/npm-registry
+[npm-registry]: /bsr/generated-assets/npm-registry
 [protobuf-es]: https://www.npmjs.com/package/@bufbuild/protoc-gen-es
 [protoc-gen-validate]: https://github.com/envoyproxy/protoc-gen-validate
 [protoc-gen-validate-ownership]: https://github.com/envoyproxy/protoc-gen-validate/issues/616

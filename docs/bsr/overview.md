@@ -137,15 +137,34 @@ To choose where to cache the files, it checks these, in order:
 
 ## Code generation
 
-Hosting modules on the BSR means anyone with proper access can consume those modules. This solves the need to coordinate and sync Protobuf files manually amongst multiple consumers, which is error prone and quite often leads to drift.
+Hosting modules on the BSR means anyone with proper access can consume those modules. This solves the need to coordinate and sync Protobuf files manually amongst multiple consumers, which is error prone and leads to drift.
 
-Instead, users bring their own plugins and generate code from a single source of truth: a hosted module on the BSR. This is especially useful when consuming a Protobuf-based API that requires a client SDK for your language(s) of choice.
+Instead, users generate code from a single source of truth: a hosted module on the BSR. This is especially useful when consuming a Protobuf-based API that requires a client SDK.
+
+### Hosted plugins
 
 In your [`buf.gen.yaml`](../configuration/v1/buf-gen-yaml.md) define plugins and their respective options, and then generate your code with the `buf` CLI by referencing a BSR module:
 
 ```terminal
 $ buf generate buf.build/acme/weather
 ```
+
+### Generated Assets
+
+By combining a BSR module and a plugin you can fetch generated assets with your language's package manager:
+
+**Go Module Proxy**
+
+```
+go get buf.build/gen/go/bufbuild/eliza/library/connect-go
+```
+
+**NPM Registry**
+
+```
+npm install @buf/bufbuild_eliza.library_connect-web@latest
+```
+
 
 > See the [Usage](../bsr/usage.md#code-generation) section for a detailed example.
 
