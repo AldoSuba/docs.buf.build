@@ -83,7 +83,8 @@ const sidebars = {
           label: "Generated Assets",
           items: [
             "bsr/generated-assets/overview",
-            "bsr/generated-assets/npm-registry",
+            "bsr/generated-assets/go",
+            "bsr/generated-assets/npm-registry"
           ],
           collapsed: false
         },
