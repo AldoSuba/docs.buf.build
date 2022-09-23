@@ -3,7 +3,16 @@ id: plugin-example
 title: Authoring a plugin
 ---
 
-> The [remote code generation](/bsr/remote-generation/overview) feature is currently in **alpha**. We started with Go and have plans to add support for other languages. [Let us know](/contact.md) which language we should tackle next.
+:::warning Deprecated documentation
+
+We made improvements to remote code generation features of the BSR.
+
+Please see the [Migrating from alpha][migrating-from-alpha] documentation for more info.
+
+If you run into issues contact us on [Buf Public Slack][buf-slack-link].
+
+:::
+
 
 The purpose of this guide is to walk you through a concrete example of how to publish an existing `protoc`-based plugin to the BSR.
 
@@ -126,3 +135,6 @@ Awesome, you've successfully published your first BSR plugin!
 Remember, plugins are the smallest reusable components required for code generation. In the next section we'll prepare a BSR Template and use the `demolab/twirp` plugin created above.
 
 Continue to the next section to learn more about authoring *and using* [BSR Templates](template-example.md)
+
+[buf-slack-link]: https://buf.build/links/slack
+[migrating-from-alpha]: /bsr/remote-generation/migrating-from-alpha#disable-plugin-uploads

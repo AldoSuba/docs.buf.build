@@ -152,7 +152,7 @@ This generates C++ and Java code in the local `/gen/proto/{cpp,java}` directorie
 
 ### Remote code generation
 
-The BSR supports hosted plugins and generated assets, check out the [remote code generation](remote-generation/overview.md) feature for additional details.
+The BSR supports hosted plugins and generated SDKs, check out the [remote code generation](remote-generation/overview.md) feature for additional details.
 
 ## Manage a repository
 

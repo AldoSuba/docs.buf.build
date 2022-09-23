@@ -3,7 +3,13 @@ id: npm-registry
 title: NPM registry
 ---
 
-The [Buf Schema Registry](../../bsr/overview.md) (BSR) supports generated assets for [JavaScript] and [TypeScript]. With this feature, you can push [Buf modules][modules] to the BSR and install code stubs generated from those modules using dependency management tools like [npm] and [Yarn].
+:::note
+
+The existing alpha remote generation [JavaScript/TypeScript documentation](../../reference/deprecated/remote-generation/js.md) has moved to the Reference section.
+
+:::
+
+The [Buf Schema Registry](../../bsr/overview.md) (BSR) supports generated SDKs for [JavaScript] and [TypeScript]. With this feature, you can push [Buf modules][modules] to the BSR and install code stubs generated from those modules using dependency management tools like [npm] and [Yarn].
 
 The BSR npm registry makes generated code available like any other dependency, which means:
 
@@ -153,7 +159,7 @@ $ npm install @buf/bufbuild_eliza.library_connect-web@0.2.1-20220706172350-dbde7
 
 ### Draft versions
 
-The BSR supports [draft commits][bsr-references]. This feature enables you to push unreleased proto changes and consume generated assets without affecting the main branch.
+The BSR supports [draft commits][bsr-references]. This feature enables you to push unreleased proto changes and consume generated code without affecting the main branch.
 
 ```terminal
 $ buf push --draft dev-draft

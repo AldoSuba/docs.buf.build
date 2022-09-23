@@ -1,6 +1,6 @@
 ---
-id: hosted-plugin-execution
-title: Hosted plugin execution
+id: remote-plugin-execution
+title: Remote plugin execution
 ---
 
 One of the greatest challenges with Protobuf code generation is the complexity of working with `protoc` and custom plugins. Time and time again we've heard that developers want the benefits of code generation, but the existing tooling gets in the way.
@@ -11,13 +11,13 @@ Every organization and open source project develops homegrown tooling in an effo
 
 At Buf, we believe code generation is a key building block and the Protobuf ecosystem deserves a proper solution.
 
-The **hosted plugin execution** feature makes it possible to remotely generate source code using hosted plugins in an isolated environment on the BSR. By isolating code generation from its environment, you eliminate an entire class of problems caused by subtle differences across specific compiler versions and custom Protobuf plugins.
+The **remote plugin execution** feature makes it possible to remotely generate source code using hosted plugins in an isolated environment on the BSR. By isolating code generation from its environment, you eliminate an entire class of problems caused by subtle differences across specific compiler versions and custom Protobuf plugins.
 
 All you need to get started is:
 
 - The `buf` CLI
-- A [`buf.gen.yaml`](../configuration/v1/buf-gen-yaml.md) file
-- An [input](../reference/inputs.md) of your choice
+- A [`buf.gen.yaml`](../../configuration/v1/buf-gen-yaml.md) file
+- An [input](../../reference/inputs.md) of your choice
 
 With this setup a single developer or thousands of developers at a large organization are able to achieve stable and reproducible code generation, while enjoying a simplified developer experience.
 
@@ -79,7 +79,7 @@ In addition to the plugins mentioned above, we're also adding support for popula
 
 ## Example
 
-This section provides an example of hosted plugin execution.
+This section provides an example of remote plugin execution.
 
 We'll use the [buf.build/demolab/theweather](https://buf.build/demolab/theweather) module hosted on the BSR as the input source. You can also use local Protobuf files, but for this example we'll use a hosted module to illustrate plugin execution.
 
@@ -288,6 +288,6 @@ You should end up with this structure:
 
 ## Wrapping up
 
-Hosted plugin execution simplifies the process of generating code for your Protobuf API. It also has the added benefit of enforcing reproducible outputs by eliminating differences in the environment where generation takes place, such as a developer's local machine or across continuous integration environments.
+Remote plugin execution simplifies the process of generating code for your Protobuf API. It also has the added benefit of enforcing reproducible outputs by eliminating differences in the environment where generation takes place, such as a developer's local machine or across continuous integration environments.
 
 Bring your own Protobuf files, or publish them to the BSR, and then generate the corresponding client and server code in your language of choice with hosted plugins on the BSR. You get all the benefits of code generation without the headache of managing plugins or `protoc` versions.

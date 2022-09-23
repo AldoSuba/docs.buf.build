@@ -1,17 +1,19 @@
 ---
-id: migration-guide
-title: Migration guide
+id: migrating-from-alpha
+title: Migrating from alpha
 ---
 
-# Remote generation migration guide
+# Migrating from alpha
 
-Several changes have been made to the remote generation features of the BSR. This guide walks you through the changes and exactly what you need to update.
+We made improvements to the remote generation features of the BSR and have revamped the documentation. This guide walks you through those changes and outlines exactly what you need to update if you were an existing user.
 
 Updated documentation can be found here:
 
-- [Hosted plugin execution][bsr-hosted-plugins]
+- [Remote plugin execution][bsr-hosted-plugins]
 - [BSR npm registry][npm-registry]
-- [BSR go module proxy][go-proxy] ???????????????
+- [BSR go module proxy][go]
+
+Older alpha documentation is located under Reference / Deprecated / Remote Generation.
 
 ## Disable plugin uploads
 
@@ -152,7 +154,7 @@ func main() {
 
 ### protoc-gen-validate plugin
 
-If you've used a custom template that included the [`protoc-gen-validate`][protoc-gen-validate] plugin as of now there is no direct migration path. We are working with the envoy team to take [stewardship][protoc-gen-validate-ownership] of protoc-gen-validate. Supporting the generated assets workflow is a primary goal. In the meantime, continue to use the template or switch to local generation using [`buf generate`][buf-generate].
+If you've used a custom template that included the [`protoc-gen-validate`][protoc-gen-validate] plugin as of now there is no direct migration path. We are working with the envoy team to take [stewardship][protoc-gen-validate-ownership] of protoc-gen-validate. Supporting the generated SDKs workflow is a primary goal. In the meantime, continue to use the template or switch to local generation using [`buf generate`][buf-generate].
 
 ## BSR npm registry
 
@@ -253,7 +255,7 @@ The plugins themselves are still hosted on the BSR and can be used with `buf gen
 - https://buf.build/library/grpc-web
 
 
-[bsr-hosted-plugins]: /bsr/hosted-plugin-execution
+[bsr-hosted-plugins]: /bsr/remote-generation/remote-plugin-execution
 [bsr-plugins]: https://buf.build/plugins
 [bsr-plugin-connect-go]: https://buf.build/plugins/connect-go
 [bsr-plugin-go]: https://buf.build/plugins/go
@@ -265,7 +267,8 @@ The plugins themselves are still hosted on the BSR and can be used with `buf gen
 [bufbuild-plugins-issue]: https://github.com/bufbuild/plugins/issues/new/choose
 [buf-generate]: /generate/usage
 [buf-tag-18]: https://github.com/bufbuild/buf/releases/tag/v1.8.0
-[npm-registry]: /bsr/generated-assets/npm-registry
+[go]: /bsr/remote-generation/go
+[npm-registry]: /bsr/remote-generation/npm-registry
 [protobuf-es]: https://www.npmjs.com/package/@bufbuild/protoc-gen-es
 [protoc-gen-validate]: https://github.com/envoyproxy/protoc-gen-validate
 [protoc-gen-validate-ownership]: https://github.com/envoyproxy/protoc-gen-validate/issues/616
