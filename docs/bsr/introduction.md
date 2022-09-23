@@ -41,7 +41,7 @@ Rust, and Go modules in Go).
 
     - *Remote plugin execution*: The Buf team manages hosted protobuf plugins that can be referenced in [`buf.gen.yaml`][buf-gen-yaml] files. Code generation takes place remotely on the BSR and generated source code is written out to disk.
     
-    - *Generated SDKs*: The BSR exposes generated SDKs through managed software repositories you fetch like any other library with tools you already know: `go get` or `npm install`. 
+    - *Generated SDKs*: The BSR exposes generated code through managed software repositories you fetch like any other library with tools you already know: `go get` or `npm install`. 
 
 ### Why the BSR?
 
@@ -100,9 +100,7 @@ Defining a Protobuf-based API enforces a contract between producer and consumers
 
 Before a client can consume a Protobuf-based API they need to generate an SDK for their language of choice. Traditionally consumers are left to figure out how to build and generate clients, but this is often cumbersome as little guidance is provided and not all Protobuf files correctly encode options for a given language.
 
-The Buf ecosystem solves this by decoupling consumer and producer concerns. The `buf` CLI can modify language-specific options on the fly, and the BSR facilitates fetching generated SDKs.
-
-Fetching a client SDK from the BSR is a single `npm install` or a `go get` command.
+Fetching a client SDK from the BSR is a single `npm install` or `go get` command.
 
 ## Let's get started
 
