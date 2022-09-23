@@ -3,10 +3,16 @@ id: template-example
 title: Authoring a template
 ---
 
-> The [remote code generation](/bsr/remote-generation/overview) feature is
-> currently in **alpha**. We started with Go and have plans to add support for
-> other languages. [Let us know](/contact.md) which language we should tackle
-> next.
+:::warning Deprecated documentation
+
+We made improvements to remote code generation features of the BSR. 
+
+Please see the [Migrating from alpha][migrating-from-alpha] documentation for more info.
+
+If you run into issues contact us on [Buf Public Slack][buf-slack-link].
+
+:::
+
 
 A BSR Template is a collection of one or more plugins that facilitates remote
 code generation.
@@ -203,6 +209,7 @@ func main() {
 The temperature in Toronto is currently: 24°C
 ```
 
-You can now build and run your Go code as you normally would. Try it out by
-running the API in one terminal window, and then hitting the endpoint with the
-SDK client.
+You can now build and run your Go code as you normally would. Try it out by running the API in one terminal window, and then hitting the endpoint with the SDK client.
+
+[buf-slack-link]: https://buf.build/links/slack
+[migrating-from-alpha]: /bsr/remote-generation/migrating-from-alpha#templates-removed

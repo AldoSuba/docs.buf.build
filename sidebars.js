@@ -80,31 +80,13 @@ const sidebars = {
         },
         {
           type: "category",
-          label: "Generated Assets",
-          items: [
-            "bsr/generated-assets/overview",
-            "bsr/generated-assets/go",
-            "bsr/generated-assets/npm-registry"
-          ],
-          collapsed: false
-        },
-        "bsr/hosted-plugin-execution",
-        {
-          type: "category",
           label: "Remote generation",
-          customProps: {
-            badge: {
-              label: "alpha",
-              severity: "info"
-            }
-          },
           items: [
-            "bsr/remote-generation/migration-guide",
             "bsr/remote-generation/overview",
             "bsr/remote-generation/go",
-            "bsr/remote-generation/js",
-            "bsr/remote-generation/plugin-example",
-            "bsr/remote-generation/template-example"
+            "bsr/remote-generation/npm-registry",
+            "bsr/remote-generation/remote-plugin-execution",
+            "bsr/remote-generation/migrating-from-alpha"
           ],
           collapsed: true
         }
@@ -180,7 +162,32 @@ const sidebars = {
         "reference/images",
         "reference/inputs",
         "reference/internal-compiler",
-        "reference/protoc-plugins"
+        "reference/protoc-plugins",
+        {
+          type: "category",
+          label: "Deprecated",
+          items: [
+            {
+              type: "category",
+              label: "Remote generation",
+              customProps: {
+                badge: {
+                  label: "alpha",
+                  severity: "info",
+                }
+              },
+              items: [
+                "reference/deprecated/remote-generation/overview",
+                "reference/deprecated/remote-generation/go",
+                "reference/deprecated/remote-generation/js",
+                "reference/deprecated/remote-generation/plugin-example",
+                "reference/deprecated/remote-generation/template-example"
+              ],
+              collapsed: true
+            }
+          ],
+          collapsed: false
+        }
       ],
       collapsed: false
     },

@@ -226,10 +226,16 @@ $ docker run \
 
 :::info Docker image doesn't include protoc or plugins
 
+<<<<<<< HEAD:docs/generate/usage.mdx
 1. Use [hosted plugin execution](../bsr/hosted-plugins.md) to generate code without requiring local plugins.
 1. Use [generated assets](../bsr/generated-assets/overview.md) to fetch generated code stubs without needing to install any additional executables.
 1. Use the `bufbuild/buf` image as part of a [multi-stage build][multi-stage] that includes any required executables as part of the final image.
 
+=======
+1. Use [hosted plugin execution](../bsr/remote-generation/remote-plugin-execution.md) to generate code without requiring local plugins.
+2. Use [generated SDKs](../bsr/remote-generation/overview.md) to fetch generated code stubs without needing to install any additional executables.
+3. Use the `bufbuild/buf` image as part of a [multi-stage build][multi-stage] that includes any required executables as part of the final image.
+>>>>>>> 8b827b2 (Curated plugins feedback (#204)):docs/generate/usage.md
 :::
 
 [image]: https://hub.docker.com/r/bufbuild/buf

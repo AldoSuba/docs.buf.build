@@ -149,9 +149,9 @@ In your [`buf.gen.yaml`](../configuration/v1/buf-gen-yaml.md) define plugins and
 $ buf generate buf.build/acme/weather
 ```
 
-### Generated Assets
+### Generated SDKs
 
-By combining a BSR module and a plugin you can fetch generated assets with your language's package manager:
+By combining a BSR module and a plugin you can fetch generated SDKs with your language's package manager:
 
 **Go Module Proxy**
 
