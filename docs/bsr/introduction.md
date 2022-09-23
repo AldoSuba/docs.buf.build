@@ -41,7 +41,7 @@ Rust, and Go modules in Go).
 
     - *Remote plugin execution*: The Buf team manages hosted protobuf plugins that can be referenced in [`buf.gen.yaml`][buf-gen-yaml] files. Code generation takes place remotely on the BSR and generated source code is written out to disk.
     
-    - *Generated SDKs*: The BSR exposes generated code through managed software repositories you fetch like any other library with tools you already know: `go get` or `npm install`. 
+    - *Generated SDKs*: The BSR exposes generated source code through managed software repositories you fetch like any other library with tools you already know: `go get` or `npm install`. 
 
 ### Why the BSR?
 

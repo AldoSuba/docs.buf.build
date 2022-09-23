@@ -149,11 +149,11 @@ $ buf generate buf.build/acme/weather
 
 ## Hosted Plugins
 
-The Buf team will package and distribute plugins to the BSR, browsable at [buf.build/plugins][bsr-plugins].
+The Buf team will package and distribute plugins to the BSR, browsable at:  [buf.build/plugins][bsr-plugins]
 
-To learn more about how plugins are packaged and distributed check out the [bufbuild/plugins repository][bufbuild-plugins].
+If you're interested in how these plugins are packaged see the [bufbuild/plugins][bufbuild-plugins] repository for more details.
 
-For more information, see the [Remote Plugin Execution][remote-plugin-execution] documentation.
+To learn more about how hosted plugins can be used in code generation workflows, see the [Remote plugin execution][remote-plugin-execution] documentation.
 
 ## Generated SDKs
 
@@ -171,9 +171,9 @@ $ go get buf.build/gen/go/bufbuild/eliza/library/connect-go
 $ npm install @buf/bufbuild_eliza.library_connect-web@latest
 ```
 
-For more information, see the [Remote Plugin Execution][remote-generation-overview-generated-sdks] documentation.
+For more information, see the [Generated SDKs][remote-generation-overview-generated-sdks] documentation.
 
-> See the [Usage](../bsr/usage.md#code-generation) section for a detailed example.
+---
 
 Although beyond the scope of this overview, we suggest taking a look at [managed mode](../generate/managed-mode.md) as it relates to code generation. Historically, *consumer concerns* are conflated with *producer concerns* due to hardcoding of language-specific options in Protobuf files, which in turn restricts their usefulness to consumers. Managed mode addresses existing limitations and offers a better separation of concerns.
 
