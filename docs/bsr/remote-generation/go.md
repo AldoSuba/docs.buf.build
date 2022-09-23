@@ -3,6 +3,13 @@ id: go
 title: Go
 ---
 
+:::note
+
+The alpha remote generation [Go documentation](../../reference/deprecated/remote-generation/go.md) has moved to the Reference section.
+
+:::
+
+
 The [Buf Schema Registry](../../bsr/overview.md) (BSR) supports serving generated SDKs for [Go].
 With this feature, you can push [Buf modules][modules] to the BSR and `go get` Go code stubs generated
 from those Protobuf definitions&mdash;without ever needing to generate code on your own. Go source code

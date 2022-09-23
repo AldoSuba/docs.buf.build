@@ -5,7 +5,7 @@ title: Overview
 
 :::note
 
-The existing alpha remote generation [Overview documentation](../../reference/deprecated/remote-generation/overview.md) has moved to the Reference section.
+The alpha remote generation [Overview documentation](../../reference/deprecated/remote-generation/overview.md) has moved to the Reference section.
 
 :::
 

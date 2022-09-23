@@ -137,11 +137,9 @@ To choose where to cache the files, it checks these, in order:
 
 ## Code generation
 
-Hosting modules on the BSR means anyone with proper access can consume those modules. This solves the need to coordinate and sync Protobuf files manually amongst multiple consumers, which is error prone and leads to drift.
+Hosting modules on the BSR allows anyone with proper access can consume those modules. This solves the need to coordinate and sync Protobuf files manually amongst multiple consumers, which is error prone and leads to drift.
 
-Instead, users generate code from a single source of truth: a hosted module on the BSR. This is especially useful when consuming a Protobuf-based API that requires a client SDK.
-
-### Hosted plugins
+Instead, users generate code from a single source of truth: a hosted module on the BSR.
 
 In your [`buf.gen.yaml`](../configuration/v1/buf-gen-yaml.md) define plugins and their respective options, and then generate your code with the `buf` CLI by referencing a BSR module:
 
@@ -149,23 +147,37 @@ In your [`buf.gen.yaml`](../configuration/v1/buf-gen-yaml.md) define plugins and
 $ buf generate buf.build/acme/weather
 ```
 
-### Generated SDKs
+## Hosted Plugins
+
+The Buf team will package and distribute plugins to the BSR, browsable at [buf.build/plugins][bsr-plugins].
+
+To learn more about how plugins are packaged and distributed check out the [bufbuild/plugins repository][bufbuild-plugins].
+
+For more information, see the [Remote Plugin Execution][remote-plugin-execution] documentation.
+
+## Generated SDKs
 
 By combining a BSR module and a plugin you can fetch generated SDKs with your language's package manager:
 
 **Go Module Proxy**
 
-```
-go get buf.build/gen/go/bufbuild/eliza/library/connect-go
+```terminal
+$ go get buf.build/gen/go/bufbuild/eliza/library/connect-go
 ```
 
 **NPM Registry**
 
-```
-npm install @buf/bufbuild_eliza.library_connect-web@latest
+```terminal
+$ npm install @buf/bufbuild_eliza.library_connect-web@latest
 ```
 
+For more information, see the [Remote Plugin Execution][remote-generation-overview-generated-sdks] documentation.
 
 > See the [Usage](../bsr/usage.md#code-generation) section for a detailed example.
 
 Although beyond the scope of this overview, we suggest taking a look at [managed mode](../generate/managed-mode.md) as it relates to code generation. Historically, *consumer concerns* are conflated with *producer concerns* due to hardcoding of language-specific options in Protobuf files, which in turn restricts their usefulness to consumers. Managed mode addresses existing limitations and offers a better separation of concerns.
+
+[bsr-plugins]: https://buf.build/plugins
+[bufbuild-plugins]: https://github.com/bufbuild/plugins
+[remote-plugin-execution]: /bsr/remote-generation/remote-plugin-execution
+[remote-generation-overview-generated-sdks]: /bsr/remote-generation/overview#generated-sdks
