@@ -5,7 +5,7 @@ title: NPM registry
 
 :::note
 
-The alpha remote generation [JavaScript/TypeScript documentation](../../reference/deprecated/remote-generation/js.md) has moved to the Reference section.
+The alpha [JavaScript/TypeScript documentation](../../reference/deprecated/remote-generation/js.md) has moved to the Reference section.
 
 :::
 

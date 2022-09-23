@@ -5,7 +5,7 @@ title: Go
 
 :::note
 
-The alpha remote generation [Go documentation](../../reference/deprecated/remote-generation/go.md) has moved to the Reference section.
+The alpha [Go documentation](../../reference/deprecated/remote-generation/go.md) has moved to the Reference section.
 
 :::
 
