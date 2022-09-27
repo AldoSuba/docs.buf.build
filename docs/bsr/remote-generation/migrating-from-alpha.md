@@ -13,7 +13,7 @@ Updated documentation can be found here:
 - [BSR npm registry][npm-registry]
 - [BSR go module proxy][go]
 
-Older alpha documentation is located under Reference / Deprecated / Remote Generation.
+Existing remote generation alpha documentation is located under Reference / Deprecated / Remote Generation.
 
 ## Disable plugin uploads
 
@@ -23,9 +23,11 @@ For now, the Buf team will package and distribute plugins to the BSR, browsable 
 
 If you find a useful plugin that should be added please [file an issue][bufbuild-plugins-issue]!
 
-:::info What happens to the old plugins and templates?
+:::info What happens to old plugins and templates?
 
-Existing plugins and templates will remain available, but will be removed at a later date. We take breaking changes very seriously and want to provide ample opportunity for our valued users to migrate and request plugins which have not yet been added.
+Existing plugins and templates on the public BSR (https://buf.build) will remain available, but will be removed at a later date. We take breaking changes very seriously and want to provide ample opportunity for our valued users to migrate and request plugins which have not yet been added.
+
+User uploaded plugins will be supported for Enterprise customers.
 
 :::
 
