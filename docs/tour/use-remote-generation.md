@@ -26,51 +26,48 @@ As expected, if you try to recompile your Go program, you'll notice a compilatio
 $ go build ./...
 ---
 client/main.go:10:2: no required module provides package github.com/bufbuild/buf-tour/petstore/gen/proto/go/pet/v1; to add it:
-	go get github.com/bufbuild/buf-tour/petstore/gen/proto/go/pet/v1
+  go get github.com/bufbuild/buf-tour/petstore/gen/proto/go/pet/v1
 ```
 
-## 16.2 Depend on `go.buf.build` {#depend-on-gobufbuild}
+## 16.2 Depend on `buf.build/gen/go` {#depend-on-gobufbuild}
 
-You can depend on the same Go/gRPC client and server stubs by adapting our import paths
-to use [`buf.build/grpc/templates/go`](https://buf.build/grpc/templates/go),
-which is one of the BSR's [hosted
-templates](/bsr/remote-generation/overview.md#hosted-templates).
+You can depend on the same Go/gRPC client and server stubs by adapting our import paths.
 
-In short, the `go-grpc` template acts exactly like the local `buf.gen.yaml` template you just
-removed. It executes the `protoc-gen-go` and `protoc-gen-go-grpc` plugins you used before, but with
-the important difference that the execution happens remotely, on BSR.
+In short, the plugins are exeucted remotely on the BSR and the generated code is served via the Go Module Proxy protocol.
 
-The [Go module path](../bsr/remote-generation/overview.md#the-go-module-path) you need to use is
-derived from the name of the module you want to generate *for* and the name of the template you want
+The [Go module path](../bsr/remote-generation/go.md#proxy) you need to use is
+derived from the name of the module you want to generate *for* and the name of the plugin you want
 to generate *with*:
 
 <Syntax
-	title="Generated Go module path syntax"
-	examples={["go.buf.build/bufbuild/connect-go/bufbuild/eliza"]}
-	segments={[
-    {"label": "go.buf.build", "kind": "constant"},
-    {"separator": "/"},
-    {"label": "template owner", "kind": "variable"},
-    {"separator": "/"},
-    {"label": "template name", "kind": "variable"},
-    {"separator": "/"},
-    {"label": "module owner", "kind": "variable"},
-    {"separator": "/"},
-    {"label": "module name", "kind": "variable"},
-  ]}
+    title="Generated Go module path syntax"
+    examples={[
+        "buf.build/gen/go/bufbuild/eliza/library/grpc-go"
+    ]}
+    segments={[
+        {"label": "buf.build/gen/go", "kind": "constant"},
+        {"separator": "/"},
+        {"label": "moduleOwner", "kind": "variable", href: "/bsr/overview#modules"},
+        {"separator": "/"},
+        {"label": "moduleName", "kind": "variable", href: "/bsr/overview#modules"},
+        {"separator": "/"},
+        {"label": "pluginOwner", "kind": "variable", href: "/bsr/remote-generation/remote-plugin-execution"},
+        {"separator": "/"},
+        {"label": "pluginName", "kind": "variable", href: "/bsr/remote-generation/remote-plugin-execution"},
+    ]}
 />
 
-With the module `buf.build/$BUF_USER/petapis` and template `buf.build/grpc/templates/go`, for example, the
+With the module `buf.build/$BUF_USER/petapis` and plugin `buf.build/library/grpc-go`, for example, the
 import path looks like this:
 
-```
-go.buf.build/grpc/go/$BUF_USER/petapis
+```sh
+buf.build/gen/go/$BUF_USER/petapis/library/grpc-go
 ```
 
 Update your import paths accordingly:
 
-```go title="client/main.go" {8-11}
- package main
+```go title="client/main.go" {8-12,30-31}
+  package main
 
  import (
      "context"
@@ -80,12 +77,40 @@ Update your import paths accordingly:
 -    // This import path is based on the name declaration in the go.mod,
 -    // and the gen/proto/go output location in the buf.gen.yaml.
 -    petv1 "github.com/bufbuild/buf-tour/petstore/gen/proto/go/pet/v1"
-+    petv1 "go.buf.build/grpc/go/$BUF_USER/petapis/pet/v1"
++    petv1 "buf.build/gen/go/$BUF_USER/petapis/library/go/pet/v1"
++    petv1grpc "buf.build/gen/go/$BUF_USER/petapis/library/grpc-go/pet/v1/petv1grpc"
      "google.golang.org/grpc"
  )
+
+func main() {
+    if err := run(); err != nil {
+        log.Fatal(err)
+    }
+}
+
+func run() error {
+    connectTo := "127.0.0.1:8080"
+    conn, err := grpc.Dial(connectTo, grpc.WithBlock(), grpc.WithInsecure())
+    if err != nil {
+        return fmt.Errorf("failed to connect to PetStoreService on %s: %w", connectTo, err)
+    }
+    log.Println("Connected to", connectTo)
+
+-    petStore := petv1.NewPetStoreServiceClient(conn)
++    petStore := petv1grpc.NewPetStoreServiceClient(conn)
+    if _, err := petStore.PutPet(context.Background(), &petv1.PutPetRequest{
+        PetType: petv1.PetType_PET_TYPE_SNAKE,
+        Name: "Ekans",
+    }); err != nil {
+        return fmt.Errorf("failed to PutPet: %w", err)
+    }
+
+    log.Println("Successfully PutPet")
+    return nil
+}
 ```
 
-```go title="server/main.go" {9-12}
+```go title="server/main.go" {9-13,31-32,43-44}
  package main
 
  import (
@@ -97,9 +122,49 @@ Update your import paths accordingly:
 -    // This import path is based on the name declaration in the go.mod,
 -    // and the gen/proto/go output location in the buf.gen.yaml.
 -    petv1 "github.com/bufbuild/buf-tour/petstore/gen/proto/go/pet/v1"
-+    petv1 "go.buf.build/grpc/go/$BUF_USER/petapis/pet/v1"
++    petv1 "buf.build/gen/go/$BUF_USER/petapis/library/go/pet/v1"
++    petv1grpc "buf.build/gen/go/$BUF_USER/petapis/library/grpc-go/pet/v1/petv1grpc"
      "google.golang.org/grpc"
  )
+
+func main() {
+    if err := run(); err != nil {
+        log.Fatal(err)
+    }
+}
+
+func run() error {
+    listenOn := "127.0.0.1:8080"
+    listener, err := net.Listen("tcp", listenOn)
+    if err != nil {
+        return fmt.Errorf("failed to listen on %s: %w", listenOn, err)
+    }
+
+    server := grpc.NewServer()
+-   petv1.RegisterPetStoreServiceServer(server, &petStoreServiceServer{})
++   petv1grpc.RegisterPetStoreServiceServer(server, &petStoreServiceServer{})
+    log.Println("Listening on", listenOn)
+    if err := server.Serve(listener); err != nil {
+        return fmt.Errorf("failed to serve gRPC server: %w", err)
+    }
+
+    return nil
+}
+
+// petStoreServiceServer implements the PetStoreService API.
+type petStoreServiceServer struct {
+-   petv1.UnimplementedPetStoreServiceServer
++   petv1grpc.UnimplementedPetStoreServiceServer
+}
+
+// PutPet adds the pet associated with the given request into the PetStore.
+func (s *petStoreServiceServer) PutPet(ctx context.Context, req *petv1.PutPetRequest) (*petv1.PutPetResponse, error) {
+    name := req.GetName()
+    petType := req.GetPetType()
+    log.Println("Got a request to create a", petType, "named", name)
+
+    return &petv1.PutPetResponse{}, nil
+}
 ```
 
 Now if you run the command below, you'll notice that the remote-generated library is
@@ -108,9 +173,12 @@ successfully resolved:
 ```terminal
 $ go mod tidy
 ---
-go: finding module for package go.buf.build/grpc/go/$BUF_USER/petapis/pet/v1
-go: found go.buf.build/grpc/go/$BUF_USER/petapis/pet/v1 in go.buf.build/grpc/go/$BUF_USER/petapis v1.4.4
-go: downloading go.buf.build/grpc/go/$BUF_USER/paymentapis v1.4.1
+go: finding module for package buf.build/gen/go/$BUF_TOUR/petapis/library/grpc-go/pet/v1/petv1grpc
+go: finding module for package buf.build/gen/go/$BUF_TOUR/petapis/library/go/pet/v1
+go: downloading buf.build/gen/go/$BUF_TOUR/petapis/library/go v1.28.1-20220907172654-7abdb7802c8f.5
+go: found buf.build/gen/go/$BUF_TOUR/petapis/library/go/pet/v1 in buf.build/gen/go/$BUF_TOUR/petapis/library/go v1.28.1-20220907172654-7abdb7802c8f.5
+go: found buf.build/gen/go/$BUF_TOUR/petapis/library/grpc-go/pet/v1/petv1grpc in buf.build/gen/go/$BUF_TOUR/petapis/library/grpc-go v1.2.0-20220907172654-7abdb7802c8f.4
+go: downloading buf.build/gen/go/$BUF_TOUR/paymentapis/library/go v1.28.1-20220907172603-9a877cf260e1.5
 ```
 
 The Go/gRPC client and server stubs are now included in your `go.mod` just like any other Go
@@ -146,7 +214,7 @@ $ go run server/main.go
 ... Got a request to create a PET_TYPE_SNAKE named Ekans
 ```
 
-Everything works just as before, but you no longer have _any_ locally generated code:
+Everything works just as before, but you no longer have *any* locally generated code:
 
 ```sh
 start/
@@ -172,48 +240,36 @@ start/
     └── main.go
 ```
 
-## 16.4 Synthetic versions
+## 16.4 Versions
 
 Now that your Go code depends on a remote-generated library, it's important to be aware of how it's
 versioned. The challenge with versioning remote generation is that the generated code is the product
 of two inputs:
 
 * The Protobuf module
-* The [template](/bsr/remote-generation/overview.md#hosted-templates) version
+* The [plugin](/bsr/remote-generation/remote-plugin-execution#official-plugins) version
 
-The lowest common denominator of the language registry ecosystems we surveyed is "semantic
-versioning without builds or pre-releases", so versions of the form `v1.2.3`.
-
-To ensure that the BSR can create consistent, lossless synthetic versions, Buf simplifies the
-versioning schemes of both inputs. Both the Protobuf module version and the template version are
-represented as **monotonically increasing integers**.
-
-  - For hosted templates, the BSR enforces a version of the form `v1`, `v2`, `vN...`.
-  - For Protobuf modules, BSR uses the **commit sequence ID**, an integer that uniquely identifies a
-    commit. It's calculated by counting the number of commits since the first commit of a module
-    (the first commit has a sequence ID of `1`, the second commit has a sequence ID of `2`, and so
-    on).
-
-With these simplified versioning schemes, the BSR creates a synthetic version that takes this form:
+Using a combination of plugin version and module commit information we version using the following syntax:
 
 import Syntax from "@site/src/components/Syntax";
 
 <Syntax
-  title="Synthetic version syntax"
-  examples={["v1.3.5", "v1.2.26"]}
+  title="Go module version syntax"
+  examples={["v1.2.0-20220907172654-7abdb7802c8f.4"]}
   segments={[
-    {label: "v", kind: "constant"},
-    {label: "1", kind: "constant"},
+    {label: "pluginVersion", kind: "variable"},
+    {separator: "-"},
+    {label: "moduleTimestamp", kind: "variable"},
+    {separator: "-"},
+    {label: "moduleCommit", kind: "variable"},
     {separator: "."},
-    {label: "templateVersion", kind: "variable", href: "/bsr/remote-generation/overview#templates"},
-    {separator: "."},
-    {label: "commitSequenceID", kind: "variable", href: "/bsr/remote-generation/overview#commits"},
-  ]}
-/>
+    {label: "pluginRevision", kind: "variable"}
+  ]
+} />
 
-In the example above, the version `v1.3.5` represents the **3**rd version of a hosted template and the
-**5**th commit of a Protobuf module. In the example `go.mod` below, the `petapis` module uses
-the **4**th version of the Protobuf module and the **4**th version of the template:
+In the example above, the version `v1.2.0-20220907172654-7abdb7802c8f.4` represents the **v1.2.0** version of the plugin and the
+**7abdb7802c8f** commit of a Protobuf module. In the example `go.mod` below, the `petapis` module uses
+the **7abdb7802c8f** commit of the Protobuf module and the **v1.28.1** version of the plugin:
 
 ```sh title="go.mod" {6}
 module github.com/bufbuild/buf-tour/petstore
@@ -221,16 +277,15 @@ module github.com/bufbuild/buf-tour/petstore
 go 1.16
 
 require (
-	go.buf.build/grpc/go/$BUF_USER/petapis v1.4.4
-	google.golang.org/genproto v0.0.0-20210811021853-ddbe55d93216 // indirect
-	google.golang.org/grpc v1.40.0
+  buf.build/gen/go/$BUF_TOUR/petapis/library/go v1.28.1-20220907172654-7abdb7802c8f.5
+  google.golang.org/genproto v0.0.0-20210811021853-ddbe55d93216 // indirect
+  google.golang.org/grpc v1.40.0
 )
 ```
 
 ## 16.5 Updating Versions {#updating-versions}
 
-When you update your module and push new commits, you can update your library version by
-incrementing the final element in the synthetic version (described above).
+When you update your module and push new commits, you can update your library version.
 
 To demonstrate, make a small change by adding a comment to the `PetStoreService`:
 
@@ -256,7 +311,14 @@ $ buf push
 8535a2784a3a48f6b72f2cb80eb49ac7
 ```
 
-Now edit your `go.mod` to use the latest version (the 5th commit):
+Now use `go get` to get the latest version:
+
+```terminal
+$ go get buf.build/gen/go/$BUF_TOUR/petapis/library/go@latest
+```
+
+Once you run the above command you'll notice that your `go.mod` is updated to the latest version.
+This can be verified with the commit hash that in the version which is the same as the `buf push` output.
 
 ```sh title="go.mod" {6-7}
  module github.com/bufbuild/buf-tour/petstore
@@ -264,23 +326,9 @@ Now edit your `go.mod` to use the latest version (the 5th commit):
  go 1.16
 
  require (
--    go.buf.build/grpc/go/$BUF_USER/petapis v1.4.4
-+    go.buf.build/grpc/go/$BUF_USER/petapis v1.4.5
+-    buf.build/gen/go/$BUF_TOUR/petapis/library/go v1.28.1-20220907172654-7abdb7802c8f.5
++    buf.build/gen/go/$BUF_TOUR/petapis/library/go v1.28.1-20221108285234-8535a2784a3a.5
      google.golang.org/genproto v0.0.0-20210811021853-ddbe55d93216 // indirect
      google.golang.org/grpc v1.40.0
  )
-```
-
-If you run the command below, you'll notice that your `go.sum` is updated with
-the version specified in your `go.mod`:
-
-```terminal
-$ go mod tidy
-```
-
-```sh title="go.sum" {1-4}
--go.buf.build/grpc/go/$BUF_USER/petapis v1.4.4 h1:Ay1b0VFvLsey21ylibis+lP8wBiDd5RUipDnQG6nCvY=
--go.buf.build/grpc/go/$BUF_USER/petapis v1.4.4/go.mod h1:aKE843ItBFu7UPuaxuUJvNpqC2hjVagPYiJ20n9dBJQ=
-+go.buf.build/grpc/go/$BUF_USER/petapis v1.4.5 h1:kW63uI3YuRvHb4WPrn7dJQLUaMHuNE3x/912DpzwloE=
-+go.buf.build/grpc/go/$BUF_USER/petapis v1.4.5/go.mod h1:aKE843ItBFu7UPuaxuUJvNpqC2hjVagPYiJ20n9dBJQ=
 ```

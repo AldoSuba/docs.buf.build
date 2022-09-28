@@ -104,7 +104,7 @@ $ go get buf.build/gen/go/acme/paymentapis/library/connect-go@feature-1
 
 <Syntax
   title="Go module version syntax"
-  examples={["0.2.1-20220706172350-dbde79169a01.3"]}
+  examples={["v0.2.1-20220706172350-dbde79169a01.3"]}
   segments={[
     {label: "pluginVersion", kind: "variable"},
     {separator: "-"},
@@ -118,7 +118,7 @@ $ go get buf.build/gen/go/acme/paymentapis/library/connect-go@feature-1
 
 With package versions (valid [semver][semver]):
 
-* The version core is the plugin version **0.2.1**
+* The version core is the plugin version **v0.2.1**
 * The semver pre-release version is composed of: 
   * module commit timestamp (YYYYMMDDHHMMSS) **20220706172350**
   * module commit short name (12 characters) **dbde79169a01**
@@ -261,3 +261,4 @@ To generate Go code from private modules you'll need to make sure the Go tooling
 [netrc]: https://golang.org/ref/mod#private-module-proxy-auth
 [private]: https://golang.org/ref/mod#private-modules
 [settings]: https://buf.build/settings/user
+[semver]: https://semver.org
