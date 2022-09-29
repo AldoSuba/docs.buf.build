@@ -3,7 +3,7 @@ id: push-a-module
 title: 7 Push a module
 ---
 
-Now that you've authenticated with the [BSR](../bsr/overview.md), you can create and push a remote [module](../bsr/overview.md#modules) that defines the
+Now that you've authenticated with the [BSR](../bsr/overview.md), you can create and push a [BSR module](../bsr/overview.md#modules) that defines the
 `PetStoreService` API.
 
 ## 7.1 Terminology {#terminology}
@@ -24,7 +24,7 @@ A BSR Module is a module that has been pushed to the BSR. A module on the BSR co
 
 #### 7.1.1 Non BSR Modules {#non-bsr-modules}
 
-Any module that exists outside of the BSR does not have the concepts of `snapshots` or `tracks` and is just an isolated non versioned instance of the larger connected BSR module.
+Any module that exists outside the BSR does not have the concepts of `snapshots` or `tracks` and is just an isolated non versioned instance of the larger connected BSR module.
 
 While roughly analogous to Git repositories, a BSR module is only a remote location - there is no concept of a repository "clone". In other words, modules do not exist in multiple locations.
 
