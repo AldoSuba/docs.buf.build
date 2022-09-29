@@ -15,7 +15,7 @@ Before we continue, it's important that we cover some basic terminology.
 **Modules** are the core primitive of Buf and the BSR. A module is a collection of Protobuf
 files that are configured, built, and versioned as a logical unit.
 
-There are two kinds of modules which are related
+Modules can exist inside the BSR or outside the BSR
 
 #### 7.1.1 BSR Modules {#bsr-modules}
 
