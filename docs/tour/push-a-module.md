@@ -65,6 +65,7 @@ $ cd petapis
 ```
 
 Update your `buf.yaml` so that its `name` matches the BSR name:
+Update the buf.yaml name to point to your module.
 
 ```yaml title="buf.yaml" {2}
  version: v1
@@ -79,7 +80,7 @@ Update your `buf.yaml` so that its `name` matches the BSR name:
 
 ## 7.4 Push the module {#push-the-module}
 
-Push the module to the `buf.build/$BUF_USER/petapis` module with this command (in the
+Push the module to `buf.build/$BUF_USER/petapis` with this command (in the
 `petapis` directory containing your `buf.yaml`):
 
 ```terminal

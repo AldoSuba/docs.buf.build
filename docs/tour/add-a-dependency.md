@@ -102,6 +102,8 @@ deps:
     commit: 62f35d8aed1149c291d606d958a7ce32
 ```
 
+> Note the term commit and snapshot are used interchangeably but buf.lock needs the key `commit` to function
+
 Now, if you try to build the module again, you'll notice that it's successful:
 
 ```terminal
@@ -125,8 +127,8 @@ the imports required to build your module. **You don't have to manually copy `.p
 
 ## 9.3 Pin Your Dependencies {#pin-your-dependencies}
 
-You can pin to a specific tag or commit by specifying it in your `deps` after the `:` delimiter. For example,
-if you want to depend on the same commit you resolved above and prevent `buf` from updating it in the future,
+You can pin to a specific tag or snapshot by specifying it in your `deps` after the `:` delimiter. For example,
+if you want to depend on the same snapshot you resolved above and prevent `buf` from updating it in the future,
 you can specify it like this:
 
 ```yaml title="buf.yaml" {4-5}

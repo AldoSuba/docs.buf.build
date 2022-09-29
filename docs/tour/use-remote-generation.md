@@ -191,9 +191,9 @@ versioning schemes of both inputs. Both the Protobuf module version and the temp
 represented as **monotonically increasing integers**.
 
   - For hosted templates, the BSR enforces a version of the form `v1`, `v2`, `vN...`.
-  - For Protobuf modules, BSR uses the **commit sequence ID**, an integer that uniquely identifies a
-    commit. It's calculated by counting the number of commits since the first commit of a module
-    (the first commit has a sequence ID of `1`, the second commit has a sequence ID of `2`, and so
+  - For Protobuf modules, BSR uses the **snapshot sequence ID**, an integer that uniquely identifies a
+    snapshot. It's calculated by counting the number of snapshots since the first snapshot of a module
+    (the first snapshot has a sequence ID of `1`, the second snapshot has a sequence ID of `2`, and so
     on).
 
 With these simplified versioning schemes, the BSR creates a synthetic version that takes this form:
@@ -231,7 +231,7 @@ require (
 
 ## 16.5 Updating Versions {#updating-versions}
 
-When you update your module and push new commits, you can update your library version by
+When you update your module and push new snapshots, you can update your library version by
 incrementing the final element in the synthetic version (described above).
 
 To demonstrate, make a small change by adding a comment to the `PetStoreService`:
@@ -258,7 +258,7 @@ $ buf push
 8535a2784a3a48f6b72f2cb80eb49ac7
 ```
 
-Now edit your `go.mod` to use the latest version (the 5th commit):
+Now edit your `go.mod` to use the latest version (the 5th snapshot):
 
 ```sh title="go.mod" {6-7}
  module github.com/bufbuild/buf-tour/petstore

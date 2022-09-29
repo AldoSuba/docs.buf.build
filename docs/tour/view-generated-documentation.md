@@ -48,7 +48,7 @@ petapis/
         └── pet.proto
 ```
 
-Now if you push your module again, you'll notice a new commit and that the documentation has been
+Now if you push your module again, you'll notice a new snapshot and that the documentation has been
 updated to reflect the latest changes:
 
 ```terminal
@@ -69,6 +69,6 @@ package documentation at [https://buf.build/acme/petapis/docs/4514ddced0584e73a1
 From here, you can click through each of the Protobuf type definitions and see all of
 the comments associated with each type. In fact, if you click on the `google.type.DateTime`
 message referenced in the `Pet` message, you'll be brought to the `google.type.v1` package
-documentation for the same commit.
+documentation for the same snapshot.
 
 For an example of API documentation, check out [googleapis](https://buf.build/googleapis/googleapis/docs).

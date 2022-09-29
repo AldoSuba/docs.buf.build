@@ -47,18 +47,16 @@ For the `PetStoreService`, here's the proper order for publishing updates:
 ## 14.2 Push the `paymentapis` module {#push-the-paymentapis-module}
 
 You haven't made any changes to the `buf.build/googleapis/googleapis` module, so you don't need to
-push a new version of that module. But you just introduced the
-`buf.build/$BUF_USER/paymentapis` module, so you need to create the
-`buf.build/$BUF_USER/paymentapis` repository:
+push a new version of that module. But you just drafted the `buf.build/$BUF_USER/paymentapis` module that needs to be created on the BSR:
 
 ```terminal
-$ buf beta registry repository create buf.build/$BUF_USER/paymentapis --visibility public
+$ buf beta registry module create buf.build/$BUF_USER/paymentapis --visibility public
 ---
 Full name                        Created
 buf.build/$BUF_USER/paymentapis  ...
 ```
 
-Now that the repository exists, change into the `paymentapis` directory and push the module:
+Now that the module exists, change into the `paymentapis` directory and push to the BSR:
 
 ```terminal
 $ cd ../paymentapis
@@ -69,7 +67,7 @@ $ buf push
 
 ## 14.3 Push the `petapis` module {#push-the-petapis-module}
 
-The `buf.build/$BUF_USER/paymentapis` repository now contains the same content you have locally, so
+The `buf.build/$BUF_USER/paymentapis` module now contains the same content you have locally, so
 you can add it as a dependency to the local `petapis` module:
 
 ```terminal
