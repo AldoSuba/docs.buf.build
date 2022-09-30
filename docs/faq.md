@@ -15,7 +15,7 @@ You may need to upgrade your googleapis/googleapis dependency.
 https://github.com/googleapis/googleapis contains over 3800 files, mostly
 relating to Google's core APIs. However, there are only ~30 files used by
 99.999% of developers, and these files are the most common dependency in
-the Protobuf ecosystem. This hosted module now only includes these specific
+the Protobuf ecosystem. This BSR module now only includes these specific
 files, as including all the files causes hundreds of megabytes of unused
 generated code for the vast majority of developers.
 
@@ -32,17 +32,17 @@ $ buf mod update
 If you've pinned your `googleapis/googleapis` dependency, you'll need to remove
 the pin prior to `buf mod update`.
 
-Additionally, if you have dependencies that themselves depend on googleapis,
-you'll need to update those as well, starting with your upstream modules. See
+Additionally, if you have dependencies that themselves depend on `googleapis`,
+you'll need to update those as well, starting with your BSR modules. See
 [Tour - Push workspace modules](tour/push-workspace-modules) for more details.
 
-For context, we recently made a change to our managed
-[buf.build/googleapis/googleapis][googleapis] repository.
-[googleapis][googleapis-github] contains over 3800 files, mostly relating to
-Google's core APIs. This causes numerous issues for most users, such as timeouts
-when installing packages with huge swaths of unused code to pull in just a few
-files. Not only is this a lot of code over the network and on disk, but it can
-cause issues in editors that try to parse all of that code!
+For context, we recently made a change to
+[buf.build/googleapis/googleapis][googleapis]. [googleapis][googleapis-github]
+contains over 3800 files, mostly relating to Google's core APIs. This causes
+numerous issues for most users, such as timeouts when installing packages with
+huge swaths of unused code to pull in just a few files. Not only is this a lot
+of code over the network and on disk, but it can cause issues in editors that
+try to parse all of that code!
 
 However, there are only ~30 files used by 99.999% of developers, and these files
 are the most common dependency in the Protobuf ecosystem. For example:
@@ -52,7 +52,7 @@ are the most common dependency in the Protobuf ecosystem. For example:
 - `google.api`, for defining APIs, such as with `grpc-gateway`.
 
 We considered these commonly used packages and included a subset of them into
-the new, slim googleapis repository.
+the new, slim `googleapis` module.
 
 At Buf, we take breaking changes incredibly seriously. This was done to ensure
 the stability of the BSR before we move the BSR out of beta. We apologize for

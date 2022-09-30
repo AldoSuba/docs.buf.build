@@ -21,8 +21,8 @@ on-demand, for every version, for every possible Protobuf plugin, with
 consumption via language-native mechanisms.
 
 This feature is currently available for Buf's
-[Go Module Proxy](bsr/remote-generation/overview.md#go-module-proxy) which is
-currently in **alpha**. Given a module, such as `buf.build/acme/weather`, you
+[Go module proxy](bsr/remote-generation/overview.md#go-module-proxy) which is
+currently in **alpha**. Given a BSR name, such as `buf.build/acme/weather`, you
 can consume generated code for:
 
 - Plugin `protoc-gen-go` version `1.4.0`
@@ -50,10 +50,10 @@ well.
 
 ### Enforced linting and compatibility
 
-The BSR currently leans on the module author to verify that their proposed
-commit is backwards-compatible with previous commits before the module is
-pushed. `buf breaking` does help, of course, but mistakes happen and users might
-forget to instrument this in their CI pipeline.
+The BSR currently leans on the module author to verify proposed snapshots are
+backwards compatible before pushing the module. `buf breaking` does help, of
+course, but mistakes happen and users might forget to instrument this in their
+CI pipeline.
 
 Instead, we can let users configure backwards-compatibility for the module
 itself so that it's **enforced on the server side**. Better yet, the same could
@@ -75,7 +75,7 @@ backwards-incompatible API changes.
 
 By virtue of Protobuf API compatibility, rules and Buf's powerful compatibility
 tooling, the BSR is uniquely positioned to solve this problem. The BSR receives
-all of the dependencies requested for a specific module, and can systematically
+all of the dependencies requested for a given BSR name, and can systematically
 determine the latest version that is compatible with _all_ of the provided
 versions with Buf's compatibility checker. If such a version does not exist, the
 BSR can give an informative error that describes exactly _why_ the dependencies
