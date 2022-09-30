@@ -5,7 +5,7 @@ title: Generated documentation
 
 import Image from '@site/src/components/Image';
 
-The BSR comes with complete documentation for your Protobuf files through a browsable UI with syntax highlighting, one click navigation between definitions and references. Navigate to a repository within the BSR and click the **Docs** tab. 
+The BSR comes with complete documentation for your Protobuf files through a browsable UI with syntax highlighting, one click navigation between definitions and references. Navigate to a repository within the BSR and click the **Docs** tab.
 
 <Image alt="BSR module" src="/img/bsr/gen_docs-3.png" caption="The documentation link in the BSR interface" />
 
@@ -13,7 +13,7 @@ For an example see the `demolab/theweather` module by visiting [https://buf.buil
 
 ## Module documentation
 
-Most documentation comes directly from comments associated with your Protobuf definitions. But there also needs to be a way for authors to *describe their module* for others to understand its functionality.
+Most documentation comes directly from comments associated with your Protobuf definitions. But there also needs to be a way for authors to _describe their module_ for others to understand its functionality.
 
 To accomplish this, you add a `buf.md` file to the same directory as your module's `buf.yaml` file and push it to the BSR like normal. Since documentation is part of your module, any updates to your `buf.md` result in new commits in the BSR.
 

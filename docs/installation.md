@@ -3,7 +3,6 @@ id: installation
 title: Installation
 ---
 
-
 import DownloadButton, {mac, linux, windows} from '@site/src/components/DownloadButton';
 
 <div>
@@ -28,10 +27,10 @@ $ brew install bufbuild/buf/buf
 
 This installs:
 
-  - The binaries `buf`, `protoc-gen-buf-breaking`, `protoc-gen-buf-lint`.
-  - Bash completion for `buf`.
-  - Fish completion for `buf`.
-  - Zsh completion for `buf`.
+- The binaries `buf`, `protoc-gen-buf-breaking`, `protoc-gen-buf-lint`.
+- Bash completion for `buf`.
+- Fish completion for `buf`.
+- Zsh completion for `buf`.
 
 ## GitHub Releases
 
@@ -73,8 +72,8 @@ BIN="/usr/local/bin" && \
 
 ### Tarball
 
-To install the `buf`, `protoc-gen-buf-breaking`, and `protoc-gen-buf-lint` binaries,
-bash completion, fish completion, and zsh completion to `/usr/local` for version `1.8.0`:
+To install the `buf`, `protoc-gen-buf-breaking`, and `protoc-gen-buf-lint` binaries, bash
+completion, fish completion, and zsh completion to `/usr/local` for version `1.8.0`:
 
 ```sh
 # Substitute PREFIX for your install prefix.
@@ -122,8 +121,8 @@ VERSION="1.8.0" && \
 
 ## From source
 
-The binary can be installed from source if `go` is installed, however we recommend using one of
-the release assets instead.
+The binary can be installed from source if `go` is installed, however we recommend using one of the
+release assets instead.
 
 ```sh
 # Substitute GOBIN for your bin directory
@@ -134,8 +133,8 @@ GO111MODULE=on GOBIN=/usr/local/bin go install \
 
 ## Using the Docker image
 
-Buf ships a Docker image ([bufbuild/buf](https://hub.docker.com/r/bufbuild/buf)) that enables
-you to use `buf` as part of your Docker workflow.
+Buf ships a Docker image ([bufbuild/buf](https://hub.docker.com/r/bufbuild/buf)) that enables you to
+use `buf` as part of your Docker workflow.
 
 For example, you can run `buf lint` with this command:
 
