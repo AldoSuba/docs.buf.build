@@ -3,26 +3,35 @@ id: usage
 title: Usage
 ---
 
-To execute `buf` commands below make sure you are [authenticated](../bsr/authentication.md). Obtain a token from the BSR and run:
+To execute `buf` commands below make sure you are
+[authenticated](../bsr/authentication.md). Obtain a token from the BSR and run:
 
 ```terminal
 $ buf registry login
 ```
 
-Follow the prompts to enter your username and password (API Token). This adds an entry into your `$HOME/.netrc` (Linux or macOS) or `%HOME%/_netrc` (Windows).
+Follow the prompts to enter your username and password (API Token). This adds an
+entry into your `$HOME/.netrc` (Linux or macOS) or `%HOME%/_netrc` (Windows).
 
 ## Push a module
 
-The only requirement to push to the BSR is to have a module that [builds](../build/usage.md)
-successfully, meaning that you should be able to run `buf build` successfully on your module.
+The only requirement to push to the BSR is to have a module that
+[builds](../build/usage.md) successfully, meaning that you should be able to run
+`buf build` successfully on your module.
 
-Before you can push a module into the BSR there needs to exist a repository, owned by either a user or an organization, the user has access to. A repository can be created either through the UI or from the command line with `buf`.
+Before you can push a module into the BSR there needs to exist a repository,
+owned by either a user or an organization, the user has access to. A repository
+can be created either through the UI or from the command line with `buf`.
 
-If you want to collaborate with other users on a module, select an organization as the owner of the repository.
+If you want to collaborate with other users on a module, select an organization
+as the owner of the repository.
 
 **1. Create a Repository**
 
-Through the **UI** log in at [https://buf.build/login](https://buf.build/login) and navigate to Your repositories and click **Create Repository**. Select an owner for the repository and give it a repository name. The visibility can be either public or private.
+Through the **UI** log in at [https://buf.build/login](https://buf.build/login)
+and navigate to Your repositories and click **Create Repository**. Select an
+owner for the repository and give it a repository name. The visibility can be
+either public or private.
 
 Alternatively, use the **CLI** run this command:
 
@@ -30,12 +39,14 @@ Alternatively, use the **CLI** run this command:
 $ buf beta registry repository create <MODULE_NAME> --visibility [public,private]
 ```
 
-The module name takes the form `<remote>/<owner>/<repository_name>` (for example, `buf.build/acme/weather`).<br/>
-The `--visibility` flag is **required** and must be one of: `private` or `public`.
+The module name takes the form `<remote>/<owner>/<repository_name>` (for
+example, `buf.build/acme/weather`).<br/> The `--visibility` flag is **required**
+and must be one of: `private` or `public`.
 
 **2. Configure a name**
 
-You'll need to configure your `buf.yaml` file to match the BSR repository. To do so, add the module name as a `name` key:
+You'll need to configure your `buf.yaml` file to match the BSR repository. To do
+so, add the module name as a `name` key:
 
 ```yaml title=buf.yaml {2}
 version: v1
@@ -52,9 +63,9 @@ $ buf push
 
 This command returns the commit reference.
 
-One of the main benefits of a centralized, Protobuf-aware registry is you're guaranteed not to push
-broken modules. This means that consumers can have confidence that modules hosted on the BSR
-always compile.
+One of the main benefits of a centralized, Protobuf-aware registry is you're
+guaranteed not to push broken modules. This means that consumers can have
+confidence that modules hosted on the BSR always compile.
 
 Suppose we mistyped an identifier:
 
@@ -74,20 +85,26 @@ If we try to `buf push` to the BSR we'll get an immediate error:
 Failure: units/v1/metric.proto:5:1:syntax error: unexpected identifier.
 ```
 
-Sure you can have CI workflows to automatically catch compilation errors, but by using the BSR these guarantees are made available to everyone out-of-the-box.
+Sure you can have CI workflows to automatically catch compilation errors, but by
+using the BSR these guarantees are made available to everyone out-of-the-box.
 
-That's it. This module can now be consumed as a first class dependency and its [generated documentation](documentation.md) can be viewed on the BSR.
+That's it. This module can now be consumed as a first class dependency and its
+[generated documentation](documentation.md) can be viewed on the BSR.
 
 ## Add a dependency
 
-If, for example, you are using one of the files from the [googleapis](https://github.com/googleapis/googleapis) repository in your Protobuf files, and you're having to copy files into your local Protobuf generation tree, you can instead use `buf` to manage this dependency for you.
+If, for example, you are using one of the files from the
+[googleapis](https://github.com/googleapis/googleapis) repository in your
+Protobuf files, and you're having to copy files into your local Protobuf
+generation tree, you can instead use `buf` to manage this dependency for you.
 
-To include dependencies in your build add the `deps` key to your `buf.yaml` file and list the modules your build depends on. Example:
+To include dependencies in your build add the `deps` key to your `buf.yaml` file
+and list the modules your build depends on. Example:
 
 ```yaml title=buf.yaml {2,3}
 version: v1
 deps:
-    - buf.build/googleapis/googleapis
+  - buf.build/googleapis/googleapis
 lint:
   use:
     - DEFAULT
@@ -102,7 +119,9 @@ After adding dependencies in `buf.yaml` run this command:
 $ buf mod update
 ```
 
-This updates all your `deps` to their latest version and gets captured in a `buf.lock` file. You do not need to make any changes to this file and if using a version control system, commit it along with your Protobuf files.
+This updates all your `deps` to their latest version and gets captured in a
+`buf.lock` file. You do not need to make any changes to this file and if using a
+version control system, commit it along with your Protobuf files.
 
 ```yaml title=buf.lock
 # Generated by buf. DO NOT EDIT.
@@ -114,19 +133,28 @@ deps:
     commit: 62f35d8aed1149c291d606d958a7ce32
 ```
 
-Once your dependencies are updated, you can run `buf build` and the `buf` CLI resolves hosted module dependencies by leveraging the BSR.
+Once your dependencies are updated, you can run `buf build` and the `buf` CLI
+resolves hosted module dependencies by leveraging the BSR.
 
-> For a more in-depth example see the [Tour - Add a Dependency](../tour/add-a-dependency.md)
+> For a more in-depth example see the
+> [Tour - Add a Dependency](../tour/add-a-dependency.md)
 
 ## Code generation
 
-The BSR facilitates both local and remote code generation, simplifying how module consumers get access to generated code. This is especially useful for **clients** that need to generate an SDK to consume a Protobuf-based API in their language of choice.
+The BSR facilitates both local and remote code generation, simplifying how
+module consumers get access to generated code. This is especially useful for
+**clients** that need to generate an SDK to consume a Protobuf-based API in
+their language of choice.
 
 ### Local code generation
 
-The `buf generate` command enables you to run local plugins to generate code from remote modules hosted on the BSR. If you already have a workflow that invokes plugins with `protoc` then adopting `buf generate` should be straightforward.
+The `buf generate` command enables you to run local plugins to generate code
+from remote modules hosted on the BSR. If you already have a workflow that
+invokes plugins with `protoc` then adopting `buf generate` should be
+straightforward.
 
-Add a `buf.gen.yaml` file and list all the plugins as well as their options. Here is a quick example that generates C++ and Java code.
+Add a `buf.gen.yaml` file and list all the plugins as well as their options.
+Here is a quick example that generates C++ and Java code.
 
 ```yaml title=buf.gen.yaml
 version: v1
@@ -137,28 +165,36 @@ plugins:
     out: gen/proto/java
 ```
 
-The `buf` CLI infers the `protoc-gen-{name}` prefix for each plugin specified by the `name` key, similar to `protoc` behaviour.
+The `buf` CLI infers the `protoc-gen-{name}` prefix for each plugin specified by
+the `name` key, similar to `protoc` behaviour.
 
-Once you set up a `buf.gen.yaml` file, run this command and specify a module hosted on the BSR. That's right, you can reference a hosted BSR module without having the Protobuf files locally!
+Once you set up a `buf.gen.yaml` file, run this command and specify a module
+hosted on the BSR. That's right, you can reference a hosted BSR module without
+having the Protobuf files locally!
 
 ```terminal
 $ buf generate <MODULE_NAME>
 ```
 
-This generates C++ and Java code in the local `/gen/proto/{cpp,java}` directories.
+This generates C++ and Java code in the local `/gen/proto/{cpp,java}`
+directories.
 
-> For a more advanced example, check out the [Tour - Generate Go Code](../tour/generate-go-code.md)
+> For a more advanced example, check out the
+> [Tour - Generate Go Code](../tour/generate-go-code.md)
 
 ### Remote code generation
 
-If you don't want to manage plugins and generate code manually and would prefer to simply consume generated code, check out the [remote code generation](remote-generation/overview.md) feature, which is currently in **alpha**.
+If you don't want to manage plugins and generate code manually and would prefer
+to simply consume generated code, check out the
+[remote code generation](remote-generation/overview.md) feature, which is
+currently in **alpha**.
 
 ## Manage a repository
 
 ### Deprecate or undeprecate a repository
 
-BSR repositories can be deprecated. `buf` warns you when you run `buf mod update` on a module that depends on a 
-deprecated repository.
+BSR repositories can be deprecated. `buf` warns you when you run
+`buf mod update` on a module that depends on a deprecated repository.
 
 You can deprecate a repository with
 

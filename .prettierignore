@@ -1,4 +1,8 @@
 .docusaurus
 build
-docs
 drafts
+docs/bsr/remote-generation/hosted-plugins.md
+docs/bsr/remote-generation/js.md
+docs/bsr/remote-generation/overview.md
+docs/lint/usage.md
+docs/tour/use-remote-generation.md
