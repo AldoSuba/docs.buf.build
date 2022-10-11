@@ -16,6 +16,7 @@ but a variety of other formats are supported and explained below.
 
 First, some basic terminology to help our discussion:
 
+<<<<<<< Updated upstream
 - A **source** is a set of `.proto` files that can be built into a single Buf
   **image** using the `buf build` command.
 - A Buf **image** is encoded as an [`Image`][image-proto] Protobuf message. The
@@ -27,6 +28,17 @@ First, some basic terminology to help our discussion:
   Commonly used formats include [`dir`](#dir) and [`git`](#git). The **format**
   of an **input** is usually derived automatically but you can opt to set it
   explicitly.
+=======
+- A **source** is a set of `.proto` files that can be built into a single Buf **image** using the
+  `buf build` command.
+- A Buf **image** is encoded as an [`Image`][image-proto] Protobuf message. The mechanics of Buf
+  images are described in the [reference docs](images.md).
+- An **schema** is either a **source**&mdash;a set of `.proto` files&mdash;or an **image**&mdash;a
+  set of `.proto` files built into a single, encapsulating Protobuf [`Image`][image-proto] message.
+- All **schemas** have a **format** that describes the type of the **schema**. Commonly used formats
+  include [`dir`](#dir) and [`git`](#git). The **format** of an **schema** is usually derived
+  automatically but you can opt to set it explicitly.
+>>>>>>> Stashed changes
 
 ## Why?
 
@@ -71,21 +83,34 @@ $ buf build -o image.bin
 $ buf breaking --against image.bin
 ```
 
-## Specifying an input
+## Specifying an input schema
 
+<<<<<<< Updated upstream
 Buf inputs are specified as the first argument on the command line, and with the
 `--against` flag for the compare against input on `buf breaking`.
 
 For each of `buf {build,lint,breaking,generate,ls-files}`, the input is
 specified as the first argument. Inputs are specified as a string and have this
 structure:
+=======
+Buf input schemas are specified as the first argument on the command line, and with the `--against` flag
+for the compare against input on `buf breaking`.
+
+For each of `buf {build,lint,breaking,generate,ls-files}`, the schema is specified as the first argument.
+Schemas are specified as a string and have this structure:
+>>>>>>> Stashed changes
 
 ```
 path#option_key1=option_value1,option_key2=option_value2
 ```
 
+<<<<<<< Updated upstream
 The path specifies the path to the input. The options specify options to
 interpret the input at the path.
+=======
+The path specifies the path to the schema. The options specify options to interpret the
+input at the path.
+>>>>>>> Stashed changes
 
 ### format option
 
@@ -131,8 +156,12 @@ All Sources contain a set of `.proto` files that can be compiled.
 
 A local directory. The path can be either relative or absolute.
 
+<<<<<<< Updated upstream
 **This is the default format**. By default, `buf` uses the current directory as
 its input for all commands.
+=======
+**This is the default format**. By default, `buf` uses the current directory as its schema input for all commands.
+>>>>>>> Stashed changes
 
 Examples:
 
@@ -406,7 +435,7 @@ There are also **two special cases**:
 **If no format can be automatically derived, the `dir` format is assumed**,
 meaning that `buf` assumes that the path is a path to a local directory.
 
-The format of an input can be explicitly set as described above.
+The format of a schema can be explicitly set as described above.
 
 ## Deprecated formats
 
