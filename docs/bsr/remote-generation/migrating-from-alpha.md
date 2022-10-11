@@ -5,9 +5,7 @@ title: Migrating from alpha
 
 # Migrating from alpha
 
-We made improvements to the remote generation features of the BSR and have
-revamped the documentation. This guide walks you through those changes and
-outlines exactly what you need to update if you were an existing user.
+We made improvements to the remote generation features of the BSR and have revamped the documentation. This guide walks you through those changes and outlines exactly what you need to update if you were an existing user.
 
 Updated documentation can be found here:
 
@@ -15,28 +13,19 @@ Updated documentation can be found here:
 - [BSR npm registry][npm-registry]
 - [BSR go module proxy][go]
 
-Existing remote generation alpha documentation is located under Reference /
-Deprecated / Remote Generation.
+Existing remote generation alpha documentation is located under Reference / Deprecated / Remote Generation.
 
 ## Disable plugin uploads
 
-You will no longer be able to upload plugins or create templates based on those
-plugins.
+You will no longer be able to upload plugins or create templates based on those plugins.
 
-For now, the Buf team will package and distribute plugins to the BSR, browsable
-at [buf.build/plugins][bsr-plugins]. To learn more about how plugins are
-packaged and distributed check out the [bufbuild/plugins
-repository][bufbuild-plugins].
+For now, the Buf team will package and distribute plugins to the BSR, browsable at [buf.build/plugins][bsr-plugins]. To learn more about how plugins are packaged and distributed check out the [bufbuild/plugins repository][bufbuild-plugins]. 
 
-If you find a useful plugin that should be added please [file an
-issue][bufbuild-plugins-issue]!
+If you find a useful plugin that should be added please [file an issue][bufbuild-plugins-issue]!
 
 :::info What happens to old plugins and templates?
 
-Existing plugins and templates on the public BSR (https://buf.build) will remain
-available, but will be removed at a later date. We take breaking changes very
-seriously and want to provide ample opportunity for our valued users to migrate
-and request plugins which have not yet been added.
+Existing plugins and templates on the public BSR (https://buf.build) will remain available, but will be removed at a later date. We take breaking changes very seriously and want to provide ample opportunity for our valued users to migrate and request plugins which have not yet been added.
 
 User uploaded plugins will be supported for Enterprise customers.
 
@@ -44,9 +33,7 @@ User uploaded plugins will be supported for Enterprise customers.
 
 ## Templates removed
 
-Templates were yet another concept for users to understand when interacting with
-the BSR, so we removed them. Instead, you reference plugins directly by name. A
-list of plugins can be found at:
+Templates were yet another concept for users to understand when interacting with the BSR, so we removed them. Instead, you reference plugins directly by name. A list of plugins can be found at:
 
 https://buf.build/plugins
 
@@ -56,27 +43,21 @@ Some plugins can be used with the BSR go module proxy and BSR npm registry.
 
 ### Versioning
 
-The synthetic versioning scheme has been replaced by a more explicit versioning
-scheme comprised of the plugin version, module reference (datetime+short commit
-name) and revision. Example:
+The synthetic versioning scheme has been replaced by a more explicit versioning scheme comprised of the plugin version, module reference (datetime+short commit name) and revision. Example:
 
 ```
 0.4.0-20220908151351-622fe7149695.1
 ```
 
-This new semver-compatible versioning scheme can be pinned in lock files and
-always references a specific plugin + module for reproducibility.
+This new semver-compatible versioning scheme can be pinned in lock files and always references a specific plugin + module for reproducibility.
 
-Most users will be fetching `@latest` and will be unaffected by the versioning
-change.
+Most users will be fetching `@latest` and will be unaffected by the versioning change.
 
 ## buf.gen.yaml
 
 The buf.gen.yaml configuration file is largely unchanged, except for:
 
-1. `name` and `remote` keys to reference plugins changed to just `plugin`. The
-   `plugin` key understands both local and remote references. Requires [buf CLI
-   version 1.8][buf-tag-18] or later.
+1. `name` and `remote` keys to reference plugins changed to just `plugin`. The `plugin` key understands both local and remote references. Requires [buf CLI version 1.8][buf-tag-18] or later.
 
 1. Drop the `../plugins/..` path when referencing hosted plugins
 
@@ -94,10 +75,8 @@ There are a couple of key changes from the alpha:
 
 - The base URL has changed to `buf.build/gen/go`
 - The path has changed to begin with the module name.
-- The template reference in the path has been replaced with plugins and moved to
-  the end.
-- The version has changed to inlcude plugin version and module commit
-  information.
+- The template reference in the path has been replaced with plugins and moved to the end.
+- The version has changed to inlcude plugin version and module commit information.
 
 The new format is:
 
@@ -108,25 +87,19 @@ The new format is:
 + buf.build/gen/go/acme/petapis/library/go
 ```
 
-This means you'll need to search and replace the old import path with the new
-one and run `go mod tidy`.
+This means you'll need to search and replace the old import path with the new one and run `go mod tidy`.
 
 The versioning has also changed to a more descriptive form:
 
 `{pluginVersion}-{moduleCommitTimestamp}-{moduleCommitName}.{pluginRevision}`
 
-Instead of relying on the commit sequence it now relies directly on commits. For
-ways to pin to a commit and other documentation please see the new [Go
-proxy][go-proxy] docs.
+Instead of relying on the commit sequence it now relies directly on commits. For ways to pin to a commit and other documentation please see the new [Go proxy][go-proxy] docs.
 
 ### connect-go template
 
-If you've used the [connect go template][bsr-template-connect-go] you'll need to
-update all **connect** imports to the generated code of the connect plugin.
+If you've used the [connect go template][bsr-template-connect-go] you'll need to update all **connect** imports to the generated code of the connect plugin.
 
-The `go.mod` will now require two different imports, one for the
-[`go`][bsr-plugin-go] plugin and the other for the
-[`connect-go`][bsr-plugin-connect-go] plugin.
+The `go.mod` will now require two different imports, one for the [`go`][bsr-plugin-go] plugin and the other for the [`connect-go`][bsr-plugin-connect-go] plugin.
 
 ```diff title=go.mod
 - go.buf.build/bufbuild/connect-go/acme/petapis
@@ -149,12 +122,9 @@ import (
 
 ### grpc/go template
 
-If you've used the [`grpc/go` template][bsr-template-grpc-go] you'll need to
-update all **grpc** imports to the generated code of the grpc plugin.
+If you've used the [`grpc/go` template][bsr-template-grpc-go] you'll need to update all **grpc** imports to the generated code of the grpc plugin.
 
-The `go.mod` will now require two different imports, one for the
-[`go`][bsr-plugin-go] plugin and the other for the
-[`grpc-go`][bsr-plugin-grpc-go] plugin.
+The `go.mod` will now require two different imports, one for the [`go`][bsr-plugin-go] plugin and the other for the [`grpc-go`][bsr-plugin-grpc-go] plugin.
 
 ```diff title=go.mod
 - go.buf.build/grpc/go/acme/petapis
@@ -162,10 +132,7 @@ The `go.mod` will now require two different imports, one for the
 + buf.build/gen/go/acme/petapis/library/grpc-go
 ```
 
-We patched the [`grpc-go`][bsr-plugin-grpc-go] plugin to generate code to a sub
-package. Earlier it used to generate code to the same package as the
-[`go`][bsr-plugin-go] plugin. The new import path is a subpackage that is named
-in the format: `{goPackageName}grpc`
+We patched the [`grpc-go`][bsr-plugin-grpc-go] plugin to generate code to a sub package. Earlier it used to generate code to the same package as the [`go`][bsr-plugin-go] plugin. The new import path is a subpackage that is named in the format: `{goPackageName}grpc`
 
 Example:
 
@@ -189,19 +156,14 @@ func main() {
 
 ### protoc-gen-validate plugin
 
-If you've used a custom template that included the
-[`protoc-gen-validate`][protoc-gen-validate] plugin as of now there is no direct
-migration path. We are working with the envoy team to take
-[stewardship][protoc-gen-validate-ownership] of protoc-gen-validate. Supporting
-the generated SDKs workflow is a primary goal. In the meantime, continue to use
-the template or switch to local generation using [`buf generate`][buf-generate].
+If you've used a custom template that included the [`protoc-gen-validate`][protoc-gen-validate] plugin as of now there is no direct migration path. We are working with the envoy team to take [stewardship][protoc-gen-validate-ownership] of protoc-gen-validate. Supporting the generated SDKs workflow is a primary goal. In the meantime, continue to use the template or switch to local generation using [`buf generate`][buf-generate].
 
 ## BSR npm registry
 
+
 ### Base URL
 
-The base URL for the BSR npm registry has changed, you'll want to update your
-`.npmrc`:
+The base URL for the BSR npm registry has changed, you'll want to update your `.npmrc`:
 
 ```diff
 - @buf:registry=https://npm.buf.build
@@ -210,15 +172,13 @@ The base URL for the BSR npm registry has changed, you'll want to update your
 
 ### Naming convention
 
-The naming convention has changed because templates have been removed in favor
-of plugins. The new format is:
+The naming convention has changed because templates have been removed in favor of plugins. The new format is:
 
 `{moduleOwner}_{moduleName}.{pluginOwner}_{pluginName}`
 
-Note the dot (`.`) delimiter is used to break up the module and the plugin
-components.
+Note the dot (`.`) delimiter is used to break up the module and the plugin components.
 
-This means you'll need to do 2 things:
+This means you'll need to do 2 things: 
 
 1. `npm remove` the old package and `npm install` the new package
 1. Search and replace application imports
@@ -232,10 +192,7 @@ New documentation is available at [NPM registry][npm-registry].
 
 ### connect-web template
 
-If you consumed [connect-web template][bsr-template-connect-web] you'll need to
-update all imports for **base types** within your application code. This plugin
-now outputs plugin dependencies, namely [protobuf-es][protobuf-es], into a
-separate package.
+If you consumed [connect-web template][bsr-template-connect-web] you'll need to update all imports for **base types** within your application code. This plugin now outputs plugin dependencies, namely [protobuf-es][protobuf-es], into a separate package.
 
 <details>
   <summary>Show example</summary>
@@ -287,24 +244,18 @@ separate package.
   </div>
 </details>
 
-Using this example, if your application code imported `eliza_pb.js` from
-`@buf/bufbuild_connect-web_bufbuild_eliza/eliza_connectweb.js` then you'll want
-to update that import within your application code to reference the base types
-from `@buf/bufbuild_eliza.library_protobuf-es/eliza_connectweb.js`. Assuming you
-have `npm uninstall` and `npm install` based on the naming change mentioned
-above.
 
-### protocolbuffers/js and grpc/web templates
+Using this example, if your application code imported `eliza_pb.js` from `@buf/bufbuild_connect-web_bufbuild_eliza/eliza_connectweb.js` then you'll want to update that import within your application code to reference the base types from `@buf/bufbuild_eliza.library_protobuf-es/eliza_connectweb.js`. Assuming you have `npm uninstall` and `npm install` based on the naming change mentioned above.
 
-If you were using the [`protocolbuffers_js`][template-protocolbuffers-js] or
-[`grpc_web`][template-grpc-web] templates there is no equivalent in the new BSR
-npm registry.
+### protocolbuffers/js and grpc/web templates 
 
-The plugins themselves are still hosted on the BSR and can be used with
-`buf generate` commands.
+If you were using the [`protocolbuffers_js`][template-protocolbuffers-js] or [`grpc_web`][template-grpc-web] templates there is no equivalent in the new BSR npm registry.
+
+The plugins themselves are still hosted on the BSR and can be used with `buf generate` commands.
 
 - https://buf.build/library/js
 - https://buf.build/library/grpc-web
+
 
 [bsr-hosted-plugins]: /bsr/remote-generation/remote-plugin-execution
 [bsr-plugins]: https://buf.build/plugins
@@ -322,7 +273,6 @@ The plugins themselves are still hosted on the BSR and can be used with
 [npm-registry]: /bsr/remote-generation/npm-registry
 [protobuf-es]: https://www.npmjs.com/package/@bufbuild/protoc-gen-es
 [protoc-gen-validate]: https://github.com/envoyproxy/protoc-gen-validate
-[protoc-gen-validate-ownership]:
-  https://github.com/envoyproxy/protoc-gen-validate/issues/616
+[protoc-gen-validate-ownership]: https://github.com/envoyproxy/protoc-gen-validate/issues/616
 [template-grpc-web]: https://buf.build/grpc/templates/web
 [template-protocolbuffers-js]: https://buf.build/protocolbuffers/templates/js
