@@ -86,6 +86,7 @@ $ buf breaking --against image.bin
 ## Specifying an input schema
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Buf inputs are specified as the first argument on the command line, and with the
 `--against` flag for the compare against input on `buf breaking`.
 
@@ -93,11 +94,16 @@ For each of `buf {build,lint,breaking,generate,ls-files}`, the input is
 specified as the first argument. Inputs are specified as a string and have this
 structure:
 =======
+=======
+>>>>>>> Stashed changes
 Buf input schemas are specified as the first argument on the command line, and with the `--against` flag
 for the compare against input on `buf breaking`.
 
 For each of `buf {build,lint,breaking,generate,ls-files}`, the schema is specified as the first argument.
 Schemas are specified as a string and have this structure:
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 ```
@@ -105,9 +111,12 @@ path#option_key1=option_value1,option_key2=option_value2
 ```
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 The path specifies the path to the input. The options specify options to
 interpret the input at the path.
 =======
+=======
+>>>>>>> Stashed changes
 The path specifies the path to the schema. The options specify options to interpret the
 input at the path.
 >>>>>>> Stashed changes
@@ -157,8 +166,12 @@ All Sources contain a set of `.proto` files that can be compiled.
 A local directory. The path can be either relative or absolute.
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 **This is the default format**. By default, `buf` uses the current directory as
 its input for all commands.
+=======
+**This is the default format**. By default, `buf` uses the current directory as its schema input for all commands.
+>>>>>>> Stashed changes
 =======
 **This is the default format**. By default, `buf` uses the current directory as its schema input for all commands.
 >>>>>>> Stashed changes
