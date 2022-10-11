@@ -93,7 +93,6 @@ supported RPC plugins:
 - https://buf.build/library/connect-web
 
 #### gRPC
-
 - https://buf.build/library/grpc-cpp
 - https://buf.build/library/grpc-csharp
 - https://buf.build/library/grpc-go
@@ -108,7 +107,6 @@ supported RPC plugins:
 - https://buf.build/library/grpc-web
 
 #### Twirp
-
 - https://buf.build/library/twirp-go
 
 ## Example
@@ -227,6 +225,7 @@ information can be
 
 > As a best practice, when referencing hosted plugins we recommend including the
 > version of the plugin to ensure reproducible code generation.
+
 It is possible to reference both local and hosted plugins within a single
 template file. The `buf generate` command issues an RPC to the BSR to execute
 the hosted plugins against the given input. Once execution is finished the
