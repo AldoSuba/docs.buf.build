@@ -141,7 +141,7 @@ Here are a few ways to get moving:
 
 ## Experimental features
 
-[Remote generation](remote-generation/overview.mdx) is currently an _alpha
+[Remote generation](../reference/deprecated/remote-generation/overview.mdx) is currently an _alpha
 feature_. This feature lets the BSR generate data types and service stubs for
 your modules and store the generated code in a **hosted registry**. With this,
 you can consume the generated code like any other library in your language of

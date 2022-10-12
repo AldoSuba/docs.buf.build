@@ -18,8 +18,8 @@ request to be re-added with the desired role.
   plugins must be deleted before the organization can be deleted.
 - Can add and delete resources such as
   [repositories](../bsr/overview.mdx#modules),
-  [templates](../bsr/remote-generation/overview#templates) and
-  [plugins](../bsr/remote-generation/overview#plugins).
+  [templates](../reference/deprecated/remote-generation/overview#templates) and
+  [plugins](../reference/deprecated/remote-generation/overview#plugins).
 
 ### Admin {#org-admin}
 
