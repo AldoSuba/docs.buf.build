@@ -6,7 +6,7 @@ title: Inputs
 The various I/O options for `buf` may seem a bit daunting, so we'll break down
 how this all fits together.
 
-In general, a Buf schema input is a collection of `.proto` files used by many of the
+In general, a schema input for `buf` is a collection of `.proto` files used by many of the
 `buf` commands. In most cases, this is a [module](../bsr/overview.mdx#modules),
 but a variety of other formats are supported and explained below.
 
@@ -73,7 +73,7 @@ $ buf breaking --against image.bin
 
 ## Specifying a schema
 
-Buf schemas are almost always specified as the first argument on the command line, and with the
+Schemas are almost always specified as the first argument on the command line, and with the
 `--against` flag for the compare against schema on `buf breaking`.
 
 For each of `buf {build,lint,breaking,generate,ls-files}`, the schema is
@@ -89,7 +89,7 @@ interpret the schema at the path.
 
 ### format option
 
-The `format` option can be used on any schema string to override the derived
+The `format` option can be used on any schema to override the derived
 format.
 
 Examples:
@@ -252,7 +252,7 @@ Examples:
 ### protofile
 
 A local proto file. The path can be either relative or absolute, similar to the
-[dir](#dir) schema input. This is a special input that uses the file and its imports as
+[dir](#dir) input. This is a special input that uses the file and its imports as
 the input to `buf` commands. If a local
 [configuration](configuration/overview.md) file is found, dependencies specified
 are used to resolve file imports first, followed by the local filesystem. If
