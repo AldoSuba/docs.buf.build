@@ -398,7 +398,7 @@ invocations and use [configuration](#configuration) instead.
   https://developers.google.com/protocol-buffers/docs/reference/go-generated
 [go_package]:
   https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L391
-[hosted]: ../bsr/remote-generation/overview.mdx#hosted-plugins
+[hosted]: ../reference/deprecated/remote-generation/overview.mdx#hosted-plugins
 [input]: /reference/inputs.md
 [java_multiple_files]:
   https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L363
@@ -417,7 +417,7 @@ invocations and use [configuration](#configuration) instead.
   https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L447
 [php_namespace]:
   https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L442
-[plugins]: /bsr/remote-generation/concepts#plugins
+[plugins]: /reference/deprecated/remote-generation/concepts#plugins
 [protoc]: https://github.com/protocolbuffers/protobuf
 [ruby_package]:
   https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L452
