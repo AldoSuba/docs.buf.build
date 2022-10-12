@@ -1,7 +1,7 @@
-import Link from '@docusaurus/Link';
-import React from 'react';
+import Link from "@docusaurus/Link";
+import React from "react";
 
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 
 enum Kind {
   CONSTANT,
@@ -125,7 +125,13 @@ const urls: UrlProps[] = [
   {
     title: "Members of an organization",
     example: bsrEndpoint("acme/members"),
-    segments: [root, slash, variable("organization"), slash, constant("members")]
+    segments: [
+      root,
+      slash,
+      variable("organization"),
+      slash,
+      constant("members")
+    ]
   },
   {
     title: "Organizations a user belongs to",
@@ -227,7 +233,9 @@ const urls: UrlProps[] = [
   },
   {
     title: "Generated documentation for a specific reference",
-    example: bsrEndpoint("acme/paymentapis/docs/9a877cf260e1488d869a31fce3bea26d"),
+    example: bsrEndpoint(
+      "acme/paymentapis/docs/9a877cf260e1488d869a31fce3bea26d"
+    ),
     segments: [
       root,
       slash,
@@ -242,7 +250,9 @@ const urls: UrlProps[] = [
   },
   {
     title: "Code for a specific reference",
-    example: bsrEndpoint("acme/paymentapis/tree/9a877cf260e1488d869a31fce3bea26d"),
+    example: bsrEndpoint(
+      "acme/paymentapis/tree/9a877cf260e1488d869a31fce3bea26d"
+    ),
     segments: [
       root,
       slash,
@@ -257,7 +267,9 @@ const urls: UrlProps[] = [
   },
   {
     title: "Generated assets for a specific reference",
-    example: bsrEndpoint("acme/paymentapis/assets/9a877cf260e1488d869a31fce3bea26d"),
+    example: bsrEndpoint(
+      "acme/paymentapis/assets/9a877cf260e1488d869a31fce3bea26d"
+    ),
     segments: [
       root,
       slash,

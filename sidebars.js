@@ -43,13 +43,23 @@ const sidebars = {
     {
       type: "category",
       label: "Lint",
-      items: ["lint/overview", "lint/usage", "lint/configuration", "lint/rules"],
+      items: [
+        "lint/overview",
+        "lint/usage",
+        "lint/configuration",
+        "lint/rules"
+      ],
       collapsed: false
     },
     {
       type: "category",
       label: "Breaking Change Detection",
-      items: ["breaking/overview", "breaking/usage", "breaking/configuration", "breaking/rules"],
+      items: [
+        "breaking/overview",
+        "breaking/usage",
+        "breaking/configuration",
+        "breaking/rules"
+      ],
       collapsed: false
     },
     {
@@ -74,7 +84,7 @@ const sidebars = {
           customProps: {
             badge: {
               label: "beta",
-              severity: "info",
+              severity: "info"
             }
           }
         },
@@ -83,7 +93,6 @@ const sidebars = {
           label: "Remote generation",
           items: [
             "bsr/remote-generation/overview",
-            "bsr/remote-generation/go",
             "bsr/remote-generation/npm-registry",
             "bsr/remote-generation/remote-plugin-execution",
             "bsr/remote-generation/migrating-from-alpha"
@@ -96,7 +105,10 @@ const sidebars = {
     {
       type: "category",
       label: "Best Practices",
-      items: ["best-practices/style-guide", "best-practices/module-development"],
+      items: [
+        "best-practices/style-guide",
+        "best-practices/module-development"
+      ],
       collapsed: false
     },
     {
@@ -173,7 +185,7 @@ const sidebars = {
               customProps: {
                 badge: {
                   label: "alpha",
-                  severity: "info",
+                  severity: "info"
                 }
               },
               items: [
