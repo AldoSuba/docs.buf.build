@@ -77,7 +77,7 @@ projects={["breaking-change-detection"]} />
 `buf`'s breaking change detector works by comparing a previous version of your
 Protobuf schema to your current version. `buf` considers your current schema to
 be the "input" and your previous schema to be the "against input". This is
-represented by the first CLI argument `<input>` and the `--against` flag.
+represented by the first CLI argument `<schema>` and the `--against` flag.
 
 There are multiple ways to store and/or retrieve your previous schema version
 with `buf` inputs. The sections below outline some common scenarios and how to

@@ -129,10 +129,10 @@ The gazelle [extension](gazelle) can generate `buf_breaking_test` in either leve
 The Buf image file can be generated using:
 
 ```terminal
-$ buf build --exclude-imports -o image.bin <input>
+$ buf build --exclude-imports -o image.bin <schema>
 ```
 
-`<input>` can be the path to a buf module among [others](/reference/inputs).
+`<schema>` can be the path to a buf module among [others](/reference/inputs).
 
 We recommend storing the resulting Buf image file in a `testdata` directory and checking it in to version control. It should be updated as needed. In the case of repositories that follow a versioning scheme such as [semver](https://semver.org/). It can be updated on each new release either manually or a post release hook.
 

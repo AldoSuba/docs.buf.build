@@ -254,10 +254,10 @@ levels of granularity.
 You can generate an [Image][image] file like this:
 
 ```terminal
-$ buf build --exclude-imports -o image.bin <input>
+$ buf build --exclude-imports -o image.bin <schema>
 ```
 
-The `<input>` is often a directory containing a `buf.yaml`, but all of the other
+The `<schema>` is often a directory containing a `buf.yaml`, but all of the other
 [Input formats](/reference/inputs) are also supported.
 
 We recommend storing the Image file in a `testdata` directory and checking it in
