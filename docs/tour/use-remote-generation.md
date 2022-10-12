@@ -1,6 +1,6 @@
 ---
-id: use-remote-generation
-title: 16 Bonus — Use remote generation
+id: use-generated-sdks
+title: 16 Bonus — Use generated SDKs
 ---
 
 In this section, you'll learn how to use Buf's Go Module Proxy to import the Go/gRPC client and
@@ -34,7 +34,7 @@ client/main.go:10:2: no required module provides package github.com/bufbuild/buf
 You can depend on the same Go/gRPC client and server stubs by adapting our import paths
 to use [`buf.build/grpc/templates/go`](https://buf.build/grpc/templates/go),
 which is one of the BSR's [hosted
-templates](/bsr/remote-generation/overview.md#hosted-templates).
+templates](../bsr/remote-generation/overview.md#hosted-plugins).
 
 In short, the `go-grpc` template acts exactly like the local `buf.gen.yaml` template you just
 removed. It executes the `protoc-gen-go` and `protoc-gen-go-grpc` plugins you used before, but with
@@ -45,19 +45,19 @@ derived from the name of the module you want to generate *for* and the name of t
 to generate *with*:
 
 <Syntax
-	title="Generated Go module path syntax"
-	examples={["go.buf.build/bufbuild/connect-go/bufbuild/eliza"]}
-	segments={[
-    {"label": "go.buf.build", "kind": "constant"},
-    {"separator": "/"},
-    {"label": "template owner", "kind": "variable"},
-    {"separator": "/"},
-    {"label": "template name", "kind": "variable"},
-    {"separator": "/"},
-    {"label": "module owner", "kind": "variable"},
-    {"separator": "/"},
-    {"label": "module name", "kind": "variable"},
-  ]}
+title="Generated Go module path syntax"
+examples={["go.buf.build/bufbuild/connect-go/bufbuild/eliza"]}
+segments={[
+{"label": "go.buf.build", "kind": "constant"},
+{"separator": "/"},
+{"label": "template owner", "kind": "variable"},
+{"separator": "/"},
+{"label": "template name", "kind": "variable"},
+{"separator": "/"},
+{"label": "module owner", "kind": "variable"},
+{"separator": "/"},
+{"label": "module name", "kind": "variable"},
+]}
 />
 
 With the module `buf.build/$BUF_USER/petapis` and template `buf.build/grpc/templates/go`, for example, the
@@ -128,7 +128,7 @@ $ go run server/main.go
 ... Listening on 127.0.0.1:8080
 ```
 
-In a separate terminal, run the client and you'll see a successful `PutPet` operation:
+In a separate terminal, run the client, and you'll see a successful `PutPet` operation:
 
 ```terminal
 $ go run client/main.go
@@ -179,7 +179,7 @@ versioned. The challenge with versioning remote generation is that the generated
 of two inputs:
 
 * The Protobuf module
-* The [template](/bsr/remote-generation/overview.md#hosted-templates) version
+* The [template](../bsr/remote-generation/overview.md#hosted-plugins) version
 
 The lowest common denominator of the language registry ecosystems we surveyed is "semantic
 versioning without builds or pre-releases", so versions of the form `v1.2.3`.
@@ -188,27 +188,27 @@ To ensure that the BSR can create consistent, lossless synthetic versions, Buf s
 versioning schemes of both inputs. Both the Protobuf module version and the template version are
 represented as **monotonically increasing integers**.
 
-  - For hosted templates, the BSR enforces a version of the form `v1`, `v2`, `vN...`.
-  - For Protobuf modules, BSR uses the **commit sequence ID**, an integer that uniquely identifies a
-    commit. It's calculated by counting the number of commits since the first commit of a module
-    (the first commit has a sequence ID of `1`, the second commit has a sequence ID of `2`, and so
-    on).
+- For hosted templates, the BSR enforces a version of the form `v1`, `v2`, `vN...`.
+- For Protobuf modules, BSR uses the **commit sequence ID**, an integer that uniquely identifies a
+  commit. It's calculated by counting the number of commits since the first commit of a module
+  (the first commit has a sequence ID of `1`, the second commit has a sequence ID of `2`, and so
+  on).
 
 With these simplified versioning schemes, the BSR creates a synthetic version that takes this form:
 
 import Syntax from "@site/src/components/Syntax";
 
 <Syntax
-  title="Synthetic version syntax"
-  examples={["v1.3.5", "v1.2.26"]}
-  segments={[
-    {label: "v", kind: "constant"},
-    {label: "1", kind: "constant"},
-    {separator: "."},
-    {label: "templateVersion", kind: "variable", href: "/bsr/remote-generation/overview#templates"},
-    {separator: "."},
-    {label: "commitSequenceID", kind: "variable", href: "/bsr/remote-generation/overview#commits"},
-  ]}
+title="Synthetic version syntax"
+examples={["v1.3.5", "v1.2.26"]}
+segments={[
+{label: "v", kind: "constant"},
+{label: "1", kind: "constant"},
+{separator: "."},
+{label: "templateVersion", kind: "variable", href: "/bsr/remote-generation/overview#templates"},
+{separator: "."},
+{label: "commitSequenceID", kind: "variable", href: "/bsr/remote-generation/overview#commits"},
+]}
 />
 
 In the example above, the version `v1.3.5` represents the **3**rd version of a hosted template and the
