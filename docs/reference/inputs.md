@@ -89,7 +89,7 @@ interpret the schema at the path.
 
 ### format option
 
-The `format` option can be used on any schema to override the derived
+The `format` option can be used on any flag or argument to override the derived
 format.
 
 Examples:
