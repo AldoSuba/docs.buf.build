@@ -3,9 +3,9 @@ id: plugin-example
 title: Authoring a plugin
 ---
 
-> The [remote code generation](/bsr/remote-generation/overview) feature is
+> The [remote code generation](./overview.mdx) feature is
 > currently in **alpha**. We started with Go and have plans to add support for
-> other languages. [Let us know](/contact.md) which language we should tackle
+> other languages. [Let us know](../../../contact.md) which language we should tackle
 > next.
 
 The purpose of this guide is to walk you through a concrete example of how to

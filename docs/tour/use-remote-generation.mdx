@@ -3,7 +3,7 @@ id: use-remote-generation
 title: 16 Bonus — Use remote generation
 ---
 
-> The [remote code generation](/bsr/remote-generation/overview) feature is
+> The [remote code generation](/reference/deprecated/remote-generation/overview) feature is
 > currently in **alpha**. We started with Go and have plans to add support for
 > other languages. [Let us know](/contact.md) which language we should tackle
 > next.
@@ -41,14 +41,14 @@ You can depend on the same Go/gRPC client and server stubs by adapting our
 import paths to use
 [`buf.build/grpc/templates/go`](https://buf.build/grpc/templates/go), which is
 one of the BSR's
-[hosted templates](/bsr/remote-generation/overview.mdx#hosted-templates).
+[hosted templates](/reference/deprecated/remote-generation/overview.mdx#hosted-templates).
 
 In short, the `go-grpc` template acts exactly like the local `buf.gen.yaml`
 template you just removed. It executes the `protoc-gen-go` and
 `protoc-gen-go-grpc` plugins you used before, but with the important difference
 that the execution happens remotely, on BSR.
 
-The [Go module path](../bsr/remote-generation/overview.mdx#the-go-module-path)
+The [Go module path](../reference/deprecated/remote-generation/overview.mdx#the-go-module-path)
 you need to use is derived from the name of the module you want to generate
 _for_ and the name of the template you want to generate _with_:
 
@@ -191,7 +191,7 @@ be aware of how it's versioned. The challenge with versioning remote generation
 is that the generated code is the product of two inputs:
 
 - The Protobuf module
-- The [template](/bsr/remote-generation/overview.mdx#hosted-templates) version
+- The [template](/reference/deprecated/remote-generation/overview.mdx#hosted-templates) version
 
 The lowest common denominator of the language registry ecosystems we surveyed is
 "semantic versioning without builds or pre-releases", so versions of the form
@@ -224,13 +224,13 @@ import Syntax from "@site/src/components/Syntax";
     {
       label: "templateVersion",
       kind: "variable",
-      href: "/bsr/remote-generation/overview#templates"
+      href: "/reference/deprecated/remote-generation/overview#templates"
     },
     { separator: "." },
     {
       label: "commitSequenceID",
       kind: "variable",
-      href: "/bsr/remote-generation/overview#commits"
+      href: "/reference/deprecated/remote-generation/overview#commits"
     }
   ]}
 />

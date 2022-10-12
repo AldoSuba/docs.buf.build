@@ -26,10 +26,10 @@ const links: Record<string, string> = {
   module: "/bsr/overview#modules",
   organization: "/bsr/user-management#organization-roles",
   owner: "/bsr/user-management#owner",
-  plugin: "/bsr/remote-generation/concepts#plugins",
+  plugin: "/reference/deprecated/remote-generation/concepts#plugins",
   reference: "/bsr/overview#referencing-a-module",
   repository: "/bsr/overview#modules",
-  template: "/bsr/remote-generation/concepts#templates",
+  template: "/reference/deprecated/remote-generation/concepts#templates",
   user: "/bsr/user-management"
 };
 
