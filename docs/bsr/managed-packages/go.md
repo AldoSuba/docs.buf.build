@@ -257,7 +257,7 @@ To generate Go code from private modules you'll need to make sure the Go tooling
 [connect-demo]: https://github.com/bufbuild/connect-demo
 [connect-go]: https://buf.build/library/connect-go
 [goproxy]: https://golang.org/ref/mod#goproxy-protocol
-[modules]: ../overview.mdx#modules
+[modules]: docs/bsr/overview.mdx#modules
 [netrc]: https://golang.org/ref/mod#private-module-proxy-auth
 [private]: https://golang.org/ref/mod#private-modules
 [settings]: https://buf.build/settings/user
