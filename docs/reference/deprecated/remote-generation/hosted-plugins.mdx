@@ -32,8 +32,8 @@ custom Protobuf plugins.
 All you need to get started is:
 
 - The `buf` CLI
-- A [`buf.gen.yaml`](../../configuration/v1/buf-gen-yaml.md) file
-- An [input](../../reference/inputs.md) of your choice
+- A [`buf.gen.yaml`](../../../configuration/v1/buf-gen-yaml.md) file
+- An [input](../inputs.md) of your choice
 
 With this setup a single developer or thousands of developers at a large
 organization are able to achieve stable and reproducible code generation, while
@@ -106,100 +106,102 @@ omitted, if you want to always use the latest version of the plugin.
 
 Create a template file with these contents:
 
+
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 <Tabs
-  groupId="language-selection"
-  defaultValue="go"
-  values={[
-    {label: 'Go', value: 'go'},
-    {label: 'JavaScript', value: 'javascript'},
-    {label: 'Python', value: 'python'},
-    {label: 'Ruby', value: 'ruby'},
-    {label: 'Java', value: 'java'},
-  ]}>
-  <TabItem value="go">
+    groupId="language-selection"
+    defaultValue="go"
+    values={[
+        {label: 'Go', value: 'go'},
+        {label: 'JavaScript', value: 'javascript'},
+        {label: 'Python', value: 'python'},
+        {label: 'Ruby', value: 'ruby'},
+        {label: 'Java', value: 'java'},
+    ]}>
+    <TabItem value="go">
 
-```yaml title=buf.gen.yaml
-version: v1
-managed:
-  enabled: true
-  go_package_prefix:
-    default: github.com/organization/repository/gen/go
-plugins:
-  - remote: buf.build/protocolbuffers/plugins/go:v1.27.1-1
-    out: gen/go
-    opt: paths=source_relative
-  - remote: buf.build/grpc/plugins/go:v1.1.0-1
-    out: gen/go
-    opt:
-      - paths=source_relative
-      - require_unimplemented_servers=false
-```
+        ```yaml title=buf.gen.yaml
+        version: v1
+        managed:
+        enabled: true
+        go_package_prefix:
+        default: github.com/organization/repository/gen/go
+        plugins:
+        - remote: buf.build/protocolbuffers/plugins/go:v1.27.1-1
+        out: gen/go
+        opt: paths=source_relative
+        - remote: buf.build/grpc/plugins/go:v1.1.0-1
+        out: gen/go
+        opt:
+        - paths=source_relative
+        - require_unimplemented_servers=false
+        ```
 
-  </TabItem>
-  <TabItem value="javascript">
+    </TabItem>
+    <TabItem value="javascript">
 
-```yaml title=buf.gen.yaml
-version: v1
-managed:
-  enabled: true
-plugins:
-  - remote: buf.build/protocolbuffers/plugins/js:v3.19.1-1
-    out: gen/js
-    opt:
-      - import_style=commonjs
-      - binary
-  - remote: buf.build/grpc/plugins/node:v1.11.2-1
-    out: gen/js
-    opt:
-      - import_style=commonjs
-```
+        ```yaml title=buf.gen.yaml
+        version: v1
+        managed:
+        enabled: true
+        plugins:
+        - remote: buf.build/protocolbuffers/plugins/js:v3.19.1-1
+        out: gen/js
+        opt:
+        - import_style=commonjs
+        - binary
+        - remote: buf.build/grpc/plugins/node:v1.11.2-1
+        out: gen/js
+        opt:
+        - import_style=commonjs
+        ```
 
-  </TabItem>
-  <TabItem value="python">
+    </TabItem>
+    <TabItem value="python">
 
-```yaml title=buf.gen.yaml
-version: v1
-managed:
-  enabled: true
-plugins:
-  - remote: buf.build/protocolbuffers/plugins/python:v3.19.1-1
-    out: gen/python
-  - remote: buf.build/grpc/plugins/python:v1.41.1-1
-    out: gen/python
-```
+        ```yaml title=buf.gen.yaml
+        version: v1
+        managed:
+        enabled: true
+        plugins:
+        - remote: buf.build/protocolbuffers/plugins/python:v3.19.1-1
+        out: gen/python
+        - remote: buf.build/grpc/plugins/python:v1.41.1-1
+        out: gen/python
+        ```
 
-  </TabItem>
-  <TabItem value="ruby">
+    </TabItem>
+    <TabItem value="ruby">
 
-```yaml title=buf.gen.yaml
-version: v1
-managed:
-  enabled: true
-plugins:
-  - remote: buf.build/protocolbuffers/plugins/ruby:v3.19.1-1
-    out: gen/ruby
-  - remote: buf.build/grpc/plugins/ruby:v1.41.1-1
-    out: gen/ruby
-```
+        ```yaml title=buf.gen.yaml
+        version: v1
+        managed:
+        enabled: true
+        plugins:
+        - remote: buf.build/protocolbuffers/plugins/ruby:v3.19.1-1
+        out: gen/ruby
+        - remote: buf.build/grpc/plugins/ruby:v1.41.1-1
+        out: gen/ruby
+        ```
 
-  </TabItem>
-  <TabItem value="java">
+    </TabItem>
+    <TabItem value="java">
 
-```yaml title=buf.gen.yaml
-version: v1
-managed:
-  enabled: true
-plugins:
-  - remote: buf.build/protocolbuffers/plugins/java:v3.19.1-1
-    out: gen/java
-  - remote: buf.build/grpc/plugins/java:v1.42.1-1
-    out: gen/java
-```
+        ```yaml title=buf.gen.yaml
+        version: v1
+        managed:
+        enabled: true
+        plugins:
+        - remote: buf.build/protocolbuffers/plugins/java:v3.19.1-1
+        out: gen/java
+        - remote: buf.build/grpc/plugins/java:v1.42.1-1
+        out: gen/java
+        ```
 
-  </TabItem>
+    </TabItem>
 </Tabs>
 
 Note, we're using the `remote` key instead of `name` to reference a remote
@@ -221,90 +223,90 @@ $ buf generate buf.build/demolab/theweather
 You should end up with this structure:
 
 <Tabs
-  groupId="language-selection"
-  defaultValue="go"
-  values={[
-    {label: 'Go', value: 'go'},
-    {label: 'JavaScript', value: 'javascript'},
-    {label: 'Python', value: 'python'},
-    {label: 'Ruby', value: 'ruby'},
-    {label: 'Java', value: 'java'},
-  ]}>
-  <TabItem value="go">
+    groupId="language-selection"
+    defaultValue="go"
+    values={[
+        {label: 'Go', value: 'go'},
+        {label: 'JavaScript', value: 'javascript'},
+        {label: 'Python', value: 'python'},
+        {label: 'Ruby', value: 'ruby'},
+        {label: 'Java', value: 'java'},
+    ]}>
+    <TabItem value="go">
 
-```sh
-.
-├── buf.gen.yaml
-└── gen
-    └── go
+        ```sh
+        .
+        ├── buf.gen.yaml
+        └── gen
+        └── go
         └── weather
-            └── v1
-                ├── weather.pb.go
-                └── weather_grpc.pb.go
-```
+        └── v1
+        ├── weather.pb.go
+        └── weather_grpc.pb.go
+        ```
 
-  </TabItem>
-  <TabItem value="javascript">
+    </TabItem>
+    <TabItem value="javascript">
 
-```sh
-.
-├── buf.gen.yaml
-└── gen
-    └── js
+        ```sh
+        .
+        ├── buf.gen.yaml
+        └── gen
+        └── js
         └── weather
-            └── v1
-                ├── weather_grpc_pb.js
-                └── weather_pb.js
-```
+        └── v1
+        ├── weather_grpc_pb.js
+        └── weather_pb.js
+        ```
 
-  </TabItem>
-  <TabItem value="python">
+    </TabItem>
+    <TabItem value="python">
 
-```sh
-.
-├── buf.gen.yaml
-└── gen
-    └── python
+        ```sh
+        .
+        ├── buf.gen.yaml
+        └── gen
+        └── python
         └── weather
-            └── v1
-                ├── weather_pb2.py
-                └── weather_pb2_grpc.py
-```
+        └── v1
+        ├── weather_pb2.py
+        └── weather_pb2_grpc.py
+        ```
 
-  </TabItem>
-  <TabItem value="ruby">
+    </TabItem>
+    <TabItem value="ruby">
 
-```sh
-.
-├── buf.gen.yaml
-└── gen
-    └── ruby
+        ```sh
+        .
+        ├── buf.gen.yaml
+        └── gen
+        └── ruby
         └── weather
-            └── v1
-                ├── weather_pb.rb
-                └── weather_services_pb.rb
-```
+        └── v1
+        ├── weather_pb.rb
+        └── weather_services_pb.rb
+        ```
 
-  </TabItem>
-  <TabItem value="java">
+    </TabItem>
+    <TabItem value="java">
 
-```sh
-.
-├── buf.gen.yaml
-└── gen
-    └── java
+        ```sh
+        .
+        ├── buf.gen.yaml
+        └── gen
+        └── java
         └── com
-            └── weather
-                └── v1
-                    ├── GetWeatherRequest.java
-                    ├── GetWeatherRequestOrBuilder.java
-                    ├── GetWeatherResponse.java
-                    ├── GetWeatherResponseOrBuilder.java
-                    ├── WeatherProto.java
-                    └── WeatherServiceGrpc.java
-```
+        └── weather
+        └── v1
+        ├── GetWeatherRequest.java
+        ├── GetWeatherRequestOrBuilder.java
+        ├── GetWeatherResponse.java
+        ├── GetWeatherResponseOrBuilder.java
+        ├── WeatherProto.java
+        └── WeatherServiceGrpc.java
+        ```
 
-  </TabItem>
+    </TabItem>
 </Tabs>
 
 ## Wrapping up

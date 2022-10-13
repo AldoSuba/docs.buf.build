@@ -266,7 +266,7 @@ To generate Go code from private modules you'll need to make sure the Go tooling
 
 [goproxy]: https://golang.org/ref/mod#goproxy-protocol
 
-[modules]: docs/bsr/overview.mdx#modules
+[modules]: /docs/bsr/overview.mdx#modules
 
 [netrc]: https://golang.org/ref/mod#private-module-proxy-auth
 

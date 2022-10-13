@@ -279,7 +279,7 @@ The plugins themselves are still hosted on the BSR and can be used with `buf gen
 - https://buf.build/library/js
 - https://buf.build/library/grpc-web
 
-[bsr-hosted-plugins]: docs/generate/remote-generation.md
+[bsr-hosted-plugins]: /docs/generate/remote-generation.md
 
 [bsr-plugins]: https://buf.build/plugins
 
@@ -299,7 +299,7 @@ The plugins themselves are still hosted on the BSR and can be used with `buf gen
 
 [bufbuild-plugins-issue]: https://github.com/bufbuild/plugins/issues/new/choose
 
-[buf-generate]: docs/generate/usage.mdx
+[buf-generate]: /docs/generate/usage.mdx
 
 [buf-tag-18]: https://github.com/bufbuild/buf/releases/tag/v1.8.0
 
