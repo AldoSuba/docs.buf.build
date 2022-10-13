@@ -5,12 +5,12 @@ title: NPM registry
 
 :::note
 
-The alpha [JavaScript/TypeScript documentation](../../reference/deprecated/remote-generation/js.md) has moved to the
+The alpha [JavaScript/TypeScript documentation](../../reference/deprecated/remote-generation/js.mdx) has moved to the
 Reference section.
 
 :::
 
-The [Buf Schema Registry](../../bsr/overview.md) (BSR) supports generated SDKs for [JavaScript] and [TypeScript]. With
+The [Buf Schema Registry](../../bsr/overview.mdx) (BSR) supports generated SDKs for [JavaScript] and [TypeScript]. With
 this feature, you can push [Buf modules][modules] to the BSR and install code stubs generated from those modules using
 dependency management tools like [npm] and [Yarn].
 
@@ -128,7 +128,7 @@ the [`library_connect-web`](https://buf.build/library/connect-web) plugin.
 ## Package versions
 
 By default, when you `npm install` a [Buf module][modules], the BSR generates code from the most
-recent [reference](../overview.md#referencing-a-module) for the module. But you can also install a specific package
+recent [reference](../overview.mdx#referencing-a-module) for the module. But you can also install a specific package
 version using npm's standard `@` syntax referencing an explicit version or a draft name.
 
 ```terminal

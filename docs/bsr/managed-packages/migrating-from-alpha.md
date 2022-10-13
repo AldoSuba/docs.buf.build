@@ -279,7 +279,7 @@ The plugins themselves are still hosted on the BSR and can be used with `buf gen
 - https://buf.build/library/js
 - https://buf.build/library/grpc-web
 
-[bsr-hosted-plugins]: /reference/deprecated/remote-generation/remote-plugin-execution
+[bsr-hosted-plugins]: docs/generate/remote-generation
 
 [bsr-plugins]: https://buf.build/plugins
 
@@ -303,9 +303,9 @@ The plugins themselves are still hosted on the BSR and can be used with `buf gen
 
 [buf-tag-18]: https://github.com/bufbuild/buf/releases/tag/v1.8.0
 
-[go]: /docs/reference/deprecated/remote-generation/go
+[go]: go
 
-[npm-registry]: docs/reference/deprecated/remote-generation/npm-registry
+[npm-registry]: npm-registry
 
 [protobuf-es]: https://www.npmjs.com/package/@bufbuild/protoc-gen-es
 
