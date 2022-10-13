@@ -34,14 +34,21 @@ module path**. The import path for generated Go code has this format:
 
 import Syntax from "@site/src/components/Syntax";
 
-<Syntax title="Generated Go module path syntax" examples={[
-"buf.build/gen/go/bufbuild/eliza/library/connect-go" ]} segments={[ {"label":
-"buf.build/gen/go", "kind": "constant"}, {"separator": "/"}, {"label":
-"moduleOwner", "kind": "variable", href: "/bsr/overview#modules"}, {"separator":
-"/"}, {"label": "moduleName", "kind": "variable", href:
-"/bsr/overview#modules"}, {"separator": "/"}, {"label": "pluginOwner", "kind":
-"variable", href: "#proxy"}, {"separator": "/"}, {"label": "pluginName", "kind":
-"variable", href: "#proxy"}, ]} />
+<Syntax
+  title="Generated Go module path syntax"
+  examples={["buf.build/gen/go/bufbuild/eliza/library/connect-go"]}
+  segments={[
+    { label: "buf.build/gen/go", kind: "constant" },
+    { separator: "/" },
+    { label: "moduleOwner", kind: "variable", href: "/bsr/overview#modules" },
+    { separator: "/" },
+    { label: "moduleName", kind: "variable", href: "/bsr/overview#modules" },
+    { separator: "/" },
+    { label: "pluginOwner", kind: "variable", href: "#proxy" },
+    { separator: "/" },
+    { label: "pluginName", kind: "variable", href: "#proxy" }
+  ]}
+/>
 
 So if you wanted to, for example, generate the [`acme/paymentapis`][api]
 Protobuf module using the [`connect-go`][connect-go] plugin, you could install
@@ -101,11 +108,19 @@ $ go get buf.build/gen/go/acme/paymentapis/library/connect-go@feature-1
 
 ### Version syntax
 
-<Syntax title="Go module version syntax"
-examples={["0.2.1-20220706172350-dbde79169a01.3"]} segments={[ {label:
-"pluginVersion", kind: "variable"}, {separator: "-"}, {label: "moduleTimestamp",
-kind: "variable"}, {separator: "-"}, {label: "moduleCommit", kind: "variable"},
-{separator: "."}, {label: "pluginRevision", kind: "variable"} ] } />
+<Syntax
+  title="Go module version syntax"
+  examples={["0.2.1-20220706172350-dbde79169a01.3"]}
+  segments={[
+    { label: "pluginVersion", kind: "variable" },
+    { separator: "-" },
+    { label: "moduleTimestamp", kind: "variable" },
+    { separator: "-" },
+    { label: "moduleCommit", kind: "variable" },
+    { separator: "." },
+    { label: "pluginRevision", kind: "variable" }
+  ]}
+/>
 
 With package versions (valid [semver][semver]):
 
@@ -242,16 +257,14 @@ is correctly configured.
    For more information, see the official [private modules
    documentation][private].
 
-[api]: https://buf.build/acme/paymentapis
-[go]: https://golang.org
-[eliza-module]: https://buf.build/bufbuild/eliza/
-[connect]: https://connect.build
-[connect-demo]: https://github.com/bufbuild/connect-demo
-[connect-go]: https://buf.build/library/connect-go
-[goproxy]: https://golang.org/ref/mod#goproxy-protocol
-[modules]: ../overview.mdx#modules
-[netrc]: https://golang.org/ref/mod#private-module-proxy-auth
-[private]: https://golang.org/ref/mod#private-modules
-[settings]: https://buf.build/settings/user
-
-deprecated/remote-generation/go.md
+- [api](https://buf.build/acme/paymentapis)
+- [go](https://golang.org)
+- [eliza-module](https://buf.build/bufbuild/eliza/)
+- [connect](https://connect.build)
+- [connect-demo](https://github.com/bufbuild/connect-demo)
+- [connect-go](https://buf.build/library/connect-go)
+- [goproxy](https://golang.org/ref/mod#goproxy-protocol)
+- [modules](../overview.mdx#modules)
+- [netrc](https://golang.org/ref/mod#private-module-proxy-auth)
+- [private](https://golang.org/ref/mod#private-modules)
+- [settings](https://buf.build/settings/user)
