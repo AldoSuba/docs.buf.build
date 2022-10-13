@@ -161,12 +161,8 @@
       "destination": "/bsr/introduction"
     },
     {
-      "source": "/bsr/managed-packages",
-      "destination": "/bsr/managed-packages/overview"
-    },
-    {
-      "source": "/reference/deprecated/remote-generation",
-      "destination": "/reference/deprecated/remote-generation/overview"
+      "source": "/bsr/remote-generation",
+      "destination": "/bsr/remote-generation/overview"
     },
     {
       "source": "/best-practices",
@@ -206,19 +202,19 @@
     },
     {
       "source": "/bsr-npm",
-      "destination": "/reference/deprecated/remote-generation/js"
+      "destination": "/bsr/remote-generation/js"
     },
     {
-      "source": "/reference/deprecated/remote-generation/npm",
-      "destination": "/reference/deprecated/remote-generation/js"
+      "source": "/bsr/remote-generation/npm",
+      "destination": "/bsr/remote-generation/js"
     },
     {
-      "source": "/reference/deprecated/remote-generation/consuming-generated-code",
-      "destination": "/reference/deprecated/remote-generation/go"
+      "source": "/bsr/remote-generation/consuming-generated-code",
+      "destination": "/bsr/remote-generation/go"
     },
     {
-      "source": "/reference/deprecated/remote-generation/concepts",
-      "destination": "/reference/deprecated/remote-generation/overview#concepts"
+      "source": "/bsr/remote-generation/concepts",
+      "destination": "/bsr/remote-generation/overview#concepts"
     }
   ]
 }
