@@ -9,7 +9,6 @@ The alpha [Go documentation](../../reference/deprecated/remote-generation/go.mdx
 
 :::
 
-
 The [Buf Schema Registry](../../bsr/overview.mdx) (BSR) supports serving generated SDKs for [Go].
 With this feature, you can push [Buf modules][modules] to the BSR and `go get` Go code stubs generated
 from those Protobuf definitions&mdash;without ever needing to generate code on your own. Go source code
@@ -66,7 +65,9 @@ steps:
 
 ## Module versions
 
-By default, when you `go get` a [Buf module][modules], the BSR generates code from the most recent [reference](../overview.mdx#referencing-a-module) for the module. But you can also install a specific module version using `go get`'s `@` syntax referencing an explicit version or a draft name.
+By default, when you `go get` a [Buf module][modules], the BSR generates code from the most
+recent [reference](../overview.mdx#referencing-a-module) for the module. But you can also install a specific module
+version using `go get`'s `@` syntax referencing an explicit version or a draft name.
 
 #### Latest version
 
@@ -214,7 +215,8 @@ To generate Go code from private modules you'll need to make sure the Go tooling
 
 1. Log into the BSR:
 
-   The `go` tool uses [`.netrc` credentials][netrc] if available and you can use `buf registry login` to add this to your `.netrc` file.
+   The `go` tool uses [`.netrc` credentials][netrc] if available and you can use `buf registry login` to add this to
+   your `.netrc` file.
    You can obtain an API token (password) from the [Settings page][settings].
 
     ```terminal
@@ -251,13 +253,23 @@ To generate Go code from private modules you'll need to make sure the Go tooling
    For more information, see the official [private modules documentation][private].
 
 [api]: https://buf.build/acme/paymentapis
+
 [go]: https://golang.org
+
 [eliza-module]: https://buf.build/bufbuild/eliza/
+
 [connect]: https://connect.build
+
 [connect-demo]: https://github.com/bufbuild/connect-demo
+
 [connect-go]: https://buf.build/library/connect-go
+
 [goproxy]: https://golang.org/ref/mod#goproxy-protocol
+
 [modules]: docs/bsr/overview.mdx#modules
+
 [netrc]: https://golang.org/ref/mod#private-module-proxy-auth
+
 [private]: https://golang.org/ref/mod#private-modules
+
 [settings]: https://buf.build/settings/user
