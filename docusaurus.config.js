@@ -13,7 +13,6 @@ module.exports = {
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
           admonitions: {
-            icons: "none"
           }
         },
         theme: {
