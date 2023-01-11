@@ -21,25 +21,25 @@ It can be a local .proto file, binary output of &#34;buf build&#34;, bsr module 
 e.g.
 $ buf convert example.proto --type=Foo.proto --from=payload.json --to=output.bin
 
-# Other examples
+### Other examples:
 
-# All of &lt;input&gt;, &#34;--from&#34; and &#34;to&#34; accept formatting options
+### &lt;input&gt;, &#34;--from&#34; and &#34;to&#34; accept formatting options
 
 $ buf convert example.proto#format=bin --type=buf.Foo --from=payload#format=json --to=out#format=json
 
-# Both &lt;input&gt; and &#34;--from&#34; accept stdin redirecting
+### Both &lt;input&gt; and &#34;--from&#34; accept stdin redirecting
 
 $ buf convert &lt;(buf build -o -)#format=bin --type=foo.Bar --from=&lt;(echo &#34;{\&#34;one\&#34;:\&#34;55\&#34;}&#34;)#format=json
 
-# Redirect from stdin to --from
+### Redirect from stdin to --from
 
 $ echo &#34;{\&#34;one\&#34;:\&#34;55\&#34;}&#34; | buf convert buf.proto --type buf.Foo --from -#format=json
 
-# Redirect from stdin to &lt;input&gt;
+### Redirect from stdin to &lt;input&gt;
 
 $ buf build -o - | buf convert -#format=bin --type buf.Foo --from=payload.json
 
-# Use a module on the bsr
+### Use a module on the bsr
 
 buf convert buf.build/&lt;org&gt;/&lt;repo&gt; --type buf.Foo --from=payload.json 
 
@@ -61,7 +61,7 @@ buf beta convert <input> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log_format string   The log format [text,color,json]. (default "color")
+      --log-format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```

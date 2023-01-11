@@ -24,7 +24,7 @@ buf beta registry commit list <buf.build/owner/repo[:ref]> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log_format string   The log format [text,color,json]. (default "color")
+      --log-format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
