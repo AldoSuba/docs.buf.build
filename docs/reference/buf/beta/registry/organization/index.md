@@ -2,7 +2,7 @@
 id: index
 title: buf beta registry organization
 sidebar_label: overview
-sidebar_position: 3
+sidebar_position: 0
 ---
 Manage organizations.
 

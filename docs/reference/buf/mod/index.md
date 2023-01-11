@@ -2,7 +2,7 @@
 id: index
 title: buf mod
 sidebar_label: overview
-sidebar_position: 11
+sidebar_position: 0
 ---
 Manage Buf modules.
 

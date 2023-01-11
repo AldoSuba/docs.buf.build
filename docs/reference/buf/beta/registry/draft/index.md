@@ -2,7 +2,7 @@
 id: index
 title: buf beta registry draft
 sidebar_label: overview
-sidebar_position: 2
+sidebar_position: 0
 ---
 Manage a repository's drafts.
 

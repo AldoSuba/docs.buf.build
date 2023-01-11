@@ -2,7 +2,7 @@
 id: index
 title: buf beta
 sidebar_label: overview
-sidebar_position: 2
+sidebar_position: 0
 ---
 Beta commands. Unstable and likely to change.
 

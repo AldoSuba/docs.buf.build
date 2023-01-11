@@ -2,7 +2,7 @@
 id: index
 title: buf alpha plugin
 sidebar_label: overview
-sidebar_position: 1
+sidebar_position: 0
 ---
 Manage plugins on the Buf Schema Registry.
 

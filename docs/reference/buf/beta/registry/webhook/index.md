@@ -2,7 +2,7 @@
 id: index
 title: buf beta registry webhook
 sidebar_label: overview
-sidebar_position: 8
+sidebar_position: 0
 ---
 Manage webhooks for a repository on the Buf Schema Registry.
 

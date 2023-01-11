@@ -2,7 +2,7 @@
 id: index
 title: buf beta registry tag
 sidebar_label: overview
-sidebar_position: 6
+sidebar_position: 0
 ---
 Manage a repository's tags.
 

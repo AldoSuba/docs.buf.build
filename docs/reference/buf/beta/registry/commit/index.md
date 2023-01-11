@@ -2,7 +2,7 @@
 id: index
 title: buf beta registry commit
 sidebar_label: overview
-sidebar_position: 1
+sidebar_position: 0
 ---
 Manage a repository's commits.
 

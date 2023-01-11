@@ -2,7 +2,7 @@
 id: index
 title: buf registry
 sidebar_label: overview
-sidebar_position: 13
+sidebar_position: 0
 ---
 Manage assets on the Buf Schema Registry.
 

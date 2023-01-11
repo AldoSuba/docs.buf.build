@@ -2,7 +2,7 @@
 id: index
 title: buf beta registry template
 sidebar_label: overview
-sidebar_position: 7
+sidebar_position: 0
 ---
 Manage Protobuf templates on the Buf Schema Registry.
 

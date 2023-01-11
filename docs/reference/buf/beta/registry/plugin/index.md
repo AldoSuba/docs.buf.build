@@ -2,7 +2,7 @@
 id: index
 title: buf beta registry plugin
 sidebar_label: overview
-sidebar_position: 4
+sidebar_position: 0
 ---
 Manage Protobuf plugins.
 

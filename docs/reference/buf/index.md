@@ -3,7 +3,6 @@ id: index
 title: buf
 sidebar_label: overview
 sidebar_position: 0
-href: /
 ---
 version 1.11.1-dev
 
