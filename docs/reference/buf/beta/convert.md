@@ -19,13 +19,18 @@ $ buf convert &lt;input&gt; --type=&lt;type&gt; --from=&lt;payload&gt; --to=&lt;
 &lt;input&gt; is the same input as any other buf command. 
 It can be a local .proto file, binary output of &#34;buf build&#34;, bsr module or local buf module.
 e.g.
+
+
 $ buf convert example.proto --type=Foo.proto --from=payload.json --to=output.bin
 
 ### Other examples:
 
 ### &lt;input&gt;, &#34;--from&#34; and &#34;to&#34; accept formatting options
 
+
+```
 $ buf convert example.proto#format=bin --type=buf.Foo --from=payload#format=json --to=out#format=json
+```
 
 ### Both &lt;input&gt; and &#34;--from&#34; accept stdin redirecting
 
