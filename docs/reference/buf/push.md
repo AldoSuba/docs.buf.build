@@ -2,7 +2,7 @@
 id: push
 title: buf push
 sidebar_label: push
-sidebar_position: 12
+sidebar_position: 13
 ---
 Push a module to a registry.
 

@@ -2,7 +2,7 @@
 id: export
 title: buf export
 sidebar_label: export
-sidebar_position: 6
+sidebar_position: 7
 ---
 Export the files from the input location to an output location.
 
@@ -16,23 +16,27 @@ If no argument is specified, defaults to &#34;.&#34;.
 
 Examples:
 
-$ buf export &lt;input&gt; --output=&lt;output-dir&gt;
+	$ buf export &lt;input&gt; --output=&lt;output-dir&gt;
 
 input can be of the format [dir,git,mod,protofile,tar,targz,zip].
 
 output will be a directory with all of the .proto files in the &lt;input&gt;.
 
-# Export current directory to another local directory. 
-$ buf export . --output=&lt;output-dir&gt;
+Export current directory to another local directory. 
 
-# Export the latest remote module to a local directory.
-$ buf export buf.build/&lt;owner&gt;/&lt;repo&gt; --output=&lt;output-dir&gt;
+	$ buf export . --output=&lt;output-dir&gt;
 
-# Export a specific version of a remote module to a local directory.
-$ buf export buf.build/&lt;owner&gt;/&lt;repo&gt;:&lt;version&gt; --output=&lt;output-dir&gt;
+Export the latest remote module to a local directory.
 
-# Export a git repo to a local directory.
-$ buf export https://&lt;git-server&gt;/&lt;owner&gt;/&lt;repo&gt;.git --output=&lt;output-dir&gt; 
+	$ buf export buf.build/&lt;owner&gt;/&lt;repo&gt; --output=&lt;output-dir&gt;
+
+Export a specific version of a remote module to a local directory.
+
+	$ buf export buf.build/&lt;owner&gt;/&lt;repo&gt;:&lt;version&gt; --output=&lt;output-dir&gt;
+
+Export a git repo to a local directory.
+
+	$ buf export https://&lt;git-server&gt;/&lt;owner&gt;/&lt;repo&gt;.git --output=&lt;output-dir&gt; 
 
 ```
 buf export <input> [flags]

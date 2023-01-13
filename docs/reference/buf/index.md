@@ -4,7 +4,7 @@ title: buf
 sidebar_label: overview
 sidebar_position: 0
 ---
-version 1.11.1-dev
+version 1.12.1-dev
 
 The Buf CLI
 
@@ -35,6 +35,7 @@ buf [flags]
 * [buf breaking](breaking)	 - Verify that the input location has no breaking changes compared to the against location.
 * [buf build](build)	 - Build all Protobuf files from the specified input and output a Buf image.
 * [buf convert](convert)	 - Convert a message from binary to JSON or vice versa
+* [buf curl](curl)	 - Invoke an RPC endpoint, a la 'cURL'.
 * [buf export](export)	 - Export the files from the input location to an output location.
 * [buf format](format)	 - Format all Protobuf files from the specified input and output the result.
 * [buf generate](generate)	 - Generate stubs for protoc plugins using a template.

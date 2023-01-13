@@ -14,37 +14,33 @@ Use an input proto to interpret a proto/json message and convert it to a differe
 
 The simplest form is:
 
-$ buf convert &lt;input&gt; --type=&lt;type&gt; --from=&lt;payload&gt; --to=&lt;output&gt;
+	$ buf convert &lt;input&gt; --type=&lt;type&gt; --from=&lt;payload&gt; --to=&lt;output&gt;
 
 &lt;input&gt; is the same input as any other buf command. 
 It can be a local .proto file, binary output of &#34;buf build&#34;, bsr module or local buf module.
 e.g.
 
+	$ buf convert example.proto --type=Foo.proto --from=payload.json --to=output.bin
 
-$ buf convert example.proto --type=Foo.proto --from=payload.json --to=output.bin
+Other examples
 
-### Other examples:
+All of &lt;input&gt;, &#34;--from&#34; and &#34;to&#34; accept formatting options
 
-### &lt;input&gt;, &#34;--from&#34; and &#34;to&#34; accept formatting options
+	$ buf convert example.proto#format=bin --type=buf.Foo --from=payload#format=json --to=out#format=json
 
+Both &lt;input&gt; and &#34;--from&#34; accept stdin redirecting
 
-```
-$ buf convert example.proto#format=bin --type=buf.Foo --from=payload#format=json --to=out#format=json
-```
+	$ buf convert &lt;(buf build -o -)#format=bin --type=foo.Bar --from=&lt;(echo &#34;{\&#34;one\&#34;:\&#34;55\&#34;}&#34;)#format=json
 
-### Both &lt;input&gt; and &#34;--from&#34; accept stdin redirecting
+Redirect from stdin to --from
 
-$ buf convert &lt;(buf build -o -)#format=bin --type=foo.Bar --from=&lt;(echo &#34;{\&#34;one\&#34;:\&#34;55\&#34;}&#34;)#format=json
+	$ echo &#34;{\&#34;one\&#34;:\&#34;55\&#34;}&#34; | buf convert buf.proto --type buf.Foo --from -#format=json
 
-### Redirect from stdin to --from
+Redirect from stdin to &lt;input&gt;
 
-$ echo &#34;{\&#34;one\&#34;:\&#34;55\&#34;}&#34; | buf convert buf.proto --type buf.Foo --from -#format=json
+	$ buf build -o - | buf convert -#format=bin --type buf.Foo --from=payload.json
 
-### Redirect from stdin to &lt;input&gt;
-
-$ buf build -o - | buf convert -#format=bin --type buf.Foo --from=payload.json
-
-### Use a module on the bsr
+Use a module on the bsr
 
 buf convert buf.build/&lt;org&gt;/&lt;repo&gt; --type buf.Foo --from=payload.json 
 

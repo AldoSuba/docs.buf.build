@@ -2,7 +2,7 @@
 id: lint
 title: buf lint
 sidebar_label: lint
-sidebar_position: 9
+sidebar_position: 10
 ---
 Verify that the input location passes lint checks.
 

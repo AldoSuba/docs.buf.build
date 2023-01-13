@@ -2,7 +2,7 @@
 id: ls-files
 title: buf ls-files
 sidebar_label: ls-files
-sidebar_position: 10
+sidebar_position: 11
 ---
 List all Protobuf files for the input.
 
