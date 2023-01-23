@@ -81,68 +81,6 @@ const sidebars = {
         },
         {
             type: "category",
-            label: "The Buf Schema Registry (BSR)",
-            items: [
-                "bsr/introduction",
-                "bsr/overview",
-                "bsr/authentication",
-                "bsr/usage",
-                "bsr/documentation",
-                "bsr/user-management",
-                {
-                    type: "doc",
-                    id: "bsr/studio",
-                    customProps: {
-                        badge: {
-                            label: "beta",
-                            severity: "info"
-                        }
-                    }
-                },
-                {
-                    type: "category",
-                    label: "Remote Plugins",
-                    items: [
-                        "bsr/remote-plugins/overview",
-                        "bsr/remote-plugins/usage",
-                        "bsr/remote-plugins/migrating-from-alpha",
-                    ],
-                    customProps: {
-                        badge: {
-                            label: "new",
-                            severity: "info"
-                        }
-                    },
-                    collapsed: true
-                },
-                {
-                    type: "category",
-                    label: "Remote Packages",
-                    items: [
-                        "bsr/remote-packages/overview",
-                        "bsr/remote-packages/go",
-                        "bsr/remote-packages/npm",
-                        "bsr/remote-packages/migrating-from-alpha"
-                    ],
-                    customProps: {
-                        badge: {
-                            label: "new",
-                            severity: "info"
-                        }
-                    },
-                    collapsed: true
-                },
-                {
-                    type: "category",
-                    label: "Advanced Features",
-                    items: [],
-                    collapsed: true
-                },
-            ],
-            collapsed: false
-        },
-        {
-            type: "category",
             label: "The Buf CLI",
             items: [
                 {
@@ -192,6 +130,68 @@ const sidebars = {
                     type: "category",
                     label: "Invoking RPCs",
                     items: ["curl/usage"],
+                    collapsed: true
+                },
+                {
+                    type: "category",
+                    label: "Advanced Features",
+                    items: [],
+                    collapsed: true
+                },
+            ],
+            collapsed: false
+        },
+        {
+            type: "category",
+            label: "The Buf Schema Registry (BSR)",
+            items: [
+                "bsr/introduction",
+                "bsr/overview",
+                "bsr/authentication",
+                "bsr/usage",
+                "bsr/documentation",
+                "bsr/user-management",
+                {
+                    type: "doc",
+                    id: "bsr/studio",
+                    customProps: {
+                        badge: {
+                            label: "beta",
+                            severity: "info"
+                        }
+                    }
+                },
+                {
+                    type: "category",
+                    label: "Remote Plugins",
+                    items: [
+                        "bsr/remote-plugins/overview",
+                        "bsr/remote-plugins/usage",
+                        "bsr/remote-plugins/migrating-from-alpha",
+                    ],
+                    customProps: {
+                        badge: {
+                            label: "new",
+                            severity: "info"
+                        }
+                    },
+                    collapsed: true
+                },
+                {
+                    type: "category",
+                    label: "Remote Packages",
+                    items: [
+                        "bsr/remote-packages/overview",
+                        "bsr/remote-packages/go",
+                        "bsr/remote-packages/npm",
+                        "bsr/remote-packages/migrating-from-alpha"
+                    ],
+                    customProps: {
+                        badge: {
+                            label: "new",
+                            severity: "info"
+                        }
+                    },
                     collapsed: true
                 },
                 {
