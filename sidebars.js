@@ -2,8 +2,18 @@
 
 const sidebars = {
     docs: [
-        "introduction",
-        "installation",
+        {
+            type: "category",
+            label: "About",
+            items: [
+                "introduction",
+                "installation",
+                "editor-integration",
+                "faq",
+                "contact"
+            ],
+            collapsed: false
+        },
         {
             type: "category",
             label: "Tour",
@@ -39,51 +49,34 @@ const sidebars = {
         },
         {
             type: "category",
-            label: "Build",
-            items: ["build/usage"],
-            collapsed: false
-        },
-        {
-            type: "category",
-            label: "Generate",
+            label: "How To",
             items: [
-                "generate/usage",
-                "generate/managed-mode",
+                "how-to/replace-protoc-with-buf",
+                "how-to/iterate-on-modules",
+                "how-to/migrate-from-protolock",
+                "how-to/migrate-from-prototool",
+                {
+                    type: "category",
+                    label: "CI/CD",
+                    items: ["ci-cd/setup", "ci-cd/github-actions"],
+                    collapsed: true
+                },
+                {
+                    type: "category",
+                    label: "Best Practices",
+                    items: [
+                        "best-practices/style-guide",
+                        "best-practices/module-development"
+                    ],
+                    collapsed: true
+                },
+                {
+                    type: "category",
+                    label: "Build systems",
+                    items: ["build-systems/bazel"],
+                    collapsed: true
+                },
             ],
-            collapsed: false
-        },
-        {
-            type: "category",
-            label: "Lint",
-            items: [
-                "lint/overview",
-                "lint/usage",
-                "lint/configuration",
-                "lint/rules"
-            ],
-            collapsed: false
-        },
-        {
-            type: "category",
-            label: "Breaking Change Detection",
-            items: [
-                "breaking/overview",
-                "breaking/usage",
-                "breaking/configuration",
-                "breaking/rules"
-            ],
-            collapsed: false
-        },
-        {
-            type: "category",
-            label: "Format",
-            items: ["format/usage", "format/style"],
-            collapsed: false
-        },
-        {
-            type: "category",
-            label: "Invoking RPCs",
-            items: ["curl/usage"],
             collapsed: false
         },
         {
@@ -120,7 +113,7 @@ const sidebars = {
                             severity: "info"
                         }
                     },
-                    collapsed: false
+                    collapsed: true
                 },
                 {
                     type: "category",
@@ -137,71 +130,76 @@ const sidebars = {
                             severity: "info"
                         }
                     },
-                    collapsed: false
-                }
-            ],
-            collapsed: false
-        },
-        {
-            type: "category",
-            label: "Best Practices",
-            items: [
-                "best-practices/style-guide",
-                "best-practices/module-development"
-            ],
-            collapsed: false
-        },
-        {
-            type: "category",
-            label: "CI/CD",
-            items: ["ci-cd/setup", "ci-cd/github-actions"],
-            collapsed: false
-        },
-        {
-            type: "category",
-            label: "Build systems",
-            items: ["build-systems/bazel"],
-            collapsed: false
-        },
-        {
-            type: "category",
-            label: "How To",
-            items: [
-                "how-to/replace-protoc-with-buf",
-                "how-to/iterate-on-modules",
-                "how-to/migrate-from-protolock",
-                "how-to/migrate-from-prototool"
-            ],
-            collapsed: false
-        },
-        {
-            type: "category",
-            label: "Configuration",
-            items: [
-                "configuration/overview",
-                "configuration/v1beta1-migration-guide",
-                {
-                    type: "category",
-                    label: "v1",
-                    items: [
-                        "configuration/v1/buf-yaml",
-                        "configuration/v1/buf-lock",
-                        "configuration/v1/buf-gen-yaml",
-                        "configuration/v1/buf-work-yaml"
-                    ],
-                    collapsed: false
+                    collapsed: true
                 },
                 {
                     type: "category",
-                    label: "v1beta1",
+                    label: "Advanced Features",
+                    items: [],
+                    collapsed: true
+                },
+            ],
+            collapsed: false
+        },
+        {
+            type: "category",
+            label: "The Buf CLI",
+            items: [
+                {
+                    type: "category",
+                    label: "Build",
+                    items: ["build/usage"],
+                    collapsed: true
+                },
+                {
+                    type: "category",
+                    label: "Generate",
                     items: [
-                        "configuration/v1beta1/buf-yaml",
-                        "configuration/v1beta1/buf-lock",
-                        "configuration/v1beta1/buf-gen-yaml",
-                        "configuration/v1beta1/lint-rules"
+                        "generate/usage",
+                        "generate/managed-mode",
                     ],
                     collapsed: true
-                }
+                },
+                {
+                    type: "category",
+                    label: "Lint",
+                    items: [
+                        "lint/overview",
+                        "lint/usage",
+                        "lint/configuration",
+                        "lint/rules"
+                    ],
+                    collapsed: true
+                },
+                {
+                    type: "category",
+                    label: "Breaking Change Detection",
+                    items: [
+                        "breaking/overview",
+                        "breaking/usage",
+                        "breaking/configuration",
+                        "breaking/rules"
+                    ],
+                    collapsed: true
+                },
+                {
+                    type: "category",
+                    label: "Format",
+                    items: ["format/usage", "format/style"],
+                    collapsed: true
+                },
+                {
+                    type: "category",
+                    label: "Invoking RPCs",
+                    items: ["curl/usage"],
+                    collapsed: true
+                },
+                {
+                    type: "category",
+                    label: "Advanced Features",
+                    items: [],
+                    collapsed: true
+                },
             ],
             collapsed: false
         },
@@ -237,14 +235,42 @@ const sidebars = {
                             collapsed: true
                         }
                     ],
-                    collapsed: false
-                }
+                    collapsed: true
+                },
+                {
+                    type: "category",
+                    label: "Configuration",
+                    items: [
+                        "configuration/overview",
+                        "configuration/v1beta1-migration-guide",
+                        {
+                            type: "category",
+                            label: "v1",
+                            items: [
+                                "configuration/v1/buf-yaml",
+                                "configuration/v1/buf-lock",
+                                "configuration/v1/buf-gen-yaml",
+                                "configuration/v1/buf-work-yaml"
+                            ],
+                            collapsed: true
+                        },
+                        {
+                            type: "category",
+                            label: "v1beta1",
+                            items: [
+                                "configuration/v1beta1/buf-yaml",
+                                "configuration/v1beta1/buf-lock",
+                                "configuration/v1beta1/buf-gen-yaml",
+                                "configuration/v1beta1/lint-rules"
+                            ],
+                            collapsed: true
+                        }
+                    ],
+                    collapsed: true
+                },
             ],
             collapsed: false
         },
-        "editor-integration",
-        "faq",
-        "contact"
     ]
 };
 
