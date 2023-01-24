@@ -16,23 +16,23 @@ article on culinary social history.
 <Cards>
   <Card
     name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    url="../../tutorials/getting-started/getting-started-with-buf"
+    description="Get started with Buf CLI in no time with this easy-to-follow tutorial and revolutionize the way you work with Protocol Buffers!"
   />
   <Card
     name="🚧 How To"
-    url="#"
-    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
+    url="how-to"
+    description="Learn how to build efficient and accurate code with Buf Build: a powerful tool for working with Protocol Buffers, in this comprehensive guide."
   />
   <Card
     name="🧱 Reference"
-    url="#"
-    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
+    url="reference/overview"
+    description="Take your buf breaking change detection to the next level with this set of expert-approved rules and never miss a backwards-incompatible change again!"
   />
   <Card
     name="🏗 Explanation"
-    url="#"
-    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
+    url="../build/explanation"
+    description=""
   />
 </Cards>
 
