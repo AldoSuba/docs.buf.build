@@ -1,0 +1,105 @@
+---
+id: getting-started-with-buf
+title: Getting Started with Buf
+description: Hello Buf CLI! Goodbye manual code generation tasks. let's get started and empower your development workflow!
+---
+
+:::danger 🚧 Construction Notes
+
+This TUTORIAL is oriented to learning, must allow the newcomer to get started. Its form, a lesson. Analogous teaching
+a small child how to cook.
+
+:::
+
+import { Card, Cards } from "@site/src/components/Cards";
+
+<Cards>
+  <Card
+    name="🖌 Tutorial"
+    url="docs/tutorials/going-further-with-buf"
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  />
+  <Card
+    name="🚧 How To"
+    url="#"
+    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
+  />
+  <Card
+    name="🧱 Reference"
+    url="#"
+    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
+  />
+  <Card
+    name="🏗 Explanation"
+    url="#"
+    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
+  />
+</Cards>
+
+Are you ready to take your code generation game to the next level? Look no further! In the next 10 minutes, you will
+learn how to use the Buf CLI to easily and efficiently generate code for your project. By following the step-by-step
+instructions, you will be able to install and configure the Buf CLI, validate your configuration, and generate code for
+your project in no time. With Buf, you'll be able to streamline your code generation process, and say goodbye to manual
+code generation tasks. So let's get started and empower your development workflow!
+
+Alright, let's make code generation fun and easy! With this guide, you're about to take a leap into the world of Buf CLI
+and learn how to generate code like a pro. And trust me, once you start using Buf, you'll wonder how you ever managed
+without it. It may take a bit of time and practice to fully understand and utilize the Buf CLI, but remember, practice
+makes perfect! And don't worry, you won't be alone in this journey, this guide will be your trusty companion. So, put on
+your learning cap, and let's get started! You'll be generating code like a boss in no time!
+
+:::info
+
+We will assume you have already installed `buf` to your $PATH. If you haven't, head on over to
+our [installation guide](installation.mdx) first.
+
+:::
+
+1. Initialize a new Buf configuration file by running the command `buf init`. This will create a file named `buf.yaml` in
+the current directory. This file will be used to specify the configuration for your project.
+1. Modify the `buf.yaml` file to specify the configuration for your project. This includes setting the path to your proto
+files, specifying the language to generate code for, and configuring any plugins you want to use. The `buf.yaml` file
+uses a YAML format, and should be edited with a text editor of your choice.
+1. Run the command `buf` check to ensure that your configuration is valid and that all dependencies are met. This command
+will validate the configuration and check for any missing dependencies.
+1. Run the command `buf lint` to check your proto files for any linting errors. This command checks for style guide
+violation and other linting errors in the proto files.
+1. To generate code, you will need to run the command `buf generate`, this command will generate the code based on the
+configuration specified in `buf.yaml`.
+
+:::info
+Don't give up now! You're on the right track to mastering the Buf CLI and streamlining your code generation process.
+By following this guide, you're about to gain a powerful tool that will make your code generation process faster,
+more efficient and reliable. It may take a bit of time and practice to fully understand and utilize the Buf CLI,
+but trust me, it's worth it! By sticking with it and working through the steps in this guide, you'll be able to
+experience the benefits of using Buf in your workflow. So, don't hesitate, keep moving forward, and remember the
+end goal: becoming a code generation master!
+:::
+
+1. The generated code will be placed in the directory specified in the `buf.yaml` file under the `out` field. By
+default, the code will be generated in a directory named `gen/` in the current directory, but you can specify a
+different location by modifying the `out` field in the configuration file.
+1. The module process will also create a file named `buf.lock` in the current directory. This file contains
+information about the versions of the dependent modules used during code generation. This file is used to ensure
+that the code is regenerated only when necessary, and to ensure that the same versions of protos and plugins are used
+for all code generation operations.
+1. To generate code for a specific language, you can use the with the buf generate command. For example, to
+generate code for Java, you would use the command buf generate java.
+1. You can also use the buf generate command with a specific protos file or directory, this command will generate the
+code only for the specified protos files or directory. For example, to generate code only for example.proto, you
+would use the command buf generate path/to/example.proto.
+
+Code generation is like having a personal chef for your development process, especially when it comes to Schema Driven
+Development. Just like a chef takes care of preparing your meals, Buf takes care of generating code for you, saving you
+time and effort. With Buf, you can say goodbye to the tedious task of manually writing code, and hello to more time for
+coding the fun stuff. It's like having a sous chef to help you with the prep work, so you can focus on creating the
+gourmet dish. And just like a master chef, Buf allows you to customize and perfect your code generation process, making
+it unique to your project's needs. In Schema Driven Development, the Buf CLI acts like a head chef, using your schema as
+a recipe to generate the code automatically and consistently. So, fire up your Buf CLI and let it work its magic!
+
+Congratulations on taking the first step towards streamlining your code generation process with Buf CLI! By following
+the steps outlined in this guide, you should now be able to install, configure, and use the Buf CLI to generate code
+for your project with ease. With Buf, you can save valuable time and effort, allowing you to focus on what really
+matters - building amazing things. Whether you're working on a large-scale project or a small one, Buf can help you to
+generate code more efficiently. So go ahead, give Buf a try, and see the difference it can make in your workflow.
+Remember, with Buf the sky's the limit!

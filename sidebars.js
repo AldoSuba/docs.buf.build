@@ -1,277 +1,118 @@
 // @ts-check
 
 const sidebars = {
-    docs: [
+  docs: [
+    "introduction",
+    "installation",
+    {
+      type: "category",
+      label: "The Buf CLI",
+      items: [
+        { type: "doc", label: "Breaking", id: "buf/breaking/buf-breaking-explanation" },
+        { type: "doc", label: "Build", id: "buf/build/buf-build-explanation" },
+        { type: "doc", label: "Convert", id: "buf/convert/buf-convert-explanation" },
+        { type: "doc", label: "Curl", id: "buf/curl/buf-curl-explanation" },
+        { type: "doc", label: "Export", id: "buf/export/buf-export-explanation" },
+        { type: "doc", label: "Format", id: "buf/format/buf-format-explanation" },
+        { type: "doc", label: "Generate", id: "buf/generate/buf-generate-explanation" },
+        { type: "doc", label: "Lint", id: "buf/lint/buf-lint-explanation" },
+        { type: "doc", label: "Mod", id: "buf/mod/buf-mod-explanation" },
+        { type: "doc", label: "Push", id: "buf/push/buf-push-explanation" },
+        { type: "doc", label: "Registry", id: "buf/registry/buf-registry-explanation" }
+      ],
+      collapsed: false
+    },
+    {
+      type: "category",
+      label: "The Buf Schema Registry (BSR)",
+      items: [
+        { type: "doc", label: "Dependency Management", id: "bsr/dependency-management/bsr-dependency-management-explanation" },
+        { type: "doc", label: "Documentation", id: "bsr/documentation/bsr-documentation-explanation" },
+        { type: "doc", label: "Remote Packages", id: "bsr/remote-packages/bsr-remote-packages-explanation" },
+        { type: "doc", label: "Remote Plugins", id: "bsr/remote-plugins/bsr-remote-plugins-explanation" },
+        { type: "doc", label: "Schema Management", id: "bsr/schema-management/bsr-schema-management-explanation" },
+        { type: "doc", label: "Studio", id: "bsr/studio/bsr-studio-explanation" },
+        { type: "doc", label: "User Management", id: "bsr/user-management/bsr-user-management-explanation" },
+      ],
+      collapsed: false
+    },
+    {
+      type: "category",
+      label: "Tutorials",
+      items: [
         {
-            type: "category",
-            label: "About",
-            items: [
-                "introduction",
-                "installation",
-                "editor-integration",
-                "faq",
-                "contact"
-            ],
-            collapsed: false
+          type: "doc",
+          id: "tutorials/getting-started/getting-started-with-buf",
+          label: "Getting started with Buf",
         },
         {
-            type: "category",
-            label: "Tour",
-            items: [
-                "tour/introduction",
-                "tour/configure-and-build",
-                "tour/list-all-protobuf-files",
-                "tour/lint-your-api",
-                "tour/detect-breaking-changes",
-                "tour/generate-code",
-                "tour/log-into-the-bsr",
-                "tour/push-a-module",
-                "tour/view-generated-documentation",
-                "tour/add-a-dependency",
-                "tour/generate-go-code",
-                "tour/implement-grpc-endpoints",
-                "tour/use-a-workspace",
-                "tour/use-managed-mode",
-                "tour/push-workspace-modules",
-                {
-                    type: "doc",
-                    id: "tour/use-remote-packages",
-                    customProps: {
-                        badge: {
-                            label: "new",
-                            severity: "info"
-                        }
-                    }
-                },
-                "tour/wrapping-up",
-            ],
-            collapsed: false
+          type: "doc",
+          id: "tutorials/going-further/going-further-with-buf",
+          label: "Going further with Buf",
         },
         {
-            type: "category",
-            label: "How To",
-            items: [
-                "how-to/replace-protoc-with-buf",
-                "how-to/iterate-on-modules",
-                "how-to/migrate-from-protolock",
-                "how-to/migrate-from-prototool",
-                {
-                    type: "category",
-                    label: "CI/CD",
-                    items: ["ci-cd/setup", "ci-cd/github-actions"],
-                    collapsed: true
-                },
-                {
-                    type: "category",
-                    label: "Best Practices",
-                    items: [
-                        "best-practices/style-guide",
-                        "best-practices/module-development"
-                    ],
-                    collapsed: true
-                },
-                {
-                    type: "category",
-                    label: "Build systems",
-                    items: ["build-systems/bazel"],
-                    collapsed: true
-                },
-            ],
-            collapsed: false
+          type: "doc",
+          id: "tutorials/getting-started/getting-started-with-bsr",
+          label: "Getting started with the BSR",
+        },
+        "tutorials/getting-started/getting-started-with-buf-studio",
+      ],
+      collapsed: false
+    },
+    {
+      type: "category",
+      label: "How To",
+      items: [
+        "how-to/how-to-use-buf-in-your-js-project",
+        "how-to/build-an-api-client-with-buf",
+        "how-to/replace-protoc-with-buf",
+        "how-to/iterate-on-modules",
+        "how-to/migrate-from-protolock",
+        "how-to/migrate-from-prototool"
+      ],
+      collapsed: false
+    },
+    {
+      type: "category",
+      label: "Reference",
+      items: [
+        {
+          type: "category",
+          label: "The Buf CLI",
+          items: [
+            { type: "doc", label: "Breaking", id: "buf/breaking/buf-breaking-reference" },
+            { type: "doc", label: "Build", id: "buf/build/buf-build-reference" },
+            { type: "doc", label: "Convert", id: "buf/convert/buf-convert-reference" },
+            { type: "doc", label: "Curl", id: "buf/curl/buf-curl-reference" },
+            { type: "doc", label: "Export", id: "buf/export/buf-export-reference" },
+            { type: "doc", label: "Format", id: "buf/format/buf-format-reference" },
+            { type: "doc", label: "Generate", id: "buf/generate/buf-generate-reference" },
+            { type: "doc", label: "Lint", id: "buf/lint/buf-lint-reference" },
+            { type: "doc", label: "Mod", id: "buf/mod/buf-mod-reference" },
+            { type: "doc", label: "Push", id: "buf/push/buf-push-reference" },
+            { type: "doc", label: "Registry", id: "buf/registry/buf-registry-reference" }
+          ],
+          collapsed: true
         },
         {
-            type: "category",
-            label: "The Buf CLI",
-            items: [
-                {
-                    type: "category",
-                    label: "Build",
-                    items: ["build/usage"],
-                    collapsed: true
-                },
-                {
-                    type: "category",
-                    label: "Generate",
-                    items: [
-                        "generate/usage",
-                        "generate/managed-mode",
-                    ],
-                    collapsed: true
-                },
-                {
-                    type: "category",
-                    label: "Lint",
-                    items: [
-                        "lint/overview",
-                        "lint/usage",
-                        "lint/configuration",
-                        "lint/rules"
-                    ],
-                    collapsed: true
-                },
-                {
-                    type: "category",
-                    label: "Breaking Change Detection",
-                    items: [
-                        "breaking/overview",
-                        "breaking/usage",
-                        "breaking/configuration",
-                        "breaking/rules"
-                    ],
-                    collapsed: true
-                },
-                {
-                    type: "category",
-                    label: "Format",
-                    items: ["format/usage", "format/style"],
-                    collapsed: true
-                },
-                {
-                    type: "category",
-                    label: "Invoking RPCs",
-                    items: ["curl/usage"],
-                    collapsed: true
-                },
-                {
-                    type: "category",
-                    label: "Advanced Features",
-                    items: [],
-                    collapsed: true
-                },
-            ],
-            collapsed: false
+          type: "category",
+          label: "The Buf Schema Registry (BSR)",
+          items: [
+            { type: "doc", label: "Dependency Management", id: "bsr/dependency-management/bsr-dependency-management-reference" },
+            { type: "doc", label: "Documentation", id: "bsr/documentation/bsr-documentation-reference" },
+            { type: "doc", label: "Remote Packages", id: "bsr/remote-packages/bsr-remote-packages-reference" },
+            { type: "doc", label: "Remote Plugins", id: "bsr/remote-plugins/bsr-remote-plugins-reference" },
+            { type: "doc", label: "Schema Management", id: "bsr/schema-management/bsr-schema-management-reference" },
+            { type: "doc", label: "Studio", id: "bsr/studio/bsr-studio-reference" },
+            { type: "doc", label: "User Management", id: "bsr/user-management/bsr-user-management-reference" },
+          ],
+          collapsed: true
         },
-        {
-            type: "category",
-            label: "The Buf Schema Registry (BSR)",
-            items: [
-                "bsr/introduction",
-                "bsr/overview",
-                "bsr/authentication",
-                "bsr/usage",
-                "bsr/documentation",
-                "bsr/user-management",
-                {
-                    type: "doc",
-                    id: "bsr/studio",
-                    customProps: {
-                        badge: {
-                            label: "beta",
-                            severity: "info"
-                        }
-                    }
-                },
-                {
-                    type: "category",
-                    label: "Remote Plugins",
-                    items: [
-                        "bsr/remote-plugins/overview",
-                        "bsr/remote-plugins/usage",
-                        "bsr/remote-plugins/migrating-from-alpha",
-                    ],
-                    customProps: {
-                        badge: {
-                            label: "new",
-                            severity: "info"
-                        }
-                    },
-                    collapsed: true
-                },
-                {
-                    type: "category",
-                    label: "Remote Packages",
-                    items: [
-                        "bsr/remote-packages/overview",
-                        "bsr/remote-packages/go",
-                        "bsr/remote-packages/npm",
-                        "bsr/remote-packages/migrating-from-alpha"
-                    ],
-                    customProps: {
-                        badge: {
-                            label: "new",
-                            severity: "info"
-                        }
-                    },
-                    collapsed: true
-                },
-                {
-                    type: "category",
-                    label: "Advanced Features",
-                    items: [],
-                    collapsed: true
-                },
-            ],
-            collapsed: false
-        },
-        {
-            type: "category",
-            label: "Reference",
-            items: [
-                "reference/workspaces",
-                "reference/images",
-                "reference/inputs",
-                "reference/internal-compiler",
-                "reference/protoc-plugins",
-                {
-                    type: "category",
-                    label: "Deprecated",
-                    items: [
-                        {
-                            type: "category",
-                            label: "Remote generation",
-                            customProps: {
-                                badge: {
-                                    label: "alpha",
-                                    severity: "info"
-                                }
-                            },
-                            items: [
-                                "reference/deprecated/remote-generation/overview",
-                                "reference/deprecated/remote-generation/go",
-                                "reference/deprecated/remote-generation/js",
-                                "reference/deprecated/remote-generation/plugin-example",
-                                "reference/deprecated/remote-generation/template-example"
-                            ],
-                            collapsed: true
-                        }
-                    ],
-                    collapsed: true
-                },
-                {
-                    type: "category",
-                    label: "Configuration",
-                    items: [
-                        "configuration/overview",
-                        "configuration/v1beta1-migration-guide",
-                        {
-                            type: "category",
-                            label: "v1",
-                            items: [
-                                "configuration/v1/buf-yaml",
-                                "configuration/v1/buf-lock",
-                                "configuration/v1/buf-gen-yaml",
-                                "configuration/v1/buf-work-yaml"
-                            ],
-                            collapsed: true
-                        },
-                        {
-                            type: "category",
-                            label: "v1beta1",
-                            items: [
-                                "configuration/v1beta1/buf-yaml",
-                                "configuration/v1beta1/buf-lock",
-                                "configuration/v1beta1/buf-gen-yaml",
-                                "configuration/v1beta1/lint-rules"
-                            ],
-                            collapsed: true
-                        }
-                    ],
-                    collapsed: true
-                },
-            ],
-            collapsed: false
-        },
-    ]
+      ],
+      collapsed: false
+    }
+
+  ]
 };
 
 module.exports = sidebars;
