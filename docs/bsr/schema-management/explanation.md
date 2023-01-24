@@ -1,5 +1,5 @@
 ---
-id: bsr-schema-management-explanation
+id: explanation
 title: Overview
 description: EXPLANATION
 ---

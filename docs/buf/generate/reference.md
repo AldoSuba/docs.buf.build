@@ -1,5 +1,5 @@
 ---
-id: buf-generate-reference
+id: reference
 title: Buf Generate
 description: An informative article on Buf Generate, a code generation tool for Protocol Buffers with advanced algorithms and plugin architecture.
 ---

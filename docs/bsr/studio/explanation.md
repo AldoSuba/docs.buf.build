@@ -1,5 +1,5 @@
 ---
-id: bsr-studio-explanation
+id: explanation
 title: Overview
 description: EXPLANATION
 ---

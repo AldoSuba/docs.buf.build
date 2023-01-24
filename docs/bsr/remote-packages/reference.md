@@ -1,5 +1,5 @@
 ---
-id: bsr-remote-packages-reference
+id: reference
 title: Overview
 description: REFERENCE
 ---

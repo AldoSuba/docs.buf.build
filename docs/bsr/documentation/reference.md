@@ -1,5 +1,5 @@
 ---
-id: bsr-documentation-reference
+id: reference
 title: Overview
 description: REFERENCE
 ---

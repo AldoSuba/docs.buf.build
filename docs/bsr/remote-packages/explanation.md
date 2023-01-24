@@ -1,5 +1,5 @@
 ---
-id: bsr-remote-packages-explanation
+id: explanation
 title: Overview
 description: EXPLANATION
 ---

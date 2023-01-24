@@ -1,5 +1,5 @@
 ---
-id: bsr-studio-reference
+id: reference
 title: Overview
 description: REFERENCE
 ---

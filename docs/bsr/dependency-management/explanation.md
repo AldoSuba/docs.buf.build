@@ -1,5 +1,5 @@
 ---
-id: bsr-dependency-management-explanation
+id: explanation
 title: Overview
 description: EXPLANATION
 ---

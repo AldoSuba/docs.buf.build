@@ -1,5 +1,5 @@
 ---
-id: bsr-user-management-explanation
+id: explanation
 title: Overview
 description: EXPLANATION
 ---

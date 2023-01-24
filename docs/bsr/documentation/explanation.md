@@ -1,5 +1,5 @@
 ---
-id: bsr-documentation-explanation
+id: explanation
 title: Overview
 description: EXPLANATION
 ---

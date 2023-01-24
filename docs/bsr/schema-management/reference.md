@@ -1,5 +1,5 @@
 ---
-id: bsr-schema-management-reference
+id: reference
 title: Overview
 description: REFERENCE
 ---

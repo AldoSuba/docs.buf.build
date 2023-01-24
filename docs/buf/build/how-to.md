@@ -1,7 +1,7 @@
 ---
-id: buf-build-how-to
-title: Building with Buf: A Comprehensive How-To Guide
-description: Learn how to build efficient and accurate code with Buf Build: a powerful tool for working with Protocol Buffers, in this comprehensive guide.
+id: how-to
+title: "Building with Buf: A Comprehensive How-To Guide"
+description: "Learn how to build efficient and accurate code with Buf Build: a powerful tool for working with Protocol Buffers, in this comprehensive guide."
 ---
 
 > We highly recommend completing [the tour](../tour/configure-and-build.md) to get an overview of `buf build`.

@@ -1,5 +1,5 @@
 ---
-id: bsr-remote-plugins-reference
+id: reference
 title: Overview
 description: REFERENCE
 ---

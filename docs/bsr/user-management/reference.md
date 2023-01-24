@@ -1,5 +1,5 @@
 ---
-id: bsr-user-management-reference
+id: reference
 title: Overview
 description: REFERENCE
 ---

@@ -49,8 +49,8 @@ The `--tag` flag isn't required, but we recommend tagging BSR commits with
 version control references as a way to track corresponding revisions.
 
 > All of these steps (and more) ought to be configured in
-> [CI/CD](../ci-cd/setup.mdx). If you're a GitHub Actions user, make sure to
-> check out the [GitHub Actions guide](../ci-cd/github-actions.md) to learn
+> [CI/CD](../ci-cd/how-to.mdx). If you're a GitHub Actions user, make sure to
+> check out the [GitHub Actions guide](../ci-cd/reference.md) to learn
 > more.
 
 ## Update dependencies

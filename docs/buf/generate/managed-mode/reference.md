@@ -1,5 +1,5 @@
 ---
-id: buf-managed-mode-reference
+id: reference
 title: Managed mode
 ---
 

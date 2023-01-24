@@ -1,5 +1,5 @@
 ---
-id: bsr-remote-plugins-explanation
+id: explanation
 title: Overview
 description: EXPLANATION
 ---
