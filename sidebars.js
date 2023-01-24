@@ -14,7 +14,7 @@ const sidebars = {
         { type: "doc", label: "Curl", id: "buf/curl/buf-curl-explanation" },
         { type: "doc", label: "Export", id: "buf/export/buf-export-explanation" },
         { type: "doc", label: "Format", id: "buf/format/buf-format-explanation" },
-        { type: "doc", label: "Generate", id: "buf/generate/buf-generate-explanation" },
+        { type: "category", label: "Generate", items: ["buf/generate/buf-generate-explanation", "buf/generate/buf-managed-mode-reference"] },
         { type: "doc", label: "Lint", id: "buf/lint/buf-lint-explanation" },
         { type: "doc", label: "Mod", id: "buf/mod/buf-mod-explanation" },
         { type: "doc", label: "Push", id: "buf/push/buf-push-explanation" },
@@ -68,7 +68,9 @@ const sidebars = {
         "how-to/replace-protoc-with-buf",
         "how-to/iterate-on-modules",
         "how-to/migrate-from-protolock",
-        "how-to/migrate-from-prototool"
+        "how-to/migrate-from-prototool",
+        { type: "doc", label: "Buf Breaking", id: "buf/breaking/buf-breaking-explanation" },
+        { type: "doc", label: "Buf Breaking", id: "buf/breaking/buf-breaking-explanation" },
       ],
       collapsed: false
     },
