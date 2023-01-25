@@ -57,6 +57,11 @@ const sidebars = {
         },
         {
           type: "doc",
+          id: "tutorials/going-further/going-further-with-bsr",
+          label: "Going further with the BSR"
+        },
+        {
+          type: "doc",
           id: "tutorials/getting-started/getting-started-with-buf-studio",
           label: "Getting Started with Buf Studio"
         }

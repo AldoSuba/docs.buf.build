@@ -47,10 +47,273 @@ collaboration and sharing.
 
 And let's not forget about Schema Driven Development - the approach that will have you catching errors before they even
 happen! By defining and managing your data schemas first, and then building your application around them, you'll be on
-your way to creating a seamless and error-free experience for your users.
+your way to creating a seamless and error-free experience for your users. Together we will look at:
+
+* An Introduction to the Buf Schema Registry and its use cases
+* Authentication & setting up a development environment
+* An overview of the Buf Schema Registry Data model
+* Creating a registry and pushing a module
+* Using the BSR to generate and customize documentation for consumers
+* An introduction to schema dependency management
 
 So, buckle up and let's dive into the world of Buf Schema Registry and Schema Driven Development. It's going to be a
 wild ride, but trust us, it'll be worth it in the end!
+
+You've gone over many of the primary `buf` commands, so now you'll shift gears
+and learn how to use `buf` to interact with the Buf Schema Registry ([BSR]) to
+manage our `PetStoreService` API.
+
+## Log in {#login}
+
+Visit [https://buf.build/login][login] and you'll be prompted with a few
+different login options, including Google, GitHub, and traditional email and
+password. After you've successfully authenticated, you'll be prompted to select
+a username and complete your registration. If successful, you should see that
+you're logged in and that your username is rendered in the upper right-hand
+corner.
+
+Throughout this tour, you'll see references to the `BUF_USER` environment
+variable as your newly created BSR username. Once you have completed
+registration, export this value so that you can copy and paste commands.
+
+```terminal
+# Note this is just for the tour!
+$ export BUF_USER=<YOUR_BUF_USER>
+```
+
+> Any time the `$BUF_USER` placeholder is used within a file, such as
+> [`buf.yaml`](../configuration/v1/buf-yaml.md), you need to manually replace it
+> with your local value of `BUF_USER`.
+
+## Create an API Token {#create-an-api-token}
+
+Now that you're logged in, visit the [https://buf.build/settings/user][user]
+page and click the **Create New Token** button. Select an expiration time and
+add a note for yourself to distinguish this token from others (we recommend that
+you name this `CLI`, `Development`, or something else along those lines).
+
+Click **Create** and copy the token to your clipboard.
+
+## `Buf registry login` {#buf-login}
+
+All you need to log in is the API token created above. Run this command to do
+so:
+
+```terminal
+$ buf registry login
+```
+
+You'll be prompted for your username and the token that you just copied.
+
+In the future, the `buf` CLI will get its authentication credentials from your
+`$HOME/.netrc` file. The `buf registry login` command automatically writes your
+supplied creds to that file, which should now look like this:
+
+```sh title="~/.netrc"
+machine buf.build
+    login <USERNAME>
+    password <TOKEN>
+machine go.buf.build
+    login <USERNAME>
+    password <TOKEN>
+```
+
+You can log out at any time using this command:
+
+```terminal
+$ buf registry logout
+---
+All existing BSR credentials removed from $HOME/.netrc.
+```
+
+For more information on `.netrc`, check out the
+[curl documentation](https://everything.curl.dev/usingcurl/netrc).
+
+> If you're developing on a Windows machine, the credentials file is
+> `%HOME%/_netrc`.
+
+[bsr]: /bsr/introduction.md
+[login]: https://buf.build/login
+[user]: https://buf.build/settings/user
+
+Now that you've authenticated with the [BSR](../bsr/overview.mdx), you can
+create a repository and push a [module](../bsr/overview.mdx#modules) that
+defines the `PetStoreService` API.
+
+## Terminology {#terminology}
+
+Before we continue, it's important that we cover some basic terminology.
+
+### Modules {#modules}
+
+**Modules** are the core primitive of Buf and the BSR. A module is a collection
+of Protobuf files that are configured, built, and versioned as a logical unit.
+You created a module when you initialized a
+[`buf.yaml`](../configuration/v1/buf-yaml.md) at the beginning of the tour.
+
+### Repositories {#repositories}
+
+A module is stored in a **repository**. A repository stores all versions of a
+module, where each version is identified by a commit, (optionally) a tag, and/or
+(optionally) a draft.
+
+While roughly analogous to Git repositories, a BSR repository is only a remote
+location - there is no concept of a repository "clone". In other words,
+repositories do not exist in multiple locations.
+
+### Module names {#module-names}
+
+A fully qualified module name consists of three components:
+
+- **Remote**: The DNS name for the server hosting the BSR, such as `buf.build`.
+- **Owner**: The user or organization that owns the repository.
+- **Repository**: The repository's name.
+
+Some example module names broken down into components:
+
+| Name                             | Remote              | Owner      | Repository |
+|:---------------------------------|:--------------------|:-----------|:-----------|
+| `buf.build/alice/tools`          | `buf.build`         | `alice`    | `tools`    |
+| `buf.build/acme/weather`         | `buf.build`         | `acme`     | `weather`  |
+| `my-private-bsr.io/omnicorp/biz` | `my-private-bsr.io` | `omnicorp` | `biz`      |
+
+## Create a repository {#create-a-repository}
+
+Create a new `petapis` repository for your module with this command:
+
+```terminal
+$ buf beta registry repository create buf.build/$BUF_USER/petapis --visibility public
+---
+Full name                    Created
+buf.build/$BUF_USER/petapis  ...
+```
+
+## Configure a `name` {#configure-a-name}
+
+Move back into the `petapis` directory:
+
+```terminal
+$ cd petapis
+```
+
+Update your `buf.yaml` so that its `name` matches the repository you just
+created:
+
+```yaml title="buf.yaml" {2}
+ version: v1
++name: buf.build/$BUF_USER/petapis
+ breaking:
+   use:
+     - FILE
+ lint:
+   use:
+     - DEFAULT
+```
+
+## Push the module {#push-the-module}
+
+Push the module to the `buf.build/$BUF_USER/petapis` repository with this
+command (in the `petapis` directory containing your `buf.yaml`):
+
+```terminal
+$ buf push
+---
+19bcefa1a736428d9e64d21c9191b213
+```
+
+Behind the scenes, `buf` recognizes the `name` in your `buf.yaml` and pushes the
+module to the `buf.build/$BUF_USER/petapis` repository. If successful, the
+generated commit identifies this current version of your module.
+
+> The commit you see differs from the one shown here.
+
+> You can also push the module as a draft with `--draft` flag!
+>
+> ```terminal
+> $ buf push --draft draft-name
+> ---
+> e9ec7a9375eb496baf6f3d38c36ba629
+> ```
+>
+> The pushed draft will not be included in the main commit history, and can only
+> be resolved by using the draft name or the commit name as reference. See the
+> [Referencing a module](../bsr/overview.mdx#referencing-a-module) for detail.
+
+You can browse generated documentation for your
+[module](../bsr/overview.mdx#modules) in the [BSR](../bsr/overview.mdx).
+
+Navigate to the `/docs` page for the module you just created in your browser. If
+your `$BUF_USER` variable is set to `acme` and you created the
+`buf.build/acme/petapis` module, you can visit the
+[https://buf.build/acme/petapis/docs](https://buf.build/acme/petapis/docs) page
+(replace `acme` with your `$BUF_USER` in this link).
+
+## Add a `buf.md` {#add-a-bufmd}
+
+The page you see above serves as the primary entrypoint for your module's
+documentation. But as you can see from the default `buf.md` content, we
+currently don't have any module-level documentation.
+
+You can update the module-level documentation page by creating a `buf.md` in the
+same directory as your module's [`buf.yaml`](../configuration/v1/buf-yaml.md),
+and pushing it up to the BSR. In this way, the `buf.md` file is analogous to a
+GitHub repository's `README.md`. The `buf.md` file currently supports all the
+[CommonMark](https://commonmark.org) syntax.
+
+Let's start by adding a quick note:
+
+```terminal
+$ touch buf.md
+```
+
+```markdown title="buf.md"
+## APIs
+
+This module contains all of the APIs required to interact with the
+`PetStoreService`.
+```
+
+Your `petapis` directory should now look like this:
+
+```sh
+petapis/
+├── buf.md
+├── buf.yaml
+├── google
+│   └── type
+│       └── datetime.proto
+└── pet
+    └── v1
+        └── pet.proto
+```
+
+Now if you push your module again, you'll notice a new commit and that the
+documentation has been updated to reflect the latest changes:
+
+```terminal
+$ buf push
+---
+4514ddced0584e73a100e82096c7958c
+```
+
+If you refresh the documentation page you visited above, you should see the
+changes you just introduced with your `buf.md` documentation.
+
+## Package documentation {#package-documentation}
+
+As you can see from the module documentation page, both the `pet.v1` and
+`google.type` packages are available as links. Click on the `pet.v1` link to
+navigate to its package documentation at
+[https://buf.build/acme/petapis/docs/4514ddced0584e73a100e82096c7958c/pet.v1](https://buf.build/acme/petapis/docs/4514ddced0584e73a100e82096c7958c/pet.v1).
+
+From here, you can click through each of the Protobuf type definitions and see
+all of the comments associated with each type. In fact, if you click on the
+`google.type.DateTime` message referenced in the `Pet` message, you'll be
+brought to the `google.type.v1` package documentation for the same commit.
+
+For an example of API documentation, check out
+[googleapis](https://buf.build/googleapis/googleapis/docs).
+
 
 :::note Generated Documentation
 The Buf Schema Registry's ability to generate API documentation is more than just a convenient feature, it's an
@@ -71,6 +334,190 @@ make it stand out in a crowded market. So, let's seize this opportunity and crea
 others to use and integrate it!
 :::
 
+Without the [BSR](../bsr/overview.mdx), you can only depend on other Protobuf
+APIs by manually fetching the `.proto` files you need. If you wanted to use
+[`googleapis`](https://github.com/googleapis/googleapis), for example, you'd
+need to clone the right Git repository and copy the `.proto` file(s) you need in
+order to compile your own `.proto` files. And if `googleapis` has its own
+external dependencies, then you need to fetch those as well.
+
+Even worse, this way of managing dependencies is prone to API drift, where the
+`googleapis` code may evolve over time, leaving your local copies inconsistent
+with the latest version and your modules thus out of date. It turns out that
+this is exactly what you did with the `PetStoreService`: the
+`google/type/datetime.proto` file is actually present in your local directory
+and currently used to build your [module](../bsr/overview.mdx#modules).
+
+Now that you're familiar with the BSR, you can simplify this entire workflow
+immensely.
+
+## Remove the `datetime.proto` file {#remove-datetime-proto}
+
+Start by removing the `google/type/datetime.proto` file from your module
+altogether. From within the `petapis` directory, run this command to remove
+_all_ the local `google` dependencies:
+
+```terminal
+$ rm -rf google
+```
+
+Now remove the `google/type/datetime.proto` reference from your
+[`buf.yaml`](../configuration/v1/buf-yaml.md):
+
+```yaml title="buf.yaml" {6-7}
+ version: v1
+ name: buf.build/$BUF_USER/petapis
+ breaking:
+   use:
+     - FILE
+ lint:
+   use:
+     - DEFAULT
+-  ignore:
+-    - google/type/datetime.proto
+```
+
+If you try to build the module in its current state, you will notice an error:
+
+```terminal
+$ buf build
+---
+pet/v1/pet.proto:7:8:google/type/datetime.proto: does not exist
+```
+
+## Depend on `googleapis` {#depend-on-googleapis}
+
+You can resolve this error by configuring a dependency in your `buf.yaml`'s
+[`deps`](/configuration/v1/buf-yaml#deps) key. The `google/type/datetime.proto`
+file is provided by the `buf.build/googleapis/googleapis` module, so you can
+configure it like this:
+
+```yaml title="buf.yaml" {3-4}
+ version: v1
+ name: buf.build/$BUF_USER/petapis
++deps:
++  - buf.build/googleapis/googleapis
+ breaking:
+   use:
+     - FILE
+ lint:
+   use:
+     - DEFAULT
+```
+
+Now, if you try to build the module again, you'll notice this:
+
+```terminal
+$ buf build
+---
+WARN	Specified deps are not covered in your buf.lock, run "buf mod update":
+	- buf.build/googleapis/googleapis
+pet/v1/pet.proto:7:8:google/type/datetime.proto: does not exist
+```
+
+`buf` detected that you specified a dependency that isn't included in the
+module's [`buf.lock`](../configuration/v1/buf-lock.md) file. This file is a
+dependency manifest for your module, representing a single reproducible build of
+your module's dependencies. You don't have a `buf.lock` file yet because you
+haven't specified any external dependencies, but you can create one with the
+command that `buf` recommended above:
+
+```terminal
+$ buf mod update
+```
+
+The `buf mod update` command updates all of your `deps` to their latest version.
+The generated `buf.lock` should look similar to this (the `commit` may vary):
+
+```yaml title="buf.lock"
+# Generated by buf. DO NOT EDIT.
+version: v1
+deps:
+  - remote: buf.build
+    owner: googleapis
+    repository: googleapis
+    commit: 62f35d8aed1149c291d606d958a7ce32
+```
+
+Now, if you try to build the module again, you'll notice that it's successful:
+
+```terminal
+$ buf build
+---
+buf: downloading buf.build/googleapis/googleapis:62f35d8aed1149c291d606d958a7ce32
+```
+
+This is the BSR's dependency management in action! A few things happened here,
+so let's break it down:
+
+1. `buf` noticed that a new dependency was added to the `deps` key.
+2. `buf` resolved the latest version of the `buf.build/googleapis/googleapis`
+module and wrote it to the module's `buf.lock`.
+3. When another `buf` command is run, `buf` downloads the
+`buf.build/googleapis/googleapis` module to the local
+[module cache](../bsr/overview.mdx#module-cache).
+4. Finally, now that `buf` has all of the dependencies it needs, it can
+successfully build the module (as `google/type/datetime.proto` is included).
+
+In summary, `buf` can resolve the dependencies specified in your `buf.yaml`'s
+`deps` key and include the imports required to build your module. **You don't
+have to manually copy `.proto` files anymore!**
+
+## Pin your dependencies {#pin-your-dependencies}
+
+Pin a specific tag, commit, or draft by specifying it in your `deps` after the
+`:` delimiter. For example, if you want to depend on the same commit you
+resolved above and prevent `buf` from updating it in the future, you can specify
+it like this:
+
+```yaml title="buf.yaml" {4-5}
+ version: v1
+ name: buf.build/$BUF_USER/petapis
+ deps:
+-  - buf.build/googleapis/googleapis
++  - buf.build/googleapis/googleapis:62f35d8aed1149c291d606d958a7ce32
+ breaking:
+   use:
+     - FILE
+ lint:
+   use:
+     - DEFAULT
+```
+
+This is **not recommended** in general since you should _always_ be able to
+update to the latest version of your dependencies if they remain backwards
+compatible. But in some situations it's unavoidable. With that said, restore the
+`buf.yaml` file to its previous state before you continue:
+
+```yaml title="buf.yaml" {4-5}
+ version: v1
+ name: buf.build/$BUF_USER/petapis
+ deps:
+-  - buf.build/googleapis/googleapis:62f35d8aed1149c291d606d958a7ce32
++  - buf.build/googleapis/googleapis
+ breaking:
+   use:
+     - FILE
+ lint:
+   use:
+     - DEFAULT
+```
+
+## Push Your Changes {#push-your-changes}
+
+Now that you've updated your module to depend on
+`buf.build/googleapis/googleapis` instead of vendoring the
+`google/type/datetime.proto` yourself, you can push the module to the BSR:
+
+```terminal
+$ buf push
+---
+b2917eb692064beb92ad1e38dba6c25e
+```
+
+> If one or more dependencies are pinned to a draft commit, pushing the module
+> will not be allowed.
+
 Wow, you did it! You've officially completed this tutorial on the Buf Schema Registry and you're now a pro at managing
 your data schemas like a boss! From creating and managing schemas, to collaborating and sharing with others, to
 supporting Schema Driven Development approach, and even using remote packages and plugins, you're ready to tackle any
@@ -85,5 +532,11 @@ there who are always happy to lend a hand. So, don't be shy, join the community 
 surprised how much you can learn from others.
 
 In the end, managing data schemas can be a complex task, but with the Buf Schema Registry, it's like a game, a game
-where you're the player, the developer and the winner, you're in charge and you're in control. So, grab your controller,
+where you're the player, the developer and the winner, you're in charge, and you're in control. So, grab your controller,
 and let's play the data management game!
+
+Don't forget to check out our other tutorial on Going Further with the Buf Schema Registry! This complimentary tutorial will take
+your Buf Schema Registry skills to the next level and provide you with even more valuable insights and techniques. Trust
+me, you won't want to miss it! It's packed with practical examples and hands-on exercises that will help you
+master the Buf Schema Registry in no time. So what are you waiting for? Head over to our tutorial section and start learning
+today! It's the perfect opportunity to take your skills to new heights and achieve your full potential.
