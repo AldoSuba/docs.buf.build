@@ -36,6 +36,10 @@ article on culinary social history.
   />
 </Cards>
 
+:::caution 🚧 UNDER CONSTRUCTION
+Content Required
+:::
+
 Are you tired of writing tedious, repetitive code? Say hello to Buf Generate, the ultimate tool for streamlining your
 development process. This powerful tool makes it easy to generate efficient and accurate code, saving you time and
 effort. With Buf Generate, you can say goodbye to manual code writing and hello to faster, more efficient development.

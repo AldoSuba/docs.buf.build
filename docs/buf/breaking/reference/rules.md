@@ -1,6 +1,7 @@
 ---
 id: rules
 title: Rules and categories
+description: "Take your buf breaking change detection to the next level with this set of expert-approved rules and never miss a backwards-incompatible change again!"
 ---
 
 import { Card, Cards } from "@site/src/components/Cards";

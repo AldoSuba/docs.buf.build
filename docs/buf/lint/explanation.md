@@ -1,10 +1,8 @@
 ---
 id: explanation
 title: Overview
-description: Say goodbye to tedious manual checks for buf breaking changes and hello to effortless detection with our super-duper buf breaking change detection tool.
+description: Explore the full capabilities of buf lint with this informative reference material, containing expert advice and best practices.
 ---
-
-import { Card, Cards } from "@site/src/components/Cards";
 
 :::danger 🚧 Construction Notes
 
@@ -13,31 +11,31 @@ article on culinary social history.
 
 :::
 
+import { Card, Cards } from "@site/src/components/Cards";
+
 <Cards>
   <Card
     name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    url="../../tutorials/getting-started/getting-started-with-buf"
+    description="Get started with Buf CLI in no time with this easy-to-follow tutorial and revolutionize the way you work with Protocol Buffers!"
   />
   <Card
     name="🚧 How To"
-    url="#"
-    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
+    url="../how-to"
+    description="A technical document describing Buf Lint, a tool for ensuring clean code when working with Protocol Buffers."
   />
   <Card
     name="🧱 Reference"
-    url="#"
-    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
+    url="configuration"
+    description="Unlock the full potential of buf lint with this easy-to-follow configuration guide and take your development process to new heights!"
   />
   <Card
     name="🏗 Explanation"
-    url="#"
-    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
+    url="../explanation"
+    description="Explore the full capabilities of buf lint with this informative reference material, containing expert advice and best practices."
   />
 </Cards>
 
-Are you looking for a more efficient way to detect buf breaking changes in your code? Our buf breaking change detection
-tool may be able to help. It uses advanced algorithms to quickly identify changes that could cause issues in your code.
-With a user-friendly interface, it can save you time and effort compared to manual checks. This tool is designed to make
-your development process smoother and more efficient. If you're interested in improving your change detection process,
-consider giving our buf breaking change detection tool a try.
+:::caution 🚧 UNDER CONSTRUCTION
+Content Required
+:::

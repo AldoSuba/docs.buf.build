@@ -41,3 +41,7 @@ tool may be able to help. It uses advanced algorithms to quickly identify change
 With a user-friendly interface, it can save you time and effort compared to manual checks. This tool is designed to make
 your development process smoother and more efficient. If you're interested in improving your change detection process,
 consider giving our buf breaking change detection tool a try.
+
+:::caution 🚧 UNDER CONSTRUCTION
+Content Required
+:::

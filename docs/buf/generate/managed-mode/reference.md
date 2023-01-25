@@ -1,6 +1,7 @@
 ---
 id: reference
 title: Managed mode
+description: "Buf Generate: A Technical Reference"
 ---
 
 Protobuf enables you to set [file options][file-options] in your `.proto` files

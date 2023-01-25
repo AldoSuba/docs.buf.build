@@ -70,6 +70,7 @@ const sidebars = {
         "how-to/migrate-from-protolock",
         "how-to/migrate-from-prototool",
         "buf/breaking/how-to",
+        "buf/build/how-to",
         "buf/generate/how-to",
         {
           type: "doc",
@@ -105,7 +106,7 @@ const sidebars = {
                 "buf/generate/managed-mode/reference"
               ]
             },
-            { type: "doc", label: "Lint", id: "buf/lint/reference" },
+            { type: "category", label: "Lint", items: ["buf/lint/reference/overview", "buf/lint/reference/configuration", "buf/lint/reference/rules"], collapsed: true },
             { type: "doc", label: "Mod", id: "buf/mod/reference" },
             { type: "doc", label: "Push", id: "buf/push/reference" },
             { type: "doc", label: "Registry", id: "buf/registry/reference" }

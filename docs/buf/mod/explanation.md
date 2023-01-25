@@ -36,8 +36,6 @@ article on culinary social history.
   />
 </Cards>
 
-Are you looking for a more efficient way to detect buf breaking changes in your code? Our buf breaking change detection
-tool may be able to help. It uses advanced algorithms to quickly identify changes that could cause issues in your code.
-With a user-friendly interface, it can save you time and effort compared to manual checks. This tool is designed to make
-your development process smoother and more efficient. If you're interested in improving your change detection process,
-consider giving our buf breaking change detection tool a try.
+:::caution 🚧 UNDER CONSTRUCTION
+Content Required
+:::

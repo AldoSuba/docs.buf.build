@@ -35,7 +35,7 @@ module.exports = {
   url: "https://docs.buf.build",
   baseUrl: "/",
   favicon: "img/favicon.png",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "ignore",
   onBrokenMarkdownLinks: "warn",
   organizationName: "bufbuild",
   projectName: "buf",

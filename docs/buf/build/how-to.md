@@ -4,7 +4,37 @@ title: "Building with Buf: A Comprehensive How-To Guide"
 description: "Learn how to build efficient and accurate code with Buf Build: a powerful tool for working with Protocol Buffers, in this comprehensive guide."
 ---
 
-> We highly recommend completing [the tour](../tour/configure-and-build.md) to get an overview of `buf build`.
+:::danger 🚧 Construction Notes
+
+This HOW TO GUIDE is **oriented to a goal** and must show how to solve the specific problem of using remote packages in
+a web client. Its form, a series of steps - analogous to a recipe in a cookery book
+
+:::
+
+import { Card, Cards } from "@site/src/components/Cards";
+
+<Cards>
+  <Card
+    name="🖌 Tutorial"
+    url="../../tutorials/getting-started/getting-started-with-buf"
+    description="Get started with Buf CLI in no time with this easy-to-follow tutorial and revolutionize the way you work with Protocol Buffers!"
+  />
+  <Card
+    name="🚧 How To"
+    url="how-to"
+    description="Learn how to build efficient and accurate code with Buf Build: a powerful tool for working with Protocol Buffers, in this comprehensive guide."
+  />
+  <Card
+    name="🧱 Reference"
+    url="reference"
+    description="Don't miss out on the opportunity to upgrade your development process with our state-of-the-art buf breaking change detection tool!"
+  />
+  <Card
+    name="🏗 Explanation"
+    url="explanation"
+    description="Unlock the full potential of Buf Build and understand its role in modern development with this in-depth guide exploring the context and power of Buf Build."
+  />
+</Cards>
 
 All `buf` operations rely on building, or compiling, Protobuf files. The [linter](../lint/overview.md),
 [breaking change detector](../breaking/overview.md), [generator](../generate/usage.mdx),
