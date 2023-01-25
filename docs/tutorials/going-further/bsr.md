@@ -43,12 +43,22 @@ schema registries. By the end of this tutorial, you will have a deep understandi
 effectively use it in your development projects. So, whether you're working on a large-scale project or just want to
 take your skills to the next level, this tutorial is the perfect resource to help you master the buf schema registry.
 
+Get ready to elevate your development game to the next level with our advanced tutorial on the buf schema registry! This
+in-depth tutorial is designed for developers who want to master the powerful features and capabilities of the buf schema
+registry and take their skills to new heights. We will be diving deep into advanced topics such as schema evolution,
+versioning, best practices for managing large-scale schema registries and more. Whether you're working on a large-scale
+project or simply want to take your skills to the next level, this tutorial will provide you with the knowledge and
+tools you need to confidently use the buf schema registry and streamline your development process. So, get ready to
+unlock the full potential of the buf schema registry and take your development to the next level!
+
 Together we will look at:
 
 * An Introduction to the plugins on the Buf Schema Registry
 * Find our how you can improve the efficiency of your team with advanced schema management
+* Best practices for using protobuf in your projects
 * Solve plugin versioning and generate code securely in the Buf Sandbox
 * Discover how to streamline your API development with Remote Packages
+
 
 Congratulations on completing our advanced tutorial on the buf schema registry! We hope that you have gained a deeper
 understanding of the powerful features and capabilities of the buf schema registry and how to effectively use it in your

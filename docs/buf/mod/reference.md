@@ -36,8 +36,6 @@ encyclopedia article.
   />
 </Cards>
 
-Are you ready to take your development process to the next level? Look no further! This guide will show you how to use
-our state-of-the-art buf breaking change detection tool to detect those pesky backwards-incompatible changes in no time.
-Say goodbye to hours of manual checks and hello to effortless, accurate detection with our user-friendly tool. By the
-end of this guide, not only will you be a pro at using our tool, but you'll be able to confidently tackle any buf
-breaking change that comes your way. Let's dive in and revolutionize the way you code!
+:::caution 🚧 UNDER CONSTRUCTION
+Content Required
+:::
