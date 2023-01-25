@@ -1,6 +1,6 @@
 ---
 id: configuration
-title: Configuration
+title: Breaking Change Configuration
 description: "Unlock the full potential of buf breaking change detection with this easy-to-follow configuration guide and take your development process to new heights!"
 ---
 

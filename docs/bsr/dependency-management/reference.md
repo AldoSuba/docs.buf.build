@@ -1,10 +1,9 @@
 ---
 id: reference
-title: Overview
+title: Dependency Management
 description: REFERENCE
 ---
 
-import { Card, Cards } from "@site/src/components/Cards";
 
 :::danger 🚧 Construction Notes
 
@@ -12,6 +11,8 @@ This REFERENCE is oriented to information must describe the machinery. Its form 
 encyclopedia article.
 
 :::
+
+import { Card, Cards } from "@site/src/components/Cards";
 
 <Cards>
   <Card

@@ -1,6 +1,6 @@
 ---
 id: explanation
-title: Overview
+title: cURL
 description: "Exploring the Power of Buf Curl: A Guide to Understanding and Utilizing Buf Curl in Modern Development"
 ---
 

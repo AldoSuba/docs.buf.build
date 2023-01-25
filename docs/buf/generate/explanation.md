@@ -1,6 +1,6 @@
 ---
 id: explanation
-title: Buf Generate
+title: Generate
 description: This article explains the context and significance of Buf Generate, a tool that streamlines the development process when working with Protocol Buffers, a language- and platform-neutral data serialization format.
 ---
 

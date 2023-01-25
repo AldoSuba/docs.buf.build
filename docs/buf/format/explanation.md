@@ -1,7 +1,6 @@
 ---
 id: explanation
-title: Overview
-description: Say goodbye to tedious manual checks for buf breaking changes and hello to effortless detection with our super-duper buf breaking change detection tool.
+title: Format
 ---
 
 import { Card, Cards } from "@site/src/components/Cards";

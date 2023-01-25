@@ -1,6 +1,6 @@
 ---
 id: rules
-title: Rules and categories
+title: Breaking Change Rules & Categories
 description: "Take your buf breaking change detection to the next level with this set of expert-approved rules and never miss a backwards-incompatible change again!"
 ---
 

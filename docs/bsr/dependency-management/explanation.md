@@ -1,10 +1,9 @@
 ---
 id: explanation
-title: Overview
+title: Dependency Management
 description: EXPLANATION
 ---
 
-import { Card, Cards } from "@site/src/components/Cards";
 
 :::danger 🚧 Construction Notes
 
@@ -13,11 +12,13 @@ article on culinary social history.
 
 :::
 
+import { Card, Cards } from "@site/src/components/Cards";
+
 <Cards>
   <Card
     name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    url="../../tutorials/getting-started/getting-started-with-bsr"
+    description="Are you ready to elevate your schema management game and streamline your development process?"
   />
   <Card
     name="🚧 How To"

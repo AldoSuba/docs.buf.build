@@ -55,7 +55,11 @@ const sidebars = {
           id: "tutorials/getting-started/getting-started-with-bsr",
           label: "Getting started with the BSR"
         },
-        "tutorials/getting-started/getting-started-with-buf-studio"
+        {
+          type: "doc",
+          id: "tutorials/getting-started/getting-started-with-buf-studio",
+          label: "Getting Started with Buf Studio"
+        }
       ],
       collapsed: false
     },
@@ -72,11 +76,12 @@ const sidebars = {
         "buf/breaking/how-to",
         "buf/build/how-to",
         "buf/generate/how-to",
+        "bsr/remote-packages/how-to",
         {
           type: "doc",
           id: "ci-cd/how-to",
           label: "Buf on GitHub Actions: A Setup Guide"
-        },
+        }
       ],
       collapsed: false
     },
@@ -88,7 +93,12 @@ const sidebars = {
           type: "category",
           label: "The Buf CLI",
           items: [
-            { type: "category", label: "Breaking", items: ["buf/breaking/reference/configuration", "buf/breaking/reference/rules"], collapsed: true },
+            {
+              type: "category",
+              label: "Breaking",
+              items: ["buf/breaking/reference/configuration", "buf/breaking/reference/rules"],
+              collapsed: true
+            },
             { type: "doc", label: "Build", id: "buf/build/reference" },
             { type: "doc", label: "Convert", id: "buf/convert/reference" },
             { type: "doc", label: "Curl", id: "buf/curl/reference" },
@@ -106,7 +116,6 @@ const sidebars = {
                 "buf/generate/managed-mode/reference"
               ]
             },
-            { type: "category", label: "Lint", items: ["buf/lint/reference/overview", "buf/lint/reference/configuration", "buf/lint/reference/rules"], collapsed: true },
             { type: "doc", label: "Mod", id: "buf/mod/reference" },
             { type: "doc", label: "Push", id: "buf/push/reference" },
             { type: "doc", label: "Registry", id: "buf/registry/reference" }
@@ -119,14 +128,48 @@ const sidebars = {
           items: [
             { type: "doc", label: "Dependency Management", id: "bsr/dependency-management/reference" },
             { type: "doc", label: "Documentation", id: "bsr/documentation/reference" },
-            { type: "doc", label: "Remote Packages", id: "bsr/remote-packages/reference" },
+            {
+              type: "category",
+              label: "Remote Packages",
+              items: ["bsr/remote-packages/reference/overview", "bsr/remote-packages/reference/go", "bsr/remote-packages/reference/npm"]
+            },
             { type: "doc", label: "Remote Plugins", id: "bsr/remote-plugins/reference" },
             { type: "doc", label: "Schema Management", id: "bsr/schema-management/reference" },
             { type: "doc", label: "Studio", id: "bsr/studio/reference" },
             { type: "doc", label: "User Management", id: "bsr/user-management/reference" }
           ],
           collapsed: true
-        }
+        },
+        "reference/workspaces",
+        "reference/images",
+        "reference/inputs",
+        "reference/internal-compiler",
+        "reference/protoc-plugins",
+        {
+          type: "category",
+          label: "Deprecated",
+          items: [
+            {
+              type: "category",
+              label: "Remote generation",
+              customProps: {
+                badge: {
+                  label: "alpha",
+                  severity: "info"
+                }
+              },
+              items: [
+                "reference/deprecated/remote-generation/overview",
+                "reference/deprecated/remote-generation/go",
+                "reference/deprecated/remote-generation/js",
+                "reference/deprecated/remote-generation/plugin-example",
+                "reference/deprecated/remote-generation/template-example"
+              ],
+              collapsed: true
+            }
+          ],
+          collapsed: true
+        },
       ],
       collapsed: false
     }

@@ -16,8 +16,8 @@ encyclopedia article.
 <Cards>
   <Card
     name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    url="../../tutorials/getting-started/getting-started-with-bsr"
+    description="Are you ready to elevate your schema management game and streamline your development process?"
   />
   <Card
     name="🚧 How To"
@@ -35,3 +35,7 @@ encyclopedia article.
     description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
   />
 </Cards>
+
+:::caution 🚧 UNDER CONSTRUCTION
+Content Required
+:::

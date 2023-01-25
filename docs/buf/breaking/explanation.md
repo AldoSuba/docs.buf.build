@@ -26,13 +26,13 @@ article on culinary social history.
   />
   <Card
     name="🧱 Reference"
-    url="reference/overview"
+    url="reference/configuration"
     description="Take your buf breaking change detection to the next level with this set of expert-approved rules and never miss a backwards-incompatible change again!"
   />
   <Card
     name="🏗 Explanation"
     url="../build/explanation"
-    description=""
+    description="Unlock the full potential of Buf Build and understand its role in modern development with this in-depth guide exploring the context and power of Buf Build."
   />
 </Cards>
 
