@@ -88,7 +88,7 @@ const sidebars = {
           type: "category",
           label: "The Buf CLI",
           items: [
-            { type: "category", label: "Breaking", items: ["buf/breaking/reference/overview", "buf/breaking/reference/configuration", "buf/breaking/reference/rules"], collapsed: true },
+            { type: "category", label: "Breaking", items: ["buf/breaking/reference/configuration", "buf/breaking/reference/rules"], collapsed: true },
             { type: "doc", label: "Build", id: "buf/build/reference" },
             { type: "doc", label: "Convert", id: "buf/convert/reference" },
             { type: "doc", label: "Curl", id: "buf/curl/reference" },
