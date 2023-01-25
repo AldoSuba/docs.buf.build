@@ -18,7 +18,7 @@ topics:
 
 - [Modules](../bsr/overview.mdx#modules)
 - [BSR](../bsr/overview.mdx)
-- [Workspaces](../reference/workspaces.mdx)
+- [Workspaces](../buf/other/workspaces.mdx)
 
 ## Edit and push
 
@@ -93,7 +93,7 @@ that the other module can update its dependency and use it locally. This
 workflow imposes a frustrating feedback loop and invites more opportunities for
 mistakes in each pushed module commit.
 
-The `buf` module [workspace](../reference/workspaces.mdx) was created to solve
+The `buf` module [workspace](../buf/other/workspaces.mdx) was created to solve
 exactly this problem (and more).
 
 For example, if you have two modules checked out in sibling directories:
@@ -174,7 +174,7 @@ push each of your modules until all of your local changes are published to the
 BSR.
 
 For more on workspaces, see the
-[workspace documentation](../reference/workspaces.mdx).
+[workspace documentation](../buf/other/workspaces.mdx).
 
 `buf` provides a variety of powerful tools that help you develop your APIs and
 iterate on one or more modules at a time. Make sure to check out more of the

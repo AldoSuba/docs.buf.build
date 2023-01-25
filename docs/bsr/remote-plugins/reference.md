@@ -39,7 +39,7 @@ encyclopedia article.
 ## Configuration
 
 The `buf.gen.yaml` file controls how the `buf generate` command executes
-Protobuf plugins for any [input](../../reference/inputs.md). Here, we can
+Protobuf plugins for any [input](../../buf/other/inputs.md). Here, we can
 specify [remote plugins](overview.mdx) to perform code generation. For more
 information on the `buf.gen.yaml` configuration, see the
 [reference](../../configuration/v1/buf-gen-yaml.md).
@@ -50,7 +50,7 @@ ecosystem. To discover all publicly-available plugins, go to
 
 ## Choose your input
 
-Remote plugins generate code for [inputs](../../reference/inputs.md). An input
+Remote plugins generate code for [inputs](../../buf/other/inputs.md). An input
 can be a git repository, tarball, zip file, a or local directory containing
 Protobuf files configured with a
 [`buf.yaml`](../../configuration/v1/buf-yaml.md) configuration file. Buf refers
@@ -78,7 +78,7 @@ configure modules to build with `buf`.
 
 ## Create a [`buf.gen.yaml`](/configuration/v1/buf-gen-yaml)
 
-Now that you have an [input](../../reference/inputs.md) to generate code for, we
+Now that you have an [input](../../buf/other/inputs.md) to generate code for, we
 need to define a [`buf.gen.yaml`](/configuration/v1/buf-gen-yaml) and specify
 what `protoc` plugins you want to use.
 

@@ -33,7 +33,7 @@ commands and migration.
   Protobuf file, and happily parse Protobuf files that are not valid. Instead,
   `buf` lets you use either the internal compiler that is tested to cover every
   edge case and parses only valid files, or use `protoc` output as `buf` input.
-  See our [compiler](../reference/internal-compiler.md) discussion for more
+  See our [compiler](../buf/other/internal-compiler.md) discussion for more
   details.
 - Protolock uses a custom structure, represented in
   [JSON](https://github.com/nilslice/protolock/blob/1a3dd1a15d36f26d0a616be4584da6a4589e7844/parse.go#L19),
@@ -80,7 +80,7 @@ commands and migration.
   [manually](../build/usage.md#limit-to-specific-files) for use cases that
   require this, such as [Bazel](/build-systems/bazel.md).
 - Since `buf` can process `FileDescriptorSet`s as input, `buf` provides a
-  [protoc plugin](../reference/protoc-plugins.md#breaking) to allow you to use
+  [protoc plugin](../buf/other/protoc-plugins.md#breaking) to allow you to use
   `buf`'s breaking change detection functionality with your current `protoc`
   setup.
 

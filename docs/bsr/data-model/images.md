@@ -3,6 +3,41 @@ id: images
 title: Images
 ---
 
+
+:::danger 🚧 Construction Notes
+
+This EXPLANATION oriented to understanding must explain & build context. Its form, discursive explanation. Analogous an
+article on culinary social history.
+
+:::
+
+import Image from "@site/src/components/Image";
+import Syntax from "@site/src/components/Syntax";
+import { Card, Cards } from "@site/src/components/Cards";
+
+<Cards>
+  <Card
+    name="🖌 Tutorial"
+    url="#"
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  />
+  <Card
+    name="🚧 How To"
+    url="#"
+    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
+  />
+  <Card
+    name="🧱 Reference"
+    url="#"
+    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
+  />
+  <Card
+    name="🏗 Explanation"
+    url="#"
+    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
+  />
+</Cards>
+
 Throughout the documentation, you may occasionally see references to Buf
 **images**. We'll go over what images are, how they are used, and the various
 options associated with them here.
@@ -210,7 +245,7 @@ Linting and breaking change detection internally operate on Buf images that the
 represent a stable, widely used method to represent a compiled Protobuf schema.
 For the breaking change detector, images are the storage format used if you want
 to manually store the state of your Protobuf schema. See the
-[input documentation](inputs.md#breaking-change-detection) for more details.
+[input documentation](../../buf/other/inputs.md#breaking-change-detection) for more details.
 
 ## Creating images
 
@@ -227,7 +262,7 @@ ordering of the `FileDescriptorProto`s is carefully written to mimic the
 ordering that `protoc` would produce, for both the cases where imports are and
 are not written.
 
-By default, `buf` produces a [Buf image](../reference/images.md) with both
+By default, `buf` produces a [Buf image](images.md) with both
 imports and source code info. You can strip each of these:
 
 ```sh
@@ -246,7 +281,7 @@ Images can be outputted in one of two formats:
 
 Either format can be compressed using Gzip or Zstandard.
 
-Per the [Buf input](inputs.md) documentation, `buf build` can deduce the format
+Per the [Buf input](../../buf/other/inputs.md) documentation, `buf build` can deduce the format
 from the file extension:
 
 ```sh
@@ -296,7 +331,7 @@ in case you need it.
 
 ## Using protoc output as `buf` input
 
-Since `buf` speaks in terms of [Buf images](../reference/images.md) and
+Since `buf` speaks in terms of [Buf images](images.md) and
 [`FileDescriptorSet`][filescriptorset]s are images, we can use`protoc` output as
 `buf` input. Here's an example for [`buf lint`](../lint/usage.mdx):
 
@@ -307,8 +342,8 @@ $ protoc -I . --include_source_info -o /dev/stdout foo.proto | buf lint -
 ## Protoc lint and breaking change detection plugins
 
 Since `buf` "understands" [`FileDescriptorSet`][filedescriptorset]s, we can
-provide plugins [`protoc-gen-buf-lint`](../reference/protoc-plugins.md#lint) and
-[`protoc-gen-buf-breaking`](../reference/protoc-plugins.md#breaking) as standard
+provide plugins [`protoc-gen-buf-lint`](../../buf/other/protoc-plugins.md#lint) and
+[`protoc-gen-buf-breaking`](../../buf/other/protoc-plugins.md#breaking) as standard
 Protobuf plugins as well.
 
 [codegeneratorrequest]:

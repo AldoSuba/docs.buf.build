@@ -4,14 +4,15 @@ title: Overview
 description: EXPLANATION
 ---
 
-import { Card, Cards } from "@site/src/components/Cards";
-
 :::danger 🚧 Construction Notes
 
 This EXPLANATION oriented to understanding must explain & build context. Its form, discursive explanation. Analogous an
 article on culinary social history.
 
 :::
+
+import { Card, Cards } from "@site/src/components/Cards";
+
 
 <Cards>
   <Card

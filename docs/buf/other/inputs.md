@@ -3,6 +3,39 @@ id: inputs
 title: Inputs
 ---
 
+
+:::danger 🚧 Construction Notes
+
+This EXPLANATION oriented to understanding must explain & build context. Its form, discursive explanation. Analogous an
+article on culinary social history.
+
+:::
+
+import { Card, Cards } from "@site/src/components/Cards";
+
+<Cards>
+  <Card
+    name="🖌 Tutorial"
+    url="#"
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  />
+  <Card
+    name="🚧 How To"
+    url="#"
+    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
+  />
+  <Card
+    name="🧱 Reference"
+    url="#"
+    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
+  />
+  <Card
+    name="🏗 Explanation"
+    url="#"
+    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
+  />
+</Cards>
+
 The various I/O options for `buf` may seem a bit daunting, so we'll break down
 how this all fits together.
 
@@ -19,7 +52,7 @@ First, some basic terminology to help our discussion:
 - A **source** is a set of `.proto` files that can be built into a single Buf
   **image** using the `buf build` command.
 - A Buf **image** is encoded as an [`Image`][image-proto] Protobuf message. The
-  mechanics of Buf images are described in the [reference docs](images.md).
+  mechanics of Buf images are described in the [reference docs](../../bsr/data-model/images.md).
 - An **input** is either a **source**&mdash;a set of `.proto` files&mdash;or an
   **image**&mdash;a set of `.proto` files built into a single, encapsulating
   Protobuf [`Image`][image-proto] message.
@@ -304,14 +337,14 @@ You can create images using `buf build`. Examples:
 Note that `-o` is an alias for `--output`.
 
 **You can also create Buf images in the `bin` format using `protoc`**. See the
-[internal compiler](../reference/internal-compiler.md) documentation for more
+[internal compiler](internal-compiler.md) documentation for more
 details.
 
 The command below, for examples, shows a way to compile all Protobuf files in
 your current directory, produce a
 [`FileDescriptorSet`](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto)
 (which is also a Buf image, as described in the
-[reference documentation](images.md)) to stdout, and read this image as binary
+[reference documentation](../../bsr/data-model/images.md)) to stdout, and read this image as binary
 from stdin:
 
 ```sh

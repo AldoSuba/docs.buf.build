@@ -75,7 +75,7 @@ an open-source basis. The `buf` CLI incorporates these components to help you
 create consistent Protobuf APIs:
 
 - A new developed
-  [high-performance Protobuf compiler](reference/internal-compiler.md).
+  [high-performance Protobuf compiler](buf/other/internal-compiler.md).
 - A [linter](lint/overview.md) that enforces good API design choices and
   structure.
 - A [breaking change detector](breaking/overview.md) that enforces compatibility

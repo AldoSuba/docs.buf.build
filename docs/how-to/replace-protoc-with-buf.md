@@ -58,7 +58,7 @@ directory that contains a `buf.yaml` (called a
 [module](../bsr/overview.mdx#modules) in Buf parlance), and multiple modules are
 stitched together with a
 [`buf.work.yaml`](../configuration/v1/buf-work-yaml.md), which defines a
-[workspace](../reference/workspaces.mdx).
+[workspace](../buf/other/workspaces.mdx).
 
 The example shown above can be adapted to `buf` by adding a `buf.yaml` config
 file to each of the `-I` directories and creating a `buf.work.yaml` that
