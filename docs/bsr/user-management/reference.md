@@ -4,9 +4,6 @@ title: Authentication
 description: REFERENCE
 ---
 
-
-
-
 Authentication is required for the majority of the `buf` CLI commands that
 interact with the BSR.
 
@@ -15,7 +12,7 @@ interact with the BSR.
 Sign up or log in at [https://buf.build/login](https://buf.build/login) and
 navigate to your account settings at
 [https://buf.build/settings](https://buf.build/settings/user) or by selecting
-"Settings" from the avatar dropdown at the top-right corner of the page.
+"Settings" from the avatar dropdown in the top-right corner of the page.
 
 On the settings page, click the `Create New Token` button, select an expiration
 time, and add a note for yourself to distinguish this token from others. Click
@@ -44,6 +41,7 @@ The order of precedence for CLI authentication is:
 
 `BUF_TOKEN` can contain a default token. This token is used when authenticating with
 the BSR. You can set `BUF_TOKEN` by:
+
 ```terminal
 $ export BUF_TOKEN=${YOUR_TOKEN}
 ```
@@ -54,9 +52,11 @@ The `BUF_TOKEN` environment variable can also contain tokens with specified BSR 
 Each token has the format `${USER}:${BUF_TOKEN}@${REMOTE_ADDRESS}` with multiple tokens
 separated by `,`. The `buf` CLI will find the correct authentication token for different
 remote address. You can set `BUF_TOKEN` by:
+
 ```terminal
 $ export BUF_TOKEN=${USER1}:${TOKEN1}@{REMOTE1},${USER2}:${TOKEN2}@{REMOTE2},...,{DEFAULT_TOKEN}
 ```
+
 The default token is used when authenticating with remote addresses when a matching remote
 token is not provided. The default token is not required.
 
@@ -108,7 +108,7 @@ as:
 Access the secret token as specified by your CI provider and make it available
 as an environment variable: [`BUF_TOKEN`](#buf_token)
 
-If this is not possible, you can also login via the CLI (assuming
+If this is not possible, you can also log in via the CLI (assuming
 `BUF_API_TOKEN` and `BUF_USER` are set):
 
 ```terminal
@@ -117,5 +117,5 @@ $ echo ${BUF_API_TOKEN} | buf registry login --username ${BUF_USER} --token-stdi
 
 You can now use any of the authenticated `buf` commands, such as `buf push`.
 
-> Note that we have [official GitHub Actions](../ci-cd/github-actions.md) that
+> Note that we have [official GitHub Actions](../../ci-cd/reference) that
 > enable you to quickly configure authentication for CI jobs.

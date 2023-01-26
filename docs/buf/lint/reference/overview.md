@@ -17,7 +17,7 @@ experienced with Protobuf schema design.
 The [`buf` CLI][cli] provides linting functionality through the
 [`buf lint`](../how-to.mdx) command. When you run `buf lint`, `buf` runs a set of
 [lint rules](./rules.md) across all of the Protobuf files covered by a
-[`buf.yaml`](../configuration/v1/buf-gen-yaml.md) configuration file. By
+[`buf.yaml`](../../configuration/v1/buf-gen-yaml.md) configuration file. By
 default, the `buf` CLI uses a curated set of lint rules designed to guarantee
 consistency and maintainability across Protobuf schemas of any size and
 purpose&mdash;but without being so opinionated that it restricts you from making

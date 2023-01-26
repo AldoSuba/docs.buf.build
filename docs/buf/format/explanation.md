@@ -6,7 +6,7 @@ title: Format
 
 
 One of Buf's primary goals is to enforce consistency across all of Protobuf. The
-[linter](../lint/overview.md) ensures that the APIs themselves conform to a
+[linter](../lint/explanation) ensures that the APIs themselves conform to a
 strong set of standards, but these standards have nothing to do with the
 structure of the `.proto` source file itself. That's where `buf format` comes
 in.

@@ -56,10 +56,10 @@ commands and migration.
   running commands for files one at a time, which breaks some lint and breaking
   change detection functionality. `buf` enables you to skip file discovery and
   specify your files [manually](../build/usage.md#limit-to-specific-files) for
-  use cases that require this, such as [Bazel](/build-systems/bazel.md).
+  use cases that require this, such as [Bazel](/other/bazel.md).
 - Prototool's lint functionality lets you select a single group, currently
   `google`, `uber1`, or `uber2`, and then add and remove rules from that
-  specific group. `buf` instead provides [lint categories](../lint/rules.md)
+  specific group. `buf` instead provides [lint categories](../lint/reference/rules)
   that you can mix and match, and lets you exclude entire categories or rules if
   you want. `buf` also presents a clear path to add additional rules to new
   categories in a backwards-compatible manner without touching existing
@@ -96,7 +96,7 @@ commands and migration.
 `buf` has lint categories that are either roughly equivalent or a subset of
 Prototool lint groups. `buf` does not have linting functionality some elements
 such as file option naming. See the
-["what we left out"](../lint/rules.md#what-we-left-out) documentation for more
+["what we left out"](../lint/reference/rules#what-we-left-out) documentation for more
 details.
 
 ### `google`
@@ -121,7 +121,7 @@ lint:
 ```
 
 But we recommend using one of the "top-level categories" `MINIMAL`, `BASIC`, or
-`DEFAULT` instead. See the [lint rules](../lint/rules.md) documentation for more
+`DEFAULT` instead. See the [lint rules](../lint/reference/rules) documentation for more
 details.
 
 ### `uber1`, `uber2`
@@ -226,7 +226,7 @@ There is no equivalent in `buf`.
 There is no equivalent in `buf`.
 
 `buf` does not check file options as of now, see
-[our discussion on this](../lint/rules.md#file-option-values) for more details.
+[our discussion on this](../lint/reference/rules#file-option-values) for more details.
 
 ### `break.include_beta`
 
@@ -244,7 +244,7 @@ there is a demand for it.
 
 Use a plugin template as described in the
 [generation documentation](../generate/how-to). The default location for a
-plugin template is [`buf.gen.yaml`](../configuration/v1/buf-gen-yaml.md).
+plugin template is [`buf.gen.yaml`](../../configuration/v1/buf-gen-yaml.md).
 
 ## Equivalent commands
 

@@ -10,10 +10,8 @@ article on culinary social history.
 
 :::
 
-
-
-The Buf Schema Registry ([BSR](../explanation.mdx)) automatically enforces that
-your [module](../explanation.mdx#modules) compiles when it is pushed, but there
+The Buf Schema Registry ([BSR](../../bsr/explanation)) automatically enforces that
+your [module](../../bsr/explanation#modules) compiles when it is pushed, but there
 are other best practices that can't be enforced that you should consider when
 you are developing your modules. We'll go over what these best practices are,
 and why they're important to keep in mind.
@@ -27,8 +25,8 @@ structure.
 Suppose that you are implementing the `buf.build/acme/pkg` module, which only
 contains a single `.proto` file initially. Rather than placing this file at the
 root of the module (adjacent to the
-[`buf.yaml`](../configuration/v1/buf-yaml.md) and
-[`buf.lock`](../configuration/v1/buf-lock.md) files), this file should still be
+[`buf.yaml`](../../configuration/v1/buf-yaml.md) and
+[`buf.lock`](../../configuration/v1/buf-lock.md) files), this file should still be
 nested within a directory and defined with a package that attempts to make it
 unique across other module dependencies.
 
@@ -67,7 +65,7 @@ impossible for the compiler to distinguish between what `api.proto` you are
 referring to if there are multiple.
 
 > The module layout described here is included in the
-> [`MINIMAL`](../lint/rules.md#minimal) lint category.
+> [`MINIMAL`](../lint/reference/rules#minimal) lint category.
 
 ## Maintain backwards compatibility
 
@@ -157,4 +155,4 @@ changes to the module and all of their consumers can continue to compile their
 modules.
 
 > The package version recommendation described here is described by the
-> [`PACKAGE_VERSION_SUFFIX`](../lint/rules.md#package_version_suffix) lint rule.
+> [`PACKAGE_VERSION_SUFFIX`](../lint/reference/rules.md#package_version_suffix) lint rule.

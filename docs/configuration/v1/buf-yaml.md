@@ -8,7 +8,7 @@ placed at the root of the Protobuf source files it defines. The placement of the
 `buf.yaml` configuration tells `buf` where to search for `.proto` files, and how
 to handle imports.
 
-This file contains [lint](../../lint/rules.md) and
+This file contains [lint](../../lint/reference/rules) and
 [breaking change detection](../../breaking/rules.md) rules, and if applicable,
 the name of your module and a list of dependencies.
 
@@ -86,7 +86,7 @@ general**, however in some situations it is unavoidable.
 
 ### `lint`
 
-The `lint` key is **optional**, and specifies the [lint rules](/lint/rules.md)
+The `lint` key is **optional**, and specifies the [lint rules](/lint/reference/rules)
 enforced on the files in the module.
 
 #### `use`
@@ -352,7 +352,7 @@ breaking:
 
 The `ignore_unstable_packages` key is **optional**, and ignores packages with a
 last component that is one of the unstable forms recognized by
-[`PACKAGE_VERSION_SUFFIX`](../../lint/rules.md#package_version_suffix):
+[`PACKAGE_VERSION_SUFFIX`](../../lint/reference/rules#package_version_suffix):
 
 - `v\d+test.*`
 - `v\d+(alpha|beta)\d+`

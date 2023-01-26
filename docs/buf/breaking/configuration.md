@@ -13,9 +13,9 @@ encyclopedia article.
 :::
 
 `buf`'s breaking change detector is configured through a
-[`buf.yaml`](../configuration/v1/buf-yaml.md) file that is placed at the root of
+[`buf.yaml`](../../configuration/v1/buf-yaml.md) file that is placed at the root of
 the Protobuf source files it defines. If `buf breaking` is executed for an
-[input](../reference/inputs.md) that contains a `buf.yaml` file, its `breaking`
+[input](../other/inputs.md) that contains a `buf.yaml` file, its `breaking`
 configuration is used for the given operation.
 
 If a `buf.yaml` file is not contained in the input, `buf` operates as if there
@@ -23,7 +23,7 @@ is a `buf.yaml` file with the [default values](#default-values).
 
 Below is an example of all available configuration options. For more information
 on the `buf.yaml` configuration, see the
-[reference](../configuration/v1/buf-yaml.md).
+[reference](../../configuration/v1/buf-yaml.md).
 
 ```yaml title="buf.yaml"
 version: v1
@@ -58,7 +58,7 @@ breaking:
     - FILE_NO_DELETE
 ```
 
-**As opposed to [lint rules](../lint/rules.md), breaking rules are not meant to
+**As opposed to [lint rules](../lint/reference/rules), breaking rules are not meant to
 be overly customized.** Breaking rules are generally meant to work in unison to
 detect a category of breaking change, as opposed to merely being independent
 rules.
@@ -70,7 +70,7 @@ You should usually choose one of these values for `use`:
 - `[WIRE]` enforces that wire compatibility is not broken.
 - `[WIRE_JSON]` enforces that wire and JSON wire compatibility are not broken.
 
-See the [overview](overview.md) for a longer description of the purpose of each
+See the [overview](explanation.md) for a longer description of the purpose of each
 category.
 
 The default value is the single item `FILE`, which is what we recommend.
@@ -146,7 +146,7 @@ breaking:
 
 The `ignore_unstable_packages` key is **optional**, and ignores packages with a
 last component that is one of the unstable forms recognized by
-[`PACKAGE_VERSION_SUFFIX`](../lint/rules.md#package_version_suffix):
+[`PACKAGE_VERSION_SUFFIX`](../lint/reference/rules#package_version_suffix):
 
 - `v\d+(alpha|beta)\d*`
 - `v\d+p\d+(alpha|beta)\d*`

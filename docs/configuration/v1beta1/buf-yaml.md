@@ -13,7 +13,7 @@ placed at the root of the Protobuf source files it defines. The placement of the
 `buf.yaml` configuration tells `buf` where to search for `.proto` files, and how
 to handle imports.
 
-This file contains [lint](../../lint/rules.md) and
+This file contains [lint](../../lint/reference/rules) and
 [breaking change detection](../../breaking/rules.md) rules, and if applicable,
 the name of your module and a list of dependencies.
 

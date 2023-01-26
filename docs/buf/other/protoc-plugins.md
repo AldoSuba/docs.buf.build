@@ -135,8 +135,8 @@ $ protoc \
 pet/v1/pet.proto:47:9:Service name "PetStore" should be suffixed with "Service".
 ```
 
-[breaking]: ../breaking/overview.md
-[lint]: ../lint/overview.md
+[breaking]: ../breaking/explanation
+[lint]: ../lint/explanation
 [protoc]: https://developers.google.com/protocol-buffers
 [req]:
   https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/compiler/plugin.proto

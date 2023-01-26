@@ -115,9 +115,9 @@ in question. By default, `buf curl` will expect the server to expose the
 [service](https://github.com/grpc/grpc/blob/master/doc/server-reflection.md#known-implementations).
 
 If the server does not support reflection, you can instead indicate the schema to use via a
-`--schema` option. This option accepts the same kind of [inputs](../reference/inputs.md) as
+`--schema` option. This option accepts the same kind of [inputs](../other/inputs) as
 `buf build` and `buf generate`, letting you point to Protobuf sources on disk, in a Git repo, or in
-a [BSR](../bsr/introduction.md) module.
+a [BSR](../../bsr/introduction) module.
 
 ```terminal
 $ buf curl \

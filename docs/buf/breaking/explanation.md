@@ -4,8 +4,6 @@ title: Breaking Change Detection
 description: "Say goodbye to tedious manual checks for buf breaking changes and hello to effortless detection with our super-duper buf breaking change detection tool."
 ---
 
-
-
 :::caution 🚧 UNDER CONSTRUCTION
 Content Required
 :::
@@ -53,7 +51,7 @@ Other features of `buf`'s breaking change detector include:
   `buf` produces a reference to the location of the message in the current file.
 
 - **Speed**. `buf`'s
-  [internal Protobuf compiler](../reference/internal-compiler.md) utilizes all
+  [internal Protobuf compiler](../other/internal-compiler.md) utilizes all
   available cores to compile your Protobuf schema, while still maintaining
   deterministic output. Additionally, files are copied into memory before
   processing. As an unscientific example, `buf` can compile all 2,311 `.proto`

@@ -7,7 +7,7 @@ description: Don't miss out on the opportunity to upgrade your development proce
 
 
 The `buf format` command rewrites `.proto` files in-place according to an
-opinionated [style](style.md).
+opinionated [style](explanation).
 
 ## Configuration
 
@@ -18,7 +18,7 @@ formatted - `buf` decides for you so you don't have to.
 
 ## Examples
 
-By default, the [input](../reference/inputs.md) is the current directory and the
+By default, the [input](../other/inputs) is the current directory and the
 formatted content is written to stdout. For example, given the following `tree`:
 
 ```sh

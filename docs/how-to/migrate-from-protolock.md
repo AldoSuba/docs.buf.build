@@ -78,7 +78,7 @@ commands and migration.
 - Both Protolock and `buf` run file discovery for your Protobuf files, however
   `buf` allows you to skip file discovery and specify your files
   [manually](../build/usage.md#limit-to-specific-files) for use cases that
-  require this, such as [Bazel](/build-systems/bazel.md).
+  require this, such as [Bazel](/other/bazel.md).
 - Since `buf` can process `FileDescriptorSet`s as input, `buf` provides a
   [protoc plugin](../buf/other/protoc-plugins.md#breaking) to allow you to use
   `buf`'s breaking change detection functionality with your current `protoc`

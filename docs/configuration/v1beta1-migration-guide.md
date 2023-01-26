@@ -142,7 +142,7 @@ With a workspace, operations like `buf build`, `buf lint`, and `buf breaking`
 can target the directory containing the `buf.work.yaml` file to have the same
 experience before they split their single `buf.yaml` into multiple `buf.yaml`
 files. For example, running `buf lint` on a directory
-[input](../reference/inputs.md) containing a `buf.work.yaml` lints _all_ of the
+[input](../other/inputs) containing a `buf.work.yaml` lints _all_ of the
 modules listed in the `buf.work.yaml`.
 
 ### `MINIMAL` lint category {#minimal}

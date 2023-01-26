@@ -11,12 +11,10 @@ a web client. Its form, a series of steps - analogous to a recipe in a cookery b
 
 :::
 
-
-
 ## Define a module
 
-To get started, create a [module](../explanation.mdx#modules) by adding a
-[`buf.yaml`](../configuration/v1/buf-yaml.md) file to the root of the directory
+To get started, create a [module](../../bsr/explanation#modules) by adding a
+[`buf.yaml`](../../configuration/v1/buf-yaml.md) file to the root of the directory
 that contains your Protobuf definitions. You can create the default `buf.yaml`
 file with this command:
 
@@ -38,7 +36,7 @@ lint:
 
 You can run `buf breaking` on your module by specifying the filepath to the
 directory containing the `buf.yaml` and choosing an
-[input](../reference/inputs.md) to compare it against. In the above example, you
+[input](../other/inputs) to compare it against. In the above example, you
 can target the input defined in the current directory and compare it against the
 `main` `git` branch:
 
@@ -95,7 +93,7 @@ deal with them.
 ### git
 
 > Make sure to check out Buf's dedicated
-> [GitHub Actions](../ci-cd/github-actions.md) to seamlessly add breaking change
+> [GitHub Actions](../ci-cd/reference) to seamlessly add breaking change
 > detection into your CI/CD pipeline!
 
 You can directly compare against the `.proto` files at the head of a `git`
@@ -141,8 +139,8 @@ $ buf breaking --against '.git#tag=v1.0.0,subdir=proto'
 ```
 
 For remote locations that require authentication, see
-[HTTPS Authentication](../reference/inputs.md#https) and
-[SSH Authentication](../reference/inputs.md#ssh) for more details.
+[HTTPS Authentication](../other/inputs#https) and
+[SSH Authentication](../other/inputs#ssh) for more details.
 
 ### Archives
 
@@ -181,7 +179,7 @@ google/type/date.proto:50:3:Field "3" on message "Date" changed type from "int32
 By default, `buf` builds all files under the `buf.yaml` configuration file. You
 can instead manually specify the file or directory paths to run breaking change
 detection. This is an advanced feature intended to be used for editor or
-[Bazel](/build-systems/bazel.md) integration - it is better to let `buf`
+[Bazel](../other/bazel.md) integration - it is better to let `buf`
 discover all files under management and handle this for you in general,
 especially when using the `FILE` category.
 
@@ -193,7 +191,7 @@ $ buf breaking --against .git#branch=main --path path/to/foo.proto --path path/t
 ```
 
 You can combine this with an in-line
-[configuration override](../configuration/overview.md#configuration-override),
+[configuration override](../../configuration/overview.md#configuration-override),
 too:
 
 ```terminal

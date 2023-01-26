@@ -6,7 +6,7 @@ title: buf.gen.yaml
 The `buf.gen.yaml` file defines a local plugin template, and is used by the
 `buf generate` command to generate code for the language(s) of your choice. This
 file is often used with a [module](../../bsr/overview.mdx#modules) (or another
-[input](../../reference/inputs.md)), and is typically placed next to your
+[input](../../other/inputs)), and is typically placed next to your
 [`buf.work.yaml`](buf-work-yaml.md) file:
 
 ```sh

@@ -62,7 +62,7 @@ $ buf lint buf.build/acme/petapis
 ### Breaking change detection
 
 The biggest current use case is for
-[breaking change detection](../breaking/overview.md). When you are comparing
+[breaking change detection](../breaking/explanation). When you are comparing
 your current Protobuf schema to an old version of your schema, you have to
 decide - where is your old version stored? `buf` provides multiple options for
 this, including the ability to directly compile and compare against a Git branch

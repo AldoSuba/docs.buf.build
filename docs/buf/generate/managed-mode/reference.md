@@ -14,7 +14,7 @@ in API definitions.
 
 You can avoid setting these file options when [generating] code from Protobuf
 sources by enabling **managed mode** in your
-[`buf.gen.yaml`](../configuration/v1/buf-gen-yaml.md) configuration file. When
+[`buf.gen.yaml`](../../../configuration/v1/buf-gen-yaml.md) configuration file. When
 managed mode is [enabled](#enabled), the `buf` CLI sets specified file options
 on the fly during code generation so that you don't need to hard-code them in
 your `.proto` files.
@@ -197,7 +197,7 @@ option go_package = "github.com/acme/weather/gen/proto/go/acme/weather/v1;weathe
 
 The `except` key is **optional**, and removes certain modules from the
 `go_package` file option override behavior. The `except` values **must** be
-valid [module names](../explanation.mdx#modules).
+valid [module names](../../../bsr/explanation.mdx#modules).
 
 There are situations where you may want to enable managed mode for the
 `go_package` option in _most_ of your Protobuf files, but not necessarily for
@@ -215,7 +215,7 @@ names. Additionally, the corresponding `override` values **must** be a valid [Go
 import path][go.import] and **must not** jump context from the current
 directory. As an example, `../external` is invalid.
 
-This setting is used for [workspace](../reference/workspaces.mdx) environments,
+This setting is used for [workspace](../../other/workspaces) environments,
 where you have a module that imports from another module in the same workspace,
 and you need to generate the Go code for each module in different directories.
 This is particularly relevant for repositories that decouple their private API
@@ -382,45 +382,28 @@ The problem really comes to a head when it comes to import paths. With
 With the `buf` CLI and managed mode, you can avoid these complex `protoc`
 invocations and use [configuration](#configuration) instead.
 
-[apple_warning]:
-  https://github.com/apple/swift-protobuf/blob/main/Documentation/API.md#generated-struct-name
-[buf_gen_yaml]: /configuration/v1/buf-gen-yaml.md
-[cc_enable_arenas]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L419
-[csharp_namespace]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L427
-[descriptor.go]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L341
-[file-options]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L341
-[generating]: ../generate/how-to
+[apple_warning]: https://github.com/apple/swift-protobuf/blob/main/Documentation/API.md#generated-struct-name
+[buf_gen_yaml]: ../../../configuration/v1/buf-gen-yaml.md
+[cc_enable_arenas]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L419
+[csharp_namespace]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L427
+[descriptor.go]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L341
+[file-options]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L341
+[generating]: ../how-to
 [go.import]: https://golang.org/ref/spec#ImportPath
-[go_opt]:
-  https://developers.google.com/protocol-buffers/docs/reference/go-generated
-[go_package]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L391
-[hosted]: ../bsr/remote-packages/explanation#remote-plugins
-[input]: /reference/inputs.md
-[java_multiple_files]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L363
-[java_outer_classname]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L355
-[java_package]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L347
-[java_string_check_utf8]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L374
-[objc_class_prefix]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L424
-[optimize_for]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L384
+[go_opt]: https://developers.google.com/protocol-buffers/docs/reference/go-generated
+[go_package]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L391
+[hosted]: ../../../bsr/remote-packages/explanation#remote-plugins
+[input]: ../../other/inputs
+[java_multiple_files]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L363
+[java_outer_classname]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L355
+[java_package]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L347
+[java_string_check_utf8]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L374
+[objc_class_prefix]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L424
+[optimize_for]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L384
 [pascal]: https://techterms.com/definition/pascalcase
-[php_metadata_namespace]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L447
-[php_namespace]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L442
-[plugins]: /bsr/remote-packages/concepts#plugins
+[php_metadata_namespace]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L447
+[php_namespace]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L442
+[plugins]: ../../../bsr/remote-packages/how-to#plugins
 [protoc]: https://github.com/protocolbuffers/protobuf
-[ruby_package]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L452
-[swift_prefix]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L433
+[ruby_package]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L452
+[swift_prefix]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L433

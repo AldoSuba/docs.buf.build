@@ -525,7 +525,7 @@ foo.bar.v1testfoo
 
 One of the core promises of Protobuf API development is to never have breaking
 changes in your APIs, and `buf` helps enforce this through the
-[breaking change detector](../breaking/overview.md). There are scenarios,
+[breaking change detector](../breaking/explanation). There are scenarios,
 however, where you do want to properly version your API. Instead of making
 changes, the proper method to do so is to make a completely new Protobuf package
 that is a copy of your existing Protobuf package, serve both packages

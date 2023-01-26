@@ -249,7 +249,8 @@ const sidebars = {
           collapsed: true
         }
       ]
-    }
+    },
+    "contact"
   ]
 };
 

@@ -56,7 +56,7 @@ ifndef VERSION
 	$(error "VERSION must be set")
 endif
 	$(SED_I) "s/[0-9].[0-9][0-9]*\.[0-9][0-9]*/$(VERSION)/g" docs/installation.mdx
-	$(SED_I) "s/version: \"[0-9].[0-9][0-9]*\.[0-9][0-9]*\"/version: \"$(VERSION)\"/g" docs/ci-cd/github-actions.md
-	$(SED_I) "s/version = \"v[0-9].[0-9][0-9]*\.[0-9][0-9]*\"/version = \"v$(VERSION)\"/g" docs/build-systems/bazel.md
+	$(SED_I) "s/version: \"[0-9].[0-9][0-9]*\.[0-9][0-9]*\"/version: \"$(VERSION)\"/g" docs/ci-cd/reference
+	$(SED_I) "s/version = \"v[0-9].[0-9][0-9]*\.[0-9][0-9]*\"/version = \"v$(VERSION)\"/g" docs/other/bazel.md
 	$(SED_I) "s/BUF_VERSION=[0-9].[0-9][0-9]*\.[0-9][0-9]*/BUF_VERSION=$(VERSION)/g" docs/ci-cd/setup.mdx
 	$(SED_I) "s/downloadRelease: \"[0-9].[0-9][0-9]*\.[0-9][0-9]*\"/downloadRelease: \"$(VERSION)\"/g" docusaurus.config.js

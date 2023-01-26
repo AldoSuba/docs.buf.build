@@ -53,7 +53,7 @@ For more on the `buf.work.yaml` file, refer to the
 ## Default configuration
 
 The default configuration location depends on the
-[input](../reference/inputs.md). If `buf` is executed with an input that
+[input](../other/inputs). If `buf` is executed with an input that
 contains `buf.{mod,lock,work}` files, those files are used for the given
 operation. Running `buf lint`, for example, would use the `lint` configuration
 found in the inputs `buf.yaml`, if it exists.
@@ -79,7 +79,7 @@ without a `buf.gen.yaml` file in the current working directory yields an error
 A large number of the `buf` commands support a `--config` flag that is used to
 override the `buf.yaml` configuration with a file path or direct JSON or YAML
 data. This is useful for situations where you may want to specify all options
-via the command line, for example with [Bazel](/build-systems/bazel.md)
+via the command line, for example with [Bazel](/other/bazel.md)
 integrations and/or when using the `protoc` plugins.
 
 All commands have one or more `--.*config` flags that control this behavior. For

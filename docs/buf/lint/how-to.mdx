@@ -44,7 +44,7 @@ As you can see, the default configuration applies the
 
 You can run `buf lint` on your module by specifying the filepath to the
 directory containing the `buf.yaml`. It uses the current directory by default,
-so you can target the [input](../reference/inputs.md) defined in the current
+so you can target the [input](../other/inputs) defined in the current
 directory with this command:
 
 ```terminal
@@ -128,9 +128,9 @@ lint:
 
 ## Common use cases
 
-`buf` can lint [inputs](../reference/inputs.md) beyond your local Protobuf
-files, such as [Git repositories](../reference/inputs.md#git) and
-[tarballs](../reference/inputs.md#tar). This can be useful in a variety of
+`buf` can lint [inputs](../other/inputs) beyond your local Protobuf
+files, such as [Git repositories](../other/inputs#git) and
+[tarballs](../other/inputs#tar). This can be useful in a variety of
 scenarios, such as using [protoc] output as `buf` input. Here are some examples
 script:
 
@@ -146,8 +146,8 @@ buf lint buf.build/acme/petapis
 ```
 
 For remote locations that require authentication, see
-[HTTPS Authentication](../reference/inputs.md#https) and
-[SSH Authentication](../reference/inputs.md#ssh).
+[HTTPS Authentication](../other/inputs#https) and
+[SSH Authentication](../other/inputs#ssh).
 
 ## Limit to specific files
 

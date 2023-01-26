@@ -24,7 +24,7 @@ topics:
 
 The typical `buf` workflow involves editing your `.proto` files, and verifying
 the changes continue to conform to the configured
-[lint rules](../lint/rules.md).
+[lint rules](../lint/reference/rules).
 
 Once you've made your edits, you can manually verify your changes with the `buf`
 CLI, or by [configuring your editor](../editor-integration.mdx) to automatically
@@ -67,7 +67,7 @@ current directory, you can update your dependencies with this command:
 $ buf mod update
 ```
 
-When your dependencies conform to `buf`'s default [lint](../lint/rules.md) and
+When your dependencies conform to `buf`'s default [lint](../lint/reference/rules) and
 [breaking](../breaking/rules.md) rules, updating is straightforward. Despite
 `buf`'s best efforts, however, dependencies sometimes undergo changes that can
 break compatibility, so you might encounter errors when you try to `buf push` a

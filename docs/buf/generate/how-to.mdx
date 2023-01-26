@@ -14,9 +14,6 @@ all of its nuances, you must also learn the complexity of `protoc`. The
 can stop worrying about complex `protoc` invocations and instead focus on their
 schema definitions.
 
-
-
-
 import Examples from "@site/src/components/Examples";
 
 <Examples
@@ -30,17 +27,17 @@ import Examples from "@site/src/components/Examples";
 
 ## Configuration
 
-The [`buf.gen.yaml`](../configuration/v1/buf-gen-yaml.md) template file controls
+The [`buf.gen.yaml`](../../configuration/v1/buf-gen-yaml.md) template file controls
 how the `buf generate` command executes `protoc` plugins for any
-[input](../reference/inputs.md). The `buf.gen.yaml` template lists one or more
+[input](../other/inputs). The `buf.gen.yaml` template lists one or more
 plugins and, optionally, other file option configurations with
-[managed mode](managed-mode.md). For more information on the `buf.gen.yaml`
-configuration, see the [reference](../configuration/v1/buf-gen-yaml.md).
+[managed mode](managed-mode/explanation). For more information on the `buf.gen.yaml`
+configuration, see the [reference](../../configuration/v1/buf-gen-yaml.md).
 
 ## Define a module
 
-To get started, create a [module](../explanation.mdx#modules) by adding a
-[`buf.yaml`](../configuration/v1/buf-yaml.md) file to the root of the directory
+To get started, create a [module](../../bsr/explanation#modules) by adding a
+[`buf.yaml`](../../configuration/v1/buf-yaml.md) file to the root of the directory
 that contains your Protobuf definitions. You can create the default `buf.yaml`
 file with this command:
 
@@ -67,7 +64,7 @@ file is used to easily generate code with `protoc` plugins and simplifies the
 
 ### Create a `buf.gen.yaml`
 
-Now that you have an [input](../reference/inputs.md) to generate code for, we
+Now that you have an [input](../other/inputs) to generate code for, we
 need to define a `buf.gen.yaml` and specify what `protoc` plugins you want to
 use. For example, here's a typical `buf.gen.yaml` for
 [go](https://github.com/protocolbuffers/protobuf-go) and
@@ -94,11 +91,11 @@ plugins you want to invoke.
 Plugins are invoked in the order they are specified in the template, but each
 plugin has a per-directory parallel invocation, with results from each
 invocation combined before writing the result. For more information, see the
-[`buf.gen.yaml` reference](../configuration/v1/buf-gen-yaml.md).
+[`buf.gen.yaml` reference](../../configuration/v1/buf-gen-yaml.md).
 
 ### Run generate
 
-Run this to generate from the [input](../reference/inputs.md) in your current
+Run this to generate from the [input](../other/inputs) in your current
 directory:
 
 ```terminal
@@ -178,7 +175,7 @@ plugins:
 
 ### Run generate
 
-Run this to generate from the [input](../reference/inputs.md) in your current
+Run this to generate from the [input](../other/inputs) in your current
 directory:
 
 ```terminal
@@ -194,21 +191,21 @@ respond with your desired source code.
 ## Common use cases
 
 The most common use case is to generate using the current directory as
-[input](../reference/inputs.md):
+[input](../other/inputs):
 
 ```terminal
 $ buf generate
 ```
 
 This command assumes that a
-[`buf.gen.yaml`](../configuration/v1/buf-gen-yaml.md) exists in the directory
+[`buf.gen.yaml`](../../configuration/v1/buf-gen-yaml.md) exists in the directory
 where you run the command.
 
 ### Generating from a Buf module {#from-module}
 
-You can generate from a Buf [module](../explanation.mdx#modules) on the
-[Buf Schema Registry](../bsr/introduction.md) (BSR) by providing the module name
-as the [input](../reference/inputs.md):
+You can generate from a Buf [module](../../bsr/explanation#modules) on the
+[Buf Schema Registry](../../bsr/introduction) (BSR) by providing the module name
+as the [input](../other/inputs):
 
 ```terminal
 $ buf generate buf.build/acme/petapis
@@ -216,13 +213,13 @@ $ buf generate buf.build/acme/petapis
 
 > This examples uses a Buf module as the input, but other inputs are available.
 > For a complete list, see the
-> [Buf input format documentation](../reference/inputs.md#source-formats).
+> [Buf input format documentation](../other/inputs#source-formats).
 
 ### Generating using multiple templates {#multiple-templates}
 
-The [`buf.gen.yaml`](../configuration/v1/buf-gen-yaml.md) file enables you to
+The [`buf.gen.yaml`](../../configuration/v1/buf-gen-yaml.md) file enables you to
 configure one generation template. For cases where you need to use multiple
-templates for the same [input](../reference/inputs.md), we recommend using
+templates for the same [input](../other/inputs), we recommend using
 multiple configuration files with different names.
 
 If you needed to use one template for Go and a different template for Java, for
@@ -259,7 +256,7 @@ The paths in the template and the `-o` flag are interpreted as relative to your
 By default, `buf` builds all files under the `buf.yaml` configuration file. You
 can instead manually specify the file or directory paths to build. This is an
 advanced feature intended to be used for editor or
-[Bazel](/build-systems/bazel.md) integration - it is better to let `buf`
+[Bazel](../other/bazel.md) integration - it is better to let `buf`
 discover all files under management and handle this for you in general.
 
 If you only want to generate stubs for a subset of your input, you can do so via

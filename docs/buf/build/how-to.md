@@ -13,14 +13,14 @@ a web client. Its form, a series of steps - analogous to a recipe in a cookery b
 
 
 
-All `buf` operations rely on building, or compiling, Protobuf files. The [linter](../lint/overview.md),
-[breaking change detector](../breaking/overview.md), [generator](../generate/how-to),
-and the [BSR](../explanation.mdx) are features that rely on compilation results. In its simplest form,
-the `buf build` command is used to verify that an [input](../reference/inputs.md) compiles.
+All `buf` operations rely on building, or compiling, Protobuf files. The [linter](../lint/explanation),
+[breaking change detector](../breaking/explanation), [generator](../generate/how-to),
+and the [BSR](../../bsr/explanation) are features that rely on compilation results. In its simplest form,
+the `buf build` command is used to verify that an [input](../other/inputs) compiles.
 
 ## Configuration
 
-`buf` is configured with the [`buf.yaml`](../configuration/v1/buf-yaml.md) configuration file, which is placed
+`buf` is configured with the [`buf.yaml`](../../configuration/v1/buf-yaml.md) configuration file, which is placed
 at the root of the Protobuf source files it defines. The placement of the `buf.yaml` configuration tells `buf`
 where to search for `.proto` files, and how to handle imports. As opposed to `protoc`, where all `.proto` files
 are manually specified on the command-line, `buf` operates by recursively discovering all `.proto` files under
@@ -43,7 +43,7 @@ The `excludes` key is **optional**, and lists directories to ignore from `.proto
 added to this list are completely skipped and excluded in the result. **We do not recommend using this
 option in general**, however in some situations it is unavoidable.
 
-For more information on `buf.yaml` configuration, see the [reference](../configuration/v1/buf-yaml.md).
+For more information on `buf.yaml` configuration, see the [reference](../../configuration/v1/buf-yaml.md).
 
 ### Default values
 
@@ -53,7 +53,7 @@ root of your `.proto` files hierarchy, as this is how `.proto` import paths are 
 
 ## Define a Module
 
-To get started, create a [module](../explanation.mdx#modules) by adding a `buf.yaml` file to the root of the directory
+To get started, create a [module](../../bsr/explanation.mdx#modules) by adding a `buf.yaml` file to the root of the directory
 that contains your Protobuf definitions. You can create the default `buf.yaml` file with this command:
 
 ```terminal
@@ -75,7 +75,7 @@ lint:
 For those of you that have used `protoc`, the placement of the `buf.yaml` is analogous to a `protoc`
 include (`-I`) path. **With `buf`, there is no `-I` flag** - each `protoc` `-I` path maps to a directory
 that contains a `buf.yaml` (called a module in Buf parlance), and multiple modules are stitched
-together with a [`buf.work.yaml`](../configuration/v1/buf-work-yaml.md), which defines a [workspace](../reference/workspaces.mdx).
+together with a [`buf.work.yaml`](../../configuration/v1/buf-work-yaml.md), which defines a [workspace](../other/workspaces.mdx).
 
 To illustrate how all these pieces fit together here's a quick example using `protoc` and its equivalent
 in `buf`:
@@ -172,7 +172,7 @@ import "baz/baz.proto";
 Which file is being imported here? Is it `foo/baz/baz.proto`? `bar/baz/baz.proto`? The answer depends
 on the order of the `-I` flags given to `protoc`, or (if `buf` didn't error in this scenario
 pre-compilation, which `buf` does) the order of the imports given to the
-[internal compiler](../reference/internal-compiler.md). If the authors are being honest, we can't
+[internal compiler](../other/internal-compiler.md). If the authors are being honest, we can't
 remember if it's the first `-I` or second `-I` that wins - we have outlawed this in our own builds for a long time.
 
 While the above example is relatively contrived, the common error that comes up is when you
@@ -230,10 +230,10 @@ By default, `buf build` outputs its result to `/dev/null`. In this case, it's co
 `buf build` as a validation step, analogous to checking if the input compiles.
 
 `buf build` also supports outputting [`FileDescriptorSet`](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto)s
-and [Images](../reference/images.md), which is Buf's custom extension of the `FileDescriptorSet`. Better yet, these outputs
+and [Images][images], which is Buf's custom extension of the `FileDescriptorSet`. Better yet, these outputs
 can be formatted in a variety of ways.
 
-`buf build` can deduce the output format by the file extension, see the documentation on [automatically derived formats](../reference/inputs.md#automatically-derived-formats). For example,
+`buf build` can deduce the output format by the file extension, see the documentation on [automatically derived formats](../other/inputs#automatically-derived-formats). For example,
 
 ```terminal
 $ buf build -o image.bin
@@ -282,7 +282,7 @@ field. But we provide the option in case you want it.
 
 By default, `buf` builds all files under the `buf.yaml` configuration file. You can instead manually specify the
 file or directory paths to build. This is an advanced feature intended to be used for editor or
-[Bazel](/build-systems/bazel.md) integration - it
+[Bazel](../other/bazel.md) integration - it
 is better to let `buf` discover all files under management and handle this for you in general.
 
 The compiled result is limited to the given files if the `--path` flag is specified, as in this
@@ -391,8 +391,8 @@ $ docker run \
 
 [enums]: https://developers.google.com/protocol-buffers/docs/proto3#enum
 [filedescriptorset]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto
-[image]: ../reference/images.md
+[image]: ../../bsr/data-model/images
 [messages]: https://developers.google.com/protocol-buffers/docs/proto3#simple
-[module]: ../explanation.mdx#modules
+[module]: ../../bsr/explanation.mdx#modules
 [proto2]: https://developers.google.com/protocol-buffers/docs/proto
 [services]: https://developers.google.com/protocol-buffers/docs/proto3#services

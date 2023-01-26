@@ -26,8 +26,8 @@ to properly parse Protobuf messages and produce
 [`FileDescriptorSet`][filedescriptorset]s suitable for stub generation.
 
 Additionally, there are many situations outside of stub generation that rely on
-proper Protobuf parsing, such as [linting](../lint/overview.md) and
-[breaking change detection](../breaking/overview.md). All existing Protobuf
+proper Protobuf parsing, such as [linting](../lint/explanation) and
+[breaking change detection](../breaking/explanation). All existing Protobuf
 tooling has gone one of two routes:
 
 1. Use a third-party Protobuf parser instead of `protoc` that produces
@@ -131,8 +131,8 @@ This results in protoc's internal parser not being used at all, so you can
 verify our claims further. If you do find an issue, [contact us](../contact.md).
 
 Having this new compiler is a key component of Buf's future. Right now, it
-enables reliable [linting](../lint/overview.md),
-[breaking change detection](../breaking/overview.md),
+enables reliable [linting](../lint/explanation),
+[breaking change detection](../breaking/explanation),
 [generation](../generate/how-to), and the [BSR](../explanation.mdx). In the
 future, it enables a lot of other real-time possibilities for us.
 

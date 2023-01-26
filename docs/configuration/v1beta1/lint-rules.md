@@ -7,7 +7,7 @@ title: Lint Rules and Categories
 > old `v1beta1` documentation is included here for posterity, but you are
 > **strongly** encouraged to migrate to `v1`. See the
 > [migration guide](../v1beta1-migration-guide.md) to get started. You can find
-> the `v1` lint rules [here](/lint/rules.md).
+> the `v1` lint rules [here](/lint/reference/rules).
 
 `buf` provides a carefully curated set of lint rules designed to provide
 consistency and maintainability across a Protobuf schema of any size and any
@@ -498,7 +498,7 @@ foo.bar.v1testfoo
 
 One of the core promises of Protobuf API development is to never have breaking
 changes in your APIs, and Buf helps enforce this through the
-[breaking change detector](../../breaking/overview.md). There are scenarios,
+[breaking change detector](../../breaking/explanation). There are scenarios,
 however, where you do want to properly version your API. Instead of making
 changes, the proper method to do so is to make a completely new Protobuf package
 that is a copy of your existing Protobuf package, serve both packages
