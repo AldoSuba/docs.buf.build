@@ -38,7 +38,7 @@ within the BSR, add hosted modules as dependencies, consume modules as part of
 code generation, and much more.
 
 A **module** is identified by a `name` key in the
-[`buf.yaml`](../configuration/v1/buf-yaml.md) file, which is placed at the root
+[`buf.yaml`](../configuration/v1/buf-gen-yaml.md) file, which is placed at the root
 of the Protobuf source files it defines. This tells `buf` where to search for
 `.proto` files, and how to handle imports. Unlike `protoc`, where you manually
 specify `.proto` files, `buf` recursively discovers all `.proto` files under

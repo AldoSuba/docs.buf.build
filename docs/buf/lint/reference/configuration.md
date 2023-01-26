@@ -7,7 +7,7 @@ description: "Unlock the full potential of buf lint with this easy-to-follow con
 
 
 You can configure the `buf` CLI's linter with a
-[`buf.yaml`](../configuration/v1/buf-yaml.md) file at the root of the Protobuf
+[`buf.yaml`](../../../configuration/v1/buf-yaml.md) file at the root of the Protobuf
 source files you want to lint. If you run `buf lint` against an
 [input](../other/inputs) that contains a `buf.yaml` file, the lint
 configuration in that file is used. If the input doesn't contain a `buf.yaml`
@@ -40,7 +40,7 @@ lint:
   allow_comment_ignores: true
 ```
 
-For more info, see the [`buf.yaml` reference](../configuration/v1/buf-yaml.md).
+For more info, see the [`buf.yaml` reference](../../../configuration/v1/buf-yaml.md).
 
 ## Options
 
@@ -316,8 +316,6 @@ lint:
   service_suffix: Service
 ```
 
-[empty]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/empty.proto
+[empty]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/empty.proto
 [style]: https://developers.google.com/protocol-buffers/docs/style#enums
-[wkt]:
-  https://developers.google.com/protocol-buffers/docs/reference/google.protobuf
+[wkt]: https://developers.google.com/protocol-buffers/docs/reference/google.protobuf

@@ -55,11 +55,11 @@ commands and migration.
   mechanism to skip file discovery and specify your files manually, outside of
   running commands for files one at a time, which breaks some lint and breaking
   change detection functionality. `buf` enables you to skip file discovery and
-  specify your files [manually](../build/usage.md#limit-to-specific-files) for
-  use cases that require this, such as [Bazel](/other/bazel.md).
+  specify your files [manually](../buf/build/how-to#limit-to-specific-files) for
+  use cases that require this, such as [Bazel](../buf/other/bazel.md).
 - Prototool's lint functionality lets you select a single group, currently
   `google`, `uber1`, or `uber2`, and then add and remove rules from that
-  specific group. `buf` instead provides [lint categories](../lint/reference/rules)
+  specific group. `buf` instead provides [lint categories](../buf/lint/reference/rules)
   that you can mix and match, and lets you exclude entire categories or rules if
   you want. `buf` also presents a clear path to add additional rules to new
   categories in a backwards-compatible manner without touching existing
@@ -70,7 +70,7 @@ commands and migration.
   breaking rule or category.
 - Breaking change rules are not a binary proposition - there are different kinds
   of breaking changes that you may care about. `buf` provides
-  [four categories](../breaking/rules.md) of breaking change rules to select -
+  [four categories](../buf/breaking/rules.md) of breaking change rules to select -
   per-file generated stub breaking changes, per-package generated stub breaking
   changes, wire breaking changes, and wire + JSON breaking changes. Within these
   categories, you can go further and enable or disable individual rules through
@@ -96,7 +96,7 @@ commands and migration.
 `buf` has lint categories that are either roughly equivalent or a subset of
 Prototool lint groups. `buf` does not have linting functionality some elements
 such as file option naming. See the
-["what we left out"](../lint/reference/rules#what-we-left-out) documentation for more
+["what we left out"](../buf/lint/reference/rules#what-we-left-out) documentation for more
 details.
 
 ### `google`
@@ -121,7 +121,7 @@ lint:
 ```
 
 But we recommend using one of the "top-level categories" `MINIMAL`, `BASIC`, or
-`DEFAULT` instead. See the [lint rules](../lint/reference/rules) documentation for more
+`DEFAULT` instead. See the [lint rules](../buf/lint/reference/rules) documentation for more
 details.
 
 ### `uber1`, `uber2`
@@ -175,7 +175,7 @@ messages - this does not violate the scoping rules.
 
 ## Configuration
 
-`buf` primarily uses a [`buf.yaml`](../configuration/v1/buf-yaml.md)
+`buf` primarily uses a [`buf.yaml`](../configuration/v1/buf-gen-yaml.md)
 configuration file that should be at the root of the `.proto` files it defines,
 whereas Prototool uses the `prototool.yaml` configuration file. We'll discuss
 the Prototool configuration sections below.
@@ -214,7 +214,7 @@ Corresponds `lint.ignore_only` in `buf`.
 
 Corresponds to `lint.use` and `lint.except` in `buf`.
 
-See the [lint configuration](../lint/configuration.md) documentation for more
+See the [lint configuration](../buf/lint/reference/configuration.md) documentation for more
 details.
 
 ### `lint.file_header`
@@ -226,7 +226,7 @@ There is no equivalent in `buf`.
 There is no equivalent in `buf`.
 
 `buf` does not check file options as of now, see
-[our discussion on this](../lint/reference/rules#file-option-values) for more details.
+[our discussion on this](../buf/lint/reference/rules#file-option-values) for more details.
 
 ### `break.include_beta`
 
@@ -243,8 +243,8 @@ there is a demand for it.
 ### `generate`
 
 Use a plugin template as described in the
-[generation documentation](../generate/how-to). The default location for a
-plugin template is [`buf.gen.yaml`](../../configuration/v1/buf-gen-yaml.md).
+[generation documentation](../buf/generate/how-to). The default location for a
+plugin template is [`buf.gen.yaml`](../configuration/v1/buf-gen-yaml.md).
 
 ## Equivalent commands
 
@@ -309,7 +309,7 @@ There is no equivalent in `buf`.
 $ buf build --exclude-imports --exclude-source-info -o -
 ```
 
-This writes a binary [Buf image](../reference/images.md) to stdout. While images
+This writes a binary [Buf image](../bsr/data-model/images.md) to stdout. While images
 are wire compatible with `FileDescriptorSet`s, you can strip the extra metadata
 with the `--as-file-descriptor-set` flag. If you want to write to a file,
 specify the file path for `-o` instead of `-`.
@@ -332,7 +332,7 @@ buf format
 $ buf generate
 ```
 
-See the [generation documentation](../generate/how-to) for more details.
+See the [generation documentation](../buf/generate/how-to) for more details.
 
 ### `prototool grpc`
 
@@ -340,7 +340,7 @@ See the [generation documentation](../generate/how-to) for more details.
 $ buf curl
 ```
 
-See the [documentation for invoking RPCs](../curl/usage.md) for more details.
+See the [documentation for invoking RPCs](../buf/curl/how-to) for more details.
 
 ### `prototool lint`
 

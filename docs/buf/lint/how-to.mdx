@@ -16,8 +16,8 @@ a web client. Its form, a series of steps - analogous to a recipe in a cookery b
 ## Define a module
 
 To get started linting your Protobuf sources, create a
-[Buf module](../explanation.mdx#modules) by adding a
-[`buf.yaml`](../configuration/v1/buf-yaml.md) file to the root of the directory
+[Buf module](../../bsr/explanation.mdx#modules) by adding a
+[`buf.yaml`](../../configuration/v1/buf-yaml.md) file to the root of the directory
 that holds your Protobuf definitions. You can create the default `buf.yaml` file
 with this command:
 
@@ -38,7 +38,7 @@ lint:
 ```
 
 As you can see, the default configuration applies the
-[`DEFAULT`](./rules.md#default) rules.
+[`DEFAULT`](./reference/rules#default) rules.
 
 ## Run lint
 
@@ -109,7 +109,7 @@ $ buf lint --error-format=json
 ### Copy errors into your configuration {#copy}
 
 We can output errors in a format that you can copy into your
-[`buf.yaml`](../configuration/v1/buf-yaml.md) configuration file. This enables
+[`buf.yaml`](../../configuration/v1/buf-yaml.md) configuration file. This enables
 you to ignore specific lint errors and gradually correct them over time:
 
 ```terminal
@@ -152,7 +152,7 @@ For remote locations that require authentication, see
 ## Limit to specific files
 
 By default, the `buf` CLI builds all files under your
-[`buf.yaml`](../configuration/v1/buf-yaml.md) configuration file. But you can
+[`buf.yaml`](../../configuration/v1/buf-yaml.md) configuration file. But you can
 optionally lint only specific files or directories. This is an advanced feature
 that's mostly intended to be used by other systems, like editors. In general,
 it's better to let the `buf` CLI discover all files and handle this for you. But
@@ -165,7 +165,7 @@ $ buf lint \
 ```
 
 You can also combine this with an in-line
-[configuration override](../configuration/overview.md#configuration-override):
+[configuration override](../../configuration/overview.md#configuration-override):
 
 ```terminal
 $ buf lint \

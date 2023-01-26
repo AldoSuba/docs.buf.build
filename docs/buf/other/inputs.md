@@ -11,13 +11,11 @@ article on culinary social history.
 
 :::
 
-
-
 The various I/O options for `buf` may seem a bit daunting, so we'll break down
 how this all fits together.
 
 In general, a Buf input is a collection of `.proto` files used by many of the
-`buf` commands. In most cases, this is a [module](../explanation.mdx#modules),
+`buf` commands. In most cases, this is a [module](../../bsr/explanation.mdx#modules),
 but a variety of other formats are supported and explained below.
 
 > By default, `buf` uses the current directory as its input for all commands.
@@ -46,9 +44,9 @@ more than just local files. Those cases are described below.
 
 ### The Buf Schema Registry (BSR) {#bsr}
 
-The core primitive for Buf is the [module](/explanation.mdx#modules). Protobuf
+The core primitive for Buf is the [module](../../bsr/explanation#modules). Protobuf
 on its own has **no concept of modules**, only files. The Buf Schema Registry
-([BSR](../explanation.mdx)) is a registry for Buf modules that you want to
+([BSR](../../bsr/explanation)) is a registry for Buf modules that you want to
 manage across teams and even organizations.
 
 With the BSR, you can refer to any version of a Buf module and use it as an
@@ -218,10 +216,10 @@ directory, or a remote `http://`, `https://`, `ssh://`, or `git://` location.
 - The `branch` option specifies the branch to clone.
 - The `tag` option specifies the tag to clone.
 - The `ref` option specifies an explicit Git reference. Any ref that is a valid
-  input to `git checkout` is accepted. Note that most git hosts (including GitHub) only 
-  allow fetching by reference and not commits by sha. Buf will clone the repo, 
-  then run `git checkout <ref>` to get to the specified commit for ref. 
-  To use refs for commits outside of the range of the default clone settings use `branch` and 
+  input to `git checkout` is accepted. Note that most git hosts (including GitHub) only
+  allow fetching by reference and not commits by sha. Buf will clone the repo,
+  then run `git checkout <ref>` to get to the specified commit for ref.
+  To use refs for commits outside of the range of the default clone settings use `branch` and
   `depth` as needed.
 - The `depth` option specifies how deep of a clone to perform. It defaults to 50
   if `ref` is used and 1 otherwise.
@@ -247,9 +245,9 @@ Examples:
   `proto` directory as the base directory.
 - `.git#branch=main,recurse_submodules=true` says to clone the `main` branch
   along with all recursive submodules.
-- `.git#ref=7c0dc2fee4d20dcee8a982268ce35e66fc19cac8` says to clone the default 
+- `.git#ref=7c0dc2fee4d20dcee8a982268ce35e66fc19cac8` says to clone the default
   branch of the repo and checkout the specific ref.
-- `.git#branch=foo,ref=3ef31aff63c2d2911e0665b13906d0b2027575b7` says to clone 
+- `.git#branch=foo,ref=3ef31aff63c2d2911e0665b13906d0b2027575b7` says to clone
   the foo branch of repo and checkout the specific ref.
 - `.git#ref=refs/remotes/pull/3,branch=my_feature,depth=100` says to clone the
   specified branch to a depth of 100 and checkout `refs/remotes/pull/3`.
@@ -279,11 +277,11 @@ imports.
 
 Examples:
 
-- `buf build path/to/my/file.proto` compiles an [image](reference/images.md)
+- `buf build path/to/my/file.proto` compiles an [image](../../bsr/data-model/images.md)
   based on the file and its imports.
 - An absolute path, `/absolute/path/to/my/file.proto` can also be accepted.
 - `buf build path/to/my/file.proto#include_package_files=true` compiles an
-  [image](reference/images.md) for the file and the files in the package and
+  [image](../../bsr/data-model/images.md) for the file and the files in the package and
   their imports.
 - `buf build path/to/my/file.proto#include_package_files=false` is equivalent to
   the default behavior.
@@ -392,7 +390,7 @@ By default, `buf` derives the format and compression of an input from the path
 via the file extension.
 
 | Extension | Derived format | Derived Compression |
-| --------- | -------------- | ------------------- |
+|-----------|----------------|---------------------|
 | .bin      | bin            | none                |
 | .bin.gz   | bin            | gzip                |
 | .bin.zst  | bin            | zstd                |
@@ -429,7 +427,7 @@ The formats below are deprecated. They should continue to work forever, but we
 recommend updating if you are explicitly specifying any of these.
 
 | Format   | Replacement                                               |
-| -------- | --------------------------------------------------------- |
+|----------|-----------------------------------------------------------|
 | `bingz`  | Use the `bin` format with the `compression=gzip` option.  |
 | `jsongz` | Use the `json` format with the `compression=gzip` option. |
 | `targz`  | Use the `tar` format with the `compression=gzip` option.  |
@@ -498,7 +496,7 @@ key and known hosts file pre-installed, so this should work out of the box.
 
 ## Input configuration
 
-By default, `buf` looks for a [`buf.yaml`](../configuration/v1/buf-yaml.md) in
+By default, `buf` looks for a [`buf.yaml`](../../configuration/v1/buf-gen-yaml.md) in
 this manner:
 
 - For `dir, bin, json` inputs, `buf` looks at your current directory for a
@@ -509,8 +507,8 @@ this manner:
   of the cloned branch.
 
 The configuration can be overridden with the `--config` flag. See the
-[configuration documentation](../configuration/overview.md#configuration-override)
+[configuration documentation](../../configuration/overview.md#configuration-override)
 for more details.
 
 [image-proto]:
-  https://buf.build/bufbuild/buf/docs/main/buf.alpha.image.v1#buf.alpha.image.v1.Image
+https://buf.build/bufbuild/buf/docs/main/buf.alpha.image.v1#buf.alpha.image.v1.Image

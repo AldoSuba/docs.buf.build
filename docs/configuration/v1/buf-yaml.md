@@ -3,13 +3,13 @@ id: buf-yaml
 title: buf.yaml
 ---
 
-The `buf.yaml` file defines a [module](../../bsr/overview.mdx#modules), and is
+The `buf.yaml` file defines a [module](../../bsr/explanation#modules), and is
 placed at the root of the Protobuf source files it defines. The placement of the
 `buf.yaml` configuration tells `buf` where to search for `.proto` files, and how
 to handle imports.
 
-This file contains [lint](../../lint/reference/rules) and
-[breaking change detection](../../breaking/rules.md) rules, and if applicable,
+This file contains [lint](../../buf/lint/reference/rules) and
+[breaking change detection](../../buf/breaking/rules.md) rules, and if applicable,
 the name of your module and a list of dependencies.
 
 ## Default values
@@ -47,7 +47,7 @@ version. The only accepted values are `v1beta1` and `v1`.
 ### `name`
 
 The `name` is **optional**, and uniquely identifies your module. The `name`
-**must** be a valid [module name](../../bsr/overview.mdx#modules) and is
+**must** be a valid [module name](../../bsr/explanation#modules) and is
 directly associated with the repository that owns it.
 
 ### `deps`
@@ -55,7 +55,7 @@ directly associated with the repository that owns it.
 The `deps` key is **optional**, and declares one or more modules that your
 module depends on. Each `deps` entry **must** be a module reference, and, is
 directly associated with a repository, as well as a
-[reference](../../bsr/overview.mdx#referencing-a-module), which is either a tag
+[reference](../../bsr/explanation#referencing-a-module), which is either a tag
 or commit. A complete example of the different `deps` format is shown below:
 
 ```yaml title="buf.yaml"
@@ -70,7 +70,7 @@ deps:
 > Depending on specific references is an advanced feature; you should depend on
 > the latest commit whenever possible. In other words, your `deps` don't need to
 > include the `:<reference>` suffix in most cases. See `buf`'s
-> [best practices](../../best-practices/module-development.md) to learn more!
+> [best practices](../../buf/best-practices/module-development.md) to learn more!
 
 ### `build`
 

@@ -4,7 +4,7 @@ title: buf.lock
 ---
 
 If your [`buf.yaml`](buf-yaml.md) declares any `deps`, it will be accompanied by
-a `buf.lock` file that contains your [module](../../bsr/overview.mdx#modules)'s
+a `buf.lock` file that contains your [module](../../bsr/explanation#modules)'s
 dependency manifest. This manifest represents a single, reproducible build of
 your module.
 
@@ -43,7 +43,7 @@ its dependencies are uniquely represented and reproducible.
 ### Push and update modules
 
 You can then publish and share this particular snapshot with your consumers
-and/or collaborators by pushing it to the [BSR](../../bsr/overview.mdx) with the
+and/or collaborators by pushing it to the [BSR](../../bsr/explanation) with the
 command:
 
 ```terminal

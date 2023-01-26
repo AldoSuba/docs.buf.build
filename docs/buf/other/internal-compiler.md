@@ -100,7 +100,7 @@ the Protobuf community about producing non-`protoc`-based parsing, so this is
 one of the reasons that we enable `protoc` output to be `buf` input. If you
 don't trust us, then use `protoc` as your compiler instead, no problem.
 
-It's also one of the reasons we've exposed [`buf build`](../build/usage.md) as
+It's also one of the reasons we've exposed [`buf build`](../build/how-to) as
 we have - you can produce `FileDescriptorSet`s yourself and pass them to your
 Protobuf plugins to verify that the resulting stubs are equivalent. There is one
 known exception with docs generated based on `json_name`, see
@@ -128,15 +128,13 @@ buf build -o - | protoc --descriptor_set_in=/dev/stdin --java_out=java $(buf ls-
 ```
 
 This results in protoc's internal parser not being used at all, so you can
-verify our claims further. If you do find an issue, [contact us](../contact.md).
+verify our claims further. If you do find an issue, [contact us](../../contact.md).
 
 Having this new compiler is a key component of Buf's future. Right now, it
 enables reliable [linting](../lint/explanation),
 [breaking change detection](../breaking/explanation),
-[generation](../generate/how-to), and the [BSR](../explanation.mdx). In the
+[generation](../generate/how-to), and the [BSR](../../bsr/explanation). In the
 future, it enables a lot of other real-time possibilities for us.
 
-[filedescriptorproto]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto
-[filedescriptorset]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto
+[filedescriptorproto]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto
+[filedescriptorset]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto

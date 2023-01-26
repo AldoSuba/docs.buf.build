@@ -4,7 +4,7 @@ title: Iterate on modules
 ---
 
 > For a comprehensive guide on working with
-> [modules](../explanation.mdx#modules) and the Buf Schema Registry
+> [modules](../bsr/explanation#modules) and the Buf Schema Registry
 > (#)!
 
 As requirements change, you'll inevitably need to evolve your Protobuf APIs, and
@@ -16,15 +16,15 @@ validate a change locally before pushing a new version to the BSR.
 This guide assumes that you've used and/or familiarized yourself with these
 topics:
 
-- [Modules](../explanation.mdx#modules)
-- [BSR](../bsr/overview.mdx)
+- [Modules](../bsr/explanation#modules)
+- [BSR](../bsr/explanation)
 - [Workspaces](../buf/other/workspaces.mdx)
 
 ## Edit and push
 
 The typical `buf` workflow involves editing your `.proto` files, and verifying
 the changes continue to conform to the configured
-[lint rules](../lint/reference/rules).
+[lint rules](../buf/lint/reference/rules).
 
 Once you've made your edits, you can manually verify your changes with the `buf`
 CLI, or by [configuring your editor](../editor-integration.mdx) to automatically
@@ -60,15 +60,15 @@ latest versions with the `buf mod update` command. This command resolves the
 latest commit on the repository and updates the contents of your module's
 [`buf.lock`](../configuration/v1/buf-lock.md).
 
-For example, if a [`buf.yaml`](../configuration/v1/buf-yaml.md) is in the
+For example, if a [`buf.yaml`](../configuration/v1/buf-gen-yaml.md) is in the
 current directory, you can update your dependencies with this command:
 
 ```sh
 $ buf mod update
 ```
 
-When your dependencies conform to `buf`'s default [lint](../lint/reference/rules) and
-[breaking](../breaking/rules.md) rules, updating is straightforward. Despite
+When your dependencies conform to `buf`'s default [lint](../buf/lint/reference/rules) and
+[breaking](../buf/breaking/rules.md) rules, updating is straightforward. Despite
 `buf`'s best efforts, however, dependencies sometimes undergo changes that can
 break compatibility, so you might encounter errors when you try to `buf push` a
 new version of your module to the BSR.

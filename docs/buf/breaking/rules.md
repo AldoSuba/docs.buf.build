@@ -590,5 +590,4 @@ compatibility. We may add the
 options in the future if there is sufficient demand, especially
 [google.api.http](https://github.com/googleapis/googleapis/blob/master/google/api/annotations.proto).
 
-[filedescriptorset]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L57
+[filedescriptorset]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L57

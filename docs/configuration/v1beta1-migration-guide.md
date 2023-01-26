@@ -100,9 +100,9 @@ build:
     - vendor/googleapis
 ```
 
-Now that [workspaces](../reference/workspaces.mdx) are available, each of the
+Now that [workspaces](../buf/other/workspaces.mdx) are available, each of the
 roots can be defined as an independently configured
-[module](../bsr/overview.mdx#modules) that can be imported by others. In the
+[module](../bsr/explanation#modules) that can be imported by others. In the
 example above, the `proto` and `vendor/googleapis` roots can be defined as
 separate modules, as in these configurations:
 
@@ -142,7 +142,7 @@ With a workspace, operations like `buf build`, `buf lint`, and `buf breaking`
 can target the directory containing the `buf.work.yaml` file to have the same
 experience before they split their single `buf.yaml` into multiple `buf.yaml`
 files. For example, running `buf lint` on a directory
-[input](../other/inputs) containing a `buf.work.yaml` lints _all_ of the
+[input](../buf/other/inputs) containing a `buf.work.yaml` lints _all_ of the
 modules listed in the `buf.work.yaml`.
 
 ### `MINIMAL` lint category {#minimal}
@@ -265,7 +265,7 @@ nuanced details.
 ## `buf.gen.yaml`
 
 The `buf.gen.yaml` configuration file is largely unchanged, but a few changes
-exist for configuring [managed mode](../generate/managed-mode.md).
+exist for configuring [managed mode](../buf/generate/managed-mode/reference).
 
 ### Managed mode
 

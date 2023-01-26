@@ -182,5 +182,4 @@ Continue to the next section to learn more about authoring _and using_
 [BSR Templates](template-example.md)
 
 [buf-slack-link]: https://buf.build/links/slack
-[migrating-from-alpha]:
-  /bsr/remote-packages/migrating-from-alpha#disable-plugin-uploads
+[migrating-from-alpha]: /bsr/remote-packages/migrating-from-alpha#disable-plugin-uploads

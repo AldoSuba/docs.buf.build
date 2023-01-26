@@ -7,10 +7,10 @@ description: "Take your protocol buffers to the next level with this set of expe
 
 
 > The rules and categories described here belong to the latest
-> [`v1`](../configuration/v1/buf-yaml.md) release. If you're still using
-> `v1beta1` and haven't [migrated](../configuration/v1beta1-migration-guide.md)
+> [`v1`](../../../configuration/v1/buf-yaml.md) release. If you're still using
+> `v1beta1` and haven't [migrated](../../../configuration/v1beta1-migration-guide.md)
 > yet, refer to the previous
-> [reference](../configuration/v1beta1/lint-rules.md).
+> [reference](../../../configuration/v1beta1/lint-rules.md).
 
 `buf` provides a carefully curated set of lint rules designed to provide
 consistency and maintainability across a Protobuf schema of any size and any
@@ -34,7 +34,7 @@ configuration.
 
 ## Style guide
 
-The [Style Guide](../best-practices/style-guide.md) provides a concise document
+The [Style Guide](../../best-practices/style-guide.md) provides a concise document
 that includes all rules in the `DEFAULT` category, as well as additional
 recommendations that are not enforced. We provide this for ease of consumption
 across your various teams, while linking back to this document for rationale for
@@ -99,7 +99,7 @@ name.
 
 In short, the `MINIMAL` category verifies that all files with package
 `foo.bar.baz.v1` are in the directory `foo/bar/baz/v1` (relative to the
-[`buf.yaml`](../configuration/v1/buf-yaml.md) file), and that only one such
+[`buf.yaml`](../../../configuration/v1/buf-yaml.md) file), and that only one such
 directory exists. For example, consider this `tree`:
 
 ```sh
@@ -525,7 +525,7 @@ foo.bar.v1testfoo
 
 One of the core promises of Protobuf API development is to never have breaking
 changes in your APIs, and `buf` helps enforce this through the
-[breaking change detector](../breaking/explanation). There are scenarios,
+[breaking change detector](../../breaking/explanation). There are scenarios,
 however, where you do want to properly version your API. Instead of making
 changes, the proper method to do so is to make a completely new Protobuf package
 that is a copy of your existing Protobuf package, serve both packages
@@ -535,7 +535,7 @@ new version.
 
 A common idiom is to use alpha and beta packages for packages that are still in
 development and can have breaking changes. You can
-[configure the breaking change detector](../breaking/configuration.md) to ignore
+[configure the breaking change detector](../../breaking/configuration.md) to ignore
 breaking changes in files for these packages with the `ignore_unstable_packages`
 option:
 
@@ -696,7 +696,7 @@ should always be `true`. These aren't defaults, for backwards-compatibility
 reasons, but if you're using a tool like `buf` to produce your stubs, you
 shouldn't have to think about any of this.
 
-This is exactly why we've created [managed mode](../generate/managed-mode.md),
+This is exactly why we've created [managed mode](../generate/managed-mode/reference),
 which sets all of these file options _on the fly_ with `buf generate`.
 
 `buf` still enforces that specific file options are the same across a given
@@ -713,7 +713,7 @@ or
 [protoc-gen-validate](https://github.com/envoyproxy/protoc-gen-validate/blob/master/validate/validate.proto).
 There's a lot of thought that needs to go into issues such as forwards and
 backwards compatibility for custom options, so we currently only support the
-standard set of file options. [Contact us](../contact.md) if this is a big need
+standard set of file options. [Contact us](../../../contact) if this is a big need
 for your organization.
 
 ### Naming opinions
@@ -725,7 +725,7 @@ provide maximum usefulness of the `DEFAULT` category out of the box.
 
 ## Adding or requesting new rules
 
-If you'd like a new rule added, [contact us](../contact.md) to discuss it. We'll
+If you'd like a new rule added, [contact us](../../../contact) to discuss it. We'll
 add rules if we think they're maintainable and could have widespread value. Most
 rules can be easily added, and although
 [Buf is OSS](https://github.com/bufbuild/buf), it's usually more efficient for

@@ -13,9 +13,9 @@ The remote generation alpha has been superseded by
 [remote plugins](../../../bsr/remote-plugins/explanation).
 
 For existing users, please see the
-[remote packages migrating from alpha](../../../bsr/remote-packages/migrating-from-alpha.md)
+[remote packages migrating from alpha](../../../bsr/remote-packages/how-to)
 and
-[remote plugins migrating from alpha](../../../bsr/remote-plugins/migrating-from-alpha.md)
+[remote plugins migrating from alpha](../../../bsr/remote-plugins/how-to)
 guides, and if you run into issues, contact us on [Buf Public
 Slack][buf-slack-link].
 
@@ -44,7 +44,7 @@ import Image from "@site/src/components/Image";
 />
 
 In essence, you can use generation [templates](#templates) to generate code
-stubs from [Buf modules](../../../explanation.mdx#modules) that you've pushed
+stubs from [Buf modules](../../../bsr/explanation#modules) that you've pushed
 to the BSR. All code generation happens _on the BSR itself_&mdash;not on your
 laptop, not in a CI/CD environment, only remotely on the BSR.
 
@@ -71,7 +71,7 @@ can create and upload your own plugins to use as part of code generation.
 
 :::
 
-Plugins belong to an [owner](../../../bsr/user-management.md#owner) and may be
+Plugins belong to an [owner](../../../bsr/user-management/explanation#owner) and may be
 public or private. Public plugins are available to anyone, while private plugins
 are only available to the owner or members of the owning organization. Plugins
 are often referenced together with their owner's name, for example,
@@ -158,7 +158,7 @@ you can upload your own templates to use as part of code generation.
 
 :::
 
-Templates belong to an [owner](../../../bsr/user-management.md#owner) and can be
+Templates belong to an [owner](../../../bsr/user-management/explanation#owner) and can be
 public or private. Public templates are available to anyone, while private
 templates are available only to the owner or members of the owner's
 organization.
@@ -196,7 +196,7 @@ The BSR currently offers two registries:
 ### Synthetic versions
 
 A **synthetic version** combines the [template](#templates) and
-[module](../../../explanation.mdx#modules) versions into a
+[module](../../../bsr/explanation#modules) versions into a
 [semantic version](https://semver.org/spec/v2.0.0.html) of this form:
 
 import Syntax from "@site/src/components/Syntax";
@@ -254,7 +254,7 @@ change, which violates semantic versioning.
 In order to preserve semver guarantees in your own generated assets, we
 recommend performing [breaking change detection](../../../breaking/how-to)
 _before_ pushing a new version of a Buf module, potentially as part of your
-[CI/CD pipeline](../../../ci-cd/setup.mdx#checks).
+[CI/CD pipeline](../../../ci-cd/reference#checks).
 
 #### Commits
 

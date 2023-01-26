@@ -14,7 +14,7 @@ shown below:
 
 ## `buf.yaml`
 
-The `buf.yaml` is used to define a [module](../bsr/overview.mdx#modules). The
+The `buf.yaml` is used to define a [module](../bsr/explanation#modules). The
 `buf.yaml` is the primary configuration file, and is responsible for the
 module's name, the module's dependencies, as well as the module's `lint` and
 `breaking` configuration.
@@ -41,7 +41,7 @@ For more on the `buf.gen.yaml` file, refer to the
 ## `buf.work.yaml`
 
 The `buf.work.yaml` file is used to define a
-[workspace](../reference/workspaces.mdx), which is an advanced local development
+[workspace](../buf/other/workspaces), which is an advanced local development
 feature. In short, the `buf.work.yaml` file makes it possible to consolidate one
 or more modules into a single buildable unit. Workspaces also allow users to run
 `buf` operations across multiple modules with a single execution (such as
@@ -53,7 +53,7 @@ For more on the `buf.work.yaml` file, refer to the
 ## Default configuration
 
 The default configuration location depends on the
-[input](../other/inputs). If `buf` is executed with an input that
+[input](../buf/other/inputs). If `buf` is executed with an input that
 contains `buf.{mod,lock,work}` files, those files are used for the given
 operation. Running `buf lint`, for example, would use the `lint` configuration
 found in the inputs `buf.yaml`, if it exists.
@@ -66,7 +66,7 @@ It's important to note that, unlike the `buf.{mod,lock,work}` files, the
 `buf.gen.yaml` file found in the input is **not** used by default. Instead, the
 `buf.gen.yaml` found in the **current working directory** is used by default.
 You can manually specify the `buf.gen.yaml` file to use with the `--template`
-flag, which is explained further in the [generate usage](../generate/how-to).
+flag, which is explained further in the [generate usage](../buf/generate/how-to).
 The `buf.gen.yaml` file does not have a default value, so running `buf generate`
 without a `buf.gen.yaml` file in the current working directory yields an error
 (unless a `--template` is explicitly specified).
@@ -79,7 +79,7 @@ without a `buf.gen.yaml` file in the current working directory yields an error
 A large number of the `buf` commands support a `--config` flag that is used to
 override the `buf.yaml` configuration with a file path or direct JSON or YAML
 data. This is useful for situations where you may want to specify all options
-via the command line, for example with [Bazel](/other/bazel.md)
+via the command line, for example with [Bazel](../buf/other/bazel.md)
 integrations and/or when using the `protoc` plugins.
 
 All commands have one or more `--.*config` flags that control this behavior. For
@@ -87,7 +87,7 @@ example:
 
 - `buf build --config` specifies the config for the source input.
 - `buf lint --config` specifies the config for the source or
-  [Buf image](/reference/images) input.
+  [Buf image](../bsr/data-model/images) input.
 - `buf breaking --config` specifies the config for the source or image input.
 - `buf breaking --against-config` specifies the config for the source or image
   input to compare against.

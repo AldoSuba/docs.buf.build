@@ -7,7 +7,7 @@ title: Lint Rules and Categories
 > old `v1beta1` documentation is included here for posterity, but you are
 > **strongly** encouraged to migrate to `v1`. See the
 > [migration guide](../v1beta1-migration-guide.md) to get started. You can find
-> the `v1` lint rules [here](/lint/reference/rules).
+> the `v1` lint rules [here](../../buf/lint/reference/rules).
 
 `buf` provides a carefully curated set of lint rules designed to provide
 consistency and maintainability across a Protobuf schema of any size and any
@@ -37,7 +37,7 @@ configuration.
 
 ## Style guide
 
-Our [style guide](../../best-practices/style-guide.md) provides a concise
+Our [style guide](../../buf/best-practices/style-guide.md) provides a concise
 document that effectively includes all rules in the `DEFAULT` category, as well
 as additional recommendations that are not enforced. We provide this for ease of
 consumption across your various teams, while linking back to this document for
@@ -410,7 +410,7 @@ enum Foo {
 }
 ```
 
-The suffix is [configurable](../../lint/configuration.md).
+The suffix is [configurable](../../buf/lint/reference/configuration.md).
 
 All enums should have a zero value. Proto3 does not differentiate between set
 and unset fields, so if an enum field is not explicitly set, it defaults to the
@@ -465,7 +465,7 @@ service FooService {
 }
 ```
 
-There are [configuration options](../../lint/configuration.md) associated with
+There are [configuration options](../../buf/lint/reference/configuration.md) associated with
 these three rules.
 
 ##### `PACKAGE_VERSION_SUFFIX`
@@ -508,7 +508,7 @@ new version.
 
 A common idiom is to use alpha and beta packages for packages that are still in
 development and can have breaking changes. You can
-[configure the breaking change detector](../../breaking/configuration.md) to
+[configure the breaking change detector](../../buf/breaking/configuration.md) to
 ignore breaking changes in files for these packages with the
 `ignore_unstable_packages` option:
 
@@ -630,5 +630,4 @@ enum Scheme {
 The above results in generated code in certain languages defaulting to
 `SCHEME_FTP` instead of `SCHEME_UNSPECIFIED`.
 
-[no_standard_descriptor_accessor]:
-  https://github.com/protocolbuffers/protobuf/blob/044c766fd4777713fef2d1a9a095e4308d770c68/src/google/protobuf/descriptor.proto#L467
+[no_standard_descriptor_accessor]: https://github.com/protocolbuffers/protobuf/blob/044c766fd4777713fef2d1a9a095e4308d770c68/src/google/protobuf/descriptor.proto#L467

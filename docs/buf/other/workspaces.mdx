@@ -14,7 +14,7 @@ article on culinary social history.
 
 A workspace is a collection of one or more local modules that coexist and
 interoperate within a common directory. Workspaces make it possible for local
-[modules](../explanation.mdx#modules) to import Protobuf files from other local
+[modules](../../bsr/explanation#modules) to import Protobuf files from other local
 modules, and unlock other powerful use cases that operate on multiple modules at
 the same time.
 
@@ -27,7 +27,7 @@ import Examples from "@site/src/components/Examples";
 As you develop `buf` modules, you might find yourself in a situation where you
 own multiple modules that depend on each other. When you want to make a change
 to one of your modules, you normally need to push the update up to the
-[BSR](../explanation.mdx) so that the other module can update its dependency
+[BSR](../bsr/explanation) so that the other module can update its dependency
 and use it locally, potentially using an `alpha` branch to do so. This workflow
 imposes a frustrating feedback loop and invites more opportunities for mistakes
 in each pushed module commit.
@@ -46,7 +46,7 @@ $ protoc \
 ```
 
 In `v1beta1`, `buf` solved this problem with
-[`build.roots`](../configuration/v1beta1/buf-yaml.md#roots):
+[`build.roots`](../../configuration/v1beta1/buf-yaml.md#roots):
 
 ```yaml title="buf.yaml"
 version: v1beta1
@@ -65,7 +65,7 @@ For example, if another team explicitly vendored
 the same filename would be included twice.
 
 Now that `build.roots` are deprecated and removed in `v1`, users are encouraged
-to specify their dependencies as [`deps`](../configuration/v1/buf-yaml.md#deps):
+to specify their dependencies as [`deps`](../../configuration/v1/buf-yaml.md#deps):
 
 ```yaml title="buf.yaml"
 version: v1
@@ -82,7 +82,7 @@ more).
 
 ## Configuration
 
-The [`buf.work.yaml`](../configuration/v1/buf-work-yaml.md) file defines a
+The [`buf.work.yaml`](../../configuration/v1/buf-work-yaml.md) file defines a
 workspace, and is generally placed at the root of a VCS repository.
 
 The diagram and file below represent a complete example of a `buf.work.yaml`
@@ -143,8 +143,8 @@ With this, modules can import from one another, and a variety of commands work
 on multiple modules rather than one. For example, if `buf lint` is run for an
 [input](../other/inputs) that contains a `buf.work.yaml`, each of the
 modules contained within the workspace is linted. Other commands, such as
-`buf build`, merge workspace modules into one, so that all of the files
-contained are consolidated into a single [image](../reference/images.md).
+`buf build`, merge workspace modules into one, so that all the files
+contained are consolidated into a single [image](../../bsr/data-model/images.md).
 
 ## Importing across modules
 
@@ -281,9 +281,9 @@ The same holds true for the other `buf` operations including
 As mentioned above, workspaces enable you to work on multiple modules
 simultaneously, such as introducing a new Protobuf message in one module and
 depending on it in another. Normally, the `buf` CLI relies on the module's
-[`buf.lock`](../configuration/v1/buf-lock.md) manifest to read its dependencies
-from the local [module cache](../explanation.mdx#module-cache). This requires
-that the latest change has been pushed to the [BSR](../explanation.mdx) and
+[`buf.lock`](../../configuration/v1/buf-lock.md) manifest to read its dependencies
+from the local [module cache](../../bsr/explanation#module-cache). This requires
+that the latest change has been pushed to the [BSR](../../bsr/explanation) and
 that the user has run `buf mod update` to update their dependencies and fetch
 the latest change.
 

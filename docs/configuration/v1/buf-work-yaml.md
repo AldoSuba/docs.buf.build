@@ -4,9 +4,9 @@ title: buf.work.yaml
 ---
 
 The `buf.work.yaml` file is used to define a
-[workspace](../../reference/workspaces.mdx), where one or more modules can
+[workspace](../../buf/other/workspaces.mdx), where one or more modules can
 coexist and interoperate within a common directory. Workspaces make it possible
-for local [modules](../../bsr/overview.mdx#modules) to import Protobuf files
+for local [modules](../../bsr/explanation#modules) to import Protobuf files
 from other local modules, and unlock other powerful use cases that operate on
 multiple modules at the same time.
 

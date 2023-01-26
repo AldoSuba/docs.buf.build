@@ -3,15 +3,12 @@ id: protoc-plugins
 title: protoc plugins
 ---
 
-
 :::danger 🚧 Construction Notes
 
 This EXPLANATION oriented to understanding must explain & build context. Its form, discursive explanation. Analogous an
 article on culinary social history.
 
 :::
-
-
 
 Buf ships with two binaries that you can use as [protoc] plugins:
 
@@ -56,7 +53,7 @@ An example option:
 ```
 
 - `against_input` is required and limited to
-  [Buf image formats](../reference/images.md). The format must be `bin` or
+  [Buf image formats](../../bsr/data-model/images.md). The format must be `bin` or
   `json` and can't be `dir`, `git`, `tar`, `zip`, etc.
 - `limit_to_input_files` limits checks to those files under build by `protoc` in
   the current invocation, in this case the `file_to_generate` in the
@@ -138,5 +135,4 @@ pet/v1/pet.proto:47:9:Service name "PetStore" should be suffixed with "Service".
 [breaking]: ../breaking/explanation
 [lint]: ../lint/explanation
 [protoc]: https://developers.google.com/protocol-buffers
-[req]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/compiler/plugin.proto
+[req]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/compiler/plugin.proto

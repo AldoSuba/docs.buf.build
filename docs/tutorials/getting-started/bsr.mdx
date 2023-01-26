@@ -222,7 +222,7 @@ documentation. But as you can see from the default `buf.md` content, we
 currently don't have any module-level documentation.
 
 You can update the module-level documentation page by creating a `buf.md` in the
-same directory as your module's [`buf.yaml`](../configuration/v1/buf-yaml.md),
+same directory as your module's [`buf.yaml`](../../configuration/v1/buf-gen-yaml.md),
 and pushing it up to the BSR. In this way, the `buf.md` file is analogous to a
 GitHub repository's `README.md`. The `buf.md` file currently supports all the
 [CommonMark](https://commonmark.org) syntax.
@@ -329,7 +329,7 @@ $ rm -rf google
 ```
 
 Now remove the `google/type/datetime.proto` reference from your
-[`buf.yaml`](../configuration/v1/buf-yaml.md):
+[`buf.yaml`](../../configuration/v1/buf-gen-yaml.md):
 
 ```yaml title="buf.yaml" {6-7}
  version: v1
@@ -383,7 +383,7 @@ pet/v1/pet.proto:7:8:google/type/datetime.proto: does not exist
 ```
 
 `buf` detected that you specified a dependency that isn't included in the
-module's [`buf.lock`](../configuration/v1/buf-lock.md) file. This file is a
+module's [`buf.lock`](../../configuration/v1/buf-lock.md) file. This file is a
 dependency manifest for your module, representing a single reproducible build of
 your module's dependencies. You don't have a `buf.lock` file yet because you
 haven't specified any external dependencies, but you can create one with the

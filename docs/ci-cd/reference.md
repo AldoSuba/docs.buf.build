@@ -17,8 +17,8 @@ CI/CD solution for Protobuf:
   backwards compatibility for your Protobuf files with `buf`, and comments
   in-line on pull requests.
 - [buf-push](https://github.com/marketplace/actions/buf-push) pushes a
-  [module](../explanation.mdx#modules) to the Buf Schema Registry
-  ([BSR](../explanation.mdx)). The module is pushed with a tag equal to the git
+  [module](../bsr/explanation#modules) to the Buf Schema Registry
+  ([BSR](../bsr/explanation)). The module is pushed with a tag equal to the git
   commit SHA.
 
 In this guide, you will configure these GitHub Actions so that `buf lint` and
@@ -28,7 +28,7 @@ to the BSR when your pull request is merged.
 ## Create a BSR token
 
 The `buf-push` step requires access to the BSR. For steps on obtaining a token,
-see the [Authentication](../bsr/authentication.md) page for more details. This
+see the [Authentication](../bsr/authentication/reference) page for more details. This
 needs to be added as an encrypted
 [GitHub Secret](https://docs.github.com/en/actions/reference/encrypted-secrets).
 
@@ -189,7 +189,7 @@ they are more easily associated with one another.
 ## Inputs
 
 Some repositories are structured so that their
-[`buf.yaml`](../configuration/v1/buf-yaml.md) is defined in a sub-directory,
+[`buf.yaml`](../configuration/v1/buf-gen-yaml.md) is defined in a sub-directory,
 such as a `./proto` directory. In this case, you can specify the relative
 sub-directory using the `input` parameter (this is relevant for both
 `pull_request` and `push` workflows). For example, consider the `tree` for the

@@ -43,7 +43,7 @@ commands and migration.
   elements of a Protobuf schema, especially Protobuf options that can have an
   effect on your API compatibility. Instead, `buf` uses
   [`FileDescriptorSet`][filedescriptorset]s, extended to
-  [Buf images](../reference/images.md), which are the core primitive of the
+  [Buf images](../bsr/data-model/images.md), which are the core primitive of the
   Protobuf ecosystem, and have been stable for over a decade. `buf`'s equivalent
   to lock files are serialized `FileDescriptorSet`s.
 - Protolock only enforces 8 rules related to API compatibility in strict mode,
@@ -53,7 +53,7 @@ commands and migration.
   additional rules that `buf` enforces are critical to API compatibility.
 - Breaking change rules are not a binary proposition - there are different kinds
   of breaking changes that you may care about. `buf` provides
-  [four categories](../breaking/rules.md) of breaking change rules to select -
+  [four categories](../buf/breaking/rules.md) of breaking change rules to select -
   per-file generated stub breaking changes, per-package generated stub breaking
   changes, wire breaking changes, and wire + JSON breaking changes. Within these
   categories, you can go further and enable or disable individual rules through
@@ -67,18 +67,18 @@ commands and migration.
 - Protolock relies on `proto.lock` files as the only way to store the
   representation of your previous Protobuf schema, and these files are
   represented by a custom structure. `buf` allows you to use lock files through
-  `buf build`, but also allows [other methods](../breaking/how-to) to store
+  `buf build`, but also allows [other methods](../buf/breaking/how-to) to store
   and retrieve your previous Protobuf schema, including:
   - Cloning the head of a branch of a Git repository, either local or remote,
     and compiling on the fly.
   - Reading a tar or zip archive, either local or remote and optionally
     compressed, and compiling on the fly.
-  - Reading a "lock file", represented as a [Buf image](../reference/images.md),
+  - Reading a "lock file", represented as a [Buf image](../bsr/data-model/images.md),
     from either a local location or a remote http/https location.
 - Both Protolock and `buf` run file discovery for your Protobuf files, however
   `buf` allows you to skip file discovery and specify your files
-  [manually](../build/usage.md#limit-to-specific-files) for use cases that
-  require this, such as [Bazel](/other/bazel.md).
+  [manually](../buf/build/how-to#limit-to-specific-files) for use cases that
+  require this, such as [Bazel](../buf/other/bazel.md).
 - Since `buf` can process `FileDescriptorSet`s as input, `buf` provides a
   [protoc plugin](../buf/other/protoc-plugins.md#breaking) to allow you to use
   `buf`'s breaking change detection functionality with your current `protoc`
@@ -86,13 +86,13 @@ commands and migration.
 
 ## Configuration
 
-See the [breaking configuration](../breaking/configuration.md) documentation for
+See the [breaking configuration](../buf/breaking/configuration.md) documentation for
 more details. Note that configuration can be provided via the flag `--config` on
 the command line if you do not want to have a configuration file.
 
 ### Protolock rules to `buf` configured rules
 
-See the [breaking rules](../breaking/rules.md) documentation for an overview of
+See the [breaking rules](../buf/breaking/rules.md) documentation for an overview of
 all available breaking rules.
 
 While we recommend using one of `buf`'s preset breaking categories, the below
@@ -141,7 +141,7 @@ The Protolock flag `--ignore` can be handled by the `breaking.ignore` and
 `breaking.ignore_only` configuration options.
 
 The Protolock flag `--protoroot` is effectively handled by the placement of the
-[`buf.yaml`](../configuration/v1/buf-yaml.md) configuration file.
+[`buf.yaml`](../configuration/v1/buf-gen-yaml.md) configuration file.
 
 The Protolock flag `--lockdir` is handled by your against input, as `buf` can
 take multiple types of input to compare against. The equivalent in `buf` would
@@ -150,9 +150,9 @@ be to specify your Buf image location with `--against path/to/lock.bin`.
 ## Equivalent commands
 
 There are multiple methods to compare versions in `buf`, see the
-[breaking usage](../breaking/how-to) documentation for more details.
+[breaking usage](../buf/breaking/how-to) documentation for more details.
 
-This section assumes you are using stored [Buf image](../reference/images.md)
+This section assumes you are using stored [Buf image](../bsr/data-model/images)
 files as your method of comparing versions of your Protobuf schema.
 
 ### `protolock init`
@@ -161,7 +161,7 @@ files as your method of comparing versions of your Protobuf schema.
 $ buf build -o lock.bin
 ```
 
-This writes a binary [Buf image](../reference/images.md) of your current
+This writes a binary [Buf image](../bsr/data-model/images) of your current
 Protobuf schema. If you prefer this to be stored as JSON, as Protolock does,
 instead write to a file with a `.json` extension, such as
 `buf build -o lock.json`. Note that by default, `buf build` include source code
@@ -177,7 +177,7 @@ $ buf breaking --against lock.bin
 ```
 
 This checks for breaking changes against the `lock.bin`
-[Buf image](../reference/images.md) file. Use `buf breaking --against lock.json`
+[Buf image](../bsr/data-model/images.md) file. Use `buf breaking --against lock.json`
 if you wrote a JSON file.
 
 ### `protolock commit`
@@ -197,5 +197,4 @@ docker pull bufbuild/buf
 docker run --volume "$(pwd)/workspace" --workdir "/workspace" bufbuild/buf lint
 ```
 
-[filedescriptorset]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto
+[filedescriptorset]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto
