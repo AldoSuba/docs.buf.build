@@ -25,44 +25,6 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Guides",
-      items: [
-        "tutorials/introduction",
-        {
-          type: "doc",
-          id: "tutorials/getting-started/getting-started-with-buf",
-          label: "Getting started with Buf"
-        },
-        {
-          type: "doc",
-          id: "tutorials/getting-started/getting-started-with-bsr",
-          label: "Getting started with the BSR"
-        },
-        {
-          type: "doc",
-          id: "tutorials/getting-started/getting-started-with-buf-studio",
-          label: "Getting Started with Buf Studio"
-        },
-        "how-to/how-to-use-buf-in-your-js-project",
-        "how-to/build-an-api-client-with-buf",
-        "how-to/replace-protoc-with-buf",
-        "how-to/iterate-on-modules",
-        "how-to/migrate-from-protolock",
-        "how-to/migrate-from-prototool",
-        "buf/breaking/how-to",
-        "buf/build/how-to",
-        "buf/generate/how-to",
-        "bsr/remote-packages/how-to",
-        {
-          type: "doc",
-          id: "ci-cd/how-to",
-          label: "Buf on GitHub Actions: A Setup Guide"
-        }
-      ],
-      collapsed: true
-    },
-    {
-      type: "category",
       label: "Manuals",
       items: [
         {
@@ -123,6 +85,44 @@ const sidebars = {
           collapsed: false
         }
       ]
+    },
+    {
+      type: "category",
+      label: "Guides",
+      items: [
+        "tutorials/introduction",
+        {
+          type: "doc",
+          id: "tutorials/getting-started/getting-started-with-buf",
+          label: "Getting started with Buf"
+        },
+        {
+          type: "doc",
+          id: "tutorials/getting-started/getting-started-with-bsr",
+          label: "Getting started with the BSR"
+        },
+        {
+          type: "doc",
+          id: "tutorials/getting-started/getting-started-with-buf-studio",
+          label: "Getting Started with Buf Studio"
+        },
+        "how-to/how-to-use-buf-in-your-js-project",
+        "how-to/build-an-api-client-with-buf",
+        "how-to/replace-protoc-with-buf",
+        "how-to/iterate-on-modules",
+        "how-to/migrate-from-protolock",
+        "how-to/migrate-from-prototool",
+        "buf/breaking/how-to",
+        "buf/build/how-to",
+        "buf/generate/how-to",
+        "bsr/remote-packages/how-to",
+        {
+          type: "doc",
+          id: "ci-cd/how-to",
+          label: "Buf on GitHub Actions: A Setup Guide"
+        }
+      ],
+      collapsed: true
     },
     {
       type: "category",
