@@ -31,12 +31,12 @@ import { Card, Cards } from "@site/src/components/Cards";
   />
   <Card
     name="Manuals"
-    url="#"
+    url="manuals"
     description="Browse through the manuals and lean how to use Buf products."
   />
   <Card
     name="Reference"
-    url="#"
+    url="reference/buf/index"
     description="Browse through the CLI and API reference documentation."
   />
 </Cards>
