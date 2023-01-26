@@ -2,68 +2,64 @@
 
 const sidebars = {
   docs: [
-    "introduction",
-    "about",
-    "installation",
+    {
+      type: "category",
+      label: "Quick Start",
+      items: [
+        {
+          type: "doc",
+          id: "installation",
+          label: "Buf CLI"
+        },
+        {
+          type: "link",
+          label: "Buf Schema Registry (BSR)",
+          href: "https://buf.build/signup"
+        },
+        {
+          type: "link",
+          label: "Connect",
+          href: "https://connect.build"
+        }
+      ]
+    },
     {
       type: "category",
       label: "Guides",
       items: [
+        "tutorials/introduction",
         {
-          type: "category",
-          label: "Tutorials",
-          items: [
-            {
-              type: "doc",
-              id: "tutorials/getting-started/getting-started-with-buf",
-              label: "Getting started with Buf"
-            },
-            {
-              type: "doc",
-              id: "tutorials/going-further/going-further-with-buf",
-              label: "Going further with Buf"
-            },
-            {
-              type: "doc",
-              id: "tutorials/getting-started/getting-started-with-bsr",
-              label: "Getting started with the BSR"
-            },
-            {
-              type: "doc",
-              id: "tutorials/going-further/going-further-with-bsr",
-              label: "Going further with the BSR"
-            },
-            {
-              type: "doc",
-              id: "tutorials/getting-started/getting-started-with-buf-studio",
-              label: "Getting Started with Buf Studio"
-            }
-          ],
-          collapsed: false
+          type: "doc",
+          id: "tutorials/getting-started/getting-started-with-buf",
+          label: "Getting started with Buf"
         },
         {
-          type: "category",
-          label: "How To",
-          items: [
-            "how-to/how-to-use-buf-in-your-js-project",
-            "how-to/build-an-api-client-with-buf",
-            "how-to/replace-protoc-with-buf",
-            "how-to/iterate-on-modules",
-            "how-to/migrate-from-protolock",
-            "how-to/migrate-from-prototool",
-            "buf/breaking/how-to",
-            "buf/build/how-to",
-            "buf/generate/how-to",
-            "bsr/remote-packages/how-to",
-            {
-              type: "doc",
-              id: "ci-cd/how-to",
-              label: "Buf on GitHub Actions: A Setup Guide"
-            }
-          ],
-          collapsed: false
+          type: "doc",
+          id: "tutorials/getting-started/getting-started-with-bsr",
+          label: "Getting started with the BSR"
+        },
+        {
+          type: "doc",
+          id: "tutorials/getting-started/getting-started-with-buf-studio",
+          label: "Getting Started with Buf Studio"
+        },
+        "how-to/how-to-use-buf-in-your-js-project",
+        "how-to/build-an-api-client-with-buf",
+        "how-to/replace-protoc-with-buf",
+        "how-to/iterate-on-modules",
+        "how-to/migrate-from-protolock",
+        "how-to/migrate-from-prototool",
+        "buf/breaking/how-to",
+        "buf/build/how-to",
+        "buf/generate/how-to",
+        "bsr/remote-packages/how-to",
+        {
+          type: "doc",
+          id: "ci-cd/how-to",
+          label: "Buf on GitHub Actions: A Setup Guide"
         }
-      ]
+      ],
+      collapsed: false
     },
     {
       type: "category",
@@ -210,7 +206,7 @@ const sidebars = {
           ],
           collapsed: true
         }
-      ],
+      ]
     }
   ]
 };

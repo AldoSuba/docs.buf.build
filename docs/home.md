@@ -1,6 +1,7 @@
 ---
-id: introduction
-title: Introduction
+id: home
+title: Home
+hide_table_of_contents: true
 ---
 
 import { Card, Cards } from "@site/src/components/Cards";
@@ -10,18 +11,18 @@ import { Card, Cards } from "@site/src/components/Cards";
 <Cards>
   <Card
     name="Getting Started"
-    url="#"
-    description="Learn Buf basics and the benefits of Schema Driven Development"
+    url="tutorials/introduction"
+    description="Get started with Buf in no time and revolutionize the way you work with Protocol Buffers."
   />
   <Card
-    name="Download & Install"
-    url="#"
+    name="Quick Start"
+    url="installation"
     description="Download and install Buf on your machine in a few easy steps."
   />
   <Card
     name="Guides"
-    url="#"
-    description="Get started with Buf in no time and revolutionize the way you work with Protocol Buffers."
+    url="tutorials/introduction"
+    description="Learn Buf basics and the benefits of Schema Driven Development"
   />
   <Card
     name="Language-specific guides"
