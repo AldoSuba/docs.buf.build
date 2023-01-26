@@ -10,30 +10,7 @@ encyclopedia article.
 
 :::
 
-import { Card, Cards } from "@site/src/components/Cards";
 
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="../../../tutorials/getting-started/getting-started-with-bsr"
-    description="Are you ready to elevate your schema management game and streamline your development process?"
-  />
-  <Card
-    name="🚧 How To"
-    url="../how-to"
-    description="Streamline Your Development: Learn how to seamlessly migrate to remote packages and take your development process to the next level."
-  />
-  <Card
-    name="🧱 Reference"
-    url="overview"
-    description="Unlock the Secrets of Remote Packages: Dive deep into the world of remote packages and discover the many benefits they offer in this comprehensive guide."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="../explanation"
-    description="Unlock the power of remote packages and boost your productivity with our comprehensive guide, which covers understanding, building context, and implementing them in your workflow."
-  />
-</Cards>
 
 The Buf Schema Registry provides remote packages for Golang: consume generated
 SDKs from modules and plugins using `go get`, just like any other Golang library.
@@ -101,7 +78,7 @@ workflows down to two steps:
 ## Versions
 
 By default, when you `go get` a [Buf module][modules], the BSR generates code
-from the most recent [reference](../overview.mdx#referencing-a-module) for the
+from the most recent [reference](../explanation#referencing-a-module) for the
 module. But you can also install a specific module version using `go get`'s `@`
 syntax referencing an explicit version or a draft name.
 
@@ -210,7 +187,7 @@ that should be added please [file an issue][bufbuild-plugins-issue]!
 [connect-demo]: https://github.com/bufbuild/connect-demo
 [connect-go]: https://buf.build/bufbuild/connect-go
 [goproxy]: https://golang.org/ref/mod#goproxy-protocol
-[modules]: ../overview.mdx#modules
+[modules]: ../explanation#modules
 [netrc]: https://golang.org/ref/mod#private-module-proxy-auth
 [private]: https://golang.org/ref/mod#private-modules
 [settings]: https://buf.build/settings/user

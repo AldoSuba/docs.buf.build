@@ -11,30 +11,7 @@ article on culinary social history.
 
 :::
 
-import { Card, Cards } from "@site/src/components/Cards";
 
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  />
-  <Card
-    name="🚧 How To"
-    url="#"
-    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
-  />
-  <Card
-    name="🧱 Reference"
-    url="#"
-    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="#"
-    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
-  />
-</Cards>
 
 Protobuf is the most stable and widely adopted interface description language
 available today - it's why Buf is concentrating its initial efforts on Protobuf.
@@ -156,7 +133,7 @@ verify our claims further. If you do find an issue, [contact us](../contact.md).
 Having this new compiler is a key component of Buf's future. Right now, it
 enables reliable [linting](../lint/overview.md),
 [breaking change detection](../breaking/overview.md),
-[generation](../generate/usage.mdx), and the [BSR](../bsr/overview.mdx). In the
+[generation](../generate/how-to), and the [BSR](../explanation.mdx). In the
 future, it enables a lot of other real-time possibilities for us.
 
 [filedescriptorproto]:

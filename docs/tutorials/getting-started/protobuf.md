@@ -4,30 +4,7 @@ title: Getting Started with Protocol Buffers
 description: Get ready for your mind to be blown with an introduction to Schema Driven Development!
 ---
 
-import { Card, Cards } from "@site/src/components/Cards";
 
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  />
-  <Card
-    name="🚧 How To"
-    url="#"
-    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
-  />
-  <Card
-    name="🧱 Reference"
-    url="#"
-    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="#"
-    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
-  />
-</Cards>
 
 Welcome to our beginner's guide to Protocol Buffers! Protocol Buffers, also known as protobufs, are a powerful and
 efficient way to serialize and transmit data. In this guide, we'll explore the basics of protobufs, how to use them, and

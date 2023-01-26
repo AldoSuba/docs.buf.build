@@ -10,34 +10,11 @@ article on culinary social history.
 
 :::
 
-import { Card, Cards } from "@site/src/components/Cards";
 
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  />
-  <Card
-    name="🚧 How To"
-    url="#"
-    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
-  />
-  <Card
-    name="🧱 Reference"
-    url="#"
-    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="#"
-    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
-  />
-</Cards>
 
 A workspace is a collection of one or more local modules that coexist and
 interoperate within a common directory. Workspaces make it possible for local
-[modules](../bsr/overview.mdx#modules) to import Protobuf files from other local
+[modules](../explanation.mdx#modules) to import Protobuf files from other local
 modules, and unlock other powerful use cases that operate on multiple modules at
 the same time.
 
@@ -50,7 +27,7 @@ import Examples from "@site/src/components/Examples";
 As you develop `buf` modules, you might find yourself in a situation where you
 own multiple modules that depend on each other. When you want to make a change
 to one of your modules, you normally need to push the update up to the
-[BSR](../bsr/overview.mdx) so that the other module can update its dependency
+[BSR](../explanation.mdx) so that the other module can update its dependency
 and use it locally, potentially using an `alpha` branch to do so. This workflow
 imposes a frustrating feedback loop and invites more opportunities for mistakes
 in each pushed module commit.
@@ -305,8 +282,8 @@ As mentioned above, workspaces enable you to work on multiple modules
 simultaneously, such as introducing a new Protobuf message in one module and
 depending on it in another. Normally, the `buf` CLI relies on the module's
 [`buf.lock`](../configuration/v1/buf-lock.md) manifest to read its dependencies
-from the local [module cache](../bsr/overview.mdx#module-cache). This requires
-that the latest change has been pushed to the [BSR](../bsr/overview.mdx) and
+from the local [module cache](../explanation.mdx#module-cache). This requires
+that the latest change has been pushed to the [BSR](../explanation.mdx) and
 that the user has run `buf mod update` to update their dependencies and fetch
 the latest change.
 

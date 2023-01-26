@@ -11,30 +11,7 @@ article on culinary social history.
 
 :::
 
-import { Card, Cards } from "@site/src/components/Cards";
 
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="../../tutorials/getting-started/getting-started-with-bsr"
-    description="Are you ready to elevate your schema management game and streamline your development process?"
-  />
-  <Card
-    name="🚧 How To"
-    url="how-to"
-    description="Streamline Your Development: Learn how to seamlessly migrate to remote packages and take your development process to the next level."
-  />
-  <Card
-    name="🧱 Reference"
-    url="reference/overview"
-    description="Unlock the Secrets of Remote Packages: Dive deep into the world of remote packages and discover the many benefits they offer in this comprehensive guide."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="explanation"
-    description="Unlock the power of remote packages and boost your productivity with our comprehensive guide, which covers understanding, building context, and implementing them in your workflow."
-  />
-</Cards>
 
 Protobuf is a fantastic way to programmatically define your APIs and generate away
 a lot of the common work we perform as software engineers to communicate across
@@ -48,8 +25,8 @@ grease, and generate full-serve packages for you to consume just like any
 third-party library in your native programming language. This means you
 don't have to worry about Protobuf code generation at all -
 you can push [modules][modules] to the BSR and install code stubs generated
-from those modules using dependency management tools like [npm](npm.mdx)
-and [go](go.mdx).
+from those modules using dependency management tools like [npm](reference/npm.mdx)
+and [go](reference/go.mdx).
 
 **Go**
 

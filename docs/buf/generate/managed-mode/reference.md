@@ -197,7 +197,7 @@ option go_package = "github.com/acme/weather/gen/proto/go/acme/weather/v1;weathe
 
 The `except` key is **optional**, and removes certain modules from the
 `go_package` file option override behavior. The `except` values **must** be
-valid [module names](../bsr/overview.mdx#modules).
+valid [module names](../explanation.mdx#modules).
 
 There are situations where you may want to enable managed mode for the
 `go_package` option in _most_ of your Protobuf files, but not necessarily for
@@ -393,13 +393,13 @@ invocations and use [configuration](#configuration) instead.
   https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L341
 [file-options]:
   https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L341
-[generating]: ../generate/usage.mdx
+[generating]: ../generate/how-to
 [go.import]: https://golang.org/ref/spec#ImportPath
 [go_opt]:
   https://developers.google.com/protocol-buffers/docs/reference/go-generated
 [go_package]:
   https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L391
-[hosted]: ../bsr/remote-packages/overview.mdx#remote-plugins
+[hosted]: ../bsr/remote-packages/explanation#remote-plugins
 [input]: /reference/inputs.md
 [java_multiple_files]:
   https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L363

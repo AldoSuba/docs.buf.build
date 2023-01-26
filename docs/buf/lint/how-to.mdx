@@ -11,35 +11,12 @@ a web client. Its form, a series of steps - analogous to a recipe in a cookery b
 
 :::
 
-import { Card, Cards } from "@site/src/components/Cards";
 
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="../../tutorials/getting-started/getting-started-with-buf"
-    description="Get started with Buf CLI in no time with this easy-to-follow tutorial and revolutionize the way you work with Protocol Buffers!"
-  />
-  <Card
-    name="🚧 How To"
-    url="../how-to"
-    description="A technical document describing Buf Lint, a tool for ensuring clean code when working with Protocol Buffers."
-  />
-  <Card
-    name="🧱 Reference"
-    url="configuration"
-    description="Unlock the full potential of buf lint with this easy-to-follow configuration guide and take your development process to new heights!"
-  />
-  <Card
-    name="🏗 Explanation"
-    url="../explanation"
-    description="Explore the full capabilities of buf lint with this informative reference material, containing expert advice and best practices."
-  />
-</Cards>
 
 ## Define a module
 
 To get started linting your Protobuf sources, create a
-[Buf module](../bsr/overview.mdx#modules) by adding a
+[Buf module](../explanation.mdx#modules) by adding a
 [`buf.yaml`](../configuration/v1/buf-yaml.md) file to the root of the directory
 that holds your Protobuf definitions. You can create the default `buf.yaml` file
 with this command:

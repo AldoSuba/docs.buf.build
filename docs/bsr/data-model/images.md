@@ -13,30 +13,7 @@ article on culinary social history.
 
 import Image from "@site/src/components/Image";
 import Syntax from "@site/src/components/Syntax";
-import { Card, Cards } from "@site/src/components/Cards";
 
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  />
-  <Card
-    name="🚧 How To"
-    url="#"
-    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
-  />
-  <Card
-    name="🧱 Reference"
-    url="#"
-    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="#"
-    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
-  />
-</Cards>
 
 Throughout the documentation, you may occasionally see references to Buf
 **images**. We'll go over what images are, how they are used, and the various
@@ -119,15 +96,15 @@ definition is currently stored in the
 repo as of this writing.
 
 **Buf images are `FileDescriptorSet`s, and `FileDescriptorSet`s are images.**
-Due to the forwards- and backwards-compatible nature of Protobuf, we add an
-additional field to `FileDescriptorSet` while maintaining compatibility in both
+Due to the forwards- and backwards-compatible nature of Protobuf, we add another
+field to `FileDescriptorSet` while maintaining compatibility in both
 directions - existing Protobuf plugins drop this field, and `buf` does not
 require this field to be set to work with images.
 
-**[Modules](../bsr/overview.mdx#modules) are the primitive of Buf, and Buf
+**[Modules](../explanation#modules) are the primitive of Buf, and Buf
 images represent the compiled artifact of a module.** In fact, images contain
 information about the module used to create it, which powers a variety of
-[BSR](../bsr/overview.mdx) features. For clarity, the [`Image`][image-proto]
+[BSR](../explanation) features. For clarity, the [`Image`][image-proto]
 Protobuf definition is shown below (notice the `ModuleName` in the
 `ImageFileExtension`):
 
@@ -250,7 +227,7 @@ to manually store the state of your Protobuf schema. See the
 ## Creating images
 
 You can create Buf images using `buf build`. If the current directory contains a
-valid [`buf.yaml`](../configuration/v1/buf-yaml.md), you can building an image
+valid [`buf.yaml`](../../configuration/v1/buf-yaml.md), you can build an image
 with this command:
 
 ```sh
@@ -333,7 +310,7 @@ in case you need it.
 
 Since `buf` speaks in terms of [Buf images](images.md) and
 [`FileDescriptorSet`][filescriptorset]s are images, we can use`protoc` output as
-`buf` input. Here's an example for [`buf lint`](../lint/usage.mdx):
+`buf` input. Here's an example for [`buf lint`](../../buf/lint/how-to.mdx):
 
 ```terminal
 $ protoc -I . --include_source_info -o /dev/stdout foo.proto | buf lint -
@@ -346,13 +323,8 @@ provide plugins [`protoc-gen-buf-lint`](../../buf/other/protoc-plugins.md#lint) 
 [`protoc-gen-buf-breaking`](../../buf/other/protoc-plugins.md#breaking) as standard
 Protobuf plugins as well.
 
-[codegeneratorrequest]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/compiler/plugin.proto#L68
-[codegeneratorresponse]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/compiler/plugin.proto#L99
-[filedescriptorproto]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L62
-[filedescriptorset]:
-  https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto
-[image-proto]:
-  https://buf.build/bufbuild/buf/docs/main/buf.alpha.image.v1#buf.alpha.image.v1.Image
+[codegeneratorrequest]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/compiler/plugin.proto#L68
+[codegeneratorresponse]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/compiler/plugin.proto#L99
+[filedescriptorproto]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto#L62
+[filedescriptorset]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto
+[image-proto]: https://buf.build/bufbuild/buf/docs/main/buf.alpha.image.v1#buf.alpha.image.v1.Image

@@ -53,7 +53,7 @@ out to our buf.build users in the coming weeks as a paid feature.
 We've deprecated the
 [remote generation alpha](../../reference/deprecated/remote-generation/overview.mdx),
 but it will continue to work until April 30, 2023, at which time you'll need to
-migrate to remote plugins or [remote packages](../remote-packages/overview.mdx).
+migrate to remote plugins or [remote packages](../remote-packages/explanation).
 
 [bufbuild-plugins-issue]: https://github.com/bufbuild/plugins/issues/new/choose
 [buf-gen-yaml-revision]: https://docs.buf.build/configuration/v1/buf-gen-yaml#revision

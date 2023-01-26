@@ -13,40 +13,17 @@ article on culinary social history.
 
 import Image from "@site/src/components/Image";
 import Syntax from "@site/src/components/Syntax";
-import { Card, Cards } from "@site/src/components/Cards";
 
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  />
-  <Card
-    name="🚧 How To"
-    url="#"
-    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
-  />
-  <Card
-    name="🧱 Reference"
-    url="#"
-    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="#"
-    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
-  />
-</Cards>
 
 Welcome to the **Buf Schema Registry (BSR)**! This overview covers what the BSR
 is and the challenges it aims to solve within the Protobuf ecosystem. If you
 just want to see the BSR in action with code examples, check out
-[The tour](../tour/introduction.md).
+[The tour](#).
 
 ## What is the BSR?
 
 The BSR stores and manages Protobuf files as versioned
-[modules](overview.mdx#modules) so that individuals and organizations can
+[modules](explanation#modules) so that individuals and organizations can
 consume and publish their APIs without friction.
 
 The BSR comes with a browsable UI, dependency management, API validation,
@@ -148,17 +125,16 @@ command.
 
 ## Let's get started
 
-Once you've [installed](../installation.mdx) the latest version of `buf`, you're
+Once you've [installed](../installation) the latest version of `buf`, you're
 ready to use the BSR!
 
 Here are a few ways to get moving:
 
-- **[Overview](overview.mdx)** <br/> Dive directly into the docs to get familiar
+- **[Overview](explanation.mdx)** <br/> Dive directly into the docs to get familiar
   with the BSR and the various components.
 
-- **[Usage](usage.mdx)** <br/> Learn how to run `buf` commands that use the BSR.
+- **[Usage](reference)** <br/> Learn how to run `buf` commands that use the BSR.
 
-- **[The Tour](../tour/introduction.md)** <br/> The tour provides an overview of
-  the BSR and takes approximately 20 minutes to complete.
+- **[The Tour](#)** <br/> The tour provides an overview of the BSR and takes approximately 20 minutes to complete.
 
-[buf-gen-yaml]: /configuration/v1/buf-gen-yaml#plugins
+[buf-gen-yaml]: ../configuration/v1/buf-gen-yaml#plugins

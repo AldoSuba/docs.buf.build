@@ -35,8 +35,8 @@ module.exports = {
   url: "https://docs.buf.build",
   baseUrl: "/",
   favicon: "img/favicon.png",
-  onBrokenLinks: "ignore",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "throw",
   organizationName: "bufbuild",
   projectName: "buf",
   // Ref: https://docusaurus.io/docs/2.0.0-beta.3/api/themes/configuration

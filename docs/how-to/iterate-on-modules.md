@@ -4,8 +4,8 @@ title: Iterate on modules
 ---
 
 > For a comprehensive guide on working with
-> [modules](../bsr/overview.mdx#modules) and the Buf Schema Registry
-> ([BSR](../bsr/overview.mdx)), check out the [tour](../tour/introduction.md)!
+> [modules](../explanation.mdx#modules) and the Buf Schema Registry
+> (#)!
 
 As requirements change, you'll inevitably need to evolve your Protobuf APIs, and
 potentially update your dependencies. As much as `buf`'s breaking change
@@ -16,7 +16,7 @@ validate a change locally before pushing a new version to the BSR.
 This guide assumes that you've used and/or familiarized yourself with these
 topics:
 
-- [Modules](../bsr/overview.mdx#modules)
+- [Modules](../explanation.mdx#modules)
 - [BSR](../bsr/overview.mdx)
 - [Workspaces](../buf/other/workspaces.mdx)
 

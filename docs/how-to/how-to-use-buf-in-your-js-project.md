@@ -3,27 +3,7 @@ id: how-to-use-buf-in-your-js-project
 title: How to use Buf in your JS project
 ---
 
-import { Card, Cards } from "@site/src/components/Cards";
 
-:::danger 🚧 Construction Notes
-
-This HOW TO GUIDE is **oriented to a goal** and must show how to solve the specific problem of using remote packages in
-a web client. Its form, a series of steps - analogous to a recipe in a cookery book
-
-:::
-
-<Cards>
-  <Card
-    name="Connect"
-    url="https://connect.build/"
-    description="If you're tired of hand-written boilerplate and turned off by massive frameworks, Connect is for you."
-  />
-  <Card
-    name="Connect-Web"
-    url="https://buf.build/blog/connect-web-protobuf-grpc-in-the-browser"
-    description="It's time for Protobuf and gRPC to be your first choice in the browser"
-  />
-</Cards>
 
 [//]: #TODO (Open with a warm welcome)
 

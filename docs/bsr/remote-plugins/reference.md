@@ -4,43 +4,11 @@ title: Overview
 description: REFERENCE
 ---
 
-import { Card, Cards } from "@site/src/components/Cards";
-
-:::danger 🚧 Construction Notes
-
-This REFERENCE is oriented to information must describe the machinery. Its form is a dry description like a reference
-encyclopedia article.
-
-:::
-
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  />
-  <Card
-    name="🚧 How To"
-    url="#"
-    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
-  />
-  <Card
-    name="🧱 Reference"
-    url="#"
-    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="#"
-    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
-  />
-</Cards>
-
 ## Configuration
 
 The `buf.gen.yaml` file controls how the `buf generate` command executes
 Protobuf plugins for any [input](../../buf/other/inputs.md). Here, we can
-specify [remote plugins](overview.mdx) to perform code generation. For more
+specify [remote plugins](explanation) to perform code generation. For more
 information on the `buf.gen.yaml` configuration, see the
 [reference](../../configuration/v1/buf-gen-yaml.md).
 
@@ -54,7 +22,7 @@ Remote plugins generate code for [inputs](../../buf/other/inputs.md). An input
 can be a git repository, tarball, zip file, a or local directory containing
 Protobuf files configured with a
 [`buf.yaml`](../../configuration/v1/buf-yaml.md) configuration file. Buf refers
-to such directories of Protobuf files as [modules](../overview.mdx#modules).
+to such directories of Protobuf files as [modules](explanation#modules).
 
 For our purposes, we'll assume you have a `buf.yaml` in your current directory
 that defines a module. To create a `buf.yaml` in your current directory.
@@ -73,13 +41,13 @@ lint:
     - DEFAULT
 ```
 
-See the [build](../../build/usage.md) documentation for full details on how to
+See the [build](../../buf/build/how-to) documentation for full details on how to
 configure modules to build with `buf`.
 
-## Create a [`buf.gen.yaml`](/configuration/v1/buf-gen-yaml)
+## Create a [`buf.gen.yaml`](../../configuration/v1/buf-gen-yaml)
 
 Now that you have an [input](../../buf/other/inputs.md) to generate code for, we
-need to define a [`buf.gen.yaml`](/configuration/v1/buf-gen-yaml) and specify
+need to define a [`buf.gen.yaml`](../../configuration/v1/buf-gen-yaml) and specify
 what `protoc` plugins you want to use.
 
 A remote plugin can be pinned to a specific version, or if you want to always
@@ -92,7 +60,7 @@ import GenYaml from "./_gen-yaml.mdx";
 
 Note, we're using the `plugin` key to reference a remote plugin. More
 information can be
-[found in the buf.gen.yaml docs](/configuration/v1/buf-gen-yaml#plugin-name-or-remote).
+[found in the buf.gen.yaml docs](../../configuration/v1/buf-gen-yaml#plugin-name-or-remote).
 
 Plugins are invoked in the order they are specified in your `buf.gen.yaml` with
 results from each invocation combined before writing the result. For more
@@ -121,7 +89,7 @@ The `buf generate` command will:
 - Send the results back, and unpack them on your local file system.
 
 By default, `buf generate` looks for a
-[`buf.gen.yaml`](/configuration/v1/buf-gen-yaml) in your current directory. An
+[`buf.gen.yaml`](../../configuration/v1/buf-gen-yaml) in your current directory. An
 alternate location can be specified by usin the `--template` flag:
 
 ```terminal

@@ -4,7 +4,7 @@ title: "Master Buf Generate: A guide to transform development"
 description: "Unlock the power of Buf Generate: A step-by-step guide to revolutionize your development process"
 ---
 
-> We highly recommend completing [the tour](../tour/generate-code.md) to get an
+> We highly recommend completing [the tour](#) to get an
 > overview of `buf generate`.
 
 Protobuf has a large barrier to entry for developers new to IDL development. Not
@@ -39,7 +39,7 @@ configuration, see the [reference](../configuration/v1/buf-gen-yaml.md).
 
 ## Define a module
 
-To get started, create a [module](../bsr/overview.mdx#modules) by adding a
+To get started, create a [module](../explanation.mdx#modules) by adding a
 [`buf.yaml`](../configuration/v1/buf-yaml.md) file to the root of the directory
 that contains your Protobuf definitions. You can create the default `buf.yaml`
 file with this command:
@@ -141,7 +141,7 @@ $ buf generate --error-format=json
 
 Stop worrying about how to install your plugins at specific versions and keep
 this consistent across your team, let us take care of that.
-[**Remote plugins**](../bsr/remote-plugins/usage.mdx) make it
+[**Remote plugins**](../bsr/remote-plugins/how-to) make it
 possible to generate source code using remote plugins in an isolated environment
 on the BSR. By isolating code generation from its environment, you eliminate an
 entire class of problems caused by subtle differences across specific compiler
@@ -206,7 +206,7 @@ where you run the command.
 
 ### Generating from a Buf module {#from-module}
 
-You can generate from a Buf [module](../bsr/overview.mdx#modules) on the
+You can generate from a Buf [module](../explanation.mdx#modules) on the
 [Buf Schema Registry](../bsr/introduction.md) (BSR) by providing the module name
 as the [input](../reference/inputs.md):
 
@@ -346,9 +346,9 @@ $ docker run \
 
 :::info Docker image doesn't include protoc or plugins
 
-1. Use [remote plugins](../bsr/remote-packages/overview.mdx#remote-plugins) to
+1. Use [remote plugins](../bsr/remote-packages/explanation#remote-plugins) to
 generate code without requiring local plugins.
-1. Use [generated assets](../bsr/remote-packages/overview.mdx) to fetch
+1. Use [generated assets](../bsr/remote-packages/explanation) to fetch
 generated code stubs without needing to install any additional executables.
 1. Use the `bufbuild/buf` image as part of a [multi-stage build][multi-stage]
 that includes any required executables as part of the final image.

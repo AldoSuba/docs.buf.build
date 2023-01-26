@@ -3,18 +3,6 @@ id: installation
 title: Install the Buf CLI
 ---
 
-import DownloadButton, {
-mac,
-linux,
-windows
-} from "@site/src/components/DownloadButton";
-
-<div>
-  <DownloadButton os={mac}>Buf for Mac</DownloadButton>
-  <DownloadButton os={linux}>Buf for Linux</DownloadButton>
-  <DownloadButton os={windows}>Buf for Windows</DownloadButton>
-</div>
-
 ## Homebrew
 
 You can install `buf` on macOS or Linux using [Homebrew](https://brew.sh):

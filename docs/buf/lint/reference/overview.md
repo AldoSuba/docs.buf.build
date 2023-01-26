@@ -4,37 +4,7 @@ title: Overview
 description: "The Buf Lint Handbook: A Complete Reference Series for Writing Clean Protocol Buffers"
 ---
 
-import { Card, Cards } from "@site/src/components/Cards";
 
-:::danger 🚧 Construction Notes
-
-This REFERENCE is oriented to information must describe the machinery. Its form is a dry description like a reference
-encyclopedia article.
-
-:::
-
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="../../../tutorials/getting-started/getting-started-with-buf"
-    description="Get started with Buf CLI in no time with this easy-to-follow tutorial and revolutionize the way you work with Protocol Buffers!"
-  />
-  <Card
-    name="🚧 How To"
-    url="../how-to"
-    description="A technical document describing Buf Lint, a tool for ensuring clean code when working with Protocol Buffers."
-  />
-  <Card
-    name="🧱 Reference"
-    url="configuration"
-    description="Unlock the full potential of buf lint with this easy-to-follow configuration guide and take your development process to new heights!"
-  />
-  <Card
-    name="🏗 Explanation"
-    url="../explanation"
-    description="Explore the full capabilities of buf lint with this informative reference material, containing expert advice and best practices."
-  />
-</Cards>
 
 Using a [linter][lint] on your Protobuf sources enables you to enforce
 consistency and keep your API definitions in line with your chosen best

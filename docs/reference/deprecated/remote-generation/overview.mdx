@@ -9,8 +9,8 @@ description:
 :::warning Deprecated documentation
 
 The remote generation alpha has been superseded by
-[remote packages](../../../bsr/remote-packages/overview.mdx) and
-[remote plugins](../../../bsr/remote-plugins/overview.mdx).
+[remote packages](../../../bsr/remote-packages/explanation) and
+[remote plugins](../../../bsr/remote-plugins/explanation).
 
 For existing users, please see the
 [remote packages migrating from alpha](../../../bsr/remote-packages/migrating-from-alpha.md)
@@ -44,7 +44,7 @@ import Image from "@site/src/components/Image";
 />
 
 In essence, you can use generation [templates](#templates) to generate code
-stubs from [Buf modules](../../../bsr/overview.mdx#modules) that you've pushed
+stubs from [Buf modules](../../../explanation.mdx#modules) that you've pushed
 to the BSR. All code generation happens _on the BSR itself_&mdash;not on your
 laptop, not in a CI/CD environment, only remotely on the BSR.
 
@@ -135,7 +135,7 @@ You need to give plugins a valid [semantic version][semver].
 :::success Remote plugins
 
 A feature that you may also find useful is
-[remote plugins](../../../bsr/remote-plugins/usage.mdx).
+[remote plugins](../../../bsr/remote-plugins/how-to).
 
 While remote code generation is geared toward eliminating the need to generate
 code stubs _at all_, remote plugins enable you to generate code stubs locally
@@ -196,7 +196,7 @@ The BSR currently offers two registries:
 ### Synthetic versions
 
 A **synthetic version** combines the [template](#templates) and
-[module](../../../bsr/overview.mdx#modules) versions into a
+[module](../../../explanation.mdx#modules) versions into a
 [semantic version](https://semver.org/spec/v2.0.0.html) of this form:
 
 import Syntax from "@site/src/components/Syntax";
@@ -240,7 +240,7 @@ the module.
 
 The BSR applies synthetic versions to all remote-generated code artifacts in the
 **remote generation registry**. That currently includes
-[Go packages](../../../tour/use-remote-packages.mdx) but will be expanded to
+[Go packages](#) but will be expanded to
 other languages.
 
 #### Enforcing semantic versioning
@@ -252,7 +252,7 @@ that asset to the BSR, the patch version is incremented in spite of the breaking
 change, which violates semantic versioning.
 
 In order to preserve semver guarantees in your own generated assets, we
-recommend performing [breaking change detection](../../../breaking/usage.mdx)
+recommend performing [breaking change detection](../../../breaking/how-to)
 _before_ pushing a new version of a Buf module, potentially as part of your
 [CI/CD pipeline](../../../ci-cd/setup.mdx#checks).
 

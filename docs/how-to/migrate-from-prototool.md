@@ -243,7 +243,7 @@ there is a demand for it.
 ### `generate`
 
 Use a plugin template as described in the
-[generation documentation](../generate/usage.mdx). The default location for a
+[generation documentation](../generate/how-to). The default location for a
 plugin template is [`buf.gen.yaml`](../configuration/v1/buf-gen-yaml.md).
 
 ## Equivalent commands
@@ -332,7 +332,7 @@ buf format
 $ buf generate
 ```
 
-See the [generation documentation](../generate/usage.mdx) for more details.
+See the [generation documentation](../generate/how-to) for more details.
 
 ### `prototool grpc`
 

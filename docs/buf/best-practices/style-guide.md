@@ -10,30 +10,7 @@ article on culinary social history.
 
 :::
 
-import { Card, Cards } from "@site/src/components/Cards";
 
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  />
-  <Card
-    name="🚧 How To"
-    url="#"
-    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
-  />
-  <Card
-    name="🧱 Reference"
-    url="#"
-    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="#"
-    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
-  />
-</Cards>
 
 This is our Style Guide for Protobuf.
 
@@ -44,7 +21,7 @@ The requirements follow the [`DEFAULT`](../lint/rules.md#default) lint category.
 For details on each rule and its rationale, see that documentation. Within this
 Style Guide, we provide links under (Why?) where relevant for each check.
 
-These recommendations are not enforced by the [BSR](../bsr/overview.mdx), but
+These recommendations are not enforced by the [BSR](../explanation.mdx), but
 are rather for reference.
 
 This Style Guide is designed to provide consistency and maintainability across a
@@ -63,7 +40,7 @@ All files of the same package should be in the same directory. All files should
 be in a directory that matches their package name.
 [(Why?)](../lint/rules.md#why)
 
-For example, if we have a [module](../bsr/overview.mdx#modules) defined in the
+For example, if we have a [module](../explanation.mdx#modules) defined in the
 `proto` directory, we expect these `package` values:
 
 ```sh

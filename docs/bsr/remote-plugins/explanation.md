@@ -4,37 +4,7 @@ title: Overview
 description: EXPLANATION
 ---
 
-import { Card, Cards } from "@site/src/components/Cards";
 
-:::danger 🚧 Construction Notes
-
-This EXPLANATION oriented to understanding must explain & build context. Its form, discursive explanation. Analogous an
-article on culinary social history.
-
-:::
-
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  />
-  <Card
-    name="🚧 How To"
-    url="#"
-    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
-  />
-  <Card
-    name="🧱 Reference"
-    url="#"
-    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="#"
-    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
-  />
-</Cards>
 
 One of the greatest challenges with Protobuf code generation is the complexity
 of working with `protoc` and [plugins][plugins]. Time and time again, we've
@@ -108,6 +78,6 @@ anticipate any breaking changes between now and stability.
 We've deprecated the
 [remote generation alpha](../../reference/deprecated/remote-generation/overview.mdx),
 but it will continue to work until April 30, 2023, at which time you'll need to
-migrate to remote plugins or [remote packages](../remote-packages/overview.mdx).
+migrate to remote plugins or [remote packages](../remote-packages/explanation).
 
 [plugins]: https://buf.build/plugins

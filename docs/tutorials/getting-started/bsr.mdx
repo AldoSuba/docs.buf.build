@@ -10,32 +10,6 @@ a small child how to cook.
 
 :::
 
-import { Card, Cards } from "@site/src/components/Cards";
-
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    //     url="../../tutorials/getting-started/getting-started-with-bsr"
-    url="getting-started-with-bsr"
-    description="Are you ready to elevate your schema management game and streamline your development process?"
-  />
-  <Card
-    name="🚧 How To"
-    url="#"
-    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
-  />
-  <Card
-    name="🧱 Reference"
-    url="#"
-    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="#"
-    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
-  />
-</Cards>
-
 
 Welcome to our exciting tutorial on the Buf Schema Registry and Schema Driven Development! Are you ready to elevate your
 data management game and streamline your development process? Look no further, because the Buf Schema Registry is here
@@ -82,7 +56,7 @@ $ export BUF_USER=<YOUR_BUF_USER>
 ```
 
 > Any time the `$BUF_USER` placeholder is used within a file, such as
-> [`buf.yaml`](../configuration/v1/buf-yaml.md), you need to manually replace it
+> [`buf.yaml`](../../configuration/v1/buf-yaml.md), you need to manually replace it
 > with your local value of `BUF_USER`.
 
 ## Create an API Token {#create-an-api-token}
@@ -132,12 +106,12 @@ For more information on `.netrc`, check out the
 > If you're developing on a Windows machine, the credentials file is
 > `%HOME%/_netrc`.
 
-[bsr]: /bsr/introduction.md
-[login]: https://buf.build/login
-[user]: https://buf.build/settings/user
+[bsr]  /bsr/introduction.md
+[login]  https://buf.build/login
+[user]  https://buf.build/settings/user
 
-Now that you've authenticated with the [BSR](../bsr/overview.mdx), you can
-create a repository and push a [module](../bsr/overview.mdx#modules) that
+Now that you've authenticated with the [BSR](../../bsr/explanation.mdx), you can
+create a repository and push a [module](../../bsr/explanation.mdx#modules) that
 defines the `PetStoreService` API.
 
 ## Terminology {#terminology}
@@ -149,7 +123,7 @@ Before we continue, it's important that we cover some basic terminology.
 **Modules** are the core primitive of Buf and the BSR. A module is a collection
 of Protobuf files that are configured, built, and versioned as a logical unit.
 You created a module when you initialized a
-[`buf.yaml`](../configuration/v1/buf-yaml.md) at the beginning of the tour.
+[`buf.yaml`](../../configuration/v1/buf-yaml.md) at the beginning of the tour.
 
 ### Repositories {#repositories}
 
@@ -227,20 +201,13 @@ generated commit identifies this current version of your module.
 
 > The commit you see differs from the one shown here.
 
-> You can also push the module as a draft with `--draft` flag!
->
-> ```terminal
-> $ buf push --draft draft-name
-> ---
-> e9ec7a9375eb496baf6f3d38c36ba629
-> ```
->
-> The pushed draft will not be included in the main commit history, and can only
+> You can also push the module as a draft with `--draft` flag!```terminal$ buf push --draft draft-name---e9ec7a9375eb496baf6f3d38c36ba629
+> ```The pushed draft will not be included in the main commit history, and can only
 > be resolved by using the draft name or the commit name as reference. See the
-> [Referencing a module](../bsr/overview.mdx#referencing-a-module) for detail.
+> [Referencing a module](../../bsr/explanation.mdx#referencing-a-module) for detail.
 
 You can browse generated documentation for your
-[module](../bsr/overview.mdx#modules) in the [BSR](../bsr/overview.mdx).
+[module](../../bsr/explanation#modules) in the [BSR](../../bsr/explanation.mdx).
 
 Navigate to the `/docs` page for the module you just created in your browser. If
 your `$BUF_USER` variable is set to `acme` and you created the
@@ -269,7 +236,7 @@ $ touch buf.md
 ```markdown title="buf.md"
 ## APIs
 
-This module contains all of the APIs required to interact with the
+This module contains all the APIs required to interact with the
 `PetStoreService`.
 ```
 
@@ -307,7 +274,7 @@ navigate to its package documentation at
 [https://buf.build/acme/petapis/docs/4514ddced0584e73a100e82096c7958c/pet.v1](https://buf.build/acme/petapis/docs/4514ddced0584e73a100e82096c7958c/pet.v1).
 
 From here, you can click through each of the Protobuf type definitions and see
-all of the comments associated with each type. In fact, if you click on the
+all the comments associated with each type. In fact, if you click on the
 `google.type.DateTime` message referenced in the `Pet` message, you'll be
 brought to the `google.type.v1` package documentation for the same commit.
 
@@ -334,7 +301,7 @@ make it stand out in a crowded market. So, let's seize this opportunity and crea
 others to use and integrate it!
 :::
 
-Without the [BSR](../bsr/overview.mdx), you can only depend on other Protobuf
+Without the [BSR](../../bsr/explanation.mdx), you can only depend on other Protobuf
 APIs by manually fetching the `.proto` files you need. If you wanted to use
 [`googleapis`](https://github.com/googleapis/googleapis), for example, you'd
 need to clone the right Git repository and copy the `.proto` file(s) you need in
@@ -346,7 +313,7 @@ Even worse, this way of managing dependencies is prone to API drift, where the
 with the latest version and your modules thus out of date. It turns out that
 this is exactly what you did with the `PetStoreService`: the
 `google/type/datetime.proto` file is actually present in your local directory
-and currently used to build your [module](../bsr/overview.mdx#modules).
+and currently used to build your [module](../../bsr/explanation.mdx#modules).
 
 Now that you're familiar with the BSR, you can simplify this entire workflow
 immensely.
@@ -455,8 +422,8 @@ so let's break it down:
 module and wrote it to the module's `buf.lock`.
 3. When another `buf` command is run, `buf` downloads the
 `buf.build/googleapis/googleapis` module to the local
-[module cache](../bsr/overview.mdx#module-cache).
-4. Finally, now that `buf` has all of the dependencies it needs, it can
+[module cache](../../bsr/explanation.mdx#module-cache).
+4. Finally, now that `buf` has all the dependencies it needs, it can
 successfully build the module (as `google/type/datetime.proto` is included).
 
 In summary, `buf` can resolve the dependencies specified in your `buf.yaml`'s
@@ -518,7 +485,7 @@ b2917eb692064beb92ad1e38dba6c25e
 > If one or more dependencies are pinned to a draft commit, pushing the module
 > will not be allowed.
 
-Wow, you did it! You've officially completed this tutorial on the Buf Schema Registry and you're now a pro at managing
+Wow, you did it! You've officially completed this tutorial on the Buf Schema Registry, and you're now a pro at managing
 your data schemas like a boss! From creating and managing schemas, to collaborating and sharing with others, to
 supporting Schema Driven Development approach, and even using remote packages and plugins, you're ready to tackle any
 data management challenge that comes your way.
@@ -540,3 +507,7 @@ your Buf Schema Registry skills to the next level and provide you with even more
 me, you won't want to miss it! It's packed with practical examples and hands-on exercises that will help you
 master the Buf Schema Registry in no time. So what are you waiting for? Head over to our tutorial section and start learning
 today! It's the perfect opportunity to take your skills to new heights and achieve your full potential.
+
+[bsr]: /bsr/introduction.md
+[login]: https://buf.build/login
+[user]: https://buf.build/settings/user

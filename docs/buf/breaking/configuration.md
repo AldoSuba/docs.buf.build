@@ -1,7 +1,8 @@
 ---
 id: configuration
-title: Breaking Change Configuration
-description: "Unlock the full potential of buf breaking change detection with this easy-to-follow configuration guide and take your development process to new heights!"
+title: Configuration
+description: "Unlock the full potential of buf breaking change detection with this easy-to-follow configuration guide
+and take your development process to new heights!"
 ---
 
 :::danger 🚧 Construction Notes
@@ -10,31 +11,6 @@ This REFERENCE is oriented to information must describe the machinery. Its form 
 encyclopedia article.
 
 :::
-
-import { Card, Cards } from "@site/src/components/Cards";
-
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="../../../tutorials/getting-started/getting-started-with-buf"
-    description="Get started with Buf CLI in no time with this easy-to-follow tutorial and revolutionize the way you work with Protocol Buffers!"
-  />
-  <Card
-    name="🚧 How To"
-    url="../how-to"
-    description="Learn how to effectively use buf breaking change detection with this comprehensive how-to guide."
-  />
-  <Card
-    name="🧱 Reference"
-    url="rules"
-    description="Take your buf breaking change detection to the next level with this set of expert-approved rules and never miss a backwards-incompatible change again!"
-  />
-  <Card
-    name="🏗 Explanation"
-    url="../explanation"
-    description="Explore the full capabilities of buf breaking change detection with this informative reference material, containing expert advice and best practices."
-  />
-</Cards>
 
 `buf`'s breaking change detector is configured through a
 [`buf.yaml`](../configuration/v1/buf-yaml.md) file that is placed at the root of
@@ -118,7 +94,7 @@ breaking:
 ### `ignore`
 
 The `ignore` key is **optional**, and enables you to exclude directories or
-files from all breaking rules when running `buf breaking`. If a directory is ignored, 
+files from all breaking rules when running `buf breaking`. If a directory is ignored,
 then all files and subfolders of the directory will also be ignored. The specified
 directory or file paths **must** be relative to the `buf.yaml`. For example, the
 breaking result in `foo/bar.proto` is ignored if you apply this:

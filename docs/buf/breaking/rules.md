@@ -1,40 +1,10 @@
 ---
 id: rules
-title: Breaking Change Rules & Categories
+title: Rules & Categories
 description: "Take your buf breaking change detection to the next level with this set of expert-approved rules and never miss a backwards-incompatible change again!"
 ---
 
-import { Card, Cards } from "@site/src/components/Cards";
 
-:::danger 🚧 Construction Notes
-
-This REFERENCE is oriented to information must describe the machinery. Its form is a dry description like a reference
-encyclopedia article.
-
-:::
-
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="../../../tutorials/getting-started/getting-started-with-buf"
-    description="Get started with Buf CLI in no time with this easy-to-follow tutorial and revolutionize the way you work with Protocol Buffers!"
-  />
-  <Card
-    name="🚧 How To"
-    url="../how-to"
-    description="Learn how to effectively use buf breaking change detection with this comprehensive how-to guide."
-  />
-  <Card
-    name="🧱 Reference"
-    url="configuration"
-    description="Unlock the full potential of buf breaking change detection with this easy-to-follow configuration guide and take your development process to new heights!"
-  />
-  <Card
-    name="🏗 Explanation"
-    url="../explanation"
-    description="Explore the full capabilities of buf breaking change detection with this informative reference material, containing expert advice and best practices."
-  />
-</Cards>
 
 As discussed in the overview, `buf` categorizes breaking rules into four main
 categories:

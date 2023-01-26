@@ -11,36 +11,13 @@ article on culinary social history.
 
 :::
 
-import { Card, Cards } from "@site/src/components/Cards";
 
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  />
-  <Card
-    name="🚧 How To"
-    url="#"
-    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
-  />
-  <Card
-    name="🧱 Reference"
-    url="#"
-    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="#"
-    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
-  />
-</Cards>
 
 The various I/O options for `buf` may seem a bit daunting, so we'll break down
 how this all fits together.
 
 In general, a Buf input is a collection of `.proto` files used by many of the
-`buf` commands. In most cases, this is a [module](../bsr/overview.mdx#modules),
+`buf` commands. In most cases, this is a [module](../explanation.mdx#modules),
 but a variety of other formats are supported and explained below.
 
 > By default, `buf` uses the current directory as its input for all commands.
@@ -69,9 +46,9 @@ more than just local files. Those cases are described below.
 
 ### The Buf Schema Registry (BSR) {#bsr}
 
-The core primitive for Buf is the [module](/bsr/overview.mdx#modules). Protobuf
+The core primitive for Buf is the [module](/explanation.mdx#modules). Protobuf
 on its own has **no concept of modules**, only files. The Buf Schema Registry
-([BSR](../bsr/overview.mdx)) is a registry for Buf modules that you want to
+([BSR](../explanation.mdx)) is a registry for Buf modules that you want to
 manage across teams and even organizations.
 
 With the BSR, you can refer to any version of a Buf module and use it as an

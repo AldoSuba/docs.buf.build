@@ -27,42 +27,86 @@ const sidebars = {
       type: "category",
       label: "Manuals",
       items: [
+        "manuals",
         {
           type: "category",
           label: "The Buf CLI",
           items: [
-            { type: "category", label: "Breaking Change Detection", items: ["buf/breaking/explanation", "buf/breaking/reference/configuration", "buf/breaking/reference/rules",], collapsed: true },
-            { type: "category", label: "Build", items: ["buf/build/explanation", "buf/build/reference",], collapsed: true },
-            { type: "category", label: "Convert", items: ["buf/convert/explanation", "buf/convert/reference",], collapsed: true },
-            { type: "category", label: "cURL", items: ["buf/curl/explanation", "buf/curl/reference",], collapsed: true },
-            { type: "category", label: "Export", items: ["buf/export/explanation", "buf/export/reference",], collapsed: true },
-            { type: "category", label: "Format", items: ["buf/format/explanation", "buf/format/reference",], collapsed: true },
-            { type: "category", label: "Generate", items: ["buf/generate/explanation", "buf/generate/reference",], collapsed: true },
-            { type: "category", label: "Lint", items: ["buf/lint/explanation", "buf/lint/reference/overview", "buf/lint/reference/configuration", "buf/lint/reference/rules"], collapsed: true },
-            { type: "category", label: "Mod", items: ["buf/mod/explanation", "buf/mod/reference",], collapsed: true },
-            { type: "category", label: "Push", items: ["buf/push/explanation", "buf/push/reference",], collapsed: true },
-            { type: "category", label: "Registry", items: ["buf/registry/explanation", "buf/registry/reference",], collapsed: true },
             {
               type: "category",
-              label: "Best Practices",
+              label: "Breaking Change Detection",
               items: [
-                "buf/best-practices/module-development",
-                "buf/best-practices/style-guide"
+                { type: "doc", label: "Overview", id: "buf/breaking/explanation" },
+                { type: "doc", label: "Configuration", id: "buf/breaking/configuration" },
+                { type: "doc", label: "Rules", id: "buf/breaking/rules" }
               ],
               collapsed: true
             },
             {
               type: "category",
-              label: "Other",
-              items: [
-                "buf/other/inputs",
-                "buf/other/internal-compiler",
-                "buf/other/protoc-plugins",
-                "buf/other/workspaces",
-                "buf/other/bazel"
-              ],
+              label: "Build an image",
+              items: ["buf/build/explanation", "buf/build/reference"],
               collapsed: true
-            }
+            },
+            {
+              type: "category",
+              label: "Convert a message",
+              items: ["buf/convert/explanation", "buf/convert/reference"],
+              collapsed: true
+            },
+            {
+              type: "category",
+              label: "Invoke an API with Buf cURL",
+              items: ["buf/curl/explanation", "buf/curl/reference"],
+              collapsed: true
+            },
+            {
+              type: "category",
+              label: "Export proto files",
+              items: ["buf/export/explanation", "buf/export/reference"],
+              collapsed: true
+            },
+            {
+              type: "category",
+              label: "Format proto files",
+              items: ["buf/format/explanation", "buf/format/reference"],
+              collapsed: true
+            },
+            {
+              type: "category",
+              label: "Generate Code",
+              items: ["buf/generate/explanation", "buf/generate/reference"],
+              collapsed: true
+            },
+            {
+              type: "category",
+              label: "Apply lint checks",
+              items: ["buf/lint/explanation", "buf/lint/reference/overview", "buf/lint/reference/configuration", "buf/lint/reference/rules"],
+              collapsed: true
+            },
+            {
+              type: "category",
+              label: "Create a Buf Module",
+              items: ["buf/mod/explanation", "buf/mod/reference"],
+              collapsed: true
+            },
+            {
+              type: "category",
+              label: "Push a module to the BSR",
+              items: ["buf/push/explanation", "buf/push/reference"],
+              collapsed: true
+            },
+            {
+              type: "category",
+              label: "Interact with a Buf Registry",
+              items: ["buf/registry/explanation", "buf/registry/reference"],
+              collapsed: true
+            },
+            { type: "doc", label: "Understanding Inputs", id: "buf/other/inputs" },
+            { type: "doc", label: "What is the Buf compiler?", id: "buf/other/internal-compiler" },
+            { type: "doc", label: "Understanding protoc plugins", id: "buf/other/protoc-plugins" },
+            { type: "doc", label: "Using a workspace", id: "buf/other/workspaces" },
+            { type: "doc", label: "Use Buf with Bazel", id: "buf/other/bazel" }
           ],
           collapsed: false
         },
@@ -120,6 +164,15 @@ const sidebars = {
           type: "doc",
           id: "ci-cd/how-to",
           label: "Buf on GitHub Actions: A Setup Guide"
+        },
+        {
+          type: "category",
+          label: "Best Practices",
+          items: [
+            "buf/best-practices/module-development",
+            "buf/best-practices/style-guide"
+          ],
+          collapsed: true
         }
       ],
       collapsed: true
@@ -130,13 +183,24 @@ const sidebars = {
       items: [
         {
           type: "category",
-          label: "buf cli",
+          label: "The Buf CLI",
           collapsed: true,
           items: [
             {
-              type: 'autogenerated',
-              dirName: 'reference/buf',
-            },
+              type: "autogenerated",
+              dirName: "reference/buf"
+            }
+          ]
+        },
+        {
+          type: "category",
+          label: "Configuration",
+          collapsed: true,
+          items: [
+            {
+              type: "autogenerated",
+              dirName: "configuration"
+            }
           ]
         },
         {

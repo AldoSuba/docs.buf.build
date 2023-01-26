@@ -11,30 +11,7 @@ article on culinary social history.
 
 :::
 
-import { Card, Cards } from "@site/src/components/Cards";
 
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="../../tutorials/getting-started/getting-started-with-bsr"
-    description="Are you ready to elevate your schema management game and streamline your development process?"
-  />
-  <Card
-    name="🚧 How To"
-    url="how-to"
-    description="Streamline Your Development: Learn how to seamlessly migrate to remote packages and take your development process to the next level."
-  />
-  <Card
-    name="🧱 Reference"
-    url="reference/overview"
-    description="Unlock the Secrets of Remote Packages: Dive deep into the world of remote packages and discover the many benefits they offer in this comprehensive guide."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="explanation"
-    description="Unlock the power of remote packages and boost your productivity with our comprehensive guide, which covers understanding, building context, and implementing them in your workflow."
-  />
-</Cards>
 
 The [remote generation alpha](../../reference/deprecated/remote-generation/overview.mdx)
 included a feature called remote code execution, which we now simply refer to as
@@ -206,7 +183,7 @@ migration path. We've taken
 [stewardship][protoc-gen-validate-ownership] of protoc-gen-validate from the Envoy
 team, and will continue to work to improve it, however protoc-gen-validate generated
 code is required to be generated to the same package as protoc-gen-go code, which does
-not fit cleanly into the remote packages model. In the meantime, switch to [remote plugins](../remote-plugins/overview.mdx)
+not fit cleanly into the remote packages model. In the meantime, switch to [remote plugins](../remote-plugins/explanation)
 using `buf generate`.
 
 ## BSR NPM registry
@@ -241,7 +218,7 @@ This means you'll need to do 2 things:
 + npm install @buf/bufbuild_eliza.bufbuild_es
 ```
 
-New documentation is available at [NPM registry](go.mdx).
+New documentation is available at [NPM registry](reference/npm).
 
 ### connect-web template
 

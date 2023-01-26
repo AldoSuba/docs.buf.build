@@ -12,30 +12,7 @@ article on culinary social history.
 
 import Image from "@site/src/components/Image";
 import Syntax from "@site/src/components/Syntax";
-import { Card, Cards } from "@site/src/components/Cards";
 
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  />
-  <Card
-    name="🚧 How To"
-    url="#"
-    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
-  />
-  <Card
-    name="🧱 Reference"
-    url="#"
-    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="#"
-    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
-  />
-</Cards>
 
 ## Modules
 
@@ -173,7 +150,7 @@ message Forecast {
 
 The `buf` CLI automatically resolves the module(s) specified in the `deps` list.
 
-> See the [Usage](../bsr/usage.mdx#add-a-dependency) section for a detailed
+> See the [Usage](reference#add-a-dependency) section for a detailed
 > example.
 
 ## Referencing a module
@@ -201,16 +178,15 @@ until you update to a non-draft commit of the dependency.
 ## Local modules with workspaces
 
 If you want to depend on local modules, you can set up a
-[workspace](../reference/workspaces.mdx) to discover modules through your file
+[workspace](../buf/other/workspaces.mdx) to discover modules through your file
 system. If you are in a workspace, `buf` looks for `deps` in your
-[workspace configuration](../reference/workspaces.mdx#configuration) _before_
+[workspace configuration](../buf/other/workspaces.mdx#configuration) _before_
 attempting to find it on the BSR.
 
 This makes workspaces a good way to iterate on multiple modules at the same time
 before pushing any changes to the BSR.
 
-> For an in-depth example check out the
-> [Tour - Use a Workspace](../tour/use-a-workspace.mdx)
+> For an in-depth example check out the [Tour - Use a Workspace](#)
 
 ## Module cache
 
@@ -248,7 +224,7 @@ If you're interested in how these plugins are packaged see the
 [bufbuild/plugins][bufbuild-plugins] repository for more details.
 
 To learn more about how remote plugins can be used in code generation workflows,
-see the [remote plugins'](remote-plugins/usage.mdx) documentation.
+see the [remote plugins'](remote-plugins/how-to) documentation.
 
 ## Remote Packages
 
@@ -272,7 +248,7 @@ For more information, see the [Remote Packages][remote-packages-overview] docume
 ---
 
 Although beyond the scope of this overview, we suggest taking a look at
-[managed mode](../generate/managed-mode.md) as it relates to code generation.
+[managed mode](../generate/managed-mode/reference) as it relates to code generation.
 Historically, _consumer concerns_ are conflated with _producer concerns_ due to
 hard-coding of language-specific options in Protobuf files, which in turn
 restricts their usefulness to consumers. Managed mode addresses existing
@@ -280,5 +256,5 @@ limitations and offers a better separation of concerns.
 
 [bsr-plugins]   https://buf.build/plugins
 [bufbuild-plugins]   https://github.com/bufbuild/plugins
-[remote-plugins]   remote-plugins/usage.mdx
+[remote-plugins]   remote-plugins/how-to
 [remote-packages-overview]   /bsr/remote-packages/overview

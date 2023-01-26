@@ -11,34 +11,11 @@ a web client. Its form, a series of steps - analogous to a recipe in a cookery b
 
 :::
 
-import { Card, Cards } from "@site/src/components/Cards";
 
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="../../tutorials/getting-started/getting-started-with-buf"
-    description="Get started with Buf CLI in no time with this easy-to-follow tutorial and revolutionize the way you work with Protocol Buffers!"
-  />
-  <Card
-    name="🚧 How To"
-    url="how-to"
-    description="Learn how to build efficient and accurate code with Buf Build: a powerful tool for working with Protocol Buffers, in this comprehensive guide."
-  />
-  <Card
-    name="🧱 Reference"
-    url="reference"
-    description="Don't miss out on the opportunity to upgrade your development process with our state-of-the-art buf breaking change detection tool!"
-  />
-  <Card
-    name="🏗 Explanation"
-    url="explanation"
-    description="Unlock the full potential of Buf Build and understand its role in modern development with this in-depth guide exploring the context and power of Buf Build."
-  />
-</Cards>
 
 All `buf` operations rely on building, or compiling, Protobuf files. The [linter](../lint/overview.md),
-[breaking change detector](../breaking/overview.md), [generator](../generate/usage.mdx),
-and the [BSR](../bsr/overview.mdx) are features that rely on compilation results. In its simplest form,
+[breaking change detector](../breaking/overview.md), [generator](../generate/how-to),
+and the [BSR](../explanation.mdx) are features that rely on compilation results. In its simplest form,
 the `buf build` command is used to verify that an [input](../reference/inputs.md) compiles.
 
 ## Configuration
@@ -76,7 +53,7 @@ root of your `.proto` files hierarchy, as this is how `.proto` import paths are 
 
 ## Define a Module
 
-To get started, create a [module](../bsr/overview.mdx#modules) by adding a `buf.yaml` file to the root of the directory
+To get started, create a [module](../explanation.mdx#modules) by adding a `buf.yaml` file to the root of the directory
 that contains your Protobuf definitions. You can create the default `buf.yaml` file with this command:
 
 ```terminal
@@ -416,6 +393,6 @@ $ docker run \
 [filedescriptorset]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto
 [image]: ../reference/images.md
 [messages]: https://developers.google.com/protocol-buffers/docs/proto3#simple
-[module]: ../bsr/overview.mdx#modules
+[module]: ../explanation.mdx#modules
 [proto2]: https://developers.google.com/protocol-buffers/docs/proto
 [services]: https://developers.google.com/protocol-buffers/docs/proto3#services

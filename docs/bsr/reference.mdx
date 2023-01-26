@@ -3,41 +3,8 @@ id: reference
 title: Usage
 ---
 
-import { Card, Cards } from "@site/src/components/Cards";
-
-:::danger 🚧 Construction Notes
-
-This REFERENCE is oriented to information must describe the machinery. Its form is a dry description like a reference
-encyclopedia article.
-
-:::
-
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  />
-  <Card
-    name="🚧 How To"
-    url="#"
-    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
-  />
-  <Card
-    name="🧱 Reference"
-    url="#"
-    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="#"
-    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
-  />
-</Cards>
-
-
 To execute `buf` commands below make sure you are
-[authenticated](../bsr/authentication.md). Obtain a token from the BSR and run:
+[authenticated](../authentication/reference). Obtain a token from the BSR and run:
 
 ```terminal
 $ buf registry login
@@ -48,7 +15,7 @@ entry into your `$HOME/.netrc` (Linux or macOS) or `%HOME%/_netrc` (Windows).
 
 ## Push a module
 
-To push to the BSR, your module must [build](../build/usage.md) successfully.
+To push to the BSR, your module must [build](../buf/build/how-to) successfully.
 This means that you are able to run `buf build` successfully on your module and
 your module has no dependencies pinned to a draft commit.
 
@@ -122,7 +89,7 @@ Sure you can have CI workflows to automatically catch compilation errors, but by
 using the BSR these guarantees are made available to everyone out-of-the-box.
 
 That's it. This module can now be consumed as a first class dependency and its
-[generated documentation](documentation.mdx) can be viewed on the BSR.
+[generated documentation](documentation/explanation) can be viewed on the BSR.
 
 ## Add a dependency
 
@@ -170,7 +137,7 @@ Once your dependencies are updated, you can run `buf build` and the `buf` CLI
 resolves hosted module dependencies by leveraging the BSR.
 
 > For a more in-depth example see the
-> [Tour - Add a Dependency](../tour/add-a-dependency.md)
+> [Tour - Add a Dependency](#)
 
 ## Code generation
 
@@ -211,12 +178,12 @@ This generates C++ and Java code in the local `/gen/proto/{cpp,java}`
 directories.
 
 > For a more advanced example, check out the
-> [Tour - Generate Go Code](../tour/generate-go-code.md)
+> [Tour - Generate Go Code](#)
 
 ### Remote code generation
 
-The BSR supports remote plugins and generated SDKs, check out the [remote plugins](remote-plugins/usage.mdx)
-and [remote packages](remote-packages/overview.mdx) feature for additional details.
+The BSR supports remote plugins and generated SDKs, check out the [remote plugins](remote-plugins/how-to)
+and [remote packages](remote-packages/explanation) feature for additional details.
 
 ## Manage a repository
 

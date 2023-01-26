@@ -17,8 +17,8 @@ CI/CD solution for Protobuf:
   backwards compatibility for your Protobuf files with `buf`, and comments
   in-line on pull requests.
 - [buf-push](https://github.com/marketplace/actions/buf-push) pushes a
-  [module](../bsr/overview.mdx#modules) to the Buf Schema Registry
-  ([BSR](../bsr/overview.mdx)). The module is pushed with a tag equal to the git
+  [module](../explanation.mdx#modules) to the Buf Schema Registry
+  ([BSR](../explanation.mdx)). The module is pushed with a tag equal to the git
   commit SHA.
 
 In this guide, you will configure these GitHub Actions so that `buf lint` and

@@ -4,39 +4,6 @@ title: User Management
 description: REFERENCE
 ---
 
-import { Card, Cards } from "@site/src/components/Cards";
-
-:::danger 🚧 Construction Notes
-
-This REFERENCE is oriented to information must describe the machinery. Its form is a dry description like a reference
-encyclopedia article.
-
-:::
-
-<Cards>
-  <Card
-    name="🖌 Tutorial"
-    url="#"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  />
-  <Card
-    name="🚧 How To"
-    url="#"
-    description="Nisl tincidunt eget nullam non. Sed cras ornare arcu dui vivamus. Id neque aliquam vestibulum morbi blandit. Turpis nunc eget lorem dolor sed."
-  />
-  <Card
-    name="🧱 Reference"
-    url="#"
-    description="Integer malesuada nunc vel risus commodo viverra maecenas accumsan. Faucibus vitae aliquet nec ullamcorper sit amet."
-  />
-  <Card
-    name="🏗 Explanation"
-    url="#"
-    description="Scelerisque varius morbi enim nunc faucibus a pellentesque sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus."
-  />
-</Cards>
-
-
 ## Organization roles
 
 Every user that is part of an organization has an explicit role. Note that users
@@ -51,7 +18,7 @@ request to be re-added with the desired role.
 - Can delete organization. All resources such as repositories, templates and
   plugins must be deleted before the organization can be deleted.
 - Can add and delete resources such as
-  [repositories](../bsr/overview.mdx#modules)
+  [repositories](../explanation#modules)
 
 ### Admin {#org-admin}
 
