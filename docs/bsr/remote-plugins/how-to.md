@@ -1,5 +1,5 @@
 ---
-id: migrating-from-alpha
+id: how-to
 title: Migrating from alpha 
 ---
 
