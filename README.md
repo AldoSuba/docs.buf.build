@@ -201,7 +201,7 @@ This is expected to update only the `package-lock.json` and no other files.
 * best-practices/module-development
 * best-practices/style-guide
 * bsr/introduction
-* bsr/overview
+* bsr/explanation
 
 ### REFERENCE
 

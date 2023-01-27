@@ -7,7 +7,7 @@ title: Authoring a plugin
 
 We made improvements to remote code generation features of the BSR.
 
-Please see the [Migrating from alpha][migrating-from-alpha] documentation for
+Please see the [Migrating from alpha][how-to] documentation for
 more info.
 
 If you run into issues contact us on [Buf Public Slack][buf-slack-link].
@@ -182,4 +182,4 @@ Continue to the next section to learn more about authoring _and using_
 [BSR Templates](template-example.md)
 
 [buf-slack-link]: https://buf.build/links/slack
-[migrating-from-alpha]: /bsr/remote-packages/migrating-from-alpha#disable-plugin-uploads
+[how-to]: /bsr/remote-packages/how-to#disable-plugin-uploads

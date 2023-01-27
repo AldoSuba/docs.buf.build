@@ -565,7 +565,7 @@ various scenarios.
 [image]: /reference/images
 [inputs]: /reference/inputs
 [lint]: /lint/overview
-[module]: /bsr/overview#module
+[module]: /bsr/explanation#module
 [repository_rule]: https://bazel.build/rules/repository_rules
 [release]: https://github.com/bufbuild/rules_buf/releases
 [rules_buf]: https://github.com/bufbuild/rules_buf
