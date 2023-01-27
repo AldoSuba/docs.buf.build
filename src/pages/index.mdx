@@ -11,7 +11,7 @@ import { Card, Cards } from "@site/src/components/Cards";
 <Cards>
   <Card
     name="✨ Getting Started"
-    url="tutorials/introduction"
+    url="guides"
     description="Get started with Buf in no time and revolutionize the way you work with Protocol Buffers."
   />
   <Card
@@ -21,7 +21,7 @@ import { Card, Cards } from "@site/src/components/Cards";
   />
   <Card
     name="🚘 Guides"
-    url="tutorials/introduction"
+    url="guides"
     description="Learn Buf basics and the benefits of Schema Driven Development"
   />
   <Card
@@ -35,3 +35,33 @@ import { Card, Cards } from "@site/src/components/Cards";
     description="Browse through the CLI and API reference documentation."
   />
 </Cards>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+defaultValue="explore-buf"
+values={[
+  {label: 'Explore Buf', value: 'explore-buf'},
+  {label: 'Common FAQs', value: 'common-faqs'},
+  {label: 'Get support', value: 'get-support'},
+]}>
+<TabItem value="explore-buf">
+
+
+</TabItem>
+<TabItem value="common-faqs">
+
+  - item 1
+  - item 2
+  - item 3
+
+</TabItem>
+<TabItem value="get-support">
+
+  - item 1
+  - item 2
+  - item 3
+
+</TabItem>
+</Tabs>
