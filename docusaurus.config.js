@@ -71,6 +71,12 @@ module.exports = {
       },
       items: [
         {
+          // The search bar must be the first item on the left - otherwise, the layout of the
+          // overridden navbar will break.
+          type: "search",
+          position: "left"
+        },
+        {
           href: "/",
           label: "Home",
           position: "left"
@@ -88,12 +94,6 @@ module.exports = {
         {
           href: "/reference/buf/index",
           label: "Reference",
-          position: "left"
-        },
-        {
-          // The search bar must be the first item on the left - otherwise, the layout of the
-          // overridden navbar will break.
-          type: "search",
           position: "left"
         },
         {
