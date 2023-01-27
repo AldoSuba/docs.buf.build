@@ -508,7 +508,7 @@ new version.
 
 A common idiom is to use alpha and beta packages for packages that are still in
 development and can have breaking changes. You can
-[configure the breaking change detector](/buf/breaking/reference/configuration) to
+[configure the breaking change detector](/buf/breaking/configuration) to
 ignore breaking changes in files for these packages with the
 `ignore_unstable_packages` option:
 

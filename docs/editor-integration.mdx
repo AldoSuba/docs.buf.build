@@ -4,8 +4,8 @@ title: Editor integration
 ---
 
 `buf` produces structured machine-readable error output for
-[build](/buf/build/usage), [lint](/buf/lint/overview), and
-[breaking change](/buf/breaking/overview) errors which integrate with IDEs, scripts,
+[build](/buf/build/how-to), [lint](/buf/lint/explanation), and
+[breaking change](/buf/breaking/explanation) errors which integrate with IDEs, scripts,
 and other tools.
 
 We currently provide Vim and Visual Studio Code integrations and intend to
@@ -33,7 +33,7 @@ let g:ale_linters_explicit = 1
 
 The extension runs `buf lint --path` on save and reveals errors on a per-file
 basis. To detect package-level problems, be sure to run a module-wide `buf lint`
-as part of your [CI](/buf/ci-cd/setup) process.
+as part of your [CI](/buf/ci-cd/how-to) process.
 
 ## Visual Studio Code [![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/bufbuild.vscode-buf?color=2048ff&label=Buf&logo=visual-studio-code&style=flat-squar)](https://marketplace.visualstudio.com/items?itemName=bufbuild.vscode-buf)
 

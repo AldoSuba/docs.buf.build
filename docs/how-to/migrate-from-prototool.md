@@ -340,7 +340,7 @@ See the [generation documentation](../buf/generate/how-to) for more details.
 $ buf curl
 ```
 
-See the [documentation for invoking RPCs](../buf/curl/how-to) for more details.
+See the [documentation for invoking RPCs](../buf/curl/explanation) for more details.
 
 ### `prototool lint`
 
