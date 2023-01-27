@@ -67,4 +67,4 @@ We plan to support Remote Packages for additional languages in the near future, 
 - C#
 - Ruby
 
-[modules]: /bsr/overview#modules
+[modules]: /bsr/explanation#modules

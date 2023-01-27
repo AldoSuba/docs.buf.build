@@ -296,4 +296,4 @@ above.
 [protobuf-es]: https://www.npmjs.com/package/@bufbuild/protoc-gen-es
 [protoc-gen-validate]: https://github.com/envoyproxy/protoc-gen-validate
 [protoc-gen-validate-ownership]: https://github.com/envoyproxy/protoc-gen-validate/issues/616
-[go-proxy]: go#using-go-modules
+[go-proxy]: reference/go#using-go-modules
