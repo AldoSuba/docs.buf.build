@@ -76,7 +76,7 @@ module.exports = {
           position: "left"
         },
         {
-          href: "/tutorials/introduction",
+          href: "/guides",
           label: "Guides",
           position: "left"
         },
@@ -86,7 +86,7 @@ module.exports = {
           position: "left"
         },
         {
-          href: "/reference",
+          href: "/reference/buf/index",
           label: "Reference",
           position: "left"
         },

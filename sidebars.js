@@ -27,133 +27,156 @@ const sidebars = {
     "editor-integration"
   ],
   manuals: [
+    "manuals",
     {
       type: "category",
-      label: "Manuals",
+      label: "The Buf CLI",
       items: [
-        "manuals",
         {
           type: "category",
-          label: "The Buf CLI",
+          label: "Breaking Change Detection",
           items: [
-            {
-              type: "category",
-              label: "Breaking Change Detection",
-              items: [
-                { type: "doc", label: "Overview", id: "buf/breaking/explanation" },
-                { type: "doc", label: "Configuration", id: "buf/breaking/configuration" },
-                { type: "doc", label: "Rules", id: "buf/breaking/rules" }
-              ],
-              collapsed: false
-            },
-            {
-              type: "category",
-              label: "Build an image",
-              items: ["buf/build/explanation", "buf/build/reference"],
-              collapsed: false
-            },
-            {
-              type: "category",
-              label: "Convert a message",
-              items: ["buf/convert/explanation", "buf/convert/reference"],
-              collapsed: false
-            },
-            {
-              type: "category",
-              label: "Invoke an API with Buf cURL",
-              items: ["buf/curl/explanation", "buf/curl/reference"],
-              collapsed: false
-            },
-            {
-              type: "category",
-              label: "Export proto files",
-              items: ["buf/export/explanation", "buf/export/reference"],
-              collapsed: false
-            },
-            {
-              type: "category",
-              label: "Format proto files",
-              items: ["buf/format/explanation", "buf/format/reference"],
-              collapsed: false
-            },
-            {
-              type: "category",
-              label: "Generate Code",
-              items: ["buf/generate/explanation", "buf/generate/reference"],
-              collapsed: false
-            },
-            {
-              type: "category",
-              label: "Apply lint checks",
-              items: ["buf/lint/explanation", "buf/lint/reference/overview", "buf/lint/reference/configuration", "buf/lint/reference/rules"],
-              collapsed: false
-            },
-            {
-              type: "category",
-              label: "Create a Buf Module",
-              items: ["buf/mod/explanation", "buf/mod/reference"],
-              collapsed: false
-            },
-            {
-              type: "category",
-              label: "Push a module to the BSR",
-              items: ["buf/push/explanation", "buf/push/reference"],
-              collapsed: false
-            },
-            {
-              type: "category",
-              label: "Interact with a Buf Registry",
-              items: ["buf/registry/explanation", "buf/registry/reference"],
-              collapsed: false
-            },
-            { type: "doc", label: "Understanding Inputs", id: "buf/other/inputs" },
-            { type: "doc", label: "What is the Buf compiler?", id: "buf/other/internal-compiler" },
-            { type: "doc", label: "Understanding protoc plugins", id: "buf/other/protoc-plugins" },
-            { type: "doc", label: "Using a workspace", id: "buf/other/workspaces" },
-            { type: "doc", label: "Use Buf with Bazel", id: "buf/other/bazel" }
+            { type: "doc", label: "Overview", id: "buf/breaking/explanation" },
+            { type: "doc", label: "Configuration", id: "buf/breaking/configuration" },
+            { type: "doc", label: "Rules", id: "buf/breaking/rules" }
           ],
-          collapsed: false
+          collapsed: true
         },
+        // TODO:
+        // {
+        //   type: "category",
+        //   label: "Build an image",
+        //   items: [
+        //     "buf/build/explanation",
+        //     "buf/build/reference"
+        //   ],
+        //   collapsed: true
+        // },
+        // TODO:
+        // {
+        //   type: "category",
+        //   label: "Convert a message",
+        //   items: [
+        //     "buf/convert/explanation",
+        //     "buf/convert/reference",
+        //   ],
+        //   collapsed: true
+        // },
         {
           type: "category",
-          label: "The Buf Schema Registry (BSR)",
+          label: "Invoke an API with Buf cURL",
           items: [
-            "bsr/introduction",
-            "bsr/explanation",
-            { type: "doc", label: "Documentation", id: "bsr/documentation/explanation" },
-            { type: "doc", label: "Authentication", id: "bsr/authentication/explanation" },
-            { type: "doc", label: "Dependency Management", id: "bsr/dependency-management/explanation" },
-            { type: "doc", label: "Remote Packages", id: "bsr/remote-packages/explanation" },
-            { type: "doc", label: "Remote Plugins", id: "bsr/remote-plugins/explanation" },
-            { type: "doc", label: "Schema Management", id: "bsr/schema-management/explanation" },
-            { type: "doc", label: "Studio", id: "bsr/studio/explanation" },
-            { type: "doc", label: "User Management", id: "bsr/user-management/explanation" },
-            { type: "category", label: "Data Model", items: ["bsr/data-model/images"], collapsed: false }
+            "buf/curl/explanation",
+            // TODO:
+            // "buf/curl/reference",
           ],
-          collapsed: false
-        }
-      ]
+          collapsed: true
+        },
+        // TODO:
+        // {
+        //   type: "category",
+        //   label: "Export proto files",
+        //   items: [
+        //     "buf/export/explanation",
+        //     "buf/export/reference",
+        //   ],
+        //   collapsed: true
+        // },
+        {
+          type: "category",
+          label: "Format proto files",
+          items: [
+            "buf/format/explanation",
+            "buf/format/reference",
+          ],
+          collapsed: true
+        },
+        // TODO:
+        // {
+        //   type: "category",
+        //   label: "Generate Code",
+        //   items: [
+        //     "buf/generate/explanation",
+        //     "buf/generate/reference",
+        //   ],
+        //   collapsed: true
+        // },
+        {
+          type: "category",
+          label: "Apply lint checks",
+          items: [
+            // "buf/lint/explanation",
+            "buf/lint/reference/overview",
+            "buf/lint/reference/configuration",
+            "buf/lint/reference/rules",
+          ],
+          collapsed: true
+        },
+        // TODO:
+        // {
+        //   type: "category",
+        //   label: "Create a Buf Module",
+        //   items: ["buf/mod/explanation", "buf/mod/reference"],
+        //   collapsed: true
+        // },
+        // {
+        //   type: "category",
+        //   label: "Push a module to the BSR",
+        //   items: ["buf/push/explanation", "buf/push/reference"],
+        //   collapsed: true
+        // },
+        // {
+        //   type: "category",
+        //   label: "Interact with a Buf Registry",
+        //   items: ["buf/registry/explanation", "buf/registry/reference"],
+        //   collapsed: true
+        // },
+        { type: "doc", label: "Understanding Inputs", id: "buf/other/inputs" },
+        { type: "doc", label: "What is the Buf compiler?", id: "buf/other/internal-compiler" },
+        { type: "doc", label: "Understanding protoc plugins", id: "buf/other/protoc-plugins" },
+        { type: "doc", label: "Using a workspace", id: "buf/other/workspaces" },
+        { type: "doc", label: "Use Buf with Bazel", id: "buf/other/bazel" }
+      ],
+      collapsed: false
+    },
+    {
+      type: "category",
+      label: "The Buf Schema Registry (BSR)",
+      items: [
+        "bsr/introduction",
+        "bsr/explanation",
+        { type: "doc", label: "Documentation", id: "bsr/documentation/explanation" },
+        // { type: "doc", label: "Authentication", id: "bsr/authentication/explanation" },
+        // { type: "doc", label: "Dependency Management", id: "bsr/dependency-management/explanation" },
+        { type: "doc", label: "Remote Packages", id: "bsr/remote-packages/explanation" },
+        { type: "doc", label: "Remote Plugins", id: "bsr/remote-plugins/explanation" },
+        // { type: "doc", label: "Schema Management", id: "bsr/schema-management/explanation" },
+        { type: "doc", label: "Studio", id: "bsr/studio/explanation" },
+        // { type: "doc", label: "User Management", id: "bsr/user-management/explanation" },
+        { type: "category", label: "Data Model", items: ["bsr/data-model/images"], collapsed: false }
+      ],
+      collapsed: false
     }
   ],
   guides: [
-    "tutorials/introduction",
-    {
-      type: "doc",
-      id: "tutorials/getting-started/getting-started-with-buf",
-      label: "Getting started with Buf"
-    },
-    {
-      type: "doc",
-      id: "tutorials/getting-started/getting-started-with-bsr",
-      label: "Getting started with the BSR"
-    },
-    {
-      type: "doc",
-      id: "tutorials/getting-started/getting-started-with-buf-studio",
-      label: "Getting Started with Buf Studio"
-    },
-    "how-to/how-to-use-buf-in-your-js-project",
-    "how-to/build-an-api-client-with-buf",
+    "guides",
+    // {
+    //   type: "doc",
+    //   id: "tutorials/getting-started/getting-started-with-buf",
+    //   label: "Getting started with Buf"
+    // },
+    // {
+    //   type: "doc",
+    //   id: "tutorials/getting-started/getting-started-with-bsr",
+    //   label: "Getting started with the BSR"
+    // },
+    // {
+    //   type: "doc",
+    //   id: "tutorials/getting-started/getting-started-with-buf-studio",
+    //   label: "Getting Started with Buf Studio"
+    // },
+    // "how-to/how-to-use-buf-in-your-js-project",
+    // "how-to/build-an-api-client-with-buf",
     "how-to/replace-protoc-with-buf",
     "how-to/iterate-on-modules",
     "how-to/migrate-from-protolock",
@@ -181,7 +204,6 @@ const sidebars = {
     type: "category",
     label: "Reference",
     items: [
-      "reference",
       {
         type: "category",
         label: "The Buf CLI",
@@ -208,18 +230,18 @@ const sidebars = {
         type: "category",
         label: "The Buf Schema Registry (BSR)",
         items: [
-          "bsr/reference",
-          { type: "doc", label: "Documentation", id: "bsr/documentation/reference" },
+          // "bsr/reference",
+          // { type: "doc", label: "Documentation", id: "bsr/documentation/reference" },
           { type: "doc", label: "Authentication", id: "bsr/authentication/reference" },
-          { type: "doc", label: "Dependency Management", id: "bsr/dependency-management/reference" },
+          // { type: "doc", label: "Dependency Management", id: "bsr/dependency-management/reference" },
           {
             type: "category",
             label: "Remote Packages",
             items: ["bsr/remote-packages/reference/overview", "bsr/remote-packages/reference/go", "bsr/remote-packages/reference/npm"]
           },
           { type: "doc", label: "Remote Plugins", id: "bsr/remote-plugins/reference" },
-          { type: "doc", label: "Schema Management", id: "bsr/schema-management/reference" },
-          { type: "doc", label: "Studio", id: "bsr/studio/reference" },
+          // { type: "doc", label: "Schema Management", id: "bsr/schema-management/reference" },
+          // { type: "doc", label: "Studio", id: "bsr/studio/reference" },
           { type: "doc", label: "User Management", id: "bsr/user-management/reference" }
         ],
         collapsed: false
@@ -244,10 +266,10 @@ const sidebars = {
               "reference/deprecated/remote-generation/plugin-example",
               "reference/deprecated/remote-generation/template-example"
             ],
-            collapsed: false
+            collapsed: true
           }
         ],
-        collapsed: false
+        collapsed: true
       }
     ]
   }

@@ -1,121 +1,112 @@
+
 ---
 id: reference
-title: Authentication
+title: User Management
 description: REFERENCE
 ---
 
-Authentication is required for the majority of the `buf` CLI commands that
-interact with the BSR.
+## Organization roles
 
-## Create an API token
+Every user that is part of an organization has an explicit role. Note that users
+are unable to modify their own role. If you need to lower your access, have
+another organization user perform this action, or, leave the organization and
+request to be re-added with the desired role.
 
-Sign up or log in at [https://buf.build/login](https://buf.build/login) and
-navigate to your account settings at
-[https://buf.build/settings](https://buf.build/settings/user) or by selecting
-"Settings" from the avatar dropdown in the top-right corner of the page.
+### Owner {#org-owner}
 
-On the settings page, click the `Create New Token` button, select an expiration
-time, and add a note for yourself to distinguish this token from others. Click
-`Create` and copy the token to your clipboard.
+- Users that require unrestricted access to the organization, its settings and
+  all resources owned by the organization.
+- Can delete organization. All resources such as repositories, templates and
+  plugins must be deleted before the organization can be deleted.
+- Can add and delete resources such as
+  [repositories](../explanation#modules)
 
-> This token identifies you to the BSR and must be kept secret.
+### Admin {#org-admin}
 
-### Revoking an API token
+- Can modify organization settings, such as
+  [base resource roles](#base-resource-roles).
+- Can manage user roles, except owners.
+- Can add resources.
 
-An API token can be revoked from the same user settings page. Simply find the
-name of the token in the list and delete it. It immediately ceases to be a valid
-authentication method.
+### Member {#org-member}
 
-## Authenticating the CLI
+- Can view the organization and its members.
+- Inherits the [base resource roles](#base-resource-roles) on existing organization
+  resources (the default is [Write](#resource-write)).
 
-The order of precedence for CLI authentication is:
+### Machine {#org-machine}
 
-1. The `BUF_TOKEN` environment variable is used if it's set.
-2. The `.netrc` file.
+- Can view the organization and its members.
+- Inherits [Write](#resource-write) roles over existing organization resources,
+  regardless of the organization's [base resource roles](#base-resource-roles).
 
-### BUF_TOKEN
+This role is useful in CI pipelines - you can set the organization base roles to
+[Read](#resource-read) and configure a Machine user to push to a BSR repository
+on merge, for example.
 
-`BUF_TOKEN` is an environment variable that holds the API token, used for authentication.
+### Base resource roles {#base-resource-roles}
 
-#### Single Token
+Every organization has a set of base resource roles that apply to all members of
+the organization. The default roles:
 
-`BUF_TOKEN` can contain a default token. This token is used when authenticating with
-the BSR. You can set `BUF_TOKEN` by:
+| Repository | Template | Plugin |
+|:-----------|:---------|:-------|
+| Write      | Write    | Write  |
 
-```terminal
-$ export BUF_TOKEN=${YOUR_TOKEN}
-```
+Organization owners can modify the base resource roles depending on the
+requirements of the organization. These roles are configurable on the
+organization settings page.
 
-#### Multiple BSR Remote Tokens
+## Resource roles
 
-The `BUF_TOKEN` environment variable can also contain tokens with specified BSR address.
-Each token has the format `${USER}:${BUF_TOKEN}@${REMOTE_ADDRESS}` with multiple tokens
-separated by `,`. The `buf` CLI will find the correct authentication token for different
-remote address. You can set `BUF_TOKEN` by:
+Resources such as repositories, templates and plugins are owned by either an
+individual user or an organization. In the case of user-owned resources, the
+user is granted the `Owner` role, and for organization-owned resources, user
+with `Member` role in the organization will inherit the
+[base resource roles](#base-resource-roles) as defined by the organization,
+while user with `Owner` or `Admin` role in the organization will inherit the
+respective resource roles.
 
-```terminal
-$ export BUF_TOKEN=${USER1}:${TOKEN1}@{REMOTE1},${USER2}:${TOKEN2}@{REMOTE2},...,{DEFAULT_TOKEN}
-```
+In some situations, however, you'll need to give additional permissions to
+individual users over a user- or organization-owned resource.
 
-The default token is used when authenticating with remote addresses when a matching remote
-token is not provided. The default token is not required.
+The most common use-cases are:
 
-### netrc file
+- Outside collaborators. This is useful when users outside your organization
+  require access to specific resource(s) within the organization, but you do not
+  want them to be a member of the organization.
+- Elevated permissions for organization members. This is useful when the
+  organization base resource roles are set to **Read** and specific user(s)
+  require the **Write** or **Admin** role for specific resource(s).
 
-The `buf` CLI reads its authentication credentials from your
-[.netrc](https://www.gnu.org/software/inetutils/manual/html_node/The-_002enetrc-file.html)
-file. There is a `buf` command that manages the `.netrc` file for you, run this
-command:
+When computing the role on a resource, the highest role takes precedence. For
+example, an organization has **Write** as the base repository role, and the user
+was granted the **Admin** role on a specific repository. The final computed user
+role on the repository is **Admin**.
 
-```terminal
-$ buf registry login
-```
+### Owner {#resource-owner}
 
-You'll be prompted for your username, as well as the token and you'll end up
-with this:
+- Unrestricted access to the resource.
+- Can delete the resource.
 
-```sh title="~/.netrc"
-machine buf.build
-    login <USERNAME>
-    password <TOKEN>
-```
+### Admin {#resource-admin}
 
-You can logout at any time with this command:
+- Can update the resource settings and deprecation notices.
+- Can manage resource roles, except owners.
 
-```terminal
-$ buf registry logout
-```
+### Write {#resource-write}
 
-All existing BSR credentials removed from `$HOME/.netrc`.
+- Can perform write operations on resources, such as:
+    - Pushing to a repository
+    - Creating tags
+    - Updating template versions and plugins
 
-For more information on `.netrc`, check out the
-[curl documentation](https://everything.curl.dev/usingcurl/netrc).
+### Limited Write {#resource-limited-write}
 
-> If you're developing on a Windows machine, the credentials file is
-> `%HOME%/_netrc`.
+- Can write drafts to a repository.
 
-## CI authentication
+_Only applies to repositories._
 
-If you wish to add authentication to your continuous integration jobs, we
-recommend storing the token in your providers secret storage, if possible. Such
-as:
-[GitHub Actions](https://docs.github.com/en/actions/reference/encrypted-secrets#about-encrypted-secrets)
-,
-[Travis CI](https://docs.travis-ci.com/user/environment-variables/#defining-encrypted-variables-in-travisyml)
-,
-[CircleCI](https://circleci.com/docs/2.0/env-vars/).
+### Read {#resource-read}
 
-Access the secret token as specified by your CI provider and make it available
-as an environment variable: [`BUF_TOKEN`](#buf_token)
-
-If this is not possible, you can also log in via the CLI (assuming
-`BUF_API_TOKEN` and `BUF_USER` are set):
-
-```terminal
-$ echo ${BUF_API_TOKEN} | buf registry login --username ${BUF_USER} --token-stdin
-```
-
-You can now use any of the authenticated `buf` commands, such as `buf push`.
-
-> Note that we have [official GitHub Actions](../../ci-cd/reference) that
-> enable you to quickly configure authentication for CI jobs.
+- Can view the resource.
