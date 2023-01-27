@@ -1,6 +1,7 @@
 ---
 id: contact
 title: Contact us
+displayed_sidebar: docs
 ---
 
 We'd love to stay in touch, here's a few ways to stay up to date:

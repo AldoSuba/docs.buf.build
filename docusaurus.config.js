@@ -71,6 +71,26 @@ module.exports = {
       },
       items: [
         {
+          href: "/",
+          label: "Home",
+          position: "left"
+        },
+        {
+          href: "/tutorials/introduction",
+          label: "Guides",
+          position: "left"
+        },
+        {
+          href: "/manuals",
+          label: "Manuals",
+          position: "left"
+        },
+        {
+          href: "/reference",
+          label: "Reference",
+          position: "left"
+        },
+        {
           // The search bar must be the first item on the left - otherwise, the layout of the
           // overridden navbar will break.
           type: "search",
