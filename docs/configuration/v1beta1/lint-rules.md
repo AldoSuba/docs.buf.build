@@ -498,7 +498,7 @@ foo.bar.v1testfoo
 
 One of the core promises of Protobuf API development is to never have breaking
 changes in your APIs, and Buf helps enforce this through the
-[breaking change detector](../../breaking/explanation). There are scenarios,
+[breaking change detector](/buf/breaking/explanation). There are scenarios,
 however, where you do want to properly version your API. Instead of making
 changes, the proper method to do so is to make a completely new Protobuf package
 that is a copy of your existing Protobuf package, serve both packages
@@ -508,7 +508,7 @@ new version.
 
 A common idiom is to use alpha and beta packages for packages that are still in
 development and can have breaking changes. You can
-[configure the breaking change detector](../../buf/breaking/configuration.md) to
+[configure the breaking change detector](/buf/breaking/reference/configuration) to
 ignore breaking changes in files for these packages with the
 `ignore_unstable_packages` option:
 

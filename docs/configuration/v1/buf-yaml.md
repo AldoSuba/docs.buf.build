@@ -86,7 +86,7 @@ general**, however in some situations it is unavoidable.
 
 ### `lint`
 
-The `lint` key is **optional**, and specifies the [lint rules](/lint/reference/rules)
+The `lint` key is **optional**, and specifies the [lint rules](/buf/lint/reference/rules)
 enforced on the files in the module.
 
 #### `use`
@@ -352,7 +352,7 @@ breaking:
 
 The `ignore_unstable_packages` key is **optional**, and ignores packages with a
 last component that is one of the unstable forms recognized by
-[`PACKAGE_VERSION_SUFFIX`](../../lint/reference/rules#package_version_suffix):
+[`PACKAGE_VERSION_SUFFIX`](/buf/lint/reference/rules#package_version_suffix):
 
 - `v\d+test.*`
 - `v\d+(alpha|beta)\d+`

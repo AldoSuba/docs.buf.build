@@ -27,7 +27,7 @@ power of protobufs and watch as your front-end code becomes faster and more effi
 :::info Before you begin
 
 We will assume you have already configured your `npm` environment to work with the Buf Schema Registry and Remote
-Packages. If you haven't, head on over to our [installation guide](/bsr/remote-packages/npm) first.
+Packages. If you haven't, head on over to our [installation guide](/bsr/remote-packages/reference/npm) first.
 
 :::
 

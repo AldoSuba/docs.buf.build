@@ -202,7 +202,7 @@ The [Gazelle extension](#gazelle) can generate them in the same pattern.
 ### `buf_breaking_test` {#buf-breaking-test}
 
 `buf_breaking_test` is a test rule that checks one or more `proto_library`
-targets for breaking changes. It requires an [image](/reference/images) file to
+targets for breaking changes. It requires an [image][image] file to
 check against.
 
 #### Attributes
@@ -269,7 +269,7 @@ $ buf build --exclude-imports -o image.bin <input>
 ```
 
 The `<input>` is often a directory containing a `buf.yaml`, but all of the other
-[Input formats](/reference/inputs) are also supported.
+[Input formats][inputs] are also supported.
 
 We recommend storing the Image file in a `testdata` directory and checking it in
 to version control and updating it as needed. In the case of repositories that
@@ -548,7 +548,7 @@ Check out some of the [sample workspaces][examples] that demonstrate usage in
 various scenarios.
 
 [bazel]: https://bazel.build
-[breaking]: /breaking/overview
+[breaking]: ../breaking/explanation
 [bsr]: /bsr/introduction
 [buf_cli]: /installation
 [buf_work_yaml]: /configuration/v1/buf-work-yaml

@@ -10,7 +10,7 @@ effort, and has been well maintained. We can't heap enough praise on this
 effort, it's helped the Protobuf ecosystem move forward in a big way.
 
 In this document, we'll discuss the pros and cons of Protolock vs `buf`'s
-[breaking change detector](../breaking/overview), as well as `buf`-equivalent
+[breaking change detector](/buf/breaking/explanation), as well as `buf`-equivalent
 commands and migration.
 
 ## Protolock pros

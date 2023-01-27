@@ -6,7 +6,7 @@ title: buf.gen.yaml
 The `buf.gen.yaml` file defines a local plugin template, and is used by the
 `buf generate` command to generate code for the language(s) of your choice. This
 file is often used with a [module](../../bsr/explanation#modules) (or another
-[input](../bsr/data-model/inputs)), and is typically placed next to your
+[input](/buf/other/inputs)), and is typically placed next to your
 [`buf.work.yaml`](buf-work-yaml.md) file:
 
 ```sh
@@ -192,7 +192,7 @@ It is also used for remote plugin generation to improve code generation performa
 ### `managed`
 
 The `managed` key is used to configure
-[managed mode](../../generate/managed-mode/reference) and is an advanced feature. A
+[managed mode](/buf/generate/managed-mode/reference) and is an advanced feature. A
 complete example of the `managed` configuration with the `protoc-gen-go` plugin
 is shown below:
 
@@ -223,9 +223,9 @@ plugins:
 #### `enabled`
 
 The `enabled` key is **required** if _any_ other `managed` keys are set. Setting
-`enabled` equal to `true` enables [managed mode](../../generate/managed-mode/reference)
+`enabled` equal to `true` enables [managed mode](/buf/generate/managed-mode/reference)
 according to
-[default behavior](../../generate/managed-mode/reference#default-behavior).
+[default behavior](/buf/generate/managed-mode/reference#default-behavior).
 
 #### `cc_enable_arenas`
 
@@ -304,10 +304,10 @@ option go_package = "github.com/acme/weather/gen/proto/go/acme/weather/v1;weathe
 
 The `except` key is **optional**, and removes certain modules from the
 `go_package` file option override behavior. The `except` values **must** be
-valid [module names](../../bsr/explanation#modules).
+valid [module names](/bsr/explanation#modules).
 
 There are situations where you may want to enable
-[managed mode](../../generate/managed-mode/reference) for the `go_package` option in
+[managed mode](/buf/generate/managed-mode/reference) for the `go_package` option in
 _most_ of your Protobuf files, but not necessarily for _all_ of your Protobuf
 files. This is particularly relevant for the `buf.build/googleapis/googleapis`
 module, which points its `go_package` value to an
@@ -324,7 +324,7 @@ names. Additionally, the corresponding `override` values **must** be a valid
 [Go import path](https://golang.org/ref/spec#ImportPath) and **must not** jump
 context from the current directory. As an example, `../external` is invalid.
 
-This setting is used for [workspace](../../other/workspaces)
+This setting is used for [workspace](/buf/other/workspaces)
 environments, where you have a module that imports from another module in the
 same workspace, and you need to generate the Go code for each module in
 different directories. This is particularly relevant for repositories that
