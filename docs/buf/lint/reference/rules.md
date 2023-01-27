@@ -696,7 +696,7 @@ should always be `true`. These aren't defaults, for backwards-compatibility
 reasons, but if you're using a tool like `buf` to produce your stubs, you
 shouldn't have to think about any of this.
 
-This is exactly why we've created [managed mode](../generate/managed-mode/reference),
+This is exactly why we've created [managed mode](../../generate/managed-mode/reference),
 which sets all of these file options _on the fly_ with `buf generate`.
 
 `buf` still enforces that specific file options are the same across a given

@@ -9,7 +9,7 @@ description: "Unlock the full potential of buf lint with this easy-to-follow con
 You can configure the `buf` CLI's linter with a
 [`buf.yaml`](../../../configuration/v1/buf-yaml.md) file at the root of the Protobuf
 source files you want to lint. If you run `buf lint` against an
-[input](../other/inputs) that contains a `buf.yaml` file, the lint
+[input](../../other/inputs) that contains a `buf.yaml` file, the lint
 configuration in that file is used. If the input doesn't contain a `buf.yaml`
 file, the `buf` CLI operates _as if_ a `buf.yaml` file with the
 [default values](#default-values) were present.

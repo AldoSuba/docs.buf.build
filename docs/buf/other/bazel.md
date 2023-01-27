@@ -562,10 +562,10 @@ various scenarios.
 [gazelle]: https://github.com/bazelbuild/bazel-gazelle
 [gazelle_directive]: https://github.com/bazelbuild/bazel-gazelle#directives
 [gazelle_setup]: https://github.com/bazelbuild/bazel-gazelle#setup
-[image]: /reference/images
-[inputs]: /reference/inputs
-[lint]: /lint/overview
-[module]: /bsr/explanation#module
+[image]: ../../bsr/data-model/images
+[inputs]: inputs
+[lint]: ../lint/explanation
+[module]: ../../bsr/explanation#module
 [repository_rule]: https://bazel.build/rules/repository_rules
 [release]: https://github.com/bufbuild/rules_buf/releases
 [rules_buf]: https://github.com/bufbuild/rules_buf
@@ -574,4 +574,4 @@ various scenarios.
 [semver]: https://semver.org
 [test]: https://docs.bazel.build/versions/main/skylark/rules.html#executable-rules-and-test-rules
 [travis]: https://travis-ci.com
-[workspaces]: /other/workspaces
+[workspaces]: workspaces

@@ -31,7 +31,7 @@ The [`buf.gen.yaml`](../../configuration/v1/buf-gen-yaml.md) template file contr
 how the `buf generate` command executes `protoc` plugins for any
 [input](../other/inputs). The `buf.gen.yaml` template lists one or more
 plugins and, optionally, other file option configurations with
-[managed mode](managed-mode/explanation). For more information on the `buf.gen.yaml`
+[managed mode](managed-mode/reference). For more information on the `buf.gen.yaml`
 configuration, see the [reference](../../configuration/v1/buf-gen-yaml.md).
 
 ## Define a module
@@ -138,7 +138,7 @@ $ buf generate --error-format=json
 
 Stop worrying about how to install your plugins at specific versions and keep
 this consistent across your team, let us take care of that.
-[**Remote plugins**](../bsr/remote-plugins/how-to) make it
+[**Remote plugins**](../../bsr/remote-plugins/how-to) make it
 possible to generate source code using remote plugins in an isolated environment
 on the BSR. By isolating code generation from its environment, you eliminate an
 entire class of problems caused by subtle differences across specific compiler
@@ -343,9 +343,9 @@ $ docker run \
 
 :::info Docker image doesn't include protoc or plugins
 
-1. Use [remote plugins](../bsr/remote-packages/explanation#remote-plugins) to
+1. Use [remote plugins](../../bsr/remote-packages/explanation#remote-plugins) to
 generate code without requiring local plugins.
-1. Use [generated assets](../bsr/remote-packages/explanation) to fetch
+1. Use [generated assets](../../bsr/remote-packages/explanation) to fetch
 generated code stubs without needing to install any additional executables.
 1. Use the `bufbuild/buf` image as part of a [multi-stage build][multi-stage]
 that includes any required executables as part of the final image.

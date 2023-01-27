@@ -76,8 +76,8 @@ steps:
       version: "latest"
 ```
 
-To access your private [Remote Packages](/bsr/remote-packages/overview) in [Buf Schema Registry](/bsr/introduction)(BSR), you may
-optionally supply with your Buf username and a [Buf API Token](/bsr/authentication#buf_token):
+To access your private [Remote Packages](/bsr/remote-packages/explanation) in [Buf Schema Registry](/bsr/introduction)(BSR), you may
+optionally supply with your Buf username and a [Buf API Token](/bsr/authentication/reference#buf_token):
 
 ```yaml
 steps:
