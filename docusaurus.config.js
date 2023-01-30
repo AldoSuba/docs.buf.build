@@ -36,7 +36,7 @@ module.exports = {
   baseUrl: "/",
   favicon: "img/favicon.png",
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenMarkdownLinks: "throw",
   organizationName: "bufbuild",
   projectName: "buf",
   // Ref: https://docusaurus.io/docs/2.0.0-beta.3/api/themes/configuration

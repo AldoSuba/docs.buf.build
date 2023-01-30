@@ -193,34 +193,3 @@ This is expected to update only the `package-lock.json` and no other files.
 [buf]: https://buf.build
 [node]: https://nodejs.org
 [vale]: https://docs.errata.ai
-
-[//]: #ejackson (TODO:)
-
-### EXPLANATION
-
-* best-practices/module-development
-* best-practices/style-guide
-* bsr/introduction
-* bsr/explanation
-
-### REFERENCE
-
-* bsr/usage
-* configuration/overview
-* configuration/v1/buf-gen-yaml
-* configuration/v1/buf-lock
-* configuration/v1/buf-work-yaml
-* configuration/v1/buf-yaml
-* configuration/v1beta1/buf-gen-yaml
-* configuration/v1beta1/buf-lock
-* configuration/v1beta1/buf-yaml
-* configuration/v1beta1/lint-rules
-* editor-integration
-* reference/deprecated/remote-generation/go
-* reference/deprecated/remote-generation/js
-
-### OTHER
-
-* tour/introduction
-* tour/implement-grpc-endpoints
-* tour/wrapping-up

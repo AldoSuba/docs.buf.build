@@ -159,7 +159,39 @@ const sidebars = {
     }
   ],
   guides: [
-    "guides",
+    {
+      type: "category",
+      label: "Tour",
+      collapsed: false,
+      items: [
+        "tutorials/tour/introduction",
+        "tutorials/tour/configure-and-build",
+        "tutorials/tour/list-all-protobuf-files",
+        "tutorials/tour/lint-your-api",
+        "tutorials/tour/detect-breaking-changes",
+        "tutorials/tour/generate-code",
+        "tutorials/tour/log-into-the-bsr",
+        "tutorials/tour/push-a-module",
+        "tutorials/tour/view-generated-documentation",
+        "tutorials/tour/add-a-dependency",
+        "tutorials/tour/generate-go-code",
+        "tutorials/tour/implement-grpc-endpoints",
+        "tutorials/tour/use-a-workspace",
+        "tutorials/tour/use-managed-mode",
+        "tutorials/tour/push-workspace-modules",
+        {
+          type: "doc",
+          id: "tutorials/tour/use-remote-packages",
+          customProps: {
+            badge: {
+              label: "new",
+              severity: "info"
+            }
+          }
+        },
+        "tutorials/tour/wrapping-up",
+      ],
+    },
     // {
     //   type: "doc",
     //   id: "tutorials/getting-started/getting-started-with-buf",

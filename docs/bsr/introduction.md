@@ -18,7 +18,7 @@ import Syntax from "@site/src/components/Syntax";
 Welcome to the **Buf Schema Registry (BSR)**! This overview covers what the BSR
 is and the challenges it aims to solve within the Protobuf ecosystem. If you
 just want to see the BSR in action with code examples, check out
-[The tour](#).
+[The tour](/tutorials/tour/configure-and-build.md).
 
 ## What is the BSR?
 
@@ -135,6 +135,6 @@ Here are a few ways to get moving:
 
 - **[Usage](reference)** <br/> Learn how to run `buf` commands that use the BSR.
 
-- **[The Tour](#)** <br/> The tour provides an overview of the BSR and takes approximately 20 minutes to complete.
+- **[The tour](/tutorials/tour/configure-and-build.md)** <br/> The tour provides an overview of the BSR and takes approximately 20 minutes to complete.
 
 [buf-gen-yaml]: ../configuration/v1/buf-gen-yaml#plugins
