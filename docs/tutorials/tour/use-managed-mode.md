@@ -4,7 +4,7 @@ title: 13 Use managed mode
 ---
 
 In this section, you'll learn how to use
-[**managed mode**](/buf/generate/managed-mode/explanation) when
+[**managed mode**](buf/generate/managed-mode/reference.md) when
 [generating code](generate-code.md) using Protobuf. Managed mode is a
 configuration option in your
 [`buf.gen.yaml`](/configuration/v1/buf-gen-yaml.md) that tells `buf` to set

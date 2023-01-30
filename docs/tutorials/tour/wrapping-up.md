@@ -9,4 +9,4 @@ like the `finish` directory, except for the difference between the
 
 For more information on the concepts you went over here, continue to read
 through the rest of the documentation, or take a look at the
-[Remote Packages](/tour/use-remote-packages) feature in the next step!
+[Remote Packages](use-remote-packages) feature in the next step!

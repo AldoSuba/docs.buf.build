@@ -4,7 +4,7 @@ title: 2 List all Protobuf files
 ---
 
 You can list all of the `.proto` files managed by `buf` per the
-[build configuration](../configuration/v1/buf-yaml#build):
+[build configuration](/configuration/v1/buf-yaml#build):
 
 ```terminal
 $ buf ls-files
@@ -35,9 +35,9 @@ Some things to note from the remote input:
 - The `subdir` option specifies a sub-directory to use within a `git`, `tar`, or
   `zip` input. In this case, target the `start/petapis` sub-directory.
 
-Here, `buf` is listing the files from a [`git`](/reference/inputs#git) archive,
+Here, `buf` is listing the files from a [`git`](/buf/other/inputs#git) archive,
 so you'll notice that the result includes the `start/petapis/` prefix, which is
 the relative filepath from the root of the `git` archive.
 
-Several other [input formats](../reference/inputs) can be used in many `buf`
+Several other [input formats](/buf/other/inputs) can be used in many `buf`
 commands. We'll explore more of these formats in the upcoming sections.

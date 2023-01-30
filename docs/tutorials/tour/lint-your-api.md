@@ -47,7 +47,7 @@ rules:
 - [`SERVICE_SUFFIX`](/buf/lint/reference/rules.md#service_suffix)
 
 To make `buf` happy, you can exclude these rules from the `DEFAULT` category by
-adding them to the [`except`](/lint/reference/configuration#except) list in your lint
+adding them to the [`except`](/buf/lint/reference/configuration#except) list in your lint
 configuration:
 
 ```yaml title="buf.yaml" {8-11}
@@ -151,7 +151,7 @@ Instead, it's one of your dependencies, provided by
 ```
 
 Alternatively, you can specify exactly which rules to ignore using the
-[`ignore_only`](/lint/configuration#ignore_only) parameter. You can output
+[`ignore_only`](/buf/lint/reference/configuration.md#ignore_only) parameter. You can output
 failures in a format that you can then copy into your `buf.yaml` file. This
 enables you to ignore all existing lint errors and correct them over time:
 
