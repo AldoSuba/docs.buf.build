@@ -3,13 +3,6 @@ id: module-development
 title: Module development
 ---
 
-:::danger 🚧 Construction Notes
-
-This EXPLANATION oriented to understanding must explain & build context. Its form, discursive explanation. Analogous an
-article on culinary social history.
-
-:::
-
 The Buf Schema Registry ([BSR](../../bsr/explanation)) automatically enforces that
 your [module](../../bsr/explanation#modules) compiles when it is pushed, but there
 are other best practices that can't be enforced that you should consider when

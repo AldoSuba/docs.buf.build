@@ -3,13 +3,6 @@ id: getting-started-with-buf-studio
 title: Getting Started with Buf Studio
 ---
 
-:::danger 🚧 Construction Notes
-
-This TUTORIAL is oriented to learning, must allow the newcomer to get started. Its form, a lesson. Analogous teaching
-a small child how to cook.
-
-:::
-
 
 
 

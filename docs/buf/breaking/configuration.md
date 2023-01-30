@@ -5,13 +5,6 @@ description: "Unlock the full potential of buf breaking change detection with th
 and take your development process to new heights!"
 ---
 
-:::danger 🚧 Construction Notes
-
-This REFERENCE is oriented to information must describe the machinery. Its form is a dry description like a reference
-encyclopedia article.
-
-:::
-
 `buf`'s breaking change detector is configured through a
 [`buf.yaml`](../../configuration/v1/buf-yaml.md) file that is placed at the root of
 the Protobuf source files it defines. If `buf breaking` is executed for an

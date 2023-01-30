@@ -1,7 +1,7 @@
 ---
 id: reference
 title: Managed mode
-description: "Buf Generate: A Technical Reference"
+description: "Make everyone's Code Generation Workflow Effortless Buf Managed Mode"
 ---
 
 Protobuf enables you to set [file options][file-options] in your `.proto` files

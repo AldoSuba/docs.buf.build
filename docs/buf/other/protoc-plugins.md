@@ -3,13 +3,6 @@ id: protoc-plugins
 title: protoc plugins
 ---
 
-:::danger 🚧 Construction Notes
-
-This EXPLANATION oriented to understanding must explain & build context. Its form, discursive explanation. Analogous an
-article on culinary social history.
-
-:::
-
 Buf ships with two binaries that you can use as [protoc] plugins:
 
 - [`protoc-gen-buf-breaking`](#breaking)

@@ -4,13 +4,6 @@ title: Bazel
 ---
 
 
-:::danger 🚧 Construction Notes
-
-This EXPLANATION oriented to understanding must explain & build context. Its form, discursive explanation. Analogous an
-article on culinary social history.
-
-:::
-
 
 
 Buf provides official support for the [Bazel][bazel] build tool with

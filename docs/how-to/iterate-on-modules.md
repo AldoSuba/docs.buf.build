@@ -4,8 +4,7 @@ title: Iterate on modules
 ---
 
 > For a comprehensive guide on working with
-> [modules](../bsr/explanation#modules) and the Buf Schema Registry
-> (#)!
+> [modules](../bsr/explanation#modules) and the [Buf Schema Registry](/bsr/explanation)!
 
 As requirements change, you'll inevitably need to evolve your Protobuf APIs, and
 potentially update your dependencies. As much as `buf`'s breaking change

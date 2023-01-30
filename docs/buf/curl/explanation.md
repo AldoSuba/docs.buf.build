@@ -4,13 +4,6 @@ title: cURL
 description: "Exploring the Power of Buf Curl: A Guide to Understanding and Utilizing Buf Curl in Modern Development"
 ---
 
-:::danger 🚧 Construction Notes
-
-This EXPLANATION oriented to understanding must explain & build context. Its form, discursive explanation. Analogous an
-article on culinary social history.
-
-:::
-
 
 
 The `buf curl` command lets you invoke RPCs on a Connect, gRPC, or gRPC-Web server. This improves

@@ -1,6 +1,7 @@
 ---
 id: how-to
-title: Migrating from alpha 
+title: "Migrating from remote generation alpha: A guide to remote plugins"
+description: "Learn how to seamlessly migrate to remote packages and take your development process to the next level."
 ---
 
 The

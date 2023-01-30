@@ -4,13 +4,6 @@ title: Remote Packages
 description: "Unlock the secrets of remote packages with this comprehensive guide that includes building context, understanding the fundamentals and effective implementation in your workflow."
 ---
 
-:::danger 🚧 Construction Notes
-
-This EXPLANATION oriented to understanding must explain & build context. Its form, discursive explanation. Analogous an
-article on culinary social history.
-
-:::
-
 
 
 Protobuf is a fantastic way to programmatically define your APIs and generate away

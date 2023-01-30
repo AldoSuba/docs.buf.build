@@ -1,17 +1,8 @@
 ---
 id: how-to
-title: "Migrating from remote generation alpha: A guide"
-description: "Streamline Your Development: Learn how to seamlessly migrate to remote packages and take your development process to the next level."
+title: "Upgrading to Remote Packages: a new way of working"
+description: "Learn how to seamlessly migrate to remote packages and take your development process to the next level."
 ---
-
-:::danger 🚧 Construction Notes
-
-This EXPLANATION oriented to understanding must explain & build context. Its form, discursive explanation. Analogous an
-article on culinary social history.
-
-:::
-
-
 
 The [remote generation alpha](../../reference/deprecated/remote-generation/overview.mdx)
 included a feature called remote code execution, which we now simply refer to as

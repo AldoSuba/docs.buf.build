@@ -4,13 +4,6 @@ title: "Building with Buf: A Comprehensive How-To Guide"
 description: "Learn how to build protocol buffers with Buf Build."
 ---
 
-:::danger 🚧 Construction Notes
-
-This HOW TO GUIDE is **oriented to a goal** and must show how to solve the specific problem of using remote packages in
-a web client. Its form, a series of steps - analogous to a recipe in a cookery book
-
-:::
-
 Whether you're a beginner or looking to improve your knowledge, this guide has everything you need to get started. Our
 aim is to make the learning process as simple and straightforward as possible, so you can achieve your goals quickly and
 effectively.
