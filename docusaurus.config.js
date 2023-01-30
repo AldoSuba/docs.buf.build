@@ -82,7 +82,7 @@ module.exports = {
           position: "left"
         },
         {
-          href: "/guides",
+          href: "/tutorials/tour/introduction",
           label: "Guides",
           position: "left"
         },
