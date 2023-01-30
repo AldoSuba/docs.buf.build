@@ -1,7 +1,7 @@
 ---
 id: how-to
 title: "Building with Buf: A Comprehensive How-To Guide"
-description: "Learn how to build efficient and accurate code with Buf Build: a powerful tool for working with Protocol Buffers, in this comprehensive guide."
+description: "Learn how to build protocol buffers with Buf Build."
 ---
 
 :::danger 🚧 Construction Notes
@@ -11,12 +11,31 @@ a web client. Its form, a series of steps - analogous to a recipe in a cookery b
 
 :::
 
+Whether you're a beginner or looking to improve your knowledge, this guide has everything you need to get started. Our
+aim is to make the learning process as simple and straightforward as possible, so you can achieve your goals quickly and
+effectively.
 
+`build` is a powerful feature of the Buf CLI that streamlines the protobuf development process, it plays an important
+role in the schema driven development workflow. Here, we will be focusing on the compilation step, making it easier for
+you to manage your various proto files and packages and prepare for the best that the Buf CLI has to offer.
 
 All `buf` operations rely on building, or compiling, Protobuf files. The [linter](../lint/explanation),
 [breaking change detector](../breaking/explanation), [generator](../generate/how-to),
 and the [BSR](../../bsr/explanation) are features that rely on compilation results. In its simplest form,
 the `buf build` command is used to verify that an [input](../other/inputs) compiles.
+
+In this comprehensive guide, you will learn how to leverage Buf `build` to simplify your protobuf development and
+build high-performance systems with confidence. This guide has everything you need to get started. So, let's dive in and
+start building with Buf!
+
+## Intro
+
+Buf `build` command-line tool for generating source code from .proto files that define data structures for use with
+Protocol Buffers, a language-agnostic data serialization format. The role of `buf` is to compile the .proto files into
+language-specific code that can be used to serialize and deserialize Protocol Buffer data. This generated code provides
+classes and methods for encoding and decoding Protocol Buffer messages, making it easier to work with Protocol Buffers
+in a particular programming language. In other words, `buf` is responsible for taking the human-readable .proto
+definitions and transforming them into efficient, language-specific implementations.
 
 ## Configuration
 
@@ -53,7 +72,8 @@ root of your `.proto` files hierarchy, as this is how `.proto` import paths are 
 
 ## Define a Module
 
-To get started, create a [module](../../bsr/explanation.mdx#modules) by adding a `buf.yaml` file to the root of the directory
+To get started, create a [module](../../bsr/explanation.mdx#modules) by adding a `buf.yaml` file to the root of the
+directory
 that contains your Protobuf definitions. You can create the default `buf.yaml` file with this command:
 
 ```terminal
@@ -75,7 +95,8 @@ lint:
 For those of you that have used `protoc`, the placement of the `buf.yaml` is analogous to a `protoc`
 include (`-I`) path. **With `buf`, there is no `-I` flag** - each `protoc` `-I` path maps to a directory
 that contains a `buf.yaml` (called a module in Buf parlance), and multiple modules are stitched
-together with a [`buf.work.yaml`](../../configuration/v1/buf-work-yaml.md), which defines a [workspace](../other/workspaces.mdx).
+together with a [`buf.work.yaml`](../../configuration/v1/buf-work-yaml.md), which defines
+a [workspace](../other/workspaces.mdx).
 
 To illustrate how all these pieces fit together here's a quick example using `protoc` and its equivalent
 in `buf`:
@@ -115,7 +136,8 @@ directories:
 ```
 
 Like the `-I` flag for `protoc`, workspaces make it possible to import definitions across modules, such as introducing
-a new `message` in one module, and importing it from another. Similarly, any command that is run on an input that contains
+a new `message` in one module, and importing it from another. Similarly, any command that is run on an input that
+contains
 a `buf.work.yaml` acts upon *all* of the modules defined in the `buf.work.yaml`.
 
 ## Workspace requirements
@@ -124,7 +146,8 @@ There are two additional requirements that `buf` imposes on your `.proto` file s
 for compilation to succeed that are not enforced by `protoc`, both of which are essential to
 successful modern Protobuf development across a number of languages.
 
-**1. Workspace modules must not overlap, that is one workspace module can not be a sub-directory of another workspace module.**
+**1. Workspace modules must not overlap, that is one workspace module can not be a sub-directory of another workspace
+module.**
 
 This, for example, is not a valid configuration:
 
@@ -154,8 +177,8 @@ directories:
 
 *Given the above configuration, it's invalid to have these two files:*
 
-  - `foo/baz/baz.proto`
-  - `bar/baz/baz.proto`
+- `foo/baz/baz.proto`
+- `bar/baz/baz.proto`
 
 This results in two files having the path `baz/baz.proto`. Imagine that a third file is thrown into
 the mix:
@@ -176,8 +199,10 @@ pre-compilation, which `buf` does) the order of the imports given to the
 remember if it's the first `-I` or second `-I` that wins - we have outlawed this in our own builds for a long time.
 
 While the above example is relatively contrived, the common error that comes up is when you
-have vendored `.proto` files. For example, [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway/tree/cc01a282127b54a81f92d6b8e8fb8971dab8be9b/third_party/googleapis)
-has its own copy of the [google.api](https://github.com/googleapis/googleapis/tree/master/google/api) definitions it needs.
+have vendored `.proto` files. For
+example, [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway/tree/cc01a282127b54a81f92d6b8e8fb8971dab8be9b/third_party/googleapis)
+has its own copy of the [google.api](https://github.com/googleapis/googleapis/tree/master/google/api) definitions it
+needs.
 While these are usually in sync, the `google.api` schema can change. Imagine that we allowed this:
 
 ```yaml
@@ -202,10 +227,10 @@ $ buf build
 
 The `buf build` command:
 
-  - Discovers all Protobuf files per your `buf.yaml` configuration.
-  - Copies the Protobuf files into memory.
-  - Compiles all Protobuf files.
-  - Outputs the compiled result to a configurable location (defaults to `/dev/null`)
+- Discovers all Protobuf files per your `buf.yaml` configuration.
+- Copies the Protobuf files into memory.
+- Compiles all Protobuf files.
+- Outputs the compiled result to a configurable location (defaults to `/dev/null`)
 
 If there are errors, they are printed out in a `file:line:column:message` format by default.
 For example:
@@ -229,11 +254,14 @@ $ buf build --error-format=json
 By default, `buf build` outputs its result to `/dev/null`. In this case, it's common to use
 `buf build` as a validation step, analogous to checking if the input compiles.
 
-`buf build` also supports outputting [`FileDescriptorSet`](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto)s
+`buf build` also supports
+outputting [`FileDescriptorSet`](https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto)
+s
 and [Images][images], which is Buf's custom extension of the `FileDescriptorSet`. Better yet, these outputs
 can be formatted in a variety of ways.
 
-`buf build` can deduce the output format by the file extension, see the documentation on [automatically derived formats](../other/inputs#automatically-derived-formats). For example,
+`buf build` can deduce the output format by the file extension, see the documentation
+on [automatically derived formats](../other/inputs#automatically-derived-formats). For example,
 
 ```terminal
 $ buf build -o image.bin
@@ -275,7 +303,8 @@ this field set, and thus to mimic `protoc` entirely, you can use the `--as-file-
 $ buf build -o image.bin --as-file-descriptor-set
 ```
 
-The `ImageExtension` field doesn't affect Protobuf plugins or any other operations, as they merely see this as an unknown
+The `ImageExtension` field doesn't affect Protobuf plugins or any other operations, as they merely see this as an
+unknown
 field. But we provide the option in case you want it.
 
 ## Limit to specific files
@@ -313,17 +342,17 @@ The `--type` flag accepts fully qualified names for [messages], [enums], and [se
 dependent descriptors are included in the build:
 
 - [Messages]
-  - Messages and enums referenced in message fields
-  - Any [proto2] extension declarations for message fields
-  - The parent message if this message is a nested definition
-  - Any custom options for the message, its fields, and the file in which the message is defined
+    - Messages and enums referenced in message fields
+    - Any [proto2] extension declarations for message fields
+    - The parent message if this message is a nested definition
+    - Any custom options for the message, its fields, and the file in which the message is defined
 - [Enums]
-  - The enum value descriptors for this enum
-  - The parent message is this enum is a nested definition
-  - Any custom options for the enum, enum values, and the file in which the enum is defined
+    - The enum value descriptors for this enum
+    - The parent message is this enum is a nested definition
+    - Any custom options for the enum, enum values, and the file in which the enum is defined
 - [Services]
-  - Request and response types referenced in service methods
-  - Any custom options for the services, its methods, and the file in which the service is defined
+    - Request and response types referenced in service methods
+    - Any custom options for the services, its methods, and the file in which the service is defined
 
 :::success Supplying multiple types
 
@@ -371,11 +400,11 @@ extend google.protobuf.FieldOptions {
 This table shows which files, messages, and extensions would be included for various types from
 `foo.proto` and `bar.proto` if specified as the argument to `--type`:
 
-Type | Files | Messages | Extensions
-:----|:------|:---------|:----------
-`buf build --type pkg.Foo` | `foo.proto`, `bar.proto` | `pkg.Foo`, `pkg.Bar`, `other.Qux` | `other.baz`
-`buf build --type pkg.Bar` | `foo.proto` | `pkg.Bar` | |
-`buf build --type pkg.Baz` | `foo.proto`, `bar.proto` | `pkg.Baz`, `other.Quux`, `other.Qux` | `other.my_option`
+| Type                       | Files                    | Messages                             | Extensions        |
+|:---------------------------|:-------------------------|:-------------------------------------|:------------------|
+| `buf build --type pkg.Foo` | `foo.proto`, `bar.proto` | `pkg.Foo`, `pkg.Bar`, `other.Qux`    | `other.baz`       |
+| `buf build --type pkg.Bar` | `foo.proto`              | `pkg.Bar`                            |                   |
+| `buf build --type pkg.Baz` | `foo.proto`, `bar.proto` | `pkg.Baz`, `other.Quux`, `other.Qux` | `other.my_option` |
 
 ## Docker
 
@@ -388,6 +417,15 @@ $ docker run \
   --workdir /workspace \
   bufbuild/buf build
 ```
+
+## Conclusion
+
+Congratulations! By following this guide, you have taken an important step towards mastering Protocol Buffers with Buf.
+You should now be well-equipped to tackle any related challenges that come your way. We hope that this guide has been
+helpful and informative, and we encourage you to continue learning more about this subject. There is always more to
+discover, and the journey towards mastery is never-ending. So keep exploring, experimenting and discovering the many
+possibilities that this field has to offer. We wish you all the best in your continued learning and growth!
+
 
 [enums]: https://developers.google.com/protocol-buffers/docs/proto3#enum
 [filedescriptorset]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto

@@ -62,7 +62,7 @@ module.exports = {
       // For the "github" appearance, the stargazer count for the GitHub repository is
       // rendered as the link label (this requires a "href" to a GitHub repository).
       hideOnScroll: false,
-      title: "Docs",
+      title: "",
       logo: {
         alt: "Buf Logo",
         src: "img/logo.svg",
