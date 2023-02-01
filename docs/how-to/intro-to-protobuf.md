@@ -19,17 +19,6 @@ procedure call and performance comparison with other serialization formats. By t
 strong understanding of protobuf and be able to use them in your own projects with confidence. So, let's get started
 and discover the power of protobuf!
 
-## Table of contents
-
-* Introduction to Protocol Buffers and their use cases
-* Setting up a development environment for protobuf
-* Defining message types using the protobuf language
-* Serializing and deserializing data using protobuf
-* Using protobuf in different programming languages
-* Best practices for using protobuf in your projects
-* Advanced topics such as using protobuf with gRPC for remote procedure call.
-* Performance and size comparison between protobuf and other serialization formats.
-
 :::info
 
 By the end of this guide, you will have a solid understanding of protobuf and be able to use them effectively in your
@@ -68,3 +57,27 @@ breaking them, just like how protobuf are forward and backward compatible.
 
 Overall, protobuf provides a simple, efficient, and flexible way to serialize and transmit data, making them a great
 choice for a wide range of use cases, from small-scale mobile applications to large-scale distributed systems.
+
+## Setting up a development environment for protobuf
+
+Setting up a development environment for working with Protocol Buffers (protobufs) is a straightforward process.
+
+First, you'll need to install a compiler for Protocol Buffers, for the purposes of this guide we will
+use [Bufs internal compiler](/reference/internal-compiler). You can install `buf` on macOS or Linux
+using [Homebrew](https://brew.sh):
+
+```terminal
+$ brew install bufbuild/buf/buf
+```
+
+for more information check out our [installation guide](/installation)
+
+It's that simple! With the above steps, you have successfully set up a development environment for working with
+protobufs.
+
+Now that you have `buf` installed, in the following steps we will start defining your message types. The syntax for
+defining message types is called the Protocol Buffer Language. The language is designed to be simple and easy to use,
+and you can find detailed documentation on the Protocol Buffers website (https://protobuf.com).
+
+
+
