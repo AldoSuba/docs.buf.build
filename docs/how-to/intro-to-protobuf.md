@@ -387,4 +387,163 @@ compatibility allows you to make changes to your messages without breaking exist
 getting started with protobuf or an experienced developer looking to take your skills to the next level, we've got you
 covered. So don't forget to come back and check out our upcoming articles. We'll be excited to have you on board!
 
+## Best practices for using protobufs in your projects
+
+Think of using Protocol Buffers in your projects like building a house. Just like how you have to choose the
+right materials and design to build a sturdy and long-lasting house, you have to choose the right design and best
+practices to ensure that your code is efficient, maintainable, and scalable. Using the latest version of protobufs and
+library is like using strong and durable bricks for your house. Using descriptive and clear field names, meaningful
+enumeration names and comments is like using clear and accurate blueprint for your house. Keeping backward compatibility
+in mind when modifying messages is like building a house with the future in mind, making sure it can be expanded or
+renovated without the need to tear it down. Using linter and formatter tools is like hiring an architect to check the
+design of your house and testing your code is like hiring an inspector to check the quality of your house. By following
+these best practices, you can build a strong and long-lasting codebase, just like how you can build a strong and
+long-lasting house.
+
+When using Protocol Buffers in your projects, there are several best practices to keep in mind to ensure that your code
+is efficient, maintainable, and scalable.
+
+* **Use the latest version of protobufs**: As with any technology, it's important to keep up with the latest version of
+  protobufs. Newer versions may include bug fixes, performance improvements, and new features. It is also recommended to
+  use the latest version of the protobuf library for your programming language.
+
+* **Use descriptive and clear field names**: Field names should be descriptive and clear, and should follow the naming
+  conventions of the programming language you're using. This will make it easier to understand the structure of your
+  messages and reduce the likelihood of errors.
+
+* **Use meaningful enumeration names**: Enumerations should have meaningful names that reflect the values they
+  represent.
+  Avoid using short or abbreviated names, as they can be harder to understand and can lead to errors.
+
+* **Use comments to document your code**: Comments can be used to document your code and explain the purpose of your
+  messages
+  and fields. Comments can be added to messages, fields, and enumerations using the // syntax.
+
+* **Use the repeated keyword for repeated fields**: The repeated keyword is used to indicate that a field can have
+  multiple
+  values. When using the repeated keyword, it is recommended to use the packed format which can be more efficient and
+  can
+  help maintain backward compatibility.
+
+* **Keep backward compatibility in mind when modifying messages**: When making changes to your messages, it's important
+  to
+  keep backward compatibility in mind. Adding new fields or changing the types of existing fields can break existing
+  code. It is recommended to use the [default = value] option to specify a default value for new fields, and to use
+  the [deprecated = true] option to mark fields that are going to be removed in the future.
+
+* **Use the linter and formatter tools**: There are tools available like buf (https://buf.build/) which can be used to
+  lint,
+  format, and detect breaking change in your .proto files. This can be a great way to catch errors and ensure that your
+  code is consistent and readable.
+
+Using Protocol Buffers in your projects can bring many benefits, such as a compact binary format, efficient
+serialization and deserialization, and support for backward compatibility. By following the best practices outlined in
+this article, you can ensure that your code is efficient, maintainable, and scalable, which can save you time and effort
+in the long run.
+
+## Advanced topics with protocol buffers
+
+### gRPC
+
+gRPC is a high-performance, open-source framework for building remote procedure call (RPC) APIs. It uses the Protocol
+Buffers (protobufs) data serialization format for efficient and compact data transmission. gRPC allows you to define
+your API using a simple and efficient IDL (Interface Definition Language), and generates client and server code for
+multiple languages, including C++, Java, Python, and Go.
+
+One of the main advantages of using gRPC with protobufs is its support for bidirectional streaming. This allows for
+real-time communication, where the client and server can send messages back and forth as soon as they are available,
+rather than waiting for a response to a request.
+
+Another advantage is the ability to flow control, which enables the flow of data to be adjusted dynamically between the
+client and the server. This can be useful in situations where the server is handling a large amount of data and needs to
+slow down the flow to avoid overloading.
+
+In gRPC, you define your API using a `.proto` file, which describes the service, the methods, and the request and
+response
+messages. Once the `.proto` file is defined, you can use the `buf` compiler to generate the client and server code for
+your desired language.
+
+Here's an example of a simple gRPC service defined in a .proto file:
+
+```protobuf
+syntax = "proto3";
+
+package example;
+
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloResponse {
+  string message = 1;
+}
+```
+
+This file declares the greet.v1 Protobuf package, a service called GreetService, and a single method called Greet with
+its request and response structures. These package, service, and method names will reappear soon in our HTTP API's URLs.
+
+We're going to generate our code using Buf, a modern replacement for Google's protobuf compiler. We installed Buf
+earlier, but we also need a few configuration files to get going. (If you'd prefer, you can skip this section and use
+protoc instead — `protoc-gen-es` and `protoc-gen-grpc-node` behaves like any other plugin.)
+
+First, scaffold a basic `buf.yaml` by running buf `mod init`. Next, tell Buf how to generate code by putting this into
+`buf.gen.yaml`:
+
+```yaml
+version: v1
+plugins:
+  - plugin: buf.build/bufbuild/es
+    out: gen
+    opt: target=js+dts
+  - plugin: buf.build/grpc/node
+    out: gen
+```
+
+With those configuration files in place, you can lint your schema and generate code:
+
+```terminal
+buf lint
+buf generate
+```
+
+This command will generate the Javascript code for the client and server. In your gen directory, you should now see some
+generated code:
+
+```
+gen
+└── greet
+    └── v1
+        ├── greet.js
+        └── greet.pb.js
+```
+
+The package `gen/greet/v1` contains `greet.js`, which was generated by Buf's protoc-gen-es, and it contains the
+`GreetRequest` and `GreetResponse` structs and the associated marshaling code. Also greet.pb.js, which was generated by
+`protoc-gen-grpc-node`, and it contains the HTTP handler and client interfaces and constructors.
+
+:::danger include grpc implementation
+This needs work
+:::
+
+In summary, using protobuf with gRPC is a powerful combination for building efficient and high-performance remote
+procedure call (RPC) APIs. gRPC provides support for bidirectional streaming, flow control, and efficient data
+transmission using the protobuf data serialization format. With gRPC, you can define your API using a simple and
+efficient IDL, and generate client and server code for multiple languages.
+
+It's important to note that gRPC is not the only framework that can be used with protobuf, other alternatives are also
+available like Connect and Twirp, each with its own advantages. It's always good to evaluate the use case and choose the
+right tool for the job.
+
+### Connect
+
+Connect is a slim library for building browser- and gRPC-compatible HTTP APIs. You define your service with a Protocol
+Buffer schema, and Connect generates type-safe server and client code. Fill in your server's business logic, and you're
+done — no handwritten marshaling, routing, or client code
+required! [check it out](https://connect.build/docs/web/getting-started)
+
+
 [plugins]: https://buf.build/plugins
