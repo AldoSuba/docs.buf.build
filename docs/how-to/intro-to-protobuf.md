@@ -545,5 +545,36 @@ Buffer schema, and Connect generates type-safe server and client code. Fill in y
 done — no handwritten marshaling, routing, or client code
 required! [check it out](https://connect.build/docs/web/getting-started)
 
+## Performance and size comparison between protobuf and other serialization formats.
+
+Protocol Buffers is a data serialization format that is designed for efficient and compact data transmission. It is
+often compared to other serialization formats such as JSON, XML, and BSON in terms of performance
+and size.
+
+In terms of performance, protobufs is generally faster than other formats such as JSON and XML, because it uses a binary
+format, which is more efficient to parse and generate. The protobufs binary format is also more compact than text-based
+formats like JSON and XML, which can lead to a reduction in network bandwidth usage and storage space.
+
+In terms of size, protobufs is generally smaller than other formats like JSON and XML, because it uses a binary format,
+which is more efficient in terms of encoding data. Additionally, protobufs supports a feature called "tag deltas" which
+can save space when serializing data with many repeated fields.
+
+However, protobufs is not always the best choice, it's not as human-readable as JSON or XML, it's not as flexible as
+JSON, in which you can add fields without affecting the existing code. it's not as widely supported as JSON, and it's
+not as good for storing complex data structures as BSON.
+
+It's always good to evaluate the use case and choose the right tool for the job. For example, if you need a
+human-readable format, JSON is a better choice, if you need a format that is widely supported, JSON is a better choice,
+if you need a format that is good for storing complex data structures, BSON is a better choice.
+
+Think of using Protocol Buffers with Connect for your remote procedure call (RPC) APIs like building a car.
+Just like how you have to choose the right engine and transmission for your car, you have to choose the right framework
+and data serialization format for your APIs. Using protobuf with Connect is like using a high-performance engine for
+your car, it provides efficient and compact data transmission. Connect's support for powerful type-safe code generation
+is like having a car with advanced safety features, it ensures that your code is not only efficient but also safe,
+preventing errors and making it more maintainable. The ability to generate code for multiple languages and platforms is
+like having a car that can run on different terrains and climates, you can build cross-platform systems and applications
+that can run on multiple platforms and devices. With protobuf and Connect, you can build high-performance, efficient,
+and safe APIs, just like how you can build high-performance, efficient and safe cars.
 
 [plugins]: https://buf.build/plugins
