@@ -167,6 +167,16 @@ const sidebars = {
             type: "category",
             label: "How To",
             items: [
+                {
+                    type: "doc",
+                    id: "how-to/getting-started-with-protocol-buffers",
+                    customProps: {
+                        badge: {
+                            label: "new",
+                            severity: "info"
+                        }
+                    }
+                },
                 "how-to/replace-protoc-with-buf",
                 "how-to/iterate-on-modules",
                 "how-to/migrate-from-protolock",
