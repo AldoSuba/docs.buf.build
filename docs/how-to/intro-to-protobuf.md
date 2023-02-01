@@ -243,6 +243,62 @@ Overall, protobuf supports for backward compatibility and versioning allows you 
 your messages without breaking existing code, making it a great choice for building systems that span multiple versions
 of code.
 
+## Using protobufs in different programming languages
+
+You can use protobuf in a variety of programming languages, from C++ to Python, Java to Go, and many more. Using
+Protocol Buffers in different programming languages is a great way to take advantage of the benefits of protobuf, such
+as a compact binary format, efficient serialization and deserialization, and support for backward compatibility. We will
+talk about this in greater detail in the next section but for now, lets find out about one of the most important pieces
+to the protobuf ecosystem - Code Generation.
+
+There are official libraries available for several popular programming languages, including C++, Java, Python, Go, C#,
+and many others. These libraries provide a simple and consistent API for working with protobufs, regardless of the
+language you're using.
+
+* In C++, for example, you can use the Google's protobuf library to define message types, serialize and deserialize
+  messages, and generate code for your messages. The library also provides support for advanced features such as
+  reflection and dynamic message creation.
+
+* In Java, you can use the same library, and it's available on maven central. The library provides a similar API as in
+  C++
+  and it's easy to use.
+
+* In Python, Google's library is available via pip, and it provides an easy-to-use API for working with protobufs. The
+  library also provides support for advanced features such as reflection and dynamic message creation.
+
+* In Go, there is an official library provided by Google, and it's available via go get. It provides a similar API as in
+  other languages, and it's also easy to use.
+
+* In C#, there's an official library provided by Google, and it's available via nuget. It provides a similar API as in
+  other languages, and it's easy to use as well.
+
+The API for working with protobufs is consistent across different languages, and it's easy to learn and use, which makes
+it a great choice for building systems that span multiple languages.
+
+Additionally, there are also third-party libraries available for other languages such as Ruby, PHP, and many more. These
+libraries provide similar functionality and API as the official libraries and can be used with protobufs.
+
+One of the greatest challenges with Protobuf code generation is the complexity of working with `protoc`
+and [plugins][plugins]. Time and time again, we've heard that developers want the benefits of code generation, but
+struggle with the complex web of different compiler and plugin versions, and the varying runtime needs that plugins have
+across different languages. Managing and maintaining a stable environment locally on a single machine is hard enough,
+and the problem is compounded as you scale out code generation across many developers.
+
+Every organization and open-source project develops homegrown Protobuf tooling in an effort to simplify the developer
+experience and maintain consistent output across developers. A handful of organizations might get a workable solution,
+but these remain brittle and difficult to maintain over time. Furthermore, domain knowledge of these homegrown solutions
+is lost and upgrade paths become challenging.
+
+At Buf, we believe code generation is a key building block and the Protobuf ecosystem deserves a proper solution. With *
+*[remote plugins][plugins]**, you no longer have to concern yourself with maintaining, downloading, or
+running [plugins][plugins] on your local machine.
+
+In conclusion, using protobufs in different programming languages is an efficient and easy process. There are official
+libraries available for several popular programming languages, and the API is consistent and easy to learn, which makes
+it a great choice for building systems that span multiple languages. With the support of third-party libraries,
+protobufs can be used in almost any programming language and with Buf Remote Plugins, code generation has never been
+easier.
+
 ## Serializing and deserializing data using protobuf
 
 Serializing and deserializing data using Protocol Buffers (protobufs) is a simple and efficient process. Serialization
@@ -331,3 +387,4 @@ compatibility allows you to make changes to your messages without breaking exist
 getting started with protobuf or an experienced developer looking to take your skills to the next level, we've got you
 covered. So don't forget to come back and check out our upcoming articles. We'll be excited to have you on board!
 
+[plugins]: https://buf.build/plugins
