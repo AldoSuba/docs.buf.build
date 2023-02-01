@@ -243,3 +243,91 @@ Overall, protobuf supports for backward compatibility and versioning allows you 
 your messages without breaking existing code, making it a great choice for building systems that span multiple versions
 of code.
 
+## Serializing and deserializing data using protobuf
+
+Serializing and deserializing data using Protocol Buffers (protobufs) is a simple and efficient process. Serialization
+is the process of converting an object or data structure into a format that can be transmitted over a network or stored
+in a file. Deserialization is the opposite process of converting a serialized format back into an object or data
+structure.
+
+In protobuf, data is serialized into a compact binary format, which makes it more efficient than traditional text-based
+formats such as XML and JSON. The serialized data can be transmitted over a network or stored in a file, and then
+deserialized back into an object or data structure on the other end.
+
+In a nutshell, Protocol Buffers have two main functions:
+
+* They are a language for writing schemas for your data.
+* They define a binary format for serializing your data.
+
+These two independent traits function together to allow your project and everyone who interacts with it to define
+messages, fields, and service APIs in the exact same way. In a practical sense as it relates
+to [Protobuf-ES](https://github.com/bufbuild/protobuf-es), this means
+no more disparate JSON types all over the place. Instead, you define a common schema in a Protobuf file, such as:
+
+```protobuf
+message User {
+  string first_name = 1;
+  string last_name = 2;
+  bool active = 3;
+  User manager = 4;
+  repeated string locations = 5;
+  map<string, string> projects = 6;
+}
+```
+
+To serialize a message, you need to first create an instance of the message class, set its fields, and then call the
+toBinary()  method on the message instance. The method will return the serialized data as a byte array.
+
+```javascript
+let user = new User({
+    firstName: "Homer",
+    lastName: "Simpson",
+    active: true,
+    locations: ["Springfield"],
+    projects: {SPP: "Springfield Power Plant"},
+    manager: {
+        firstName: "Montgomery",
+        lastName: "Burns",
+    },
+});
+
+const bytes = user.toBinary();
+```
+
+To deserialize a message, you need to call the `fromBinary()` or `fromJsonString()` method on an instance of the
+message class, and pass in the serialized data as a byte array or string. The method will populate the
+fields of the message instance with the data from the serialized data.
+
+```python
+let user = new User();
+user = User.fromBinary(bytes);
+user = User.fromJsonString('{"firstName": "Homer", "lastName": "Simpson"}');
+```
+
+It's important to note that, when deserializing a message, if the message contains new fields that were not present in
+the original message, the new fields will be set to their default values. This is because of protobufs support of
+backward compatibility.
+
+Think of serializing and deserializing data using Protocol Buffers like packing and unpacking a suitcase for a trip.
+Just like how you carefully choose what clothes and items to pack in your suitcase, you choose the fields of your
+message to be serialized. The suitcase represents the serialized data, containing all the information you need for your
+trip. When you arrive at your destination, you'll unpack your suitcase and use the items inside, just like how you'll
+deserialize the data and use the fields in your message. And just like how you can add more clothes or items to your
+suitcase for a future trip without affecting the ones that were already packed, you can add new fields to your message
+without breaking the existing code thanks to protobufs support of backward compatibility.
+
+The benefits can extend to any application that interacts with yours as well. This is because the Protobuf file above
+can be used to generate types in many languages. The added bonus is that no one has to write any boilerplate code to
+make this happen. [Code generators](https://www.npmjs.com/package/@bufbuild/protoc-gen-es) handle all of this for you.
+
+Protocol Buffers also allow you to serialize this structured data. So, your application running in the browser can send
+a `User` object to a backend running an entirely different language, but using the exact same definition. Using an RPC
+framework like [Connect-Web](https://github.com/bufbuild/connect-web), your data is serialized into bytes on the wire
+and then deserialized at its destination using the defined schema.
+
+In summary, serializing and deserializing data using protobuf is a simple and efficient process. The compact binary
+format used by protobuf makes it more efficient than traditional text-based formats, and the support for backward
+compatibility allows you to make changes to your messages without breaking existing code. Whether you're a beginner just
+getting started with protobuf or an experienced developer looking to take your skills to the next level, we've got you
+covered. So don't forget to come back and check out our upcoming articles. We'll be excited to have you on board!
+
