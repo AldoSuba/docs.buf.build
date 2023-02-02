@@ -1,7 +1,7 @@
 ---
 id: getting-started-with-remote-packages-fe
-title: Getting Started with Remote Packages: A Beginner's Guide to Ditching Generated Code
-description: Empowering Front-End Development with Remote Packages: A Guide to Ditching Generated Code
+title: "Getting Started with Remote Packages: A Beginner's Guide to Ditching Generated Code"
+description: "Empowering Front-End Development with Remote Packages: A Guide to Ditching Generated Code"
 ---
 
 Code generation can bring several benefits to client-side development, particularly in terms of integration. Some of the
