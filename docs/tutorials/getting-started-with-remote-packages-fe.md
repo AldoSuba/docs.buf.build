@@ -247,8 +247,6 @@ message chain:
 
 And that's it &mdash; you've successfully made a tiny web interface for ELIZA with Vite and React.
 
-![Network panel](./eliza-network-panel.png "Inspect your network panel to view the JSON")
-
 We ran the following commands to build the app:
 
 ```bash
