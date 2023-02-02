@@ -6,6 +6,14 @@ const sidebars = {
         "installation",
         {
             type: "category",
+            label: "Getting Started",
+            items: [
+                "tutorials/getting-started-with-remote-packages-fe"
+            ],
+            collapsed: false
+        },
+        {
+            type: "category",
             label: "Tour",
             items: [
                 "tour/introduction",
