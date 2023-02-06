@@ -23,10 +23,10 @@ version: v1
 name: buf.build/$BUF_USER/petapis
 breaking:
   use:
-- FILE
+    - FILE
 lint:
   use:
-- DEFAULT
+    - DEFAULT
 ```
 
 Now let us consider a kind of logical separation you often find in larger organizations, where one team would own
@@ -49,10 +49,10 @@ version: v1
 name: buf.build/$BUF_USER/paymentapis
 breaking:
   use:
-- FILE
+    - FILE
 lint:
   use:
-- DEFAULT
+    - DEFAULT
 ```
 
 Now that the module is all set up, we can add an API:
@@ -126,10 +126,10 @@ To fix this, add the `buf.build/googleapis/googleapis` dependency and resolve it
    +  - buf.build/googleapis/googleapis
  lint:
    use:
- - DEFAULT
+    - DEFAULT
  breaking:
    use:
- - FILE
+    - FILE
 ```
 
 Now update your dependencies and try building again:
