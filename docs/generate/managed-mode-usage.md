@@ -64,7 +64,7 @@ To configure managed mode, add the [`managed.enabled`](/configuration/v1/buf-gen
 your `buf.gen.yaml` template and set a package prefix with
 the [`managed`](/configuration/v1/buf-gen-yaml#go_package_prefix) parameter.
 
-:::note
+:::info
 The `go_package` option is [notoriously complicated][go_prefix]. To generate code using plugins like `protoc-gen-go`
 and `protoc-gen-grpc`, Go repositories **must** contain a [go.mod][go.mod] file that declares a Go [module path][path]
 that acts as a prefix for package import paths within the module.
