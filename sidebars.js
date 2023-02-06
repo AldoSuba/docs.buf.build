@@ -226,7 +226,14 @@ const sidebars = {
             type: "category",
             label: "Reference",
             items: [
-                "reference/workspaces",
+                {
+                    type: "category",
+                    label: "Workspaces",
+                    items: [
+                        {type: "doc", label: "Overview", id: "reference/workspaces",},
+                        {type: "doc", label: "Usage", id: "reference/workspace-usage",},
+                    ],
+                },
                 "reference/images",
                 "reference/inputs",
                 "reference/internal-compiler",
