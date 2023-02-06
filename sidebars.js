@@ -48,7 +48,23 @@ const sidebars = {
             label: "Generate",
             items: [
                 "generate/usage",
-                "generate/managed-mode",
+                {
+                    type: "category",
+                    label: "Managed Mode",
+                    items: [
+                        {
+                          type: "doc",
+                          label: "Overview",
+                          id: "generate/managed-mode",
+                        },
+                        {
+                            type: "doc",
+                            label: "Usage",
+                            id: "generate/managed-mode-usage",
+                        },
+                    ],
+                    collapsed: false
+                },
             ],
             collapsed: false
         },
