@@ -259,6 +259,14 @@ const sidebars = {
             ],
             collapsed: false
         },
+        {
+            type: "category",
+            label: "Common Workflows",
+            items: [
+                {type: "doc", label: "Mono-repo", id: "monorepo"},
+                {type: "doc", label: "Multi-repo", id: "multirepo"},
+            ],
+        },
         "editor-integration",
         "faq",
         "contact"
@@ -266,3 +274,5 @@ const sidebars = {
 };
 
 module.exports = sidebars;
+
+
