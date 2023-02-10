@@ -1,0 +1,8 @@
+position: 20
+label: "Go"
+#collapsible: true
+collapsed: true
+# customProps:
+#   badge:
+#     label: "alpha"
+#     severity: "info"
