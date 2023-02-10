@@ -78,6 +78,31 @@ module.exports = {
           position: "left"
         },
         {
+          href: "/introduction",
+          label: "Home",
+          position: "left"
+        },
+        {
+          href: "/installation",
+          label: "Quick Start",
+          position: "left"
+        },
+        {
+          href: "/tour/introduction",
+          label: "Guides",
+          position: "left"
+        },
+        {
+          href: "/build/usage",
+          label: "Manuals",
+          position: "left"
+        },
+        {
+          href: "/configuration/overview",
+          label: "Reference",
+          position: "left"
+        },
+        {
           href: "https://buf.build/blog",
           label: "Blog",
           position: "right"

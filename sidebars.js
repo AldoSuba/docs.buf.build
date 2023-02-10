@@ -2,11 +2,11 @@
 
 const sidebars = {
     docs: [
-        {
-            type: "doc",
-            label: "Introduction",
-            id: "introduction",
-        },
+        // {
+        //     type: "doc",
+        //     label: "Introduction",
+        //     id: "introduction",
+        // },
         {
             type: "category",
             label: "Quick Start",
@@ -29,6 +29,11 @@ const sidebars = {
             ],
             collapsed: false,
         },
+        "editor-integration",
+        "faq",
+        "contact"
+    ],
+    guides: [
         {
             type: "category",
             label: "Guides",
@@ -88,7 +93,9 @@ const sidebars = {
                 },
             ],
             collapsed: false
-        },
+        }
+    ],
+    manuals: [
         {
             type: "category",
             label: "Manuals",
@@ -148,7 +155,7 @@ const sidebars = {
                             collapsed: false
                         },
                     ],
-                    collapsed: false
+                    collapsed: true
                 },
                 {
                     type: "category",
@@ -221,7 +228,7 @@ const sidebars = {
                             collapsed: false
                         }
                     ],
-                    collapsed: false
+                    collapsed: true
                 },
                 {
                     type: "category",
@@ -237,7 +244,9 @@ const sidebars = {
                 },
             ],
             collapsed: false
-        },
+        }
+    ],
+    reference: [
         {
             type: "category",
             label: "Reference",
@@ -306,10 +315,7 @@ const sidebars = {
             ],
             collapsed: false
         },
-        "editor-integration",
-        "faq",
-        "contact"
-    ]
+    ],
 };
 
 module.exports = sidebars;
