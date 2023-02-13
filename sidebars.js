@@ -38,6 +38,7 @@ const sidebars = {
                     label: "Getting Started",
                     items: [
                         "tutorials/getting-started-with-buf-cli",
+                        "tutorials/getting-started-with-bsr",
                     ],
                     collapsed: false
                 },
