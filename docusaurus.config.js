@@ -22,8 +22,12 @@ module.exports = {
         sitemap: {
           changefreq: "daily",
           priority: 0.7
-        }
-      }
+        },
+        gtag: {
+          trackingID: process.env.GOOGLE_ANALYTICS_GTAG,
+          anonymizeIP: true,
+        },
+      },
     ]
   ],
   plugins: [
@@ -201,6 +205,6 @@ module.exports = {
   },
   customFields: {
     // Used to configure the release version downloaded from the installation.mdx buttons
-    downloadRelease: "1.13.1"
+    downloadRelease: "1.14.0"
   }
 };
