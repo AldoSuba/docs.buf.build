@@ -31,7 +31,7 @@ $ [ -n "$(go env GOBIN)" ] && export PATH="$(go env GOBIN):${PATH}"
 $ [ -n "$(go env GOPATH)" ] && export PATH="$(go env GOPATH)/bin:${PATH}"
 ```
 
-## Define a service
+## 1. Define a service
 
 Now we're ready to write the Protocol Buffer schema that defines our service. In your shell,
 
@@ -66,7 +66,7 @@ This file declares the `greet.v1` Protobuf package, a service called `GreetServi
 with its request and response structures. These package, service, and method names will reappear soon in our HTTP API's
 URLs.
 
-## Lint & Format
+## 2. Lint & Format
 
 First, scaffold a basic [`buf.yaml`][buf.yaml] by running `buf mod init`.
 
@@ -74,10 +74,10 @@ With this configuration file in place, you can lint and format your schema:
 
 ```terminal
 $ buf lint
-$ buf format
+$ buf format -w
 ```
 
-## Generate code
+## 3. Generate code
 
 We're going to generate our code using [Buf][buf], a modern replacement for Google's protobuf compiler. We installed Buf
 earlier, but we also need a few configuration files to get going. (If you'd prefer, you can skip this section and

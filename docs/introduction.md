@@ -11,15 +11,27 @@ import { Card, Cards } from "@site/src/components/Cards";
 <Cards>
   <Card
     image=""
-    name="💨 Quick Start"
+    name="⚡️ Quick Start"
     url="installation"
     description="Download and install Buf on your machine in a few easy steps"
   />
   <Card
     image=""
-    name="🚘 Getting Started with the Buf CLI"
+    name="📚 Language Specific guides"
+    url="/guides/overview"
+    description="Explore how to build applications with Buf in your preferred programming language."
+  />
+  <Card
+    image=""
+    name="👨‍💻 Getting Started with the Buf CLI"
     url="/tutorials/getting-started-with-buf-cli"
     description="Learn Buf basics and the benefits of Schema Driven Development"
+  />
+  <Card
+    image=""
+    name="🚀 Getting Started with the Buf Schema Registry"
+    url="/tutorials/getting-started-with-buf-cli"
+    description="Say hello to confidence, simplicity, and ease of use with the Buf Schema Registry."
   />
 </Cards>
 

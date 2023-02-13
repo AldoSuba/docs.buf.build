@@ -48,7 +48,8 @@ plugins:
 
 With those configuration files in place, you can generate code:
 
-```bash
+```terminal
+$ rm -r gen
 $ buf generate
 ```
 
@@ -127,9 +128,8 @@ even let advanced users skip using `protoc-gen-connect-go`.
 In a separate terminal window, you can now update `go.mod` and start your server:
 
 ```terminal
-$ go get golang.org/x/net/http2
-$ go get github.com/bufbuild/connect-go
-$ go run ./cmd/server/main.go
+$ go mod tidy
+$ go run ./server/main.go
 ```
 
 ## 1. Make requests
@@ -196,7 +196,9 @@ With your server still running in a separate terminal window, you can now run
 your client:
 
 ```terminal
-$ go run ./cmd/client/main.go
+$ go run client/main.go
+---
+... Hello, Jane!
 ```
 
 Congratulations &mdash; you've built your first Connect service! 🎉
@@ -233,7 +235,7 @@ client := greetv1connect.NewGreetServiceClient(
 With your server still running in a separate terminal window, run the client one more time:
 
 ```terminal
-$ go run ./cmd/client/main.go
+$ go run ./client/main.go
 ```
 
 Your output should remain the same, but `connect-go` is now using the gRPC protocol instead of the Connect protocol to
