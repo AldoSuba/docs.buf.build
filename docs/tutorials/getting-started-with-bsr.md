@@ -1,6 +1,6 @@
 ---
 id: getting-started-with-bsr
-title: "Getting Started with Buf Schema Registry: A Beginner's Guide"
+title: Getting Started with the Buf Schema Registry
 ---
 
 In this guide you will gain strong understanding of how to login and authenticate with the Buf Schema
