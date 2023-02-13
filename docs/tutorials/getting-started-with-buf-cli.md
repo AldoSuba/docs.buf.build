@@ -35,7 +35,7 @@ First, clone the Git repository that contains the starter code for the `PetStore
 directory of your choice, run this command:
 
 ```terminal
-git clone https://github.com/bufbuild/buf-tour
+$ git clone https://github.com/bufbuild/buf-tour
 ```
 
 You'll notice that the repository contains a `start` directory and a `finish` directory. During this guide you'll work
@@ -48,8 +48,8 @@ We'll start our tour by configuring `buf` and building the `.proto` files that d
 a way to create, get, and delete pets in the store.
 
 ```terminal
-cd buf-tour/start/getting-started-with-buf-cli
-pwd
+$ cd buf-tour/start/getting-started-with-buf-cli
+$ git rev-parse --show-prefix
 ---
 /.../buf-tour/start/getting-started-with-buf-cli
 ```
@@ -59,8 +59,8 @@ pwd
 `buf` is configured with a [`buf.yaml`](/configuration/v1/buf-yaml.md) file, create your own with this command:
 
 ```terminal
-cd proto
-buf mod init
+$ cd proto
+$ buf mod init
 ```
 
 After you run this command, you'll notice a `buf.yaml` in the current directory with the following content:
@@ -84,8 +84,8 @@ Before we continue, let's verify that everything is set up properly, and we can 
 errors, we know that we've set up a buf module correctly:
 
 ```terminal
-buf build 
-echo $?
+$ buf build 
+$ echo $?
 ---
 0
 ```
@@ -103,8 +103,8 @@ usage of `protoc`, so let's jump in and generate some code.
 Move back to the `getting-started-with-buf-cli` directory with this command:
 
 ```terminal
-cd ..
-ls
+$ cd ..
+$ ls
 ---
 proto
 ```
@@ -122,8 +122,8 @@ specify options for each plugin independently.
 Create a `buf.gen.yaml` file in the `getting-started-with-buf-cli` directory:
 
 ```terminal
-touch buf.gen.yaml
-ls
+$ touch buf.gen.yaml
+# ls
 ---
 buf.gen.yaml
 proto
@@ -181,7 +181,7 @@ with the`PetStoreService` API.
 Run this command, targeting the input defined in the `proto` directory:
 
 ```terminal
-buf generate proto
+$ buf generate proto
 ---
 ```
 
@@ -223,7 +223,7 @@ a [`buf.yaml`](/configuration/v1/buf-gen-yaml.md) configuration file.
 Run all the configured lint rules by running this command:
 
 ```terminal
-buf lint proto
+$ buf lint proto
 ---
 google/type/datetime.proto:17:1:Package name "google.type" should be suffixed with a correctly formed version, such as "google.type.v1".
 pet/v1/pet.proto:44:10:Field name "petID" should be lower_snake_case, such as "pet_id".
@@ -277,7 +277,7 @@ message DeletePetResponse {}
 Verify that two of the failures are resolved by linting again and seeing only one remaining error:
 
 ```terminal
-buf lint
+$ buf lint
 ---
 google/type/datetime.proto:17:1:Package name "google.type" should be suffixed with a correctly formed version, such as "google.type.v1".
 ```
@@ -306,7 +306,7 @@ Run `buf lint --error-format=config-ignore-yaml` to get a minimal set of rules t
 and come back to fix any issues another day.
 
 ```terminal
-buf lint proto --error-format=config-ignore-yaml
+$ buf lint proto --error-format=config-ignore-yaml
 ---
 version: v1
 lint:
@@ -373,7 +373,7 @@ Now, verify that this is a breaking change against the local `main` branch. You'
 the changes you made in the [previous step](#lint-your-api):
 
 ```terminal
-buf breaking proto --against "../../.git#subdir=start/getting-started-with-buf-cli/proto"
+$ buf breaking proto --against "../../.git#subdir=start/getting-started-with-buf-cli/proto"
 ---
 proto/pet/v1/pet.proto:1:1:Previously present service "PetStore" was deleted from file.
 proto/pet/v1/pet.proto:35:3:Field "1" on message "PutPetRequest" changed type from "enum" to "string".
@@ -403,7 +403,7 @@ In this section, you'll implement a `PetStoreService` client and server, both of
 Before you write Go code, initialize a `go.mod` file with the `go mod init` command:
 
 ```terminal
-go mod init github.com/bufbuild/buf-tour
+$ go mod init github.com/bufbuild/buf-tour
 ```
 
 Similar to the [`buf.yaml`](/configuration/v1/buf-yaml) config file, the `go.mod` file tracks your code's Go
@@ -414,8 +414,8 @@ dependencies.
 Start implementing a server by creating a `server/main.go` file:
 
 ```terminal
-mkdir server
-touch server/main.go
+$ mkdir server
+$ touch server/main.go
 ```
 
 Copy and paste this content into that file:
@@ -471,7 +471,7 @@ func (s *petStoreServiceServer) PutPet(
 Now that you have code for a server, run this command to resolve the dependencies you need to build the code:
 
 ```terminal
-go mod tidy
+$ go mod tidy
 ```
 
 ### 5.4 Call `PutPet` {#call-putpet}
@@ -482,7 +482,7 @@ the server and call the `PutPet` endpoint from the buf CLI.
 First, run the server:
 
 ```terminal
-go run server/main.go
+$ go run server/main.go
 ---
 ... Listening on 127.0.0.1:8080
 ```
@@ -490,7 +490,7 @@ go run server/main.go
 In a separate terminal, in the root working directory, hit the API with a `buf curl` command:
 
 ```terminal
-buf curl \
+$ buf curl \
 --schema proto/pet/v1/pet.proto \
 --data '{"pet_type": "PET_TYPE_SNAKE", "name": "Ekans"}' \
 http://localhost:8080/pet.v1.PetStoreService/PutPet
