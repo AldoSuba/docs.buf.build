@@ -51,7 +51,7 @@ a way to create, get, and delete pets in the store.
 $ cd buf-tour/start/getting-started-with-buf-cli
 $ git rev-parse --show-prefix
 ---
-/.../buf-tour/start/getting-started-with-buf-cli
+start/getting-started-with-buf-cli
 ```
 
 ### 1.1 Configure `buf` {#configure-buf}
@@ -123,7 +123,7 @@ Create a `buf.gen.yaml` file in the `getting-started-with-buf-cli` directory:
 
 ```terminal
 $ touch buf.gen.yaml
-# ls
+$ ls
 ---
 buf.gen.yaml
 proto
@@ -482,14 +482,12 @@ the server and call the `PutPet` endpoint from the buf CLI.
 First, run the server:
 
 ```terminal
-$ go run server/main.go
----
 ... Listening on 127.0.0.1:8080
 ```
 
 In a separate terminal, in the root working directory, hit the API with a `buf curl` command:
 
-```terminal
+```terminal 
 $ buf curl \
 --schema proto/pet/v1/pet.proto \
 --data '{"pet_type": "PET_TYPE_SNAKE", "name": "Ekans"}' \

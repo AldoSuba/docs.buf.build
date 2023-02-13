@@ -528,9 +528,7 @@ $ go run client/main.go
 You'll also notice this in the server logs (in the other terminal running the
 server):
 
-```terminal
-$ go run server/main.go
----
+```terminal title="server/main.go output"
 ... Listening on 127.0.0.1:8080
 ... Got a request to create a PET_TYPE_SNAKE named Ekans
 ```
