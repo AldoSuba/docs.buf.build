@@ -21,7 +21,7 @@ For additional information, explore the following topics:
 
 * Protocol Buffers Best Practices
 * Buf Development Best Practices
-* Building APIs with Connect & gRPC
+* Building APIs with gRPC & Connect
 
 Get started with Buf today by setting up your environment and beginning your journey in building cutting-edge
 applications. Select your language:
