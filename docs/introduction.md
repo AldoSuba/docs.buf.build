@@ -14,14 +14,14 @@ import { Card, Cards } from "@site/src/components/Cards";
   />
   <Card
     image=""
-    name="🚘 Tour"
-    url="/tour/introduction"
+    name="🚘 Getting Started with the Buf CLI"
+    url="/tutorials/getting-started-with-buf-cli"
     description="Learn Buf basics and the benefits of Schema Driven Development"
   />
   <Card
     image="img/logos/cli@2x.png"
     name="The Buf CLI"
-    url="build/usage"
+    url="/build/usage"
     description="Browse through the Buf CLI manuals and lean how to use simplify your protobuf workflow"
   />
   <Card
@@ -127,7 +127,7 @@ brings dependency management to your Protobuf APIs.
 
 See the [installation](installation.mdx) page to install the `buf` CLI.
 
-Next, we recommend completing the [tour](tour/introduction.md). The tour
+Next, we recommend completing the [tour](/tutorials/getting-started-with-buf-cli). The tour
 provides an overview of most of the existing functionality of Buf and takes
 approximately 20 minutes to complete.
 

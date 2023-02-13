@@ -43,39 +43,6 @@ const sidebars = {
                 },
                 {
                     type: "category",
-                    label: "Tour",
-                    items: [
-                        "tour/introduction",
-                        "tour/configure-and-build",
-                        "tour/list-all-protobuf-files",
-                        "tour/lint-your-api",
-                        "tour/detect-breaking-changes",
-                        "tour/generate-code",
-                        "tour/log-into-the-bsr",
-                        "tour/push-a-module",
-                        "tour/view-generated-documentation",
-                        "tour/add-a-dependency",
-                        "tour/generate-go-code",
-                        "tour/implement-grpc-endpoints",
-                        "tour/use-a-workspace",
-                        "tour/use-managed-mode",
-                        "tour/push-workspace-modules",
-                        {
-                            type: "doc",
-                            id: "tour/use-remote-packages",
-                            customProps: {
-                                badge: {
-                                    label: "new",
-                                    severity: "info"
-                                }
-                            }
-                        },
-                        "tour/wrapping-up",
-                    ],
-                    collapsed: false
-                },
-                {
-                    type: "category",
                     label: "How To",
                     items: [
                         "how-to/replace-protoc-with-buf",

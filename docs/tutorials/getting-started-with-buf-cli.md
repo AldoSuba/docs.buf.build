@@ -95,7 +95,7 @@ echo $?
 the [Building With Buf](#) page.
 :::
 
-## 2 Generate Code
+## 2 Generate Code {#generate-code}
 
 `buf` provides a user-friendly experience for generating code locally that's completely compatible with any existing
 usage of `protoc`, so let's jump in and generate some code.
@@ -320,7 +320,7 @@ lint:
 For more info on lint rules and configuration, check out our [docs](/lint/overview.md).
 :::
 
-## 4 Detect breaking changes
+## 4 Detect breaking changes {#detect-breaking-changes}
 
 Detect [breaking changes][breaking] between different versions of your API. `buf` is able to detect these
 categories of breaking changes:
