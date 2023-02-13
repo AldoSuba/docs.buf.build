@@ -113,6 +113,8 @@ the `GreetRequest` and `GreetResponse` structs and the associated marshaling cod
 
 ## Next steps
 
+Next, we will take the proto file and generated code we have just created and create a fully functioning gRPC server.
+
 import Feedback from './_feedback.mdx';
 
 <Feedback/>
