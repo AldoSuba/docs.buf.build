@@ -35,6 +35,14 @@ const sidebars = {
             items: [
                 {
                     type: "category",
+                    label: "Getting Started",
+                    items: [
+                        "tutorials/getting-started-with-buf-cli",
+                    ],
+                    collapsed: false
+                },
+                {
+                    type: "category",
                     label: "Tour",
                     items: [
                         "tour/introduction",

@@ -225,6 +225,5 @@ $ buf generate petapis
 ```
 
 [cc_enable_arenas]: /configuration/v1/buf-gen-yaml.md#cc_enable_arenas
-[install_protoc]:
-  https://github.com/protocolbuffers/protobuf#protocol-compiler-installation
+[install_protoc]: https://github.com/protocolbuffers/protobuf#protocol-compiler-installation
 [java_multiple_files]: /configuration/v1/buf-gen-yaml.md#java_multiple_files

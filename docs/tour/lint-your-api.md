@@ -3,7 +3,7 @@ id: lint-your-api
 title: 3 Lint Your API
 ---
 
-You can run all of the configured lint rules by running this command:
+You can run all the configured lint rules by running this command:
 
 ```terminal
 $ buf lint
