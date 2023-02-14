@@ -18,7 +18,7 @@ import { Card, Cards } from "@site/src/components/Cards";
   <Card
     image=""
     name="📚 Language Specific guides"
-    url="/guides/overview"
+    url="/guides/language/overview"
     description="Explore how to build applications with Buf in your preferred programming language."
   />
   <Card

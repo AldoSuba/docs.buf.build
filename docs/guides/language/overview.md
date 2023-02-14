@@ -1,4 +1,5 @@
 ---
+sidebar_position: 1
 id: overview
 title: Overview
 description: "Unleash Your Development Potential with Buf: Get the Ultimate Guide to Setting Up Your Environment and
@@ -26,7 +27,7 @@ For additional information, explore the following topics:
 Get started with Buf today by setting up your environment and beginning your journey in building cutting-edge
 applications. Select your language:
 
-- [Go](language/go/overview)
-- [Node.js](language/node/getting-started.md)
-- [Swift](language/swift/getting-started.md)
-- [Web](language/web/getting-started.mdx)
+- [Go](go/overview)
+- [Node.js](node/getting-started)
+- [Swift](swift/overview)
+- [Web](web/getting-started)

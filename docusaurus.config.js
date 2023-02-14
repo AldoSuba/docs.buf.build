@@ -92,7 +92,7 @@ module.exports = {
           position: "left"
         },
         {
-          href: "/tour/introduction",
+          href: "/tutorials/getting-started-with-buf-cli",
           label: "Guides",
           position: "left"
         },
