@@ -68,32 +68,40 @@ const sidebars = {
                     type: "category",
                     label: "The Buf CLI",
                     items: [
-
+                        "overview-cli",
                         {
                             type: "category",
-                            label: "Build",
-                            items: ["build/usage"],
-                            collapsed: false
+                            label: "Explore Buf Images",
+                            items: [
+                                {
+                                    type: "doc",
+                                    id: "build/explanation",
+                                    label: "Overview",
+                                },
+                                {
+                                    type: "doc",
+                                    id: "build/usage",
+                                    label: "Configuration & Usage",
+                                },
+                            ],
+                            collapsed: true
                         },
                         {
                             type: "category",
-                            label: "Generate",
+                            label: "Generate Code",
                             items: [
-                                "generate/usage",
-                                "generate/managed-mode",
+                                {
+                                    type: "doc",
+                                    id:  "generate/usage",
+                                    label: "Overview",
+                                },
+                                {
+                                    type: "doc",
+                                    id:  "generate/managed-mode",
+                                    label: "Standardize your file options",
+                                },
                             ],
-                            collapsed: false
-                        },
-                        {
-                            type: "category",
-                            label: "Lint",
-                            items: [
-                                "lint/overview",
-                                "lint/usage",
-                                "lint/configuration",
-                                "lint/rules"
-                            ],
-                            collapsed: false
+                            collapsed: true
                         },
                         {
                             type: "category",
@@ -104,19 +112,25 @@ const sidebars = {
                                 "breaking/configuration",
                                 "breaking/rules"
                             ],
-                            collapsed: false
+                            collapsed: true
                         },
                         {
                             type: "category",
-                            label: "Format",
-                            items: ["format/usage", "format/style"],
-                            collapsed: false
+                            label: "Format & Lint proto files",
+                            items: [
+                                { type: "doc", id:"lint/overview",label: "Overview"},
+                                { type: "doc", id:"lint/usage",label: "Lint your proto files"},
+                                { type: "doc", id:"lint/configuration",label: "Configuration"},
+                                { type: "doc", id:"lint/rules",label: "Rules"},
+                                { type: "doc", id:"format/usage",label: "Enforce Consistency with Format"},
+                                { type: "doc", id:"format/style",label: "Style Guide"},
+                            ],
+                            collapsed: true
                         },
                         {
-                            type: "category",
-                            label: "Invoking RPCs",
-                            items: ["curl/usage"],
-                            collapsed: false
+                            type: "doc",
+                            label: "Invoke an API with Buf cURL",
+                            id: "curl/usage",
                         },
                     ],
                     collapsed: false

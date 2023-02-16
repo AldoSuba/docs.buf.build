@@ -93,7 +93,7 @@ module.exports = {
                     position: "left"
                 },
                 {
-                    href: "/build/usage",
+                    href: "/manuals/cli/overview",
                     label: "Manuals",
                     position: "left"
                 },

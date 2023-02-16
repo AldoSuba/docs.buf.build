@@ -39,7 +39,7 @@ import { Card, Cards } from "@site/src/components/Cards";
   <Card
     image="img/logos/cli.svg"
     name="The Buf CLI"
-    url="/build/usage"
+    url="/manuals/cli/overview"
     description="Browse through the Buf CLI manuals and lean how to use simplify your protobuf workflow"
   />
   <Card
