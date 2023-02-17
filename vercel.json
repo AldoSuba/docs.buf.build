@@ -288,6 +288,10 @@
     {
       "source": "/tour/wrapping-up",
       "destination": "/tutorials/getting-started-with-buf-cli"
+    },
+    {
+      "source": "/bsr/user-management",
+      "destination": "/reference/bsr/user-management"
     }
   ]
 }

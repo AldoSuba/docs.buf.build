@@ -1,6 +1,6 @@
 ---
 id: assets
-title: Assets
+title: Assets & SDKs
 sidebar_position: 3
 ---
 

@@ -1,6 +1,6 @@
 ---
 id: documentation
-title: Documentation
+title: Generated Documentation
 sidebar_position: 2
 ---
 

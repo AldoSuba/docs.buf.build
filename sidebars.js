@@ -141,7 +141,6 @@ const sidebars = {
                             collapsed: false
                         },
                         "bsr/documentation",
-                        "bsr/user-management",
                         {
                             type: "doc",
                             id: "bsr/studio",

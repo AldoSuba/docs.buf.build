@@ -3,6 +3,14 @@ id: user-management
 title: User management
 ---
 
+User roles and permissions are crucial for any organization, especially when it comes to collaboration and security.
+This documentation explores how to manage roles and permissions for organization resources such as repositories,
+templates, and plugins. Each user has an explicit role, with specific permissions and restrictions, such as Owner,
+Admin, Member, or Machine. The organization's owners can also modify the base resource roles.
+
+You'll also learn how to give additional permissions to individual users for specific resources. By understanding these
+roles and permissions, you can ensure that only authorized users have access to your organization's resources.
+
 ## Organization roles
 
 Every user that is part of an organization has an explicit role. Note that users
@@ -17,7 +25,7 @@ request to be re-added with the desired role.
 - Can delete organization. All resources such as repositories, templates and
   plugins must be deleted before the organization can be deleted.
 - Can add and delete resources such as
-  [repositories](../bsr/overview.mdx#modules)
+  [repositories](../../bsr/overview.mdx#modules)
 
 ### Admin {#org-admin}
 
@@ -35,7 +43,7 @@ request to be re-added with the desired role.
 ### Machine {#org-machine}
 
 - Can view the organization and its members.
-- Inherits [Write](#resource-write) roles over existing organization resources, 
+- Inherits [Write](#resource-write) roles over existing organization resources,
   regardless of the organization's [base resource roles](#base-resource-roles).
 
 This role is useful in CI pipelines - you can set the organization base roles to
@@ -48,7 +56,7 @@ Every organization has a set of base resource roles that apply to all members of
 the organization. The default roles:
 
 | Repository | Template | Plugin |
-| :--------- | :------- | :----- |
+|:-----------|:---------|:-------|
 | Write      | Write    | Write  |
 
 Organization owners can modify the base resource roles depending on the
@@ -60,9 +68,9 @@ organization settings page.
 Resources such as repositories, templates and plugins are owned by either an
 individual user or an organization. In the case of user-owned resources, the
 user is granted the `Owner` role, and for organization-owned resources, user
-with `Member` role in the organization will inherit the 
-[base resource roles](#base-resource-roles) as defined by the organization, 
-while user with `Owner` or `Admin` role in the organization will inherit the 
+with `Member` role in the organization will inherit the
+[base resource roles](#base-resource-roles) as defined by the organization,
+while user with `Owner` or `Admin` role in the organization will inherit the
 respective resource roles.
 
 In some situations, however, you'll need to give additional permissions to
