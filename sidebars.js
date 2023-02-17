@@ -42,6 +42,7 @@ const sidebars = {
                         "how-to/replace-protoc-with-buf",
                         "breaking/usage",
                         "generate/usage",
+                        "lint/usage",
                         "how-to/iterate-on-modules",
                         "how-to/migrate-from-protolock",
                         "how-to/migrate-from-prototool"
@@ -120,7 +121,6 @@ const sidebars = {
                             label: "Format & Lint proto files",
                             items: [
                                 { type: "doc", id:"lint/overview",label: "Overview"},
-                                { type: "doc", id:"lint/usage",label: "Lint your proto files"},
                                 { type: "doc", id:"lint/configuration",label: "Configuration"},
                                 { type: "doc", id:"lint/rules",label: "Rules"},
                                 { type: "doc", id:"format/usage",label: "Enforce Consistency with Format"},

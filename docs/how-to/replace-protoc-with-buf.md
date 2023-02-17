@@ -1,6 +1,7 @@
 ---
 id: replace-protoc-with-buf
-title: Replace protoc with buf
+title: "Replacing Protoc with Buf: A Migration Guide"
+description: "Streamline your .proto Compilation and Code Generation with buf: A Guide to Migrating from protoc"
 ---
 
 The `buf` CLI acts as a build system for all your `.proto` compilation and code

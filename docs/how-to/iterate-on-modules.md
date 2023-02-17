@@ -1,6 +1,7 @@
 ---
 id: iterate-on-modules
-title: Iterate on modules
+title: "Updating Protobuf Modules with Buf and BSR: A How-To Guide"
+description: "Evolve Your Protobuf APIs: A Guide to Iterating on Modules"
 ---
 
 > For a comprehensive guide on working with
