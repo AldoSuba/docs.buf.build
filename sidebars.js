@@ -40,6 +40,7 @@ const sidebars = {
                     label: "How To",
                     items: [
                         "how-to/replace-protoc-with-buf",
+                        "breaking/usage",
                         "how-to/iterate-on-modules",
                         "how-to/migrate-from-protolock",
                         "how-to/migrate-from-prototool"
@@ -108,7 +109,6 @@ const sidebars = {
                             label: "Breaking Change Detection",
                             items: [
                                 "breaking/overview",
-                                "breaking/usage",
                                 "breaking/configuration",
                                 "breaking/rules"
                             ],
