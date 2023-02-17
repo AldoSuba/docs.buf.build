@@ -18,8 +18,7 @@ multiple systems. It is a compact and efficient format that captures the complet
 all messages, enums, and services, as well as their relationships to each other.
 
 Buf Images are built from a set of `.proto` files, which define the structure and syntax of your Protobuf schema. When
-you
-build a Buf Image, the tooling compiles your `.proto` files into a single binary file that can be easily shared and
+you build a Buf Image, the tooling compiles your `.proto` files into a single binary file that can be easily shared and
 distributed across your Schema Registry.
 
 Buf Images are designed to be forwards- and backwards-compatible, allowing you to manage the evolution of your schema
