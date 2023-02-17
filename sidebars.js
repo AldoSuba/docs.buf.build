@@ -41,6 +41,7 @@ const sidebars = {
                     items: [
                         "how-to/replace-protoc-with-buf",
                         "breaking/usage",
+                        "generate/usage",
                         "how-to/iterate-on-modules",
                         "how-to/migrate-from-protolock",
                         "how-to/migrate-from-prototool"
@@ -93,7 +94,7 @@ const sidebars = {
                             items: [
                                 {
                                     type: "doc",
-                                    id:  "generate/usage",
+                                    id:  "generate/overview",
                                     label: "Overview",
                                 },
                                 {
