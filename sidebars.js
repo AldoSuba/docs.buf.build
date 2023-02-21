@@ -1,7 +1,7 @@
 // @ts-check
 
 const sidebars = {
-        docs: [
+        guides: [
             {
                 type: "category",
                 label: "Quick Start",
@@ -24,11 +24,6 @@ const sidebars = {
                 ],
                 collapsed: false,
             },
-            "about",
-            "faq",
-            "contact"
-        ],
-        guides: [
             "tutorials/getting-started-with-buf-cli",
             "tutorials/getting-started-with-bsr",
             {
@@ -59,6 +54,9 @@ const sidebars = {
                 ],
                 collapsed: false
             },
+            "about",
+            "faq",
+            "contact"
         ],
         manuals: [
             {
