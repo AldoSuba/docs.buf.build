@@ -78,11 +78,6 @@ module.exports = {
             },
             items: [
                 {
-                    href: "/installation",
-                    label: "Quick\xA0Start",
-                    position: "left"
-                },
-                {
                     href: "/tutorials/getting-started-with-buf-cli",
                     label: "Guides",
                     position: "left"
