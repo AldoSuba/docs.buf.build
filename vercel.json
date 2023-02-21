@@ -288,6 +288,10 @@
     {
       "source": "/tour/wrapping-up",
       "destination": "/tutorials/getting-started-with-buf-cli"
+    },
+    {
+      "source": "/lint/configuration:path*",
+      "destination": "/lint/overview:path*"
     }
   ]
 }

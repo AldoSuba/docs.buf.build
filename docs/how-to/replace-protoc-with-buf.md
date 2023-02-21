@@ -1,6 +1,6 @@
 ---
 id: replace-protoc-with-buf
-title: "Replacing Protoc with Buf: A Migration Guide"
+title: "Replacing Protoc with Buf"
 description: "Streamline your .proto Compilation and Code Generation with buf: A Guide to Migrating from protoc"
 ---
 
