@@ -9,7 +9,7 @@ const sidebars = {
                 customProps: {
                     badge: {
                         label: "QUICK START",
-                        severity: "info"
+                        severity: "neutral"
                     }
                 }
             },
@@ -49,6 +49,17 @@ const sidebars = {
             "contact"
         ],
         manuals: [
+            {
+                type: "doc",
+                label: "Get Buf",
+                id: "installation",
+                customProps: {
+                    badge: {
+                        label: "QUICK START",
+                        severity: "neutral"
+                    }
+                }
+            },
             {
                 type: "category",
                 label: "The Buf CLI",
@@ -137,6 +148,17 @@ const sidebars = {
             },
         ],
         reference: [
+            {
+                type: "doc",
+                label: "Get Buf",
+                id: "installation",
+                customProps: {
+                    badge: {
+                        label: "QUICK START",
+                        severity: "neutral"
+                    }
+                }
+            },
             {
                 type: "category",
                 label: "Buf CLI",
