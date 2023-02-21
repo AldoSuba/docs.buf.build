@@ -3,26 +3,15 @@
 const sidebars = {
         guides: [
             {
-                type: "category",
-                label: "Quick Start",
-                items: [
-                    {
-                        type: "doc",
-                        id: "installation",
-                        label: "Buf CLI"
-                    },
-                    {
-                        type: "link",
-                        label: "Buf Schema Registry (BSR)",
-                        href: "https://buf.build/signup"
-                    },
-                    {
-                        type: "link",
-                        label: "Connect",
-                        href: "https://connect.build"
+                type: "doc",
+                label: "Get Buf",
+                id: "installation",
+                customProps: {
+                    badge: {
+                        label: "QUICK START",
+                        severity: "info"
                     }
-                ],
-                collapsed: false,
+                }
             },
             "tutorials/getting-started-with-buf-cli",
             "tutorials/getting-started-with-bsr",
