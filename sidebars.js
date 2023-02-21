@@ -19,6 +19,7 @@ const sidebars = {
                 type: "category",
                 label: "How To",
                 items: [
+                    "how-to/use-remote-packages",
                     "how-to/replace-protoc-with-buf",
                     "breaking/usage",
                     {
