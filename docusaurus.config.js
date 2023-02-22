@@ -99,6 +99,16 @@ module.exports = {
                     position: "right"
                 },
                 {
+                    href: "https://buf.build/blog",
+                    label: "Blog",
+                    position: "right"
+                },
+                {
+                    href: "https://buf.build/careers",
+                    label: "Careers",
+                    position: "right"
+                },
+                {
                     href: "https://buf.build/login",
                     label: "Sign in",
                     position: "right",
