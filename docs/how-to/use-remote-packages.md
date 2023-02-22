@@ -33,12 +33,12 @@ $ buf --version
 1.14.0
 ```
 
-## Push a module
+## 1 Push a module
 
 If you haven't already done so, [sign up][sign-up] for the Buf Schema Registry, [create a repository][create-repo]
 and [push your module][push-module] to take advantage of everything the BSR has to offer.
 
-## Remove `buf.gen.yaml` {#remove-bufgenyaml}
+## 2 Remove `buf.gen.yaml` {#remove-bufgenyaml}
 
 Without remote packages, you will need to generate your client stubs off of a protobuf file in your project. Now,
 remove `buf.gen.yaml` and the generated code in the `gen` directory since you won't need to generate or maintain any
@@ -58,7 +58,7 @@ client/main.go:10:2: no required module provides package github.com/bufbuild/buf
 	go get github.com/bufbuild/buf-tour/petstore/gen/proto/go/pet/v1
 ```
 
-## Depend on `buf.build/gen/go` {#depend-on-bufbuildgengo}
+## 3 Depend on `buf.build/gen/go` {#depend-on-bufbuildgengo}
 
 Update your import paths to point to your BSR-powered Remote Package.
 
@@ -126,12 +126,12 @@ go: found buf.build/gen/go/$BUF_USER/petapis/grpc/go/pet/v1/petv1grpc in buf.bui
 go: found buf.build/gen/go/$BUF_USER/petapis/protocolbuffers/go/pet/v1 in buf.build/gen/go/$BUF_USER/petapis/protocolbuffers/go v1.28.1-20220907172654-7abdb7802c8f.4
 ```
 
-## Run your application {#run-your-application}
+## 4 Run your application {#run-your-application}
 
 You can run the application again to verify that the remote package works as expected. Everything works just as before,
 but you no longer have _any_ locally generated code:
 
-## Updating Versions {#updating-versions}
+### 4.1 Updating Versions {#updating-versions}
 
 If you update your module and push it, you can run `go get` to update the dependency version.
 
