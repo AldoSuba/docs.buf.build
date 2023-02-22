@@ -41,7 +41,7 @@ const sidebars = {
                     {
                         type: "doc",
                         id: "build/usage",
-                        label: "Build a Buf Image",
+                        label: "Build your Proto Schema",
                     },
                     "generate/usage",
                     "lint/usage",

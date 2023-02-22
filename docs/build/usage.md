@@ -1,23 +1,29 @@
 ---
 id: usage
-title: Usage
+title: Build a Buf Image
 ---
 
-> We highly recommend completing [the tour](../tutorials/getting-started-with-buf-cli.md#configure-buf) to get an
+> We highly recommend completing [the tour][the-tour] to get an
 > overview of `buf build`.
 
-All `buf` operations rely on building, or compiling, Protobuf files. The [linter](../lint/overview.md),
-[breaking change detector](../breaking/overview.md), [generator](../generate/usage.mdx),
-and the [BSR](../bsr/overview.mdx) are features that rely on compilation results. In its simplest form,
-the `buf build` command is used to verify that an [input](../reference/inputs.md) compiles.
+The operations on `buf` are based on Protobuf files that are built or compiled. The [linter][linter], 
+[breaking change detector][breaking-change-detector], [generator][generator], and  [BSR][bsr] features depend on the 
+results of the compilation. The `buf build` command, in its simplest form, is used to verify that [input][input] 
+successfully compiles.
 
-## Configuration
+## Before you begin
 
-`buf` is configured with the [`buf.yaml`](../configuration/v1/buf-yaml.md) configuration file, which is placed
-at the root of the Protobuf source files it defines. The placement of the `buf.yaml` configuration tells `buf`
-where to search for `.proto` files, and how to handle imports. As opposed to `protoc`, where all `.proto` files
-are manually specified on the command-line, `buf` operates by recursively discovering all `.proto` files under
-configuration and building them.
+Before you begin exploring the topic at hand, it's essential to understand some key concepts that will help you better 
+navigate the subject.
+
+`buf` is configured using the [`buf.yaml`][buf-yaml] configuration file placed at the root of the Protobuf source 
+files it defines. The placement of the [`buf.yaml`][buf-yaml] configuration file tells buf where to search for `.proto` 
+files and how to handle imports. `buf` recursively discovers all `.proto` files under configuration and builds them, 
+unlike protoc, where all `.proto` files are manually specified on the command-line.
+
+In `buf`'s default input mode, it assumes there is a `buf.yaml` in your current directory, or uses
+the default values in lieu of a `buf.yaml` file. We recommend always having a `buf.yaml` file at the
+root of your `.proto` files hierarchy, as this is how `.proto` import paths are resolved.
 
 Here is an example of all configuration options for `build`:
 
@@ -28,26 +34,17 @@ build:
     - foo/bar
 ```
 
-The `build` section only has one option:
-
-### `excludes`
-
-The `excludes` key is **optional**, and lists directories to ignore from `.proto` file discovery. Any directories
-added to this list are completely skipped and excluded in the result. **We do not recommend using this
-option in general**, however in some situations it is unavoidable.
+The `build` section in the [`buf.yaml`][buf-yaml] file only has one option, `excludes`, which is optional and lists 
+directories to ignore from `.proto` file discovery. Any directories added to this list are completely skipped and 
+excluded from the result. It is **not** recommended to use this option in general, but in some situations, it may be 
+unavoidable.
 
 For more information on `buf.yaml` configuration, see the [reference](../configuration/v1/buf-yaml.md).
 
-### Default values
+## 1 Define a Module
 
-In `buf`'s default input mode, it assumes there is a `buf.yaml` in your current directory, or uses
-the default values in lieu of a `buf.yaml` file. We recommend always having a `buf.yaml` file at the
-root of your `.proto` files hierarchy, as this is how `.proto` import paths are resolved.
-
-## Define a Module
-
-To get started, create a [module](../bsr/overview.mdx#modules) by adding a `buf.yaml` file to the root of the directory
-that contains your Protobuf definitions. You can create the default `buf.yaml` file with this command:
+To create a [module][module], add a [`buf.yaml`][buf-yaml] file to the root of the directory that contains the Protobuf 
+definitions. The `buf mod init` command can be used to create the default `buf.yaml` file. 
 
 ```terminal
 $ buf mod init
@@ -63,13 +60,16 @@ lint:
     - DEFAULT
 ```
 
-## Modules and workspaces
+## 2 Modules and workspaces
+
+Modules can be stitched together locally using a [`buf.work.yaml`][buf-work-yaml] file that 
+defines a [workspace][workspace].
 
 For those of you that have used `protoc`, the placement of the `buf.yaml` is analogous to a `protoc`
 include (`-I`) path. **With `buf`, there is no `-I` flag** - each `protoc` `-I` path maps to a directory
 that contains a `buf.yaml` (called a module in Buf parlance), and multiple modules are stitched
-together with a [`buf.work.yaml`](../configuration/v1/buf-work-yaml.md), which defines
-a [workspace](../reference/workspaces.mdx).
+together with a [`buf.work.yaml`][buf-work-yaml], which defines
+a [workspace][workspace].
 
 To illustrate how all these pieces fit together here's a quick example using `protoc` and its equivalent
 in `buf`:
@@ -113,7 +113,7 @@ a new `message` in one module, and importing it from another. Similarly, any com
 contains
 a `buf.work.yaml` acts upon *all* the modules defined in the `buf.work.yaml`.
 
-## Workspace requirements
+### 2.1 Workspace requirements
 
 There are two additional requirements that `buf` imposes on your `.proto` file structure
 for compilation to succeed that are not enforced by `protoc`, both of which are essential to
@@ -189,7 +189,7 @@ directories:
 
 Which copy of `google/api/*.proto` wins? The answer: no one wins. So Buf doesn't allow this.
 
-## Run build
+## 3 Run build
 
 You can run `buf build` on your module by specifying the filepath to the directory containing the
 `buf.yaml` configuration file. To target the module defined in the current directory:
@@ -222,7 +222,9 @@ $ buf build --error-format=json
 {"path":"acme/pet/v1/pet.proto","start_line":5,"start_column":8,"end_line":5,"end_column":8,"type":"COMPILE","message":"acme/payment/v1alpha1/payment.proto: does not exist"}
 ```
 
-## Output format
+## 4 Options
+
+### 4.1 Output format
 
 By default, `buf build` outputs its result to `/dev/null`. In this case, it's common to use
 `buf build` as a validation step, analogous to checking if the input compiles.
@@ -281,7 +283,7 @@ The `ImageExtension` field doesn't affect Protobuf plugins or any other operatio
 unknown
 field. But we provide the option in case you want it.
 
-## Limit to specific files
+### 4.2 Limit to specific files
 
 By default, `buf` builds all files under the `buf.yaml` configuration file. You can instead manually specify the
 file or directory paths to build. This is an advanced feature intended to be used for editor or
@@ -295,10 +297,10 @@ command:
 $ buf build --path path/to/foo.proto --path path/to/bar.proto
 ```
 
-## Limit to specific types
+### 4.3 Limit to specific types
 
 When you run `buf build` to create a [`FileDescriptorSet`][filedescriptorset] or Buf [image], the
-output contains all of the Protobuf types declared in the [module] by default. But for some advanced
+output contains all the Protobuf types declared in the [module] by default. But for some advanced
 use cases, you may want the image or `FileDescriptorSet` to contain only a subset of the types
 described in your Protobuf API.
 
@@ -343,7 +345,7 @@ In this case, dependent descriptors for both `acme.weather.v1.Units` and
 
 :::
 
-### Type restriction example
+#### 4.3.1 Type restriction example
 
 As an example, consider these two `.proto` files:
 
@@ -380,7 +382,7 @@ This table shows which files, messages, and extensions would be included for var
  `buf build --type pkg.Bar` | `foo.proto`              | `pkg.Bar`                            |                   |
  `buf build --type pkg.Baz` | `foo.proto`, `bar.proto` | `pkg.Baz`, `other.Quux`, `other.Qux` | `other.my_option` 
 
-## Docker
+## 5 Docker
 
 Buf ships a Docker image [bufbuild/buf](https://hub.docker.com/r/bufbuild/buf) that enables
 you to use `buf` as part of your Docker workflow. For example:
@@ -405,3 +407,24 @@ $ docker run \
 [proto2]: https://developers.google.com/protocol-buffers/docs/proto
 
 [services]: https://developers.google.com/protocol-buffers/docs/proto3#services
+
+[the-tour]: ../tutorials/getting-started-with-buf-cli.md#configure-buf
+[linter]: ../lint/overview.md
+[breaking-change-detector]: ../breaking/overview.md
+[generator]: ../generate/usage.mdx
+[bsr]: ../bsr/overview.mdx
+[input]: ../reference/inputs.md
+[buf-yaml]: ../configuration/v1/buf-yaml.md
+[reference]: ../configuration/v1/buf-yaml.md
+[module]: ../bsr/overview.mdx#modules
+[buf-work-yaml]: ../configuration/v1/buf-work-yaml.md
+[workspace]: ../reference/workspaces.mdx
+[internal-compiler]: ../reference/internal-compiler.md
+[grpc-gateway]: https://github.com/grpc-ecosystem/grpc-gateway/tree/cc01a282127b54a81f92d6b8e8fb8971dab8be9b/third_party/googleapis
+[google-api]: https://github.com/googleapis/googleapis/tree/master/google/api
+[file-descriptor-set]: https://github.com/protocolbuffers/protobuf/blob/master/src/google/protobuf/descriptor.proto
+[images]: ../reference/images.md
+[automatically-derived-formats]: ../reference/inputs.md#automatically-derived-formats
+[jq]: https://stedolan.github.io/jq
+[bazel]: /build-systems/bazel.md
+[bufbuildbuf]: https://hub.docker.com/r/bufbuild/buf
