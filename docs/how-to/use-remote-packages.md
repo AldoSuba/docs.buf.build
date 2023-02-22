@@ -9,7 +9,7 @@ Remote Packages make it so that you do not have to worry about Protobuf code gen
 the BSR and install generated code stubs from those modules using dependency management tools such as npm and go.
 
 :::note
-This guide assumes that you are already familiar with using Protocol Buffers with Buf to generate client/server stubs.
+This guide assumes that you are already familiar with using prots with Buf to generate client/server stubs.
 If you are not yet at this stage, we recommend that you check out our Getting Started guides.
 :::
 
