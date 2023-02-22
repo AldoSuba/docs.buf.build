@@ -4,22 +4,37 @@ const sidebars = {
         guides: [
             {
                 type: "doc",
-                label: "Get Buf",
+                label: "Install Buf",
                 id: "installation",
-                customProps: {
-                    badge: {
-                        label: "QUICK START",
-                        severity: "neutral"
-                    }
-                }
             },
             "tutorials/getting-started-with-buf-cli",
             "tutorials/getting-started-with-bsr",
+            {
+                type: "doc",
+                id: "bsr/studio",
+                label: "Getting Started with Buf Studio",
+                customProps: {
+                    badge: {
+                        label: "beta",
+                        severity: "info"
+                    }
+                },
+            },
             {
                 type: "category",
                 label: "How To",
                 items: [
                     "how-to/use-remote-packages",
+                    {
+                        type: "doc",
+                        label: "Invoke an API with Buf cURL",
+                        id: "curl/usage",
+                    },
+                    {
+                        type: "doc",
+                        label: "Working with the APIs",
+                        id: "bsr/api-access",
+                    },
                     "how-to/replace-protoc-with-buf",
                     "breaking/usage",
                     {
@@ -30,8 +45,6 @@ const sidebars = {
                     "generate/usage",
                     "lint/usage",
                     "how-to/iterate-on-modules",
-                    "how-to/migrate-from-protolock",
-                    "how-to/migrate-from-prototool"
                 ],
                 collapsed: false
             },
@@ -51,14 +64,8 @@ const sidebars = {
         manuals: [
             {
                 type: "doc",
-                label: "Get Buf",
+                label: "Install Buf",
                 id: "installation",
-                customProps: {
-                    badge: {
-                        label: "QUICK START",
-                        severity: "neutral"
-                    }
-                }
             },
             {
                 type: "category",
@@ -71,11 +78,6 @@ const sidebars = {
                     {type: "doc", id: "breaking/overview", label: "Breaking Change Detection"},
                     {type: "doc", id: "lint/overview", label: "Enforce Lint Standards"},
                     {type: "doc", id: "format/style", label: "Format your proto files"},
-                    {
-                        type: "doc",
-                        label: "Invoke an API with Buf cURL",
-                        id: "curl/usage",
-                    },
                 ],
                 collapsed: false
             },
@@ -87,7 +89,6 @@ const sidebars = {
                     "bsr/overview",
                     "bsr/authentication",
                     "bsr/usage",
-                    "bsr/api-access",
                     {
                         type: "category",
                         label: "Reflection",
@@ -100,16 +101,6 @@ const sidebars = {
                     },
                     "bsr/documentation",
                     "bsr/user-management",
-                    {
-                        type: "doc",
-                        id: "bsr/studio",
-                        customProps: {
-                            badge: {
-                                label: "beta",
-                                severity: "info"
-                            }
-                        }
-                    },
                     {
                         type: "category",
                         label: "Remote Plugins",
@@ -150,14 +141,8 @@ const sidebars = {
         reference: [
             {
                 type: "doc",
-                label: "Get Buf",
+                label: "Install Buf",
                 id: "installation",
-                customProps: {
-                    badge: {
-                        label: "QUICK START",
-                        severity: "neutral"
-                    }
-                }
             },
             {
                 type: "category",
@@ -241,7 +226,9 @@ const sidebars = {
                     }
                 ],
                 collapsed: true
-            }
+            },
+            "how-to/migrate-from-protolock",
+            "how-to/migrate-from-prototool"
         ],
     }
 ;
