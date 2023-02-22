@@ -1,6 +1,7 @@
 ---
 id: usage
 title: Usage
+description: "Learn how to efficiently build, compile and package your Protobuf files with Buf's powerful and intuitive build system."
 ---
 
 > We highly recommend completing [the tour](../tutorials/getting-started-with-buf-cli.md#configure-buf) to get an

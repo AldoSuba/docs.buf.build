@@ -1,6 +1,7 @@
 ---
 id: github-actions
 title: GitHub Actions
+description: "Streamline your workflow with seamless CI/CD setup using Buf."
 ---
 
 [GitHub Actions](https://github.com/features/actions) is a

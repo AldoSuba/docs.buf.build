@@ -1,6 +1,7 @@
 ---
 id: bazel
 title: Bazel
+descriptions: "Maximize your Protobuf project's potential with Bazel - A powerful build system that simplifies the build process, improves scalability and speeds up development."
 ---
 
 Buf provides official support for the [Bazel][bazel] build tool with
