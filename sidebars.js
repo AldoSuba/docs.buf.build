@@ -24,6 +24,7 @@ const sidebars = {
                 type: "category",
                 label: "How To",
                 items: [
+                    "bsr/remote-plugins/usage",
                     "how-to/use-remote-packages",
                     {
                         type: "doc",
@@ -115,7 +116,6 @@ const sidebars = {
                         label: "Remote Plugins",
                         items: [
                             "bsr/remote-plugins/overview",
-                            "bsr/remote-plugins/usage",
                             "bsr/remote-plugins/migrating-from-alpha",
                         ],
                         collapsed: false
