@@ -1,6 +1,7 @@
 ---
 id: style
 title: Style
+description: "Elevate Your Code Quality and Consistency with Buf's Stylish Formatting - Discover How!"
 ---
 
 One of Buf's primary goals is to enforce consistency across all of Protobuf. The

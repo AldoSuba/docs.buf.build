@@ -1,6 +1,7 @@
 ---
 id: configuration
 title: Configuration
+description: "Boost Your Code Quality with Buf's Powerful Linting Configuration - Get Started Today!"
 ---
 
 You can configure the `buf` CLI's linter with a

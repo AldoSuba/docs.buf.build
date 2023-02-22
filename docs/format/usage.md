@@ -1,6 +1,7 @@
 ---
 id: usage
 title: Usage
+description: "Effortlessly Format Your Protobuf Code with Buf - Get Started Today!"
 ---
 
 The `buf format` command rewrites `.proto` files in-place according to an

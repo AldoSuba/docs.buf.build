@@ -1,6 +1,7 @@
 ---
 id: usage
 title: Usage
+description: "Streamline Your API Workflow with Effortless cURL Usage - Learn How with Buf!"
 ---
 
 The `buf curl` command lets you invoke RPCs on a Connect, gRPC, or gRPC-Web server. This improves

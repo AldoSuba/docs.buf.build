@@ -1,6 +1,7 @@
 ---
 id: rules
 title: Rules and categories
+description: "Master Your Code Quality with Buf's Customizable Linting Rules - Get Started Today!"
 ---
 
 > The rules and categories described here belong to the latest

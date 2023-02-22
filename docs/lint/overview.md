@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Overview
+description: "Improve Your Codebase with Buf's Comprehensive Linting - Learn How Now!"
 ---
 
 Using a [linter][lint] on your Protobuf sources enables you to enforce
