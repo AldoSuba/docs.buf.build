@@ -50,6 +50,15 @@ const sidebars = {
             },
             {
                 type: "category",
+                label: "CI/CD",
+                items: [
+                    "ci-cd/setup",
+                    "ci-cd/github-actions",
+                ],
+                collapsed: false
+            },
+            {
+                type: "category",
                 label: "Best Practices",
                 items: [
                     "best-practices/style-guide",
@@ -123,12 +132,6 @@ const sidebars = {
                         collapsed: false
                     }
                 ],
-                collapsed: false
-            },
-            {
-                type: "category",
-                label: "CI/CD",
-                items: ["ci-cd/setup", "ci-cd/github-actions"],
                 collapsed: false
             },
             {
