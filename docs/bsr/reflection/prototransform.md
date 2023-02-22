@@ -1,6 +1,7 @@
 ---
 id: prototransform
 title: Prototransform
+description: "Transform your Protobuf data with ease - Discover how to leverage reflection and Prototransform in Buf Schema Registry for efficient and flexible data transformation."
 ---
 
 Like any Connect API, you can use the Buf Reflection API using a client

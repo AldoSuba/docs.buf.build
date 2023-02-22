@@ -1,6 +1,7 @@
 ---
 id: style-guide
 title: Style guide
+description: "Stop writing messy Protobuf code! Follow these simple style guidelines and become a coding master in no time!"
 ---
 
 This is our Style Guide for Protobuf.

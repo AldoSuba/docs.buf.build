@@ -1,6 +1,7 @@
 ---
 id: configuration
 title: Configuration
+description: "How to stay ahead of the curve and avoid Buf breaking changes - Learn the latest tips and tricks to future-proof your code!"
 ---
 
 `buf`'s breaking change detector is configured through a

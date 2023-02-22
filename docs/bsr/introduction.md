@@ -1,6 +1,7 @@
 ---
 id: introduction
 title: Introduction
+description: "Accelerate your Protobuf-based projects with Buf Schema Registry - Discover how to leverage this powerful tool to optimize your workflow and unlock new capabilities for your development projects."
 ---
 
 Welcome to the **Buf Schema Registry (BSR)**! This overview covers what the BSR

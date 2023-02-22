@@ -1,6 +1,7 @@
 ---
 id: api-access
 title: API Access
+description: "Seamlessly access Buf Schema Registry with the API - Learn how to use the API to interact with the registry programmatically and improve your workflow with Protobuf data."
 ---
 
 Buf Schema Registries provide a web UI at their domain. For example, the web UI for the public

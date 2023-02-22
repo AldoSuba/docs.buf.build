@@ -1,6 +1,7 @@
 ---
 id: module-development
 title: Module development
+description: "Discover the one simple trick that can revolutionize your productivity and change your life forever!"
 ---
 
 The Buf Schema Registry ([BSR](../bsr/overview.mdx)) automatically enforces that

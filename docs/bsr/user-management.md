@@ -1,6 +1,7 @@
 ---
 id: user-management
 title: User management
+description: "Manage access to your Protobuf projects like a pro with Buf Schema Registry user management - Learn how to efficiently control access to your registry, delegate responsibilities, and keep your projects organized and secure."
 ---
 
 ## Organization roles

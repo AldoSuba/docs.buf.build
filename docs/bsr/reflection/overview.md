@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Overview
+description: "Unlock the power of reflection in Buf Schema Registry - Explore the overview of features and benefits to accelerate your Protobuf development."
 ---
 
 The Protobuf binary format is compact and efficient, and it has clever features that allow for a

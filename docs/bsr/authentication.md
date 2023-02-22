@@ -1,6 +1,7 @@
 ---
 id: authentication
 title: Authentication
+description: "Discover how to use authentication to control access to your registry, and keep your Protobuf data secure and private."
 ---
 
 Authentication is required for the majority of the `buf` CLI commands that

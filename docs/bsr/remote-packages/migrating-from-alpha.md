@@ -1,6 +1,7 @@
 ---
 id: migrating-from-alpha
 title: Migrating from alpha
+description: "Upgrade your Buf Schema Registry workflow with ease - Learn how to migrate from the alpha remote generation to the latest stable version and unlock new features and improvements."
 ---
 
 The [remote generation alpha](../../reference/deprecated/remote-generation/overview.mdx)

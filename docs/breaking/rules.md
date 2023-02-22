@@ -1,6 +1,7 @@
 ---
 id: rules
 title: Rules and categories
+description: "Power up your Protobuf workflow with Buf - the fast, reliable, and easy-to-use build tool."
 ---
 
 As discussed in the overview, `buf` categorizes breaking rules into four main

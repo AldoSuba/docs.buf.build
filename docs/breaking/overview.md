@@ -1,6 +1,7 @@
 ---
 id: overview
 title: Overview
+description: "How to stay ahead of the curve and avoid Buf breaking changes - Learn the latest tips and tricks to future-proof your code!"
 ---
 
 One of the core promises of Protobuf is forwards and backwards compatibility.

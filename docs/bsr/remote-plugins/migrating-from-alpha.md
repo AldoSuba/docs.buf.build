@@ -1,6 +1,7 @@
 ---
 id: migrating-from-alpha
 title: Migrating from alpha
+description: "Upgrade your Buf Schema Registry workflow with remote plugins - Learn how to migrate from the alpha version to the latest stable version and explore the full potential of remote plugins for your Protobuf-based projects."
 ---
 
 The
