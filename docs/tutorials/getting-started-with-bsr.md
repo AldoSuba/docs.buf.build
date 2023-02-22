@@ -1,6 +1,7 @@
 ---
 id: getting-started-with-bsr
 title: Getting Started with the Buf Schema Registry
+description: "Unlock the power of scalable and reliable builds with Buf Build - Start your journey with our easy-to-follow tutorial today!"
 ---
 
 In this guide you will gain strong understanding of the Buf Schema Registry and its APIs, create a repository and 
