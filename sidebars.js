@@ -24,8 +24,16 @@ const sidebars = {
                 type: "category",
                 label: "How To",
                 items: [
+                    "breaking/usage",
+                    "lint/usage",
+                    "generate/usage",
                     "bsr/remote-plugins/usage",
                     "how-to/use-remote-packages",
+                    {
+                        type: "doc",
+                        id: "build/usage",
+                        label: "Build your Proto Schema",
+                    },
                     {
                         type: "doc",
                         label: "Invoke an API with Buf cURL",
@@ -37,14 +45,6 @@ const sidebars = {
                         id: "bsr/api-access",
                     },
                     "how-to/replace-protoc-with-buf",
-                    "breaking/usage",
-                    {
-                        type: "doc",
-                        id: "build/usage",
-                        label: "Build your Proto Schema",
-                    },
-                    "generate/usage",
-                    "lint/usage",
                     "how-to/iterate-on-modules",
                 ],
                 collapsed: false
