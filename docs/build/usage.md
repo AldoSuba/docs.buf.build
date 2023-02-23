@@ -11,10 +11,7 @@ The operations on `buf` are based on protobuf files that are built or compiled. 
 results of the compilation. The `buf build` command, in its simplest form, is used to verify that [input][input]
 successfully compiles.
 
-## Before you begin
-
-Before you begin exploring the topic at hand, it's essential to understand some key concepts that will help you better
-navigate the subject.
+## Key concepts
 
 `buf` is configured using the [`buf.yaml`][buf-yaml] configuration file placed at the root of the Protobuf source
 files it defines. The placement of the [`buf.yaml`][buf-yaml] configuration file tells buf where to search for `.proto`
