@@ -1,6 +1,6 @@
 ---
 id: style
-title: Style
+title: Format your proto files
 ---
 
 One of Buf's primary goals is to enforce consistency across all of Protobuf. The

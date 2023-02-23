@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Overview
+title: Enforce Lint Standards
 ---
 
 Using a [linter][lint] on your Protobuf sources enables you to enforce

@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Overview
+title: Breaking Change Detection
 ---
 
 One of the core promises of Protobuf is forwards and backwards compatibility.

@@ -1,6 +1,6 @@
 ---
 id: usage
-title: Build a Buf image
+title: Build your Proto Schema
 ---
 
 > We highly recommend completing [the tour][the-tour] to get an

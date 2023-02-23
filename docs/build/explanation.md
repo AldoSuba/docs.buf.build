@@ -1,7 +1,8 @@
 ---
 id: explanation
-title: "Diving deep on Protobuf: building an image"
+title: Explore Buf Images
 ---
+# Diving deep on Protobuf: building an image
 
 Buf Images are a powerful tool for distributing and sharing compiled Protocol Buffer (Protobuf) schemas across your
 organization. They provide a compact and efficient representation of a Protobuf schema, allowing you to easily manage
