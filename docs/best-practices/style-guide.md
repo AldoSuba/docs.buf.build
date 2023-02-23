@@ -1,6 +1,6 @@
 ---
 id: style-guide
-title: The Official Buf Style Guide
+title: The official Buf style guide
 ---
 
 This is our Style Guide for Protobuf.

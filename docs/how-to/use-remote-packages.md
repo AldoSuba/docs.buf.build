@@ -1,6 +1,6 @@
 ---
 id: use-remote-packages
-title: "Supercharge your project with Remote Packages"
+title: "Supercharge your project with remote packages"
 ---
 
 This guide will show you how to use Buf's Go Module Proxy to import Go/gRPC client and server stubs as you would for any
@@ -9,11 +9,11 @@ Remote Packages make it so that you do not have to worry about Protobuf code gen
 the BSR and install generated code stubs from those modules using dependency management tools such as npm and go.
 
 :::note
-This guide assumes that you are already familiar with using prots with Buf to generate client/server stubs.
+This guide assumes that you are already familiar with using Protobufs with Buf to generate client/server stubs.
 If you are not yet at this stage, we recommend that you check out our Getting Started guides.
 :::
 
-## Remote Packages
+## Remote packages
 
 You can use Remote Packages to depend on gRPC client and server stubs by modifying import paths to use the BSR Go
 module proxy. The Go module path you need to use is derived from the name of the module you want to generate for and the
@@ -131,7 +131,7 @@ go: found buf.build/gen/go/$BUF_USER/petapis/protocolbuffers/go/pet/v1 in buf.bu
 You can run the application again to verify that the remote package works as expected. Everything works just as before,
 but you no longer have _any_ locally generated code:
 
-### 4.1 Updating Versions {#updating-versions}
+### 4.1 Updating versions {#updating-versions}
 
 If you update your module and push it, you can run `go get` to update the dependency version.
 

@@ -355,7 +355,7 @@ lint:
   service_suffix: Service
 ```
 
-### Other Material
+### Other material
 
 import { Card, Cards } from "@site/src/components/Cards";
 

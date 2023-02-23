@@ -6,10 +6,10 @@ sidebar_position: 1
 slug: /manuals/cli/overview
 ---
 
-Buf is a helpful tool for managing Protobuf APIs. It offers various features, including code generation, breaking
+Buf is a helpful tool for managing Protobuf schemas. It offers various features, including code generation, breaking
 change detection, linting, and formatting, to assist with Protobuf development and maintenance.
 
-Buf is designed to integrate with your existing workflow to make API development easier, regardless of project size.
+Buf is designed to integrate with your existing workflow to make schema-driven development easier, regardless of project size.
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";

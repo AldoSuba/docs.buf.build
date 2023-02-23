@@ -12,7 +12,7 @@ on how to create a [`buf.gen.yaml`][buf-gen-yaml] file that serves as a template
 flags and options to customize the generation process. Additionally, it covers how to specify input paths and modules,
 and provides examples on how to generate code stubs using specific templates.
 
-## What are Protoc Plugins?
+## What are protoc plugins?
 
 Protoc plugins are external programs that implement a specific interface, defined by the protobuf compiler `protoc`, to
 generate code or perform some other custom processing on `.proto` files.

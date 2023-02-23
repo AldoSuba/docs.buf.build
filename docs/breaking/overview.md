@@ -93,9 +93,9 @@ breaking:
 
 ### `use`
 
-The `use` key is **optional**, and lists the IDs or categories to use for
+The `use` key is **optional**, and lists the rules or categories to use for
 breaking change detection. For example, this selects the `WIRE` breaking
-category, as well as the `FILE_NO_DELETE` ID:
+category, as well as the `FILE_NO_DELETE` rule:
 
 ```yaml title="buf.yaml"
 version: v1
@@ -107,8 +107,8 @@ breaking:
 
 **As opposed to [lint rules](../lint/rules.md), breaking rules are not meant to
 be overly customized.** Breaking rules are generally meant to work in unison to
-detect a category of breaking change, as opposed to merely being independent
-rules.
+detect a category of breaking change, as opposed to being independent
+of each other.
 
 You should usually choose one of these values for `use`:
 
@@ -124,7 +124,7 @@ The default value is the single item `FILE`, which is what we recommend.
 
 ### `except`
 
-The `except` key is **optional**, and removes IDs or categories from the `use`
+The `except` key is **optional**, and removes rules or categories from the `use`
 list. **We do not recommend using this option in general**. For example, this
 results in all breaking rules in the `FILE` breaking category being used except
 for `FILE_NO_DELETE`:
@@ -143,8 +143,8 @@ breaking:
 The `ignore` key is **optional**, and enables you to exclude directories or
 files from all breaking rules when running `buf breaking`. If a directory is ignored,
 then all files and subfolders of the directory will also be ignored. The specified
-directory or file paths **must** be relative to the `buf.yaml`. For example, the
-breaking result in `foo/bar.proto` is ignored if you apply this:
+directory or file paths **must** be relative to the `buf.yaml`. For example,
+breaking changes in `foo/bar.proto` are ignored if you apply this:
 
 ```yaml title="buf.yaml"
 version: v1
@@ -172,7 +172,7 @@ breaking:
 
 The `ignore_only` key is **optional**, and enables you to exclude directories or
 files from specific breaking rules when running `buf breaking` by taking a map
-from breaking rule ID or category to path. As with `ignore`, the paths **must**
+from a breaking rules or categories to paths. As with `ignore`, the paths **must**
 be relative to the `buf.yaml`. **We do not recommend this option in general.**
 
 For example, this config sets up specific ignores for the ID `FILE_SAME_TYPE`
@@ -199,7 +199,7 @@ last component that is one of the unstable forms recognized by
 - `v\d+p\d+(alpha|beta)\d*`
 - `v\d+test.*`
 
-For example, if this option is set, these packages are ignored:
+For example, if this option is true, these packages are ignored:
 
 - `foo.bar.v1alpha`
 - `foo.bar.v1alpha1`

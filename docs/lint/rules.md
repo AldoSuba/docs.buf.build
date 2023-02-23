@@ -1,6 +1,6 @@
 ---
 id: rules
-title: Lint Rules & Categories
+title: Lint rules & categories
 ---
 
 > The rules and categories described here belong to the latest

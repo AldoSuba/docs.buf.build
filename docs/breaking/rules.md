@@ -1,6 +1,6 @@
 ---
 id: rules
-title: Breaking Change Rules & Categories
+title: Breaking change rules & categories
 ---
 
 As discussed in the overview, `buf` categorizes breaking rules into four main

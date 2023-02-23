@@ -1,12 +1,12 @@
 ---
 id: usage
-title: Build a Buf Image
+title: Build a Buf image
 ---
 
 > We highly recommend completing [the tour][the-tour] to get an
 > overview of `buf build`.
 
-The operations on `buf` are based on Protobuf files that are built or compiled. The [linter][linter],
+The operations on `buf` are based on protobuf files that are built or compiled. The [linter][linter],
 [breaking change detector][breaking-change-detector], [generator][generator], and  [BSR][bsr] features depend on the
 results of the compilation. The `buf build` command, in its simplest form, is used to verify that [input][input]
 successfully compiles.
@@ -41,7 +41,7 @@ unavoidable.
 
 For more information on `buf.yaml` configuration, see the [reference][reference].
 
-## 1 Define a Module
+## 1 Define a module
 
 To create a [module][module], add a [`buf.yaml`][buf-yaml] file to the root of the directory that contains the Protobuf
 definitions. The `buf mod init` command can be used to create the default `buf.yaml` file.
@@ -232,9 +232,8 @@ By default, `buf build` outputs its result to `/dev/null`. In this case, it's co
 `buf build` also supports
 outputting [`FileDescriptorSet`][file-descriptor-set]
 s
-and [Images][images], which is Buf's custom extension of the `FileDescriptorSet`. Better yet, these
-outputs
-can be formatted in a variety of ways.
+and [images][images], which are Buf's custom extension of the `FileDescriptorSet`. Better yet, these
+outputs can be formatted in a variety of ways.
 
 `buf build` can deduce the output format by the file extension, see the documentation
 on [automatically derived formats][automatically-derived-formats]. For example,
@@ -280,8 +279,7 @@ $ buf build -o image.bin --as-file-descriptor-set
 ```
 
 The `ImageExtension` field doesn't affect Protobuf plugins or any other operations, as they merely see this as an
-unknown
-field. But we provide the option in case you want it.
+unknown field. But we provide the option in case you want it.
 
 ### 4.2 Limit to specific files
 
@@ -302,7 +300,7 @@ $ buf build --path path/to/foo.proto --path path/to/bar.proto
 When you run `buf build` to create a [`FileDescriptorSet`][file-descriptor-set] or Buf [image], the
 output contains all the Protobuf types declared in the [module] by default. But for some advanced
 use cases, you may want the image or `FileDescriptorSet` to contain only a subset of the types
-described in your Protobuf API.
+described in your protobuf schemas.
 
 Versions 1.1.0 and later of the `buf` CLI include a `--type` option for the `buf build` command that
 enables you to supply a fully qualified Protobuf name and limit the resulting image or
