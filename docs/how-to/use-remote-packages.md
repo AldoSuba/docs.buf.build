@@ -10,7 +10,7 @@ the BSR and install generated code stubs from those modules using dependency man
 
 :::note
 This guide assumes that you are already familiar with using Protobufs with Buf to generate client/server stubs.
-If you are not yet at this stage, we recommend that you check out our Getting Started guides.
+If you are not yet at this stage, we recommend that you check out our [Getting Started guides](../tutorials/getting-started-with-buf-cli.md).
 :::
 
 ## Remote packages
