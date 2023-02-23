@@ -1,6 +1,7 @@
 ---
 id: about
 title: About Buf
+description: abc
 hide_table_of_contents: true
 ---
 
