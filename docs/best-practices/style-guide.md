@@ -2,6 +2,11 @@
 id: style-guide
 title: Style guide
 description: "Stop writing messy Protobuf code! Follow these simple style guidelines and become a coding master in no time!"
+keywords: [code style guide, protobuf coding style, protobuf style guide, coding best practices, 
+protobuf coding guidelines, style consistency in protobuf, code readability in protobuf, protobuf naming conventions, 
+protobuf formatting guidelines, protobuf comments and documentation, protobuf linting and formatting tools, 
+code review best practices, protobuf code review guidelines, protobuf file organization and structure, 
+protobuf version control best practices]
 ---
 
 This is our Style Guide for Protobuf.

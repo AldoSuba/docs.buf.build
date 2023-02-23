@@ -2,6 +2,11 @@
 id: module-development
 title: Module development
 description: "Discover the one simple trick that can revolutionize your productivity and change your life forever!"
+keywords: [module development best practices, protobuf module development, protocol buffers best practices, 
+buf module development, protobuf development guidelines, module development tips and tricks, protobuf module design, 
+efficient protobuf module development, protobuf module architecture, protobuf module testing and debugging, 
+protobuf module versioning, protobuf module performance optimization, protobuf module documentation, 
+protobuf module deployment strategies, protobuf module security best practices]
 ---
 
 The Buf Schema Registry ([BSR](../bsr/overview.mdx)) automatically enforces that
@@ -128,7 +133,7 @@ package acme.pkg.v1;
 // Object is a generic object that uses
 // an int32 for its identifier.
 message Object {
-    int32 id = 1;
+  int32 id = 1;
 }
 ```
 
@@ -140,7 +145,7 @@ package acme.pkg.v2;
 // Object is a generic object that uses
 // a string for its identifier.
 message Object {
-    string id = 1;
+  string id = 1;
 }
 ```
 

@@ -2,6 +2,7 @@
 id: configuration
 title: Configuration
 description: "How to stay ahead of the curve and avoid Buf breaking changes - Learn the latest tips and tricks to future-proof your code!"
+keywords: [configuration management, protobuf configuration best practices, buf configuration guide, protobuf configuration schema, configuration file formats, configuration versioning, protobuf configuration migration, breaking configuration changes, configuration backward compatibility, protobuf configuration validation, protobuf configuration security best practices, configuration deployment strategies, configuration management tools, configuration performance optimization, configuration testing and debugging]
 ---
 
 `buf`'s breaking change detector is configured through a
